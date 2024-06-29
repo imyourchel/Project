@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Project.Customers">
+    <Position X="1.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAIgAAAAIAAAAAQQAAAAFAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Customers.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="OrderItem" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Project.Items">
+    <Position X="4.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABgAAAAYAAAAAAAAAAAQYAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Items.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project.Ingredients">
+    <Position X="2.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAIAAAAAAAAAAAQQAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Ingredients.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project.Foods">
+    <Position X="2.25" Y="4.75" Width="1.5" />
+    <AssociationLine Name="ListOfIngredients" Type="Project.Ingredients">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.11" Y="0.221" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAACACAAgA=</HashCode>
+      <FileName>Foods.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="ListOfIngredients" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Project.Beverages">
+    <Position X="4.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAIAAAQAAAAAgAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Beverages.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project.Merchandise">
+    <Position X="6.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAQAAgAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Merchandise.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project.Time">
+    <Position X="11.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAoAAAQIAAAAAACIAAAAiAAAAAAA=</HashCode>
+      <FileName>Time.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project.Players">
+    <Position X="9.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABgAAAAIAAAAAAAAAgAYQAIAIGAAAAAgAAAAAAAQA=</HashCode>
+      <FileName>Players.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Time" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="StockMerchandise" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
