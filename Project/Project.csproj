@@ -61,20 +61,20 @@
     <Compile Include="Players.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Time.cs" />
     <EmbeddedResource Include="FormGame.resx">
       <DependentUpon>FormGame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="ClassDiagram.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -123,9 +123,6 @@
     <None Include="Resources\bg.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bg play.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\18.png" />
   </ItemGroup>
   <ItemGroup>
@@ -157,6 +154,114 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\28.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\angry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mayo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beverages.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bevmachine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonreceipe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonsetting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\happy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plates.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icmachine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dialog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\burger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coldL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coldM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coldS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hotL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hotM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hotS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iceCream.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonHomeSetting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonRestartSetting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonResumeSetting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonVolDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonVolDownFull.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonVolUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonVolUpFull.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\volumeBar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\volumeBarFull.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg play %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background %287%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dewa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jenoy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bocil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background %288%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

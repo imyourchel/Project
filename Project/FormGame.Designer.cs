@@ -28,9 +28,53 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGame));
             this.buttonPlay = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
+            this.panelSetting = new System.Windows.Forms.Panel();
+            this.pictureBoxHome = new System.Windows.Forms.PictureBox();
+            this.pictureBoxRestart = new System.Windows.Forms.PictureBox();
+            this.pictureBoxResume = new System.Windows.Forms.PictureBox();
+            this.pictureBoxVolumeBarSFX5 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxVolumeBarSFX4 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxVolumeBarSFX3 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxVolumeBarSFX2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxVolumeBarSFX1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxVolmeUpSFX = new System.Windows.Forms.PictureBox();
+            this.pictureBoxVolumeDownSFX = new System.Windows.Forms.PictureBox();
+            this.pictureBoxBarMusic5 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxBarMusic4 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxBarMusic3 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxBarMusic2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxBarMusic1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxVolumeUpMusic = new System.Windows.Forms.PictureBox();
+            this.pictureBoxVolumeDownMusic = new System.Windows.Forms.PictureBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.panelGame = new System.Windows.Forms.Panel();
+            this.panelDialog2 = new System.Windows.Forms.Panel();
+            this.pictureBoxEmotion2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxOrder2 = new System.Windows.Forms.PictureBox();
+            this.panelDialog1 = new System.Windows.Forms.Panel();
+            this.pictureBoxEmotion1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxOrder1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxButtonSetting = new System.Windows.Forms.PictureBox();
+            this.pictureBoxButtonReceipe = new System.Windows.Forms.PictureBox();
+            this.labelSmall = new System.Windows.Forms.Label();
+            this.labelMedium = new System.Windows.Forms.Label();
+            this.labelLarge = new System.Windows.Forms.Label();
+            this.pictureBoxMayo = new System.Windows.Forms.PictureBox();
+            this.pictureBoxPlate = new System.Windows.Forms.PictureBox();
+            this.pictureBoxBeverage = new System.Windows.Forms.PictureBox();
+            this.pictureBoxBevMachine = new System.Windows.Forms.PictureBox();
+            this.pictureBoxICMachine = new System.Windows.Forms.PictureBox();
+            this.pictureBoxCone = new System.Windows.Forms.PictureBox();
+            this.pictureBoxServe = new System.Windows.Forms.PictureBox();
+            this.labelRemainingCustomers = new System.Windows.Forms.Label();
+            this.labelRemainingTime = new System.Windows.Forms.Label();
+            this.labelDisplayDataPlayer = new System.Windows.Forms.Label();
+            this.pictureBoxDisplayPlayer = new System.Windows.Forms.PictureBox();
             this.pictureBoxRobot5 = new System.Windows.Forms.PictureBox();
             this.pictureBoxRobot4 = new System.Windows.Forms.PictureBox();
             this.pictureBoxRobot3 = new System.Windows.Forms.PictureBox();
@@ -59,7 +103,11 @@
             this.pictureBoxLettuce = new System.Windows.Forms.PictureBox();
             this.pictureBoxPatty = new System.Windows.Forms.PictureBox();
             this.pictureBoxCheese = new System.Windows.Forms.PictureBox();
+            this.panelFoodStall = new System.Windows.Forms.Panel();
+            this.pictureBoxCustomer2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxCustomer1 = new System.Windows.Forms.PictureBox();
             this.panelTutorial = new System.Windows.Forms.Panel();
+            this.buttonBackReceipe = new System.Windows.Forms.Button();
             this.buttonStartGame = new System.Windows.Forms.Button();
             this.panelDifficulty = new System.Windows.Forms.Panel();
             this.buttonNextTutorial = new System.Windows.Forms.Button();
@@ -109,7 +157,41 @@
             this.buttonNextDifficult = new System.Windows.Forms.Button();
             this.radioButtonCreatePlayer = new System.Windows.Forms.RadioButton();
             this.pictureBoxBackHome = new System.Windows.Forms.PictureBox();
+            this.panelSetting.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHome)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRestart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResume)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolmeUpSFX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeDownSFX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeUpMusic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeDownMusic)).BeginInit();
             this.panelGame.SuspendLayout();
+            this.panelDialog2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmotion2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOrder2)).BeginInit();
+            this.panelDialog1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmotion1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOrder1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxButtonSetting)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxButtonReceipe)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMayo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBeverage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBevMachine)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxICMachine)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCone)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxServe)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDisplayPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRobot5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRobot4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRobot3)).BeginInit();
@@ -135,6 +217,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLettuce)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPatty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCheese)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCustomer2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCustomer1)).BeginInit();
             this.panelTutorial.SuspendLayout();
             this.panelDifficulty.SuspendLayout();
             this.panelImpossible.SuspendLayout();
@@ -177,10 +261,265 @@
             this.buttonExit.UseVisualStyleBackColor = false;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
+            // panelSetting
+            // 
+            this.panelSetting.BackColor = System.Drawing.Color.Transparent;
+            this.panelSetting.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelSetting.BackgroundImage")));
+            this.panelSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelSetting.Controls.Add(this.pictureBoxHome);
+            this.panelSetting.Controls.Add(this.pictureBoxRestart);
+            this.panelSetting.Controls.Add(this.pictureBoxResume);
+            this.panelSetting.Controls.Add(this.pictureBoxVolumeBarSFX5);
+            this.panelSetting.Controls.Add(this.pictureBoxVolumeBarSFX4);
+            this.panelSetting.Controls.Add(this.pictureBoxVolumeBarSFX3);
+            this.panelSetting.Controls.Add(this.pictureBoxVolumeBarSFX2);
+            this.panelSetting.Controls.Add(this.pictureBoxVolumeBarSFX1);
+            this.panelSetting.Controls.Add(this.pictureBoxVolmeUpSFX);
+            this.panelSetting.Controls.Add(this.pictureBoxVolumeDownSFX);
+            this.panelSetting.Controls.Add(this.pictureBoxBarMusic5);
+            this.panelSetting.Controls.Add(this.pictureBoxBarMusic4);
+            this.panelSetting.Controls.Add(this.pictureBoxBarMusic3);
+            this.panelSetting.Controls.Add(this.pictureBoxBarMusic2);
+            this.panelSetting.Controls.Add(this.pictureBoxBarMusic1);
+            this.panelSetting.Controls.Add(this.pictureBoxVolumeUpMusic);
+            this.panelSetting.Controls.Add(this.pictureBoxVolumeDownMusic);
+            this.panelSetting.Controls.Add(this.label20);
+            this.panelSetting.Controls.Add(this.label19);
+            this.panelSetting.Controls.Add(this.label18);
+            this.panelSetting.Location = new System.Drawing.Point(0, 0);
+            this.panelSetting.Name = "panelSetting";
+            this.panelSetting.Size = new System.Drawing.Size(1150, 650);
+            this.panelSetting.TabIndex = 9;
+            // 
+            // pictureBoxHome
+            // 
+            this.pictureBoxHome.BackgroundImage = global::Project.Properties.Resources.buttonHomeSetting;
+            this.pictureBoxHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxHome.Location = new System.Drawing.Point(775, 465);
+            this.pictureBoxHome.Name = "pictureBoxHome";
+            this.pictureBoxHome.Size = new System.Drawing.Size(125, 125);
+            this.pictureBoxHome.TabIndex = 19;
+            this.pictureBoxHome.TabStop = false;
+            // 
+            // pictureBoxRestart
+            // 
+            this.pictureBoxRestart.BackgroundImage = global::Project.Properties.Resources.buttonRestartSetting;
+            this.pictureBoxRestart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxRestart.Location = new System.Drawing.Point(250, 465);
+            this.pictureBoxRestart.Name = "pictureBoxRestart";
+            this.pictureBoxRestart.Size = new System.Drawing.Size(125, 125);
+            this.pictureBoxRestart.TabIndex = 18;
+            this.pictureBoxRestart.TabStop = false;
+            // 
+            // pictureBoxResume
+            // 
+            this.pictureBoxResume.BackgroundImage = global::Project.Properties.Resources.buttonResumeSetting;
+            this.pictureBoxResume.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxResume.Location = new System.Drawing.Point(505, 375);
+            this.pictureBoxResume.Name = "pictureBoxResume";
+            this.pictureBoxResume.Size = new System.Drawing.Size(140, 140);
+            this.pictureBoxResume.TabIndex = 17;
+            this.pictureBoxResume.TabStop = false;
+            this.pictureBoxResume.Click += new System.EventHandler(this.pictureBoxResume_Click);
+            // 
+            // pictureBoxVolumeBarSFX5
+            // 
+            this.pictureBoxVolumeBarSFX5.BackgroundImage = global::Project.Properties.Resources.volumeBarFull;
+            this.pictureBoxVolumeBarSFX5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxVolumeBarSFX5.Location = new System.Drawing.Point(830, 262);
+            this.pictureBoxVolumeBarSFX5.Name = "pictureBoxVolumeBarSFX5";
+            this.pictureBoxVolumeBarSFX5.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxVolumeBarSFX5.TabIndex = 16;
+            this.pictureBoxVolumeBarSFX5.TabStop = false;
+            // 
+            // pictureBoxVolumeBarSFX4
+            // 
+            this.pictureBoxVolumeBarSFX4.BackgroundImage = global::Project.Properties.Resources.volumeBarFull;
+            this.pictureBoxVolumeBarSFX4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxVolumeBarSFX4.Location = new System.Drawing.Point(780, 262);
+            this.pictureBoxVolumeBarSFX4.Name = "pictureBoxVolumeBarSFX4";
+            this.pictureBoxVolumeBarSFX4.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxVolumeBarSFX4.TabIndex = 15;
+            this.pictureBoxVolumeBarSFX4.TabStop = false;
+            // 
+            // pictureBoxVolumeBarSFX3
+            // 
+            this.pictureBoxVolumeBarSFX3.BackgroundImage = global::Project.Properties.Resources.volumeBarFull;
+            this.pictureBoxVolumeBarSFX3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxVolumeBarSFX3.Location = new System.Drawing.Point(730, 262);
+            this.pictureBoxVolumeBarSFX3.Name = "pictureBoxVolumeBarSFX3";
+            this.pictureBoxVolumeBarSFX3.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxVolumeBarSFX3.TabIndex = 14;
+            this.pictureBoxVolumeBarSFX3.TabStop = false;
+            // 
+            // pictureBoxVolumeBarSFX2
+            // 
+            this.pictureBoxVolumeBarSFX2.BackgroundImage = global::Project.Properties.Resources.volumeBarFull;
+            this.pictureBoxVolumeBarSFX2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxVolumeBarSFX2.Location = new System.Drawing.Point(680, 262);
+            this.pictureBoxVolumeBarSFX2.Name = "pictureBoxVolumeBarSFX2";
+            this.pictureBoxVolumeBarSFX2.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxVolumeBarSFX2.TabIndex = 13;
+            this.pictureBoxVolumeBarSFX2.TabStop = false;
+            // 
+            // pictureBoxVolumeBarSFX1
+            // 
+            this.pictureBoxVolumeBarSFX1.BackgroundImage = global::Project.Properties.Resources.volumeBarFull;
+            this.pictureBoxVolumeBarSFX1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxVolumeBarSFX1.Location = new System.Drawing.Point(630, 262);
+            this.pictureBoxVolumeBarSFX1.Name = "pictureBoxVolumeBarSFX1";
+            this.pictureBoxVolumeBarSFX1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxVolumeBarSFX1.TabIndex = 12;
+            this.pictureBoxVolumeBarSFX1.TabStop = false;
+            // 
+            // pictureBoxVolmeUpSFX
+            // 
+            this.pictureBoxVolmeUpSFX.BackgroundImage = global::Project.Properties.Resources.buttonVolUp;
+            this.pictureBoxVolmeUpSFX.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxVolmeUpSFX.Location = new System.Drawing.Point(880, 262);
+            this.pictureBoxVolmeUpSFX.Name = "pictureBoxVolmeUpSFX";
+            this.pictureBoxVolmeUpSFX.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxVolmeUpSFX.TabIndex = 11;
+            this.pictureBoxVolmeUpSFX.TabStop = false;
+            // 
+            // pictureBoxVolumeDownSFX
+            // 
+            this.pictureBoxVolumeDownSFX.BackgroundImage = global::Project.Properties.Resources.buttonVolDown;
+            this.pictureBoxVolumeDownSFX.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxVolumeDownSFX.Location = new System.Drawing.Point(580, 262);
+            this.pictureBoxVolumeDownSFX.Name = "pictureBoxVolumeDownSFX";
+            this.pictureBoxVolumeDownSFX.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxVolumeDownSFX.TabIndex = 10;
+            this.pictureBoxVolumeDownSFX.TabStop = false;
+            // 
+            // pictureBoxBarMusic5
+            // 
+            this.pictureBoxBarMusic5.BackgroundImage = global::Project.Properties.Resources.volumeBarFull;
+            this.pictureBoxBarMusic5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxBarMusic5.Location = new System.Drawing.Point(830, 155);
+            this.pictureBoxBarMusic5.Name = "pictureBoxBarMusic5";
+            this.pictureBoxBarMusic5.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxBarMusic5.TabIndex = 9;
+            this.pictureBoxBarMusic5.TabStop = false;
+            // 
+            // pictureBoxBarMusic4
+            // 
+            this.pictureBoxBarMusic4.BackgroundImage = global::Project.Properties.Resources.volumeBarFull;
+            this.pictureBoxBarMusic4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxBarMusic4.Location = new System.Drawing.Point(780, 155);
+            this.pictureBoxBarMusic4.Name = "pictureBoxBarMusic4";
+            this.pictureBoxBarMusic4.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxBarMusic4.TabIndex = 8;
+            this.pictureBoxBarMusic4.TabStop = false;
+            // 
+            // pictureBoxBarMusic3
+            // 
+            this.pictureBoxBarMusic3.BackgroundImage = global::Project.Properties.Resources.volumeBarFull;
+            this.pictureBoxBarMusic3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxBarMusic3.Location = new System.Drawing.Point(730, 155);
+            this.pictureBoxBarMusic3.Name = "pictureBoxBarMusic3";
+            this.pictureBoxBarMusic3.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxBarMusic3.TabIndex = 7;
+            this.pictureBoxBarMusic3.TabStop = false;
+            // 
+            // pictureBoxBarMusic2
+            // 
+            this.pictureBoxBarMusic2.BackgroundImage = global::Project.Properties.Resources.volumeBarFull;
+            this.pictureBoxBarMusic2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxBarMusic2.Location = new System.Drawing.Point(680, 155);
+            this.pictureBoxBarMusic2.Name = "pictureBoxBarMusic2";
+            this.pictureBoxBarMusic2.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxBarMusic2.TabIndex = 6;
+            this.pictureBoxBarMusic2.TabStop = false;
+            // 
+            // pictureBoxBarMusic1
+            // 
+            this.pictureBoxBarMusic1.BackgroundImage = global::Project.Properties.Resources.volumeBarFull;
+            this.pictureBoxBarMusic1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxBarMusic1.Location = new System.Drawing.Point(630, 155);
+            this.pictureBoxBarMusic1.Name = "pictureBoxBarMusic1";
+            this.pictureBoxBarMusic1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxBarMusic1.TabIndex = 5;
+            this.pictureBoxBarMusic1.TabStop = false;
+            // 
+            // pictureBoxVolumeUpMusic
+            // 
+            this.pictureBoxVolumeUpMusic.BackgroundImage = global::Project.Properties.Resources.buttonVolUp;
+            this.pictureBoxVolumeUpMusic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxVolumeUpMusic.Location = new System.Drawing.Point(880, 155);
+            this.pictureBoxVolumeUpMusic.Name = "pictureBoxVolumeUpMusic";
+            this.pictureBoxVolumeUpMusic.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxVolumeUpMusic.TabIndex = 4;
+            this.pictureBoxVolumeUpMusic.TabStop = false;
+            // 
+            // pictureBoxVolumeDownMusic
+            // 
+            this.pictureBoxVolumeDownMusic.BackgroundImage = global::Project.Properties.Resources.buttonVolDown;
+            this.pictureBoxVolumeDownMusic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxVolumeDownMusic.Location = new System.Drawing.Point(580, 155);
+            this.pictureBoxVolumeDownMusic.Name = "pictureBoxVolumeDownMusic";
+            this.pictureBoxVolumeDownMusic.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxVolumeDownMusic.TabIndex = 3;
+            this.pictureBoxVolumeDownMusic.TabStop = false;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.Transparent;
+            this.label20.Font = new System.Drawing.Font("Humnst777 BlkCn BT", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.White;
+            this.label20.Location = new System.Drawing.Point(211, 259);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(277, 57);
+            this.label20.TabIndex = 2;
+            this.label20.Text = "SFX Volume ";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.Transparent;
+            this.label19.Font = new System.Drawing.Font("Humnst777 BlkCn BT", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.White;
+            this.label19.Location = new System.Drawing.Point(211, 151);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(321, 57);
+            this.label19.TabIndex = 1;
+            this.label19.Text = "Music Volume ";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.Transparent;
+            this.label18.Font = new System.Drawing.Font("Humnst777 BlkCn BT", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(450, 56);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(251, 73);
+            this.label18.TabIndex = 0;
+            this.label18.Text = "SETTING";
+            // 
             // panelGame
             // 
-            this.panelGame.BackgroundImage = global::Project.Properties.Resources.bg_Ingame;
+            this.panelGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.panelGame.BackgroundImage = global::Project.Properties.Resources.bg_InGame;
             this.panelGame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelGame.Controls.Add(this.panelDialog2);
+            this.panelGame.Controls.Add(this.panelDialog1);
+            this.panelGame.Controls.Add(this.pictureBoxButtonSetting);
+            this.panelGame.Controls.Add(this.pictureBoxButtonReceipe);
+            this.panelGame.Controls.Add(this.labelSmall);
+            this.panelGame.Controls.Add(this.labelMedium);
+            this.panelGame.Controls.Add(this.labelLarge);
+            this.panelGame.Controls.Add(this.pictureBoxMayo);
+            this.panelGame.Controls.Add(this.pictureBoxPlate);
+            this.panelGame.Controls.Add(this.pictureBoxBeverage);
+            this.panelGame.Controls.Add(this.pictureBoxBevMachine);
+            this.panelGame.Controls.Add(this.pictureBoxICMachine);
+            this.panelGame.Controls.Add(this.pictureBoxCone);
+            this.panelGame.Controls.Add(this.pictureBoxServe);
+            this.panelGame.Controls.Add(this.labelRemainingCustomers);
+            this.panelGame.Controls.Add(this.labelRemainingTime);
+            this.panelGame.Controls.Add(this.labelDisplayDataPlayer);
+            this.panelGame.Controls.Add(this.pictureBoxDisplayPlayer);
             this.panelGame.Controls.Add(this.pictureBoxRobot5);
             this.panelGame.Controls.Add(this.pictureBoxRobot4);
             this.panelGame.Controls.Add(this.pictureBoxRobot3);
@@ -209,11 +548,260 @@
             this.panelGame.Controls.Add(this.pictureBoxLettuce);
             this.panelGame.Controls.Add(this.pictureBoxPatty);
             this.panelGame.Controls.Add(this.pictureBoxCheese);
+            this.panelGame.Controls.Add(this.panelFoodStall);
+            this.panelGame.Controls.Add(this.pictureBoxCustomer2);
+            this.panelGame.Controls.Add(this.pictureBoxCustomer1);
             this.panelGame.Location = new System.Drawing.Point(0, 0);
             this.panelGame.Name = "panelGame";
             this.panelGame.Size = new System.Drawing.Size(1150, 650);
             this.panelGame.TabIndex = 8;
-            this.panelGame.Paint += new System.Windows.Forms.PaintEventHandler(this.panelGame_Paint);
+            // 
+            // panelDialog2
+            // 
+            this.panelDialog2.BackColor = System.Drawing.Color.Transparent;
+            this.panelDialog2.BackgroundImage = global::Project.Properties.Resources.dialog;
+            this.panelDialog2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelDialog2.Controls.Add(this.pictureBoxEmotion2);
+            this.panelDialog2.Controls.Add(this.pictureBoxOrder2);
+            this.panelDialog2.Location = new System.Drawing.Point(996, 68);
+            this.panelDialog2.Name = "panelDialog2";
+            this.panelDialog2.Size = new System.Drawing.Size(148, 89);
+            this.panelDialog2.TabIndex = 62;
+            // 
+            // pictureBoxEmotion2
+            // 
+            this.pictureBoxEmotion2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxEmotion2.BackgroundImage = global::Project.Properties.Resources.angry;
+            this.pictureBoxEmotion2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxEmotion2.Location = new System.Drawing.Point(116, 1);
+            this.pictureBoxEmotion2.Name = "pictureBoxEmotion2";
+            this.pictureBoxEmotion2.Size = new System.Drawing.Size(32, 32);
+            this.pictureBoxEmotion2.TabIndex = 61;
+            this.pictureBoxEmotion2.TabStop = false;
+            // 
+            // pictureBoxOrder2
+            // 
+            this.pictureBoxOrder2.BackColor = System.Drawing.Color.White;
+            this.pictureBoxOrder2.BackgroundImage = global::Project.Properties.Resources.burger;
+            this.pictureBoxOrder2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxOrder2.Location = new System.Drawing.Point(39, 6);
+            this.pictureBoxOrder2.Name = "pictureBoxOrder2";
+            this.pictureBoxOrder2.Size = new System.Drawing.Size(70, 70);
+            this.pictureBoxOrder2.TabIndex = 61;
+            this.pictureBoxOrder2.TabStop = false;
+            // 
+            // panelDialog1
+            // 
+            this.panelDialog1.BackColor = System.Drawing.Color.Transparent;
+            this.panelDialog1.BackgroundImage = global::Project.Properties.Resources.dialog;
+            this.panelDialog1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelDialog1.Controls.Add(this.pictureBoxEmotion1);
+            this.panelDialog1.Controls.Add(this.pictureBoxOrder1);
+            this.panelDialog1.Location = new System.Drawing.Point(821, 51);
+            this.panelDialog1.Name = "panelDialog1";
+            this.panelDialog1.Size = new System.Drawing.Size(148, 89);
+            this.panelDialog1.TabIndex = 60;
+            // 
+            // pictureBoxEmotion1
+            // 
+            this.pictureBoxEmotion1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxEmotion1.BackgroundImage = global::Project.Properties.Resources.angry;
+            this.pictureBoxEmotion1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxEmotion1.Location = new System.Drawing.Point(116, 1);
+            this.pictureBoxEmotion1.Name = "pictureBoxEmotion1";
+            this.pictureBoxEmotion1.Size = new System.Drawing.Size(32, 32);
+            this.pictureBoxEmotion1.TabIndex = 61;
+            this.pictureBoxEmotion1.TabStop = false;
+            // 
+            // pictureBoxOrder1
+            // 
+            this.pictureBoxOrder1.BackColor = System.Drawing.Color.White;
+            this.pictureBoxOrder1.BackgroundImage = global::Project.Properties.Resources.burger;
+            this.pictureBoxOrder1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxOrder1.Location = new System.Drawing.Point(39, 6);
+            this.pictureBoxOrder1.Name = "pictureBoxOrder1";
+            this.pictureBoxOrder1.Size = new System.Drawing.Size(70, 70);
+            this.pictureBoxOrder1.TabIndex = 61;
+            this.pictureBoxOrder1.TabStop = false;
+            // 
+            // pictureBoxButtonSetting
+            // 
+            this.pictureBoxButtonSetting.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxButtonSetting.BackgroundImage = global::Project.Properties.Resources.buttonSetting;
+            this.pictureBoxButtonSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxButtonSetting.Location = new System.Drawing.Point(1099, 4);
+            this.pictureBoxButtonSetting.Name = "pictureBoxButtonSetting";
+            this.pictureBoxButtonSetting.Size = new System.Drawing.Size(45, 45);
+            this.pictureBoxButtonSetting.TabIndex = 55;
+            this.pictureBoxButtonSetting.TabStop = false;
+            this.pictureBoxButtonSetting.Click += new System.EventHandler(this.pictureBoxButtonSetting_Click);
+            // 
+            // pictureBoxButtonReceipe
+            // 
+            this.pictureBoxButtonReceipe.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxButtonReceipe.BackgroundImage = global::Project.Properties.Resources.buttonReceipe;
+            this.pictureBoxButtonReceipe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxButtonReceipe.Location = new System.Drawing.Point(1050, 4);
+            this.pictureBoxButtonReceipe.Name = "pictureBoxButtonReceipe";
+            this.pictureBoxButtonReceipe.Size = new System.Drawing.Size(45, 45);
+            this.pictureBoxButtonReceipe.TabIndex = 54;
+            this.pictureBoxButtonReceipe.TabStop = false;
+            this.pictureBoxButtonReceipe.Click += new System.EventHandler(this.pictureBoxButtonReceipe_Click);
+            // 
+            // labelSmall
+            // 
+            this.labelSmall.AutoSize = true;
+            this.labelSmall.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(167)))), ((int)(((byte)(78)))));
+            this.labelSmall.Font = new System.Drawing.Font("Franklin Gothic Heavy", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSmall.ForeColor = System.Drawing.Color.White;
+            this.labelSmall.Location = new System.Drawing.Point(326, 277);
+            this.labelSmall.Name = "labelSmall";
+            this.labelSmall.Size = new System.Drawing.Size(27, 29);
+            this.labelSmall.TabIndex = 44;
+            this.labelSmall.Text = "S";
+            // 
+            // labelMedium
+            // 
+            this.labelMedium.AutoSize = true;
+            this.labelMedium.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(58)))), ((int)(((byte)(60)))));
+            this.labelMedium.Font = new System.Drawing.Font("Franklin Gothic Heavy", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMedium.ForeColor = System.Drawing.Color.White;
+            this.labelMedium.Location = new System.Drawing.Point(273, 277);
+            this.labelMedium.Name = "labelMedium";
+            this.labelMedium.Size = new System.Drawing.Size(32, 29);
+            this.labelMedium.TabIndex = 43;
+            this.labelMedium.Text = "M";
+            // 
+            // labelLarge
+            // 
+            this.labelLarge.AutoSize = true;
+            this.labelLarge.Font = new System.Drawing.Font("Franklin Gothic Heavy", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLarge.ForeColor = System.Drawing.Color.White;
+            this.labelLarge.Location = new System.Drawing.Point(227, 277);
+            this.labelLarge.Name = "labelLarge";
+            this.labelLarge.Size = new System.Drawing.Size(25, 29);
+            this.labelLarge.TabIndex = 42;
+            this.labelLarge.Text = "L";
+            // 
+            // pictureBoxMayo
+            // 
+            this.pictureBoxMayo.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxMayo.BackgroundImage = global::Project.Properties.Resources.mayo;
+            this.pictureBoxMayo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxMayo.Location = new System.Drawing.Point(532, 321);
+            this.pictureBoxMayo.Name = "pictureBoxMayo";
+            this.pictureBoxMayo.Size = new System.Drawing.Size(30, 80);
+            this.pictureBoxMayo.TabIndex = 41;
+            this.pictureBoxMayo.TabStop = false;
+            // 
+            // pictureBoxPlate
+            // 
+            this.pictureBoxPlate.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxPlate.BackgroundImage = global::Project.Properties.Resources.plates;
+            this.pictureBoxPlate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxPlate.Location = new System.Drawing.Point(438, 321);
+            this.pictureBoxPlate.Name = "pictureBoxPlate";
+            this.pictureBoxPlate.Size = new System.Drawing.Size(80, 80);
+            this.pictureBoxPlate.TabIndex = 40;
+            this.pictureBoxPlate.TabStop = false;
+            // 
+            // pictureBoxBeverage
+            // 
+            this.pictureBoxBeverage.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxBeverage.BackgroundImage = global::Project.Properties.Resources.beverages;
+            this.pictureBoxBeverage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxBeverage.Location = new System.Drawing.Point(387, 311);
+            this.pictureBoxBeverage.Name = "pictureBoxBeverage";
+            this.pictureBoxBeverage.Size = new System.Drawing.Size(40, 90);
+            this.pictureBoxBeverage.TabIndex = 39;
+            this.pictureBoxBeverage.TabStop = false;
+            // 
+            // pictureBoxBevMachine
+            // 
+            this.pictureBoxBevMachine.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxBevMachine.BackgroundImage = global::Project.Properties.Resources.bevMachine;
+            this.pictureBoxBevMachine.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxBevMachine.Location = new System.Drawing.Point(202, 237);
+            this.pictureBoxBevMachine.Name = "pictureBoxBevMachine";
+            this.pictureBoxBevMachine.Size = new System.Drawing.Size(173, 164);
+            this.pictureBoxBevMachine.TabIndex = 38;
+            this.pictureBoxBevMachine.TabStop = false;
+            // 
+            // pictureBoxICMachine
+            // 
+            this.pictureBoxICMachine.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxICMachine.BackgroundImage = global::Project.Properties.Resources.icMachine;
+            this.pictureBoxICMachine.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxICMachine.Location = new System.Drawing.Point(15, 239);
+            this.pictureBoxICMachine.Name = "pictureBoxICMachine";
+            this.pictureBoxICMachine.Size = new System.Drawing.Size(131, 162);
+            this.pictureBoxICMachine.TabIndex = 37;
+            this.pictureBoxICMachine.TabStop = false;
+            // 
+            // pictureBoxCone
+            // 
+            this.pictureBoxCone.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxCone.BackgroundImage = global::Project.Properties.Resources.cone;
+            this.pictureBoxCone.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxCone.Location = new System.Drawing.Point(153, 311);
+            this.pictureBoxCone.Name = "pictureBoxCone";
+            this.pictureBoxCone.Size = new System.Drawing.Size(35, 90);
+            this.pictureBoxCone.TabIndex = 36;
+            this.pictureBoxCone.TabStop = false;
+            // 
+            // pictureBoxServe
+            // 
+            this.pictureBoxServe.BackColor = System.Drawing.Color.White;
+            this.pictureBoxServe.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxServe.Location = new System.Drawing.Point(596, 301);
+            this.pictureBoxServe.Name = "pictureBoxServe";
+            this.pictureBoxServe.Size = new System.Drawing.Size(100, 100);
+            this.pictureBoxServe.TabIndex = 35;
+            this.pictureBoxServe.TabStop = false;
+            // 
+            // labelRemainingCustomers
+            // 
+            this.labelRemainingCustomers.AutoSize = true;
+            this.labelRemainingCustomers.BackColor = System.Drawing.Color.Transparent;
+            this.labelRemainingCustomers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRemainingCustomers.Location = new System.Drawing.Point(444, 131);
+            this.labelRemainingCustomers.Name = "labelRemainingCustomers";
+            this.labelRemainingCustomers.Size = new System.Drawing.Size(201, 22);
+            this.labelRemainingCustomers.TabIndex = 33;
+            this.labelRemainingCustomers.Text = "Remaining Customers : ";
+            // 
+            // labelRemainingTime
+            // 
+            this.labelRemainingTime.AutoSize = true;
+            this.labelRemainingTime.BackColor = System.Drawing.Color.Transparent;
+            this.labelRemainingTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRemainingTime.Location = new System.Drawing.Point(442, 81);
+            this.labelRemainingTime.Name = "labelRemainingTime";
+            this.labelRemainingTime.Size = new System.Drawing.Size(225, 22);
+            this.labelRemainingTime.TabIndex = 32;
+            this.labelRemainingTime.Text = "Remaining Time : 00:00:59";
+            // 
+            // labelDisplayDataPlayer
+            // 
+            this.labelDisplayDataPlayer.AutoSize = true;
+            this.labelDisplayDataPlayer.BackColor = System.Drawing.Color.Transparent;
+            this.labelDisplayDataPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDisplayDataPlayer.Location = new System.Drawing.Point(115, 65);
+            this.labelDisplayDataPlayer.Name = "labelDisplayDataPlayer";
+            this.labelDisplayDataPlayer.Size = new System.Drawing.Size(122, 88);
+            this.labelDisplayDataPlayer.TabIndex = 31;
+            this.labelDisplayDataPlayer.Text = "Nama           : \r\nIncome         :\r\nBest Time   :\r\nHigh Score :\r\n";
+            // 
+            // pictureBoxDisplayPlayer
+            // 
+            this.pictureBoxDisplayPlayer.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxDisplayPlayer.BackgroundImage = global::Project.Properties.Resources.male;
+            this.pictureBoxDisplayPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxDisplayPlayer.Location = new System.Drawing.Point(29, 60);
+            this.pictureBoxDisplayPlayer.Name = "pictureBoxDisplayPlayer";
+            this.pictureBoxDisplayPlayer.Size = new System.Drawing.Size(88, 97);
+            this.pictureBoxDisplayPlayer.TabIndex = 30;
+            this.pictureBoxDisplayPlayer.TabStop = false;
             // 
             // pictureBoxRobot5
             // 
@@ -335,7 +923,6 @@
             this.pictureBoxBear5.Size = new System.Drawing.Size(46, 57);
             this.pictureBoxBear5.TabIndex = 18;
             this.pictureBoxBear5.TabStop = false;
-            this.pictureBoxBear5.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
             // pictureBoxBear4
             // 
@@ -455,7 +1042,7 @@
             this.pictureBoxIceBucket.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxIceBucket.BackgroundImage = global::Project.Properties.Resources.iceBucket;
             this.pictureBoxIceBucket.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxIceBucket.Location = new System.Drawing.Point(419, 552);
+            this.pictureBoxIceBucket.Location = new System.Drawing.Point(419, 554);
             this.pictureBoxIceBucket.Name = "pictureBoxIceBucket";
             this.pictureBoxIceBucket.Size = new System.Drawing.Size(95, 95);
             this.pictureBoxIceBucket.TabIndex = 6;
@@ -527,15 +1114,61 @@
             this.pictureBoxCheese.TabIndex = 0;
             this.pictureBoxCheese.TabStop = false;
             // 
+            // panelFoodStall
+            // 
+            this.panelFoodStall.BackColor = System.Drawing.Color.Transparent;
+            this.panelFoodStall.BackgroundImage = global::Project.Properties.Resources.foodStall;
+            this.panelFoodStall.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelFoodStall.Location = new System.Drawing.Point(0, 350);
+            this.panelFoodStall.Name = "panelFoodStall";
+            this.panelFoodStall.Size = new System.Drawing.Size(1150, 300);
+            this.panelFoodStall.TabIndex = 58;
+            // 
+            // pictureBoxCustomer2
+            // 
+            this.pictureBoxCustomer2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxCustomer2.BackgroundImage = global::Project.Properties.Resources.jeni;
+            this.pictureBoxCustomer2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxCustomer2.Location = new System.Drawing.Point(892, 131);
+            this.pictureBoxCustomer2.Name = "pictureBoxCustomer2";
+            this.pictureBoxCustomer2.Size = new System.Drawing.Size(195, 380);
+            this.pictureBoxCustomer2.TabIndex = 59;
+            this.pictureBoxCustomer2.TabStop = false;
+            // 
+            // pictureBoxCustomer1
+            // 
+            this.pictureBoxCustomer1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxCustomer1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxCustomer1.BackgroundImage")));
+            this.pictureBoxCustomer1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxCustomer1.Location = new System.Drawing.Point(691, 133);
+            this.pictureBoxCustomer1.Name = "pictureBoxCustomer1";
+            this.pictureBoxCustomer1.Size = new System.Drawing.Size(195, 380);
+            this.pictureBoxCustomer1.TabIndex = 47;
+            this.pictureBoxCustomer1.TabStop = false;
+            // 
             // panelTutorial
             // 
             this.panelTutorial.BackgroundImage = global::Project.Properties.Resources.bg_Tutorial;
             this.panelTutorial.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelTutorial.Controls.Add(this.buttonBackReceipe);
             this.panelTutorial.Controls.Add(this.buttonStartGame);
             this.panelTutorial.Location = new System.Drawing.Point(0, 0);
             this.panelTutorial.Name = "panelTutorial";
             this.panelTutorial.Size = new System.Drawing.Size(1150, 650);
             this.panelTutorial.TabIndex = 37;
+            // 
+            // buttonBackReceipe
+            // 
+            this.buttonBackReceipe.BackColor = System.Drawing.Color.Red;
+            this.buttonBackReceipe.Font = new System.Drawing.Font("Franklin Gothic Demi", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBackReceipe.ForeColor = System.Drawing.Color.White;
+            this.buttonBackReceipe.Location = new System.Drawing.Point(940, 555);
+            this.buttonBackReceipe.Name = "buttonBackReceipe";
+            this.buttonBackReceipe.Size = new System.Drawing.Size(180, 60);
+            this.buttonBackReceipe.TabIndex = 8;
+            this.buttonBackReceipe.Text = "BACK";
+            this.buttonBackReceipe.UseVisualStyleBackColor = false;
+            this.buttonBackReceipe.Click += new System.EventHandler(this.buttonBackReceipe_Click);
             // 
             // buttonStartGame
             // 
@@ -642,7 +1275,7 @@
             // panelImpossible
             // 
             this.panelImpossible.BackColor = System.Drawing.Color.Transparent;
-            this.panelImpossible.BackgroundImage = global::Project.Properties.Resources.Imposible;
+            this.panelImpossible.BackgroundImage = global::Project.Properties.Resources.imposible;
             this.panelImpossible.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelImpossible.Controls.Add(this.label13);
             this.panelImpossible.Location = new System.Drawing.Point(854, 480);
@@ -664,7 +1297,7 @@
             // panelHard
             // 
             this.panelHard.BackColor = System.Drawing.Color.Transparent;
-            this.panelHard.BackgroundImage = global::Project.Properties.Resources.Hard;
+            this.panelHard.BackgroundImage = global::Project.Properties.Resources.hard;
             this.panelHard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelHard.Controls.Add(this.label12);
             this.panelHard.Location = new System.Drawing.Point(596, 480);
@@ -909,6 +1542,7 @@
             this.radioButtonLoadPlayer.TabStop = true;
             this.radioButtonLoadPlayer.Text = "LOAD PLAYER";
             this.radioButtonLoadPlayer.UseVisualStyleBackColor = true;
+            this.radioButtonLoadPlayer.CheckedChanged += new System.EventHandler(this.radioButtonLoadPlayer_CheckedChanged);
             // 
             // panelLoadPlayer
             // 
@@ -1084,6 +1718,7 @@
             // radioButtonCreatePlayer
             // 
             this.radioButtonCreatePlayer.AutoSize = true;
+            this.radioButtonCreatePlayer.Checked = true;
             this.radioButtonCreatePlayer.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButtonCreatePlayer.Location = new System.Drawing.Point(108, 94);
             this.radioButtonCreatePlayer.Name = "radioButtonCreatePlayer";
@@ -1092,6 +1727,7 @@
             this.radioButtonCreatePlayer.TabStop = true;
             this.radioButtonCreatePlayer.Text = "CREATE PLAYER";
             this.radioButtonCreatePlayer.UseVisualStyleBackColor = true;
+            this.radioButtonCreatePlayer.CheckedChanged += new System.EventHandler(this.radioButtonCreatePlayer_CheckedChanged);
             // 
             // pictureBoxBackHome
             // 
@@ -1110,10 +1746,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1149, 650);
+            this.Controls.Add(this.panelCreateLoadPlayer);
+            this.Controls.Add(this.panelSetting);
             this.Controls.Add(this.panelGame);
             this.Controls.Add(this.panelTutorial);
             this.Controls.Add(this.panelDifficulty);
-            this.Controls.Add(this.panelCreateLoadPlayer);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonPlay);
             this.DoubleBuffered = true;
@@ -1121,7 +1758,43 @@
             this.Name = "FormGame";
             this.Text = "Food Wars";
             this.Load += new System.EventHandler(this.FormGame_Load);
+            this.panelSetting.ResumeLayout(false);
+            this.panelSetting.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHome)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRestart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResume)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolmeUpSFX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeDownSFX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeUpMusic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeDownMusic)).EndInit();
             this.panelGame.ResumeLayout(false);
+            this.panelGame.PerformLayout();
+            this.panelDialog2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmotion2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOrder2)).EndInit();
+            this.panelDialog1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmotion1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOrder1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxButtonSetting)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxButtonReceipe)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMayo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBeverage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBevMachine)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxICMachine)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCone)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxServe)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDisplayPlayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRobot5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRobot4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRobot3)).EndInit();
@@ -1147,6 +1820,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLettuce)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPatty)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCheese)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCustomer2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCustomer1)).EndInit();
             this.panelTutorial.ResumeLayout(false);
             this.panelDifficulty.ResumeLayout(false);
             this.panelDifficulty.PerformLayout();
@@ -1226,7 +1901,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panelTutorial;
-        private System.Windows.Forms.Button buttonStartGame;
         private System.Windows.Forms.Panel panelGame;
         private System.Windows.Forms.PictureBox pictureBoxBottomBun;
         private System.Windows.Forms.PictureBox pictureBoxLettuce;
@@ -1256,5 +1930,53 @@
         private System.Windows.Forms.PictureBox pictureBoxRobot4;
         private System.Windows.Forms.PictureBox pictureBoxRobot3;
         private System.Windows.Forms.PictureBox pictureBoxRobot2;
+        private System.Windows.Forms.PictureBox pictureBoxDisplayPlayer;
+        private System.Windows.Forms.Label labelDisplayDataPlayer;
+        private System.Windows.Forms.Label labelRemainingCustomers;
+        private System.Windows.Forms.Label labelRemainingTime;
+        private System.Windows.Forms.PictureBox pictureBoxServe;
+        private System.Windows.Forms.PictureBox pictureBoxCone;
+        private System.Windows.Forms.PictureBox pictureBoxICMachine;
+        private System.Windows.Forms.PictureBox pictureBoxPlate;
+        private System.Windows.Forms.PictureBox pictureBoxBeverage;
+        private System.Windows.Forms.PictureBox pictureBoxBevMachine;
+        private System.Windows.Forms.PictureBox pictureBoxMayo;
+        private System.Windows.Forms.Label labelLarge;
+        private System.Windows.Forms.Label labelSmall;
+        private System.Windows.Forms.Label labelMedium;
+        private System.Windows.Forms.PictureBox pictureBoxCustomer1;
+        private System.Windows.Forms.PictureBox pictureBoxButtonSetting;
+        private System.Windows.Forms.PictureBox pictureBoxButtonReceipe;
+        private System.Windows.Forms.Button buttonBackReceipe;
+        private System.Windows.Forms.Button buttonStartGame;
+        private System.Windows.Forms.Panel panelSetting;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Panel panelFoodStall;
+        private System.Windows.Forms.PictureBox pictureBoxCustomer2;
+        private System.Windows.Forms.Panel panelDialog1;
+        private System.Windows.Forms.PictureBox pictureBoxEmotion1;
+        private System.Windows.Forms.PictureBox pictureBoxOrder1;
+        private System.Windows.Forms.Panel panelDialog2;
+        private System.Windows.Forms.PictureBox pictureBoxEmotion2;
+        private System.Windows.Forms.PictureBox pictureBoxOrder2;
+        private System.Windows.Forms.PictureBox pictureBoxVolumeDownMusic;
+        private System.Windows.Forms.PictureBox pictureBoxBarMusic1;
+        private System.Windows.Forms.PictureBox pictureBoxVolumeUpMusic;
+        private System.Windows.Forms.PictureBox pictureBoxBarMusic5;
+        private System.Windows.Forms.PictureBox pictureBoxBarMusic4;
+        private System.Windows.Forms.PictureBox pictureBoxBarMusic3;
+        private System.Windows.Forms.PictureBox pictureBoxBarMusic2;
+        private System.Windows.Forms.PictureBox pictureBoxVolumeBarSFX5;
+        private System.Windows.Forms.PictureBox pictureBoxVolumeBarSFX4;
+        private System.Windows.Forms.PictureBox pictureBoxVolumeBarSFX3;
+        private System.Windows.Forms.PictureBox pictureBoxVolumeBarSFX2;
+        private System.Windows.Forms.PictureBox pictureBoxVolumeBarSFX1;
+        private System.Windows.Forms.PictureBox pictureBoxVolmeUpSFX;
+        private System.Windows.Forms.PictureBox pictureBoxVolumeDownSFX;
+        private System.Windows.Forms.PictureBox pictureBoxHome;
+        private System.Windows.Forms.PictureBox pictureBoxRestart;
+        private System.Windows.Forms.PictureBox pictureBoxResume;
     }
 }
