@@ -9,18 +9,18 @@ namespace Project
     public class Foods : Items
     {
         #region Fields
-        private List<Ingredients> listOfIngredients;
+        private List<IngredientsFoods> listOfIngredients;
         #endregion Fields
 
         #region Constructors        
         public Foods(string name, Image picture, int price) : base(name, picture, price)
         {
-            this.ListOfIngredients = new List<Ingredients>();
+            this.ListOfIngredients = new List<IngredientsFoods>();
         }
         #endregion Constructors
 
         #region Properties
-        public List<Ingredients> ListOfIngredients { get => listOfIngredients; set => listOfIngredients = value; }
+        public List<IngredientsFoods> ListOfIngredients { get => listOfIngredients; set => listOfIngredients = value; }
         #endregion Properties
 
         #region Methods
@@ -28,7 +28,7 @@ namespace Project
         {
             string data = base.DisplayItems() + "\n" +
                 "Ingredients : " + "\n";
-            foreach (Ingredients i in this.ListOfIngredients)
+            foreach (IngredientsFoods i in this.ListOfIngredients)
             {
                 data = data + i.Display() + "\n";
             }
@@ -37,7 +37,7 @@ namespace Project
 
         public void AddingIngredients(string name, Image picture)
         {
-            Ingredients ingredient = new Ingredients(name, picture);
+            IngredientsFoods ingredient = new IngredientsFoods(name, picture);
             listOfIngredients.Add(ingredient);
         }
         #endregion Methods

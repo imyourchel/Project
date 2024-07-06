@@ -55,7 +55,8 @@
     <Compile Include="FormGame.Designer.cs">
       <DependentUpon>FormGame.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ingredients.cs" />
+    <Compile Include="IngredientsBeverages.cs" />
+    <Compile Include="IngredientsFoods.cs" />
     <Compile Include="Items.cs" />
     <Compile Include="Merchandise.cs" />
     <Compile Include="Players.cs" />
@@ -262,6 +263,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bg play %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\textL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\textM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\textS.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

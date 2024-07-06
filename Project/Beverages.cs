@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 
 namespace Project
@@ -11,6 +12,7 @@ namespace Project
         #region Fields
         private bool isCold;
         private string size;
+        private List<IngredientsBeverages> listOfIngredients;
         #endregion Fields
 
         #region Constructors
@@ -18,12 +20,14 @@ namespace Project
         {
             this.IsCold = isCold;
             this.Size = size;
+            this.ListOfIngredients = new List<IngredientsBeverages>();
         }
         #endregion Constructors
 
         #region Properties
         public bool IsCold { get => isCold; set => isCold = value; }
         public string Size { get => size; set => size = value; }
+        public List<IngredientsBeverages> ListOfIngredients { get => listOfIngredients; set => listOfIngredients = value; }
         #endregion Properties
 
         #region Methods
@@ -40,12 +44,16 @@ namespace Project
             }
             string data = base.DisplayItems() + "\n" + temp + "\n" +
                 "Size : " + this.Size;
+            foreach (IngredientsBeverages i in this.ListOfIngredients)
+            {
+                data = data + i.Display() + "\n";
+            }
             return data;
         }
         public void AddingIngredients(string name, Image picture)
         {
-            Ingredients ingredient = new Ingredients(name, picture);
-            //listOfIngredients.Add(ingredient);
+            IngredientsBeverages ingredient = new IngredientsBeverages(name, picture);
+            listOfIngredients.Add(ingredient);
         }
         #endregion Methods
     }

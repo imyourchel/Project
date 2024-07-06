@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Project
 {
-    public class Ingredients
+    public class IngredientsFoods
     {
         #region Fields
         private string name;
@@ -14,7 +14,7 @@ namespace Project
         #endregion Fields
 
         #region Constructors
-        public Ingredients(string name, Image picture)
+        public IngredientsFoods(string name, Image picture)
         {
             this.Name = name;
             this.Picture = picture;

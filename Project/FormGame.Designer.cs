@@ -32,6 +32,9 @@
             this.buttonPlay = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
             this.panelGame = new System.Windows.Forms.Panel();
+            this.pictureBoxBevM = new System.Windows.Forms.PictureBox();
+            this.pictureBoxBevS = new System.Windows.Forms.PictureBox();
+            this.pictureBoxBevL = new System.Windows.Forms.PictureBox();
             this.labelIncomeNow = new System.Windows.Forms.Label();
             this.labelNamePlayer = new System.Windows.Forms.Label();
             this.panelDialog2 = new System.Windows.Forms.Panel();
@@ -42,8 +45,6 @@
             this.pictureBoxOrder1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxButtonSetting = new System.Windows.Forms.PictureBox();
             this.pictureBoxButtonReceipe = new System.Windows.Forms.PictureBox();
-            this.labelSmall = new System.Windows.Forms.Label();
-            this.labelMedium = new System.Windows.Forms.Label();
             this.pictureBoxMayo = new System.Windows.Forms.PictureBox();
             this.pictureBoxPlate = new System.Windows.Forms.PictureBox();
             this.pictureBoxBeverage = new System.Windows.Forms.PictureBox();
@@ -78,11 +79,11 @@
             this.buttonBuyMerchandiseRobot = new System.Windows.Forms.Button();
             this.pictureBoxIceBucket = new System.Windows.Forms.PictureBox();
             this.pictureBoxTopBun = new System.Windows.Forms.PictureBox();
-            this.pictureBoxTomato = new System.Windows.Forms.PictureBox();
             this.pictureBoxBottomBun = new System.Windows.Forms.PictureBox();
             this.pictureBoxLettuce = new System.Windows.Forms.PictureBox();
-            this.pictureBoxPatty = new System.Windows.Forms.PictureBox();
             this.pictureBoxCheese = new System.Windows.Forms.PictureBox();
+            this.pictureBoxTomato = new System.Windows.Forms.PictureBox();
+            this.pictureBoxPatty = new System.Windows.Forms.PictureBox();
             this.panelFoodStall = new System.Windows.Forms.Panel();
             this.pictureBoxCustomer2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxCustomer1 = new System.Windows.Forms.PictureBox();
@@ -147,8 +148,10 @@
             this.buttonNextDifficult = new System.Windows.Forms.Button();
             this.radioButtonCreatePlayer = new System.Windows.Forms.RadioButton();
             this.pictureBoxBackHome = new System.Windows.Forms.PictureBox();
-            this.labelLarge = new System.Windows.Forms.Label();
             this.panelGame.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBevM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBevS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBevL)).BeginInit();
             this.panelDialog2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmotion2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOrder2)).BeginInit();
@@ -185,11 +188,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCoin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIceBucket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTopBun)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTomato)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBottomBun)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLettuce)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPatty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCheese)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTomato)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPatty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCustomer2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCustomer1)).BeginInit();
             this.panelSetting.SuspendLayout();
@@ -257,15 +260,15 @@
             this.panelGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
             this.panelGame.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelGame.BackgroundImage")));
             this.panelGame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelGame.Controls.Add(this.pictureBoxBevM);
+            this.panelGame.Controls.Add(this.pictureBoxBevS);
+            this.panelGame.Controls.Add(this.pictureBoxBevL);
             this.panelGame.Controls.Add(this.labelIncomeNow);
             this.panelGame.Controls.Add(this.labelNamePlayer);
             this.panelGame.Controls.Add(this.panelDialog2);
             this.panelGame.Controls.Add(this.panelDialog1);
             this.panelGame.Controls.Add(this.pictureBoxButtonSetting);
             this.panelGame.Controls.Add(this.pictureBoxButtonReceipe);
-            this.panelGame.Controls.Add(this.labelSmall);
-            this.panelGame.Controls.Add(this.labelMedium);
-            this.panelGame.Controls.Add(this.labelLarge);
             this.panelGame.Controls.Add(this.pictureBoxMayo);
             this.panelGame.Controls.Add(this.pictureBoxPlate);
             this.panelGame.Controls.Add(this.pictureBoxBeverage);
@@ -312,6 +315,44 @@
             this.panelGame.Name = "panelGame";
             this.panelGame.Size = new System.Drawing.Size(1150, 650);
             this.panelGame.TabIndex = 8;
+            // 
+            // pictureBoxBevM
+            // 
+            this.pictureBoxBevM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(58)))), ((int)(((byte)(60)))));
+            this.pictureBoxBevM.BackgroundImage = global::Project.Properties.Resources.textM;
+            this.pictureBoxBevM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxBevM.Location = new System.Drawing.Point(273, 275);
+            this.pictureBoxBevM.Name = "pictureBoxBevM";
+            this.pictureBoxBevM.Size = new System.Drawing.Size(30, 30);
+            this.pictureBoxBevM.TabIndex = 67;
+            this.pictureBoxBevM.TabStop = false;
+            this.pictureBoxBevM.MouseEnter += new System.EventHandler(this.pictureBoxBevM_MouseEnter);
+            this.pictureBoxBevM.MouseLeave += new System.EventHandler(this.pictureBoxBevM_MouseLeave);
+            // 
+            // pictureBoxBevS
+            // 
+            this.pictureBoxBevS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(167)))), ((int)(((byte)(60)))));
+            this.pictureBoxBevS.BackgroundImage = global::Project.Properties.Resources.textS;
+            this.pictureBoxBevS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxBevS.Location = new System.Drawing.Point(325, 275);
+            this.pictureBoxBevS.Name = "pictureBoxBevS";
+            this.pictureBoxBevS.Size = new System.Drawing.Size(30, 30);
+            this.pictureBoxBevS.TabIndex = 66;
+            this.pictureBoxBevS.TabStop = false;
+            this.pictureBoxBevS.MouseEnter += new System.EventHandler(this.pictureBoxBevS_MouseEnter);
+            this.pictureBoxBevS.MouseLeave += new System.EventHandler(this.pictureBoxBevS_MouseLeave);
+            // 
+            // pictureBoxBevL
+            // 
+            this.pictureBoxBevL.BackgroundImage = global::Project.Properties.Resources.textL;
+            this.pictureBoxBevL.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxBevL.Location = new System.Drawing.Point(224, 275);
+            this.pictureBoxBevL.Name = "pictureBoxBevL";
+            this.pictureBoxBevL.Size = new System.Drawing.Size(30, 30);
+            this.pictureBoxBevL.TabIndex = 65;
+            this.pictureBoxBevL.TabStop = false;
+            this.pictureBoxBevL.MouseEnter += new System.EventHandler(this.pictureBoxBevL_MouseEnter);
+            this.pictureBoxBevL.MouseLeave += new System.EventHandler(this.pictureBoxBevL_MouseLeave);
             // 
             // labelIncomeNow
             // 
@@ -426,36 +467,6 @@
             this.pictureBoxButtonReceipe.TabIndex = 54;
             this.pictureBoxButtonReceipe.TabStop = false;
             this.pictureBoxButtonReceipe.Click += new System.EventHandler(this.pictureBoxButtonReceipe_Click);
-            // 
-            // labelSmall
-            // 
-            this.labelSmall.AutoSize = true;
-            this.labelSmall.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(167)))), ((int)(((byte)(78)))));
-            this.labelSmall.Font = new System.Drawing.Font("Franklin Gothic Heavy", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSmall.ForeColor = System.Drawing.Color.White;
-            this.labelSmall.Location = new System.Drawing.Point(326, 277);
-            this.labelSmall.Name = "labelSmall";
-            this.labelSmall.Size = new System.Drawing.Size(27, 29);
-            this.labelSmall.TabIndex = 44;
-            this.labelSmall.Text = "S";
-            this.labelSmall.MouseEnter += new System.EventHandler(this.labelSmall_MouseEnter);
-            this.labelSmall.MouseLeave += new System.EventHandler(this.labelSmall_MouseLeave);
-            // 
-            // labelMedium
-            // 
-            this.labelMedium.AutoSize = true;
-            this.labelMedium.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(58)))), ((int)(((byte)(60)))));
-            this.labelMedium.Font = new System.Drawing.Font("Franklin Gothic Heavy", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMedium.ForeColor = System.Drawing.Color.White;
-            this.labelMedium.Location = new System.Drawing.Point(272, 277);
-            this.labelMedium.Margin = new System.Windows.Forms.Padding(0);
-            this.labelMedium.Name = "labelMedium";
-            this.labelMedium.Size = new System.Drawing.Size(32, 29);
-            this.labelMedium.TabIndex = 42;
-            this.labelMedium.Text = "M";
-            this.labelMedium.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelMedium.MouseEnter += new System.EventHandler(this.labelMedium_MouseEnter);
-            this.labelMedium.MouseLeave += new System.EventHandler(this.labelMedium_MouseLeave);
             // 
             // pictureBoxMayo
             // 
@@ -877,19 +888,6 @@
             this.pictureBoxTopBun.MouseEnter += new System.EventHandler(this.pictureBoxTopBun_MouseEnter);
             this.pictureBoxTopBun.MouseLeave += new System.EventHandler(this.pictureBoxTopBun_MouseLeave);
             // 
-            // pictureBoxTomato
-            // 
-            this.pictureBoxTomato.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxTomato.BackgroundImage = global::Project.Properties.Resources.tomato;
-            this.pictureBoxTomato.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxTomato.Location = new System.Drawing.Point(625, 570);
-            this.pictureBoxTomato.Name = "pictureBoxTomato";
-            this.pictureBoxTomato.Size = new System.Drawing.Size(92, 92);
-            this.pictureBoxTomato.TabIndex = 4;
-            this.pictureBoxTomato.TabStop = false;
-            this.pictureBoxTomato.MouseEnter += new System.EventHandler(this.pictureBoxTomato_MouseEnter);
-            this.pictureBoxTomato.MouseLeave += new System.EventHandler(this.pictureBoxTomato_MouseLeave);
-            // 
             // pictureBoxBottomBun
             // 
             this.pictureBoxBottomBun.BackColor = System.Drawing.Color.Transparent;
@@ -916,19 +914,6 @@
             this.pictureBoxLettuce.MouseEnter += new System.EventHandler(this.pictureBoxLettuce_MouseEnter);
             this.pictureBoxLettuce.MouseLeave += new System.EventHandler(this.pictureBoxLettuce_MouseLeave);
             // 
-            // pictureBoxPatty
-            // 
-            this.pictureBoxPatty.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxPatty.BackgroundImage = global::Project.Properties.Resources.patty;
-            this.pictureBoxPatty.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxPatty.Location = new System.Drawing.Point(835, 570);
-            this.pictureBoxPatty.Name = "pictureBoxPatty";
-            this.pictureBoxPatty.Size = new System.Drawing.Size(92, 92);
-            this.pictureBoxPatty.TabIndex = 1;
-            this.pictureBoxPatty.TabStop = false;
-            this.pictureBoxPatty.MouseEnter += new System.EventHandler(this.pictureBoxPatty_MouseEnter);
-            this.pictureBoxPatty.MouseLeave += new System.EventHandler(this.pictureBoxPatty_MouseLeave);
-            // 
             // pictureBoxCheese
             // 
             this.pictureBoxCheese.BackColor = System.Drawing.Color.Transparent;
@@ -941,6 +926,32 @@
             this.pictureBoxCheese.TabStop = false;
             this.pictureBoxCheese.MouseEnter += new System.EventHandler(this.pictureBoxCheese_MouseEnter);
             this.pictureBoxCheese.MouseLeave += new System.EventHandler(this.pictureBoxCheese_MouseLeave);
+            // 
+            // pictureBoxTomato
+            // 
+            this.pictureBoxTomato.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxTomato.BackgroundImage = global::Project.Properties.Resources.tomato;
+            this.pictureBoxTomato.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxTomato.Location = new System.Drawing.Point(625, 570);
+            this.pictureBoxTomato.Name = "pictureBoxTomato";
+            this.pictureBoxTomato.Size = new System.Drawing.Size(92, 92);
+            this.pictureBoxTomato.TabIndex = 4;
+            this.pictureBoxTomato.TabStop = false;
+            this.pictureBoxTomato.MouseEnter += new System.EventHandler(this.pictureBoxTomato_MouseEnter);
+            this.pictureBoxTomato.MouseLeave += new System.EventHandler(this.pictureBoxTomato_MouseLeave);
+            // 
+            // pictureBoxPatty
+            // 
+            this.pictureBoxPatty.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxPatty.BackgroundImage = global::Project.Properties.Resources.patty;
+            this.pictureBoxPatty.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxPatty.Location = new System.Drawing.Point(835, 570);
+            this.pictureBoxPatty.Name = "pictureBoxPatty";
+            this.pictureBoxPatty.Size = new System.Drawing.Size(92, 92);
+            this.pictureBoxPatty.TabIndex = 1;
+            this.pictureBoxPatty.TabStop = false;
+            this.pictureBoxPatty.MouseEnter += new System.EventHandler(this.pictureBoxPatty_MouseEnter);
+            this.pictureBoxPatty.MouseLeave += new System.EventHandler(this.pictureBoxPatty_MouseLeave);
             // 
             // panelFoodStall
             // 
@@ -1687,20 +1698,6 @@
             this.pictureBoxBackHome.TabStop = false;
             this.pictureBoxBackHome.Click += new System.EventHandler(this.pictureBoxBackHome_Click);
             // 
-            // labelLarge
-            // 
-            this.labelLarge.AutoSize = true;
-            this.labelLarge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
-            this.labelLarge.Font = new System.Drawing.Font("Franklin Gothic Heavy", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLarge.ForeColor = System.Drawing.Color.White;
-            this.labelLarge.Location = new System.Drawing.Point(227, 277);
-            this.labelLarge.Name = "labelLarge";
-            this.labelLarge.Size = new System.Drawing.Size(25, 29);
-            this.labelLarge.TabIndex = 42;
-            this.labelLarge.Text = "L";
-            this.labelLarge.MouseEnter += new System.EventHandler(this.labelLarge_MouseEnter);
-            this.labelLarge.MouseLeave += new System.EventHandler(this.labelLarge_MouseLeave);
-            // 
             // FormGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1721,6 +1718,9 @@
             this.Load += new System.EventHandler(this.FormGame_Load);
             this.panelGame.ResumeLayout(false);
             this.panelGame.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBevM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBevS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBevL)).EndInit();
             this.panelDialog2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmotion2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOrder2)).EndInit();
@@ -1757,11 +1757,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCoin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIceBucket)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTopBun)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTomato)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBottomBun)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLettuce)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPatty)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCheese)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTomato)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPatty)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCustomer2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCustomer1)).EndInit();
             this.panelSetting.ResumeLayout(false);
@@ -1879,8 +1879,6 @@
         private System.Windows.Forms.PictureBox pictureBoxBeverage;
         private System.Windows.Forms.PictureBox pictureBoxBevMachine;
         private System.Windows.Forms.PictureBox pictureBoxMayo;
-        private System.Windows.Forms.Label labelSmall;
-        private System.Windows.Forms.Label labelMedium;
         private System.Windows.Forms.PictureBox pictureBoxCustomer1;
         private System.Windows.Forms.PictureBox pictureBoxButtonSetting;
         private System.Windows.Forms.PictureBox pictureBoxButtonReceipe;
@@ -1925,6 +1923,8 @@
         private System.Windows.Forms.Label labelBestTimeEasy;
         private System.Windows.Forms.Label labelNamePlayer;
         private System.Windows.Forms.Label labelIncomeNow;
-        private System.Windows.Forms.Label labelLarge;
+        private System.Windows.Forms.PictureBox pictureBoxBevM;
+        private System.Windows.Forms.PictureBox pictureBoxBevS;
+        private System.Windows.Forms.PictureBox pictureBoxBevL;
     }
 }

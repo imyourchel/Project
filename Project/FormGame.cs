@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Policy;
 using System.Text;
@@ -20,6 +21,7 @@ namespace Project
         List<Players> listOfPlayer = new List<Players>();
         List<Items> listOfItems = new List<Items>();
         Items item;
+
         public FormGame()
         {
             InitializeComponent();
@@ -223,16 +225,15 @@ namespace Project
                 pictureBox.BackColor = Color.Transparent;
             }
         }
-        private void ChangeBackgroundLabel(Label label, string status, Color color)
+        private void ChangePictureBoxColorBev(PictureBox pictureBox, string status, Color color)
         {
             if (status == "enter")
             {
-                label.BackColor = Color.Silver;
+                pictureBox.BackColor = Color.Silver;
             }
             else if (status == "leave")
             {
-                label.BackColor = color;
-
+                pictureBox.BackColor = color;
             }
         }
         #region Level
@@ -550,46 +551,47 @@ namespace Project
             ChangePictureBoxColor(pictureBoxMayo, "leave");
         }
 
-        private void labelLarge_MouseEnter(object sender, EventArgs e)
-        {            
-            Color color = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
-            ChangeBackgroundLabel(labelLarge, "enter", color);
-        }
-
-        private void labelLarge_MouseLeave(object sender, EventArgs e)
+        private void pictureBoxBevL_MouseEnter(object sender, EventArgs e)
         {
             Color color = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
-            ChangeBackgroundLabel(labelLarge, "leave", color);
+            ChangePictureBoxColorBev(pictureBoxBevL, "enter",color);
         }
 
-        private void labelMedium_MouseEnter(object sender, EventArgs e)
+        private void pictureBoxBevL_MouseLeave(object sender, EventArgs e)
+        {
+            Color color = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            ChangePictureBoxColorBev(pictureBoxBevL, "leave", color);
+        }
+
+        private void pictureBoxBevM_MouseEnter(object sender, EventArgs e)
         {
             Color color = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(58)))), ((int)(((byte)(60)))));
-            ChangeBackgroundLabel(labelMedium, "enter", color);
+            ChangePictureBoxColorBev(pictureBoxBevM, "enter", color);
         }
 
-        private void labelMedium_MouseLeave(object sender, EventArgs e)
+        private void pictureBoxBevM_MouseLeave(object sender, EventArgs e)
         {
             Color color = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(58)))), ((int)(((byte)(60)))));
-            ChangeBackgroundLabel(labelMedium, "leave", color);
+            ChangePictureBoxColorBev(pictureBoxBevM, "leave", color);
         }
 
-        private void labelSmall_MouseEnter(object sender, EventArgs e)
+        private void pictureBoxBevS_MouseEnter(object sender, EventArgs e)
         {
             Color color = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(167)))), ((int)(((byte)(78)))));
-            ChangeBackgroundLabel(labelSmall, "enter", color);
+            ChangePictureBoxColorBev(pictureBoxBevS, "enter", color);
         }
 
-        private void labelSmall_MouseLeave(object sender, EventArgs e)
+        private void pictureBoxBevS_MouseLeave(object sender, EventArgs e)
         {
             Color color = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(167)))), ((int)(((byte)(78)))));
-            ChangeBackgroundLabel(labelSmall, "leave", color);
+            ChangePictureBoxColorBev(pictureBoxBevS, "leave", color);
         }
         #endregion Foods & Beverages
         #endregion PictureBox Mouse
 
         private void StallDisplay()
         {
+            #region Foods
             item = new Foods("burger", Properties.Resources.burger, 50);
             listOfItems.Add(item);
             ((Foods)item).AddingIngredients("plate", Properties.Resources.plates);
@@ -649,10 +651,169 @@ namespace Project
 
             pictureBoxCone.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxICMachine.SizeMode = PictureBoxSizeMode.StretchImage;
+            #endregion Foods
 
+            #region Beverages
             item = new Beverages(false, "L", "coffeeLHot", Properties.Resources.hotL, 25);
             listOfItems.Add(item);
-            
+            ((Beverages)item).AddingIngredients("cup", Properties.Resources.beverages);            
+            ((Beverages)item).AddingIngredients("coffee", Properties.Resources.textL);
+
+            pictureBoxBeverage.Tag = ((Beverages)item).ListOfIngredients[0].Name;
+            pictureBoxBevL.Tag = ((Beverages)item).ListOfIngredients[1].Name;
+
+            pictureBoxBeverage.Image = ((Beverages)item).ListOfIngredients[0].Picture;
+            pictureBoxBevL.Image = ((Beverages)item).ListOfIngredients[1].Picture;
+
+            pictureBoxBeverage.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxBevL.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            item = new Beverages(false, "M", "coffeeMHot", Properties.Resources.hotM, 20);
+            listOfItems.Add(item);
+            ((Beverages)item).AddingIngredients("cup", Properties.Resources.beverages);
+            ((Beverages)item).AddingIngredients("coffee", Properties.Resources.textM);
+
+            pictureBoxBeverage.Tag = ((Beverages)item).ListOfIngredients[0].Name;
+            pictureBoxBevM.Tag = ((Beverages)item).ListOfIngredients[1].Name;
+
+            pictureBoxBeverage.Image = ((Beverages)item).ListOfIngredients[0].Picture;
+            pictureBoxBevM.Image = ((Beverages)item).ListOfIngredients[1].Picture;
+
+            pictureBoxBeverage.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxBevM.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            item = new Beverages(false, "S", "coffeeSHot", Properties.Resources.hotS, 15);
+            listOfItems.Add(item);
+            ((Beverages)item).AddingIngredients("cup", Properties.Resources.beverages);
+            ((Beverages)item).AddingIngredients("coffee", Properties.Resources.textS);
+
+            pictureBoxBeverage.Tag = ((Beverages)item).ListOfIngredients[0].Name;
+            pictureBoxBevS.Tag = ((Beverages)item).ListOfIngredients[1].Name;
+
+            pictureBoxBeverage.Image = ((Beverages)item).ListOfIngredients[0].Picture;
+            pictureBoxBevS.Image = ((Beverages)item).ListOfIngredients[1].Picture;
+
+            pictureBoxBeverage.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxBevS.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            item = new Beverages(true, "L", "coffeeLCold", Properties.Resources.coldL, 25);
+            listOfItems.Add(item);
+            ((Beverages)item).AddingIngredients("cup", Properties.Resources.beverages);
+            ((Beverages)item).AddingIngredients("coffee", Properties.Resources.textL);
+            ((Beverages)item).AddingIngredients("ice", Properties.Resources.iceBucket);
+
+            pictureBoxBeverage.Tag = ((Beverages)item).ListOfIngredients[0].Name;
+            pictureBoxBevL.Tag = ((Beverages)item).ListOfIngredients[1].Name;
+            pictureBoxIceBucket.Tag = ((Beverages)item).ListOfIngredients[2].Name;
+
+            pictureBoxBeverage.Image = ((Beverages)item).ListOfIngredients[0].Picture;
+            pictureBoxBevL.Image = ((Beverages)item).ListOfIngredients[1].Picture;
+            pictureBoxIceBucket.Image = ((Beverages)item).ListOfIngredients[2].Picture;
+
+            pictureBoxBeverage.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxBevL.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxIceBucket.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            item = new Beverages(true, "M", "coffeeMCold", Properties.Resources.coldM, 20);
+            listOfItems.Add(item);
+            ((Beverages)item).AddingIngredients("cup", Properties.Resources.beverages);
+            ((Beverages)item).AddingIngredients("coffee", Properties.Resources.textM);
+            ((Beverages)item).AddingIngredients("ice", Properties.Resources.iceBucket);
+
+            pictureBoxBeverage.Tag = ((Beverages)item).ListOfIngredients[0].Name;
+            pictureBoxBevM.Tag = ((Beverages)item).ListOfIngredients[1].Name;
+            pictureBoxIceBucket.Tag = ((Beverages)item).ListOfIngredients[2].Name;
+
+            pictureBoxBeverage.Image = ((Beverages)item).ListOfIngredients[0].Picture;
+            pictureBoxBevM.Image = ((Beverages)item).ListOfIngredients[1].Picture;
+            pictureBoxIceBucket.Image = ((Beverages)item).ListOfIngredients[2].Picture;
+
+            pictureBoxBeverage.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxBevM.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxIceBucket.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            item = new Beverages(true, "S", "coffeeSCold", Properties.Resources.coldS, 15);
+            listOfItems.Add(item);
+            ((Beverages)item).AddingIngredients("cup", Properties.Resources.beverages);
+            ((Beverages)item).AddingIngredients("coffee", Properties.Resources.textS);
+            ((Beverages)item).AddingIngredients("ice", Properties.Resources.iceBucket);
+
+            pictureBoxBeverage.Tag = ((Beverages)item).ListOfIngredients[0].Name;
+            pictureBoxBevS.Tag = ((Beverages)item).ListOfIngredients[1].Name;
+            pictureBoxIceBucket.Tag = ((Beverages)item).ListOfIngredients[2].Name;
+
+            pictureBoxBeverage.Image = ((Beverages)item).ListOfIngredients[0].Picture;
+            pictureBoxBevS.Image = ((Beverages)item).ListOfIngredients[1].Picture;
+            pictureBoxIceBucket.Image = ((Beverages)item).ListOfIngredients[2].Picture;
+
+            pictureBoxBeverage.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxBevS.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxIceBucket.SizeMode = PictureBoxSizeMode.StretchImage;
+            #endregion Beverages
+
+            #region Merchandise            
+            item = new Merchandise(5, "bear", Properties.Resources.bear, 100);
+            listOfItems.Add(item);
+            pictureBoxBear1.Tag = ((Merchandise)item).Name;
+            pictureBoxBear2.Tag = ((Merchandise)item).Name;
+            pictureBoxBear3.Tag = ((Merchandise)item).Name;
+            pictureBoxBear4.Tag = ((Merchandise)item).Name;
+            pictureBoxBear5.Tag = ((Merchandise)item).Name;
+
+            pictureBoxBear1.Image = ((Merchandise)item).Picture;
+            pictureBoxBear2.Image = ((Merchandise)item).Picture;
+            pictureBoxBear3.Image = ((Merchandise)item).Picture;
+            pictureBoxBear4.Image = ((Merchandise)item).Picture;
+            pictureBoxBear5.Image = ((Merchandise)item).Picture;
+
+            pictureBoxBear1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxBear2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxBear3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxBear4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxBear5.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            item = new Merchandise(5, "tumblr", Properties.Resources.tumblr, 100);
+            listOfItems.Add(item);
+            pictureBoxTumblr1.Tag = ((Merchandise)item).Name;
+            pictureBoxTumblr2.Tag = ((Merchandise)item).Name;
+            pictureBoxTumblr3.Tag = ((Merchandise)item).Name;
+            pictureBoxTumblr4.Tag = ((Merchandise)item).Name;
+            pictureBoxTumblr5.Tag = ((Merchandise)item).Name;
+
+            pictureBoxTumblr1.Image = ((Merchandise)item).Picture;
+            pictureBoxTumblr2.Image = ((Merchandise)item).Picture;
+            pictureBoxTumblr3.Image = ((Merchandise)item).Picture;
+            pictureBoxTumblr4.Image = ((Merchandise)item).Picture;
+            pictureBoxTumblr5.Image = ((Merchandise)item).Picture;
+
+            pictureBoxTumblr1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxTumblr2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxTumblr3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxTumblr4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxTumblr5.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            item = new Merchandise(5, "robot", Properties.Resources.robot, 100);
+            listOfItems.Add(item);
+            pictureBoxRobot1.Tag = ((Merchandise)item).Name;
+            pictureBoxRobot2.Tag = ((Merchandise)item).Name;
+            pictureBoxRobot3.Tag = ((Merchandise)item).Name;
+            pictureBoxRobot4.Tag = ((Merchandise)item).Name;
+            pictureBoxRobot5.Tag = ((Merchandise)item).Name;
+
+            pictureBoxRobot1.Image = ((Merchandise)item).Picture;
+            pictureBoxRobot2.Image = ((Merchandise)item).Picture;
+            pictureBoxRobot3.Image = ((Merchandise)item).Picture;
+            pictureBoxRobot4.Image = ((Merchandise)item).Picture;
+            pictureBoxRobot5.Image = ((Merchandise)item).Picture;
+
+            pictureBoxRobot1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxRobot2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxRobot3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxRobot4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxRobot5.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            #endregion Merchandise
+
         }
     }
 }
