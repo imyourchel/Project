@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGame));
             this.buttonPlay = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
@@ -116,13 +117,13 @@
             this.labelBestTimeHard = new System.Windows.Forms.Label();
             this.labelBestTimeMedium = new System.Windows.Forms.Label();
             this.labelBestTimeEasy = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.labelImpossible = new System.Windows.Forms.Label();
+            this.labelHard = new System.Windows.Forms.Label();
             this.pictureBoxImpossible = new System.Windows.Forms.PictureBox();
             this.pictureBoxHard = new System.Windows.Forms.PictureBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.labelMedium = new System.Windows.Forms.Label();
             this.pictureBoxMedium = new System.Windows.Forms.PictureBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.labelEasy = new System.Windows.Forms.Label();
             this.pictureBoxEasy = new System.Windows.Forms.PictureBox();
             this.buttonNextTutorial = new System.Windows.Forms.Button();
             this.labelHighScoreImposible = new System.Windows.Forms.Label();
@@ -148,6 +149,8 @@
             this.buttonNextDifficult = new System.Windows.Forms.Button();
             this.radioButtonCreatePlayer = new System.Windows.Forms.RadioButton();
             this.pictureBoxBackHome = new System.Windows.Forms.PictureBox();
+            this.timerGame = new System.Windows.Forms.Timer(this.components);
+            this.timerCust = new System.Windows.Forms.Timer(this.components);
             this.panelGame.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBevM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBevS)).BeginInit();
@@ -1024,6 +1027,7 @@
             this.pictureBoxHome.Size = new System.Drawing.Size(125, 125);
             this.pictureBoxHome.TabIndex = 19;
             this.pictureBoxHome.TabStop = false;
+            this.pictureBoxHome.Click += new System.EventHandler(this.pictureBoxHome_Click);
             // 
             // pictureBoxRestart
             // 
@@ -1034,6 +1038,7 @@
             this.pictureBoxRestart.Size = new System.Drawing.Size(125, 125);
             this.pictureBoxRestart.TabIndex = 18;
             this.pictureBoxRestart.TabStop = false;
+            this.pictureBoxRestart.Click += new System.EventHandler(this.pictureBoxRestart_Click);
             // 
             // pictureBoxResume
             // 
@@ -1266,13 +1271,13 @@
             this.panelDifficulty.Controls.Add(this.labelBestTimeHard);
             this.panelDifficulty.Controls.Add(this.labelBestTimeMedium);
             this.panelDifficulty.Controls.Add(this.labelBestTimeEasy);
-            this.panelDifficulty.Controls.Add(this.label13);
-            this.panelDifficulty.Controls.Add(this.label12);
+            this.panelDifficulty.Controls.Add(this.labelImpossible);
+            this.panelDifficulty.Controls.Add(this.labelHard);
             this.panelDifficulty.Controls.Add(this.pictureBoxImpossible);
             this.panelDifficulty.Controls.Add(this.pictureBoxHard);
-            this.panelDifficulty.Controls.Add(this.label11);
+            this.panelDifficulty.Controls.Add(this.labelMedium);
             this.panelDifficulty.Controls.Add(this.pictureBoxMedium);
-            this.panelDifficulty.Controls.Add(this.label10);
+            this.panelDifficulty.Controls.Add(this.labelEasy);
             this.panelDifficulty.Controls.Add(this.pictureBoxEasy);
             this.panelDifficulty.Controls.Add(this.buttonNextTutorial);
             this.panelDifficulty.Controls.Add(this.labelHighScoreImposible);
@@ -1329,27 +1334,29 @@
             this.labelBestTimeEasy.TabIndex = 41;
             this.labelBestTimeEasy.Text = "00 : 00 : 00";
             // 
-            // label13
+            // labelImpossible
             // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.White;
-            this.label13.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(880, 485);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(157, 38);
-            this.label13.TabIndex = 28;
-            this.label13.Text = "Impossible";
+            this.labelImpossible.AutoSize = true;
+            this.labelImpossible.BackColor = System.Drawing.Color.White;
+            this.labelImpossible.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelImpossible.Location = new System.Drawing.Point(880, 485);
+            this.labelImpossible.Name = "labelImpossible";
+            this.labelImpossible.Size = new System.Drawing.Size(157, 38);
+            this.labelImpossible.TabIndex = 28;
+            this.labelImpossible.Text = "Impossible";
+            this.labelImpossible.Click += new System.EventHandler(this.labelImpossible_Click);
             // 
-            // label12
+            // labelHard
             // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.White;
-            this.label12.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(661, 485);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(78, 38);
-            this.label12.TabIndex = 28;
-            this.label12.Text = "Hard";
+            this.labelHard.AutoSize = true;
+            this.labelHard.BackColor = System.Drawing.Color.White;
+            this.labelHard.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHard.Location = new System.Drawing.Point(661, 485);
+            this.labelHard.Name = "labelHard";
+            this.labelHard.Size = new System.Drawing.Size(78, 38);
+            this.labelHard.TabIndex = 28;
+            this.labelHard.Text = "Hard";
+            this.labelHard.Click += new System.EventHandler(this.labelHard_Click);
             // 
             // pictureBoxImpossible
             // 
@@ -1361,6 +1368,7 @@
             this.pictureBoxImpossible.Size = new System.Drawing.Size(211, 57);
             this.pictureBoxImpossible.TabIndex = 40;
             this.pictureBoxImpossible.TabStop = false;
+            this.pictureBoxImpossible.Click += new System.EventHandler(this.pictureBoxImpossible_Click);
             this.pictureBoxImpossible.MouseEnter += new System.EventHandler(this.pictureBoxImpossible_MouseEnter);
             this.pictureBoxImpossible.MouseLeave += new System.EventHandler(this.pictureBoxImpossible_MouseLeave);
             // 
@@ -1374,19 +1382,21 @@
             this.pictureBoxHard.Size = new System.Drawing.Size(211, 57);
             this.pictureBoxHard.TabIndex = 39;
             this.pictureBoxHard.TabStop = false;
+            this.pictureBoxHard.Click += new System.EventHandler(this.pictureBoxHard_Click);
             this.pictureBoxHard.MouseEnter += new System.EventHandler(this.pictureBoxHard_MouseEnter);
             this.pictureBoxHard.MouseLeave += new System.EventHandler(this.pictureBoxHard_MouseLeave);
             // 
-            // label11
+            // labelMedium
             // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.White;
-            this.label11.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(389, 485);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(122, 38);
-            this.label11.TabIndex = 28;
-            this.label11.Text = "Medium";
+            this.labelMedium.AutoSize = true;
+            this.labelMedium.BackColor = System.Drawing.Color.White;
+            this.labelMedium.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMedium.Location = new System.Drawing.Point(389, 485);
+            this.labelMedium.Name = "labelMedium";
+            this.labelMedium.Size = new System.Drawing.Size(122, 38);
+            this.labelMedium.TabIndex = 28;
+            this.labelMedium.Text = "Medium";
+            this.labelMedium.Click += new System.EventHandler(this.labelMedium_Click);
             // 
             // pictureBoxMedium
             // 
@@ -1398,19 +1408,21 @@
             this.pictureBoxMedium.Size = new System.Drawing.Size(211, 57);
             this.pictureBoxMedium.TabIndex = 38;
             this.pictureBoxMedium.TabStop = false;
+            this.pictureBoxMedium.Click += new System.EventHandler(this.pictureBoxMedium_Click);
             this.pictureBoxMedium.MouseEnter += new System.EventHandler(this.pictureBoxMedium_MouseEnter);
             this.pictureBoxMedium.MouseLeave += new System.EventHandler(this.pictureBoxMedium_MouseLeave);
             // 
-            // label10
+            // labelEasy
             // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.White;
-            this.label10.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(146, 486);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(76, 38);
-            this.label10.TabIndex = 28;
-            this.label10.Text = "Easy";
+            this.labelEasy.AutoSize = true;
+            this.labelEasy.BackColor = System.Drawing.Color.White;
+            this.labelEasy.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEasy.Location = new System.Drawing.Point(146, 486);
+            this.labelEasy.Name = "labelEasy";
+            this.labelEasy.Size = new System.Drawing.Size(76, 38);
+            this.labelEasy.TabIndex = 28;
+            this.labelEasy.Text = "Easy";
+            this.labelEasy.Click += new System.EventHandler(this.labelEasy_Click);
             // 
             // pictureBoxEasy
             // 
@@ -1422,6 +1434,7 @@
             this.pictureBoxEasy.Size = new System.Drawing.Size(211, 57);
             this.pictureBoxEasy.TabIndex = 37;
             this.pictureBoxEasy.TabStop = false;
+            this.pictureBoxEasy.Click += new System.EventHandler(this.pictureBoxEasy_Click);
             this.pictureBoxEasy.MouseEnter += new System.EventHandler(this.pictureBoxEasy_MouseEnter);
             this.pictureBoxEasy.MouseLeave += new System.EventHandler(this.pictureBoxEasy_MouseLeave);
             // 
@@ -1698,17 +1711,21 @@
             this.pictureBoxBackHome.TabStop = false;
             this.pictureBoxBackHome.Click += new System.EventHandler(this.pictureBoxBackHome_Click);
             // 
+            // timerGame
+            // 
+            this.timerGame.Tick += new System.EventHandler(this.timerGame_Tick);
+            // 
             // FormGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1149, 650);
-            this.Controls.Add(this.panelGame);
             this.Controls.Add(this.panelSetting);
-            this.Controls.Add(this.panelTutorial);
-            this.Controls.Add(this.panelDifficulty);
+            this.Controls.Add(this.panelGame);
             this.Controls.Add(this.panelCreateLoadPlayer);
+            this.Controls.Add(this.panelDifficulty);
+            this.Controls.Add(this.panelTutorial);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonPlay);
             this.DoubleBuffered = true;
@@ -1833,10 +1850,10 @@
         private System.Windows.Forms.Label labelHighScoreImposible;
         private System.Windows.Forms.Label labelHighScoreHard;
         private System.Windows.Forms.Label labelHighScoreMedium;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label labelEasy;
+        private System.Windows.Forms.Label labelMedium;
+        private System.Windows.Forms.Label labelHard;
+        private System.Windows.Forms.Label labelImpossible;
         private System.Windows.Forms.Button buttonNextTutorial;
         private System.Windows.Forms.Panel panelTutorial;
         private System.Windows.Forms.Panel panelGame;
@@ -1926,5 +1943,7 @@
         private System.Windows.Forms.PictureBox pictureBoxBevM;
         private System.Windows.Forms.PictureBox pictureBoxBevS;
         private System.Windows.Forms.PictureBox pictureBoxBevL;
+        private System.Windows.Forms.Timer timerGame;
+        private System.Windows.Forms.Timer timerCust;
     }
 }

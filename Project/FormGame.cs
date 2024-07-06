@@ -22,6 +22,19 @@ namespace Project
         List<Items> listOfItems = new List<Items>();
         Items item;
 
+        int custEasy = 8;
+        int custMedium = 12;
+        int custHard = 18;
+        int custImpossible = 25;
+        int remainingCusts;
+
+        int timeChoose;
+        int timeEasy = 30;
+        int timeMedium = 40;
+        int timeHard = 50;
+        int timeImpossible = 60;
+        int selectedIngCount;
+        int incTimerCust;
         public FormGame()
         {
             InitializeComponent();
@@ -48,10 +61,18 @@ namespace Project
             panelTutorial.Visible = false;
             panelGame.Visible = false;
             panelSetting.Visible = false;
+            timerCust.Enabled = false;
+            timerCust.Interval= 1000;
+            timerGame.Enabled = false;
+            timerGame.Interval= 1000;
         }
 
         private void buttonPlay_Click(object sender, EventArgs e)
         {
+            radioButtonLoadPlayer.Checked = false;
+            radioButtonMale.Checked = false;
+            radioButtonFemale.Checked = false;
+            textBoxNameCreate.Clear();
             BackgroundInvisible();
             //display panel create load player
             panelCreateLoadPlayer.Visible = true;
@@ -62,7 +83,7 @@ namespace Project
             panelLoadPlayer.Enabled = false;
             radioButtonMale.Enabled = true;
             //combobox
-            if (listOfPlayer == null)
+            if (listOfPlayer.Count == 0)
             {
                 radioButtonLoadPlayer.Enabled = false;
             }
@@ -96,7 +117,7 @@ namespace Project
                     {
                         pic = Properties.Resources.male;
                     }
-                    else if (radioButtonMale.Checked)
+                    else if (radioButtonFemale.Checked)
                     {
                         pic = Properties.Resources.female;
                     }                    
@@ -116,6 +137,10 @@ namespace Project
                 panelDifficulty.Visible = true;
                 panelDifficulty.BackgroundImage = Properties.Resources.bg_Difficulty;
                 panelDifficulty.BackgroundImageLayout = ImageLayout.Stretch;
+                this.labelEasy.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.labelMedium.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.labelHard.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.labelImpossible.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             }
             catch(Exception ex)
             {
@@ -131,11 +156,32 @@ namespace Project
 
         private void buttonNextTutorial_Click(object sender, EventArgs e)
         {
+            buttonStartGame.Visible = true;
             buttonBackReceipe.Visible = false;
             panelDifficulty.Visible = false;
             panelTutorial.Visible = true;
             panelTutorial.BackgroundImage = Properties.Resources.bg_Tutorial;
             panelTutorial.BackgroundImageLayout = ImageLayout.Stretch;
+            if (labelEasy.Font.Name == "Franklin Gothic Demi")
+            {
+                timeChoose = timeEasy;
+                remainingCusts = custEasy;
+            }
+            else if (labelMedium.Font.Name == "Franklin Gothic Demi")
+            {
+                timeChoose = timeMedium;
+                remainingCusts = custMedium;
+            }
+            else if (labelHard.Font.Name == "Franklin Gothic Demi")
+            {
+                timeChoose = timeHard;
+                remainingCusts = custHard;
+            }
+            else if (labelImpossible.Font.Name == "Franklin Gothic Demi")
+            {
+                timeChoose = timeImpossible;
+                remainingCusts = custImpossible;
+            }
         }
 
         private void buttonStartGame_Click(object sender, EventArgs e)
@@ -143,6 +189,11 @@ namespace Project
             panelTutorial.Visible = false;
             panelGame.Visible = true;
             panelGame.BackgroundImageLayout = ImageLayout.Stretch;
+            time = new Time(0, 0, timeChoose);
+            labelRemainingTime.Text = time.Display();
+            timerGame.Start();
+            labelRemainingCustomers.Text = "Remaining Customers : " + remainingCusts.ToString();
+            labelNamePlayer.Text = player.Name;
         }        
         private void pictureBoxButtonReceipe_Click(object sender, EventArgs e)
         {
@@ -160,12 +211,16 @@ namespace Project
 
         private void pictureBoxButtonSetting_Click(object sender, EventArgs e)
         {
+            timerGame.Stop();
             panelSetting.Visible = true;
+            panelGame.Visible=false;
         }
 
         private void pictureBoxResume_Click(object sender, EventArgs e)
         {
+            timerGame.Start();
             panelSetting.Visible = false;
+            panelGame.Visible = true;
         }
 
         private void radioButtonCreatePlayer_CheckedChanged(object sender, EventArgs e)
@@ -814,6 +869,101 @@ namespace Project
 
             #endregion Merchandise
 
+        }
+
+        private void pictureBoxHome_Click(object sender, EventArgs e)
+        {
+            panelSetting.Visible = false;
+            panelGame.Visible = false;
+            panelCreateLoadPlayer.Visible = false;
+            panelDifficulty.Visible = false;
+            panelTutorial.Visible = false;
+            BackgroundVisible();
+        }
+
+        private void pictureBoxRestart_Click(object sender, EventArgs e)
+        {
+            panelSetting.Visible = false;
+            panelGame.Visible = true;
+            timerGame.Stop();
+            time = new Time(0, 0, timeChoose);
+            timerGame.Start();
+            labelRemainingTime.Text = time.Display();
+        }
+
+        private void labelEasy_Click(object sender, EventArgs e)
+        {
+            this.labelEasy.Font = new System.Drawing.Font("Franklin Gothic Demi", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMedium.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHard.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelImpossible.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        }
+
+        private void pictureBoxEasy_Click(object sender, EventArgs e)
+        {
+            this.labelEasy.Font = new System.Drawing.Font("Franklin Gothic Demi", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMedium.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHard.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelImpossible.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        }
+
+        private void labelMedium_Click(object sender, EventArgs e)
+        {
+            this.labelMedium.Font = new System.Drawing.Font("Franklin Gothic Demi", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEasy.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHard.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelImpossible.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        }
+
+        private void pictureBoxMedium_Click(object sender, EventArgs e)
+        {
+            this.labelMedium.Font = new System.Drawing.Font("Franklin Gothic Demi", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEasy.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHard.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelImpossible.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        }
+
+        private void labelHard_Click(object sender, EventArgs e)
+        {
+            this.labelHard.Font = new System.Drawing.Font("Franklin Gothic Demi", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEasy.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMedium.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelImpossible.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        }
+
+        private void pictureBoxHard_Click(object sender, EventArgs e)
+        {
+            this.labelHard.Font = new System.Drawing.Font("Franklin Gothic Demi", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEasy.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMedium.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelImpossible.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        }
+
+        private void labelImpossible_Click(object sender, EventArgs e)
+        {
+            this.labelImpossible.Font = new System.Drawing.Font("Franklin Gothic Demi", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEasy.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMedium.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHard.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        }
+
+        private void pictureBoxImpossible_Click(object sender, EventArgs e)
+        {
+            this.labelImpossible.Font = new System.Drawing.Font("Franklin Gothic Demi", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEasy.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMedium.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHard.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        }
+
+        private void timerGame_Tick(object sender, EventArgs e)
+        {
+            time.Add(-1);
+            labelRemainingTime.Text = time.Display();
+            if (time.Hour == 0 && time.Minute == 0 && time.Second == 0)
+            {
+                timerGame.Stop();
+                MessageBox.Show("Gameover");
+            }
         }
     }
 }
