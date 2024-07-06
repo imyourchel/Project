@@ -22,6 +22,7 @@ namespace Project
         List<Items> listOfItems = new List<Items>();
         Items item;
         Merchandise merchandise;
+        Customers customers;
 
         int custEasy = 8;
         int custMedium = 12;
@@ -1032,6 +1033,82 @@ namespace Project
             {
                 timerGame.Stop();
                 MessageBox.Show("Gameover");
+            }
+        }
+
+        private void CreateCustomers()
+        {
+            Random numRandomCust = new Random();
+            int randomCust = numRandomCust.Next(0, 3);
+            if (randomCust == 0)
+            {
+                customers = new Customers("Dustin", Properties.Resources.dustin, "male", null);
+            }
+            else if (randomCust == 1)
+            {
+                customers = new Customers("Jeni", Properties.Resources.jeni, "female", null);
+            }
+            else if(randomCust == 2)
+            {
+                customers = new Customers("Bumi", Properties.Resources.bumi, "kis", null);
+            }
+            pictureBoxCustomer1.Image = customers.Picture;
+            pictureBoxCustomer1.BackColor = Color.Transparent;
+            pictureBoxCustomer1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            panelDialog1.BackgroundImage = Properties.Resources.dialog;
+            incTimerCust = 0;
+
+            pictureBoxServe.Image = null;
+            pictureBoxServe.Tag = "none";
+
+            timerCust.Start();
+        }
+        private void CreateCustomerOrder()
+        {
+            Random numRandomItemType = new Random();
+            int randomItemType = numRandomItemType.Next(0, 3);
+
+            if(randomItemType == 0) //Foods
+            {
+                if(customers.Type == "male")
+                {
+                    customers.OrderItem = listOfItems[0];
+                }
+                else if(customers.Type == "female")
+                {
+                    customers.OrderItem = listOfItems[1];
+                }
+                else if(customers.Type == "kid")
+                {
+                    customers.OrderItem = listOfItems[2];
+                }
+            }
+            else if (randomItemType == 1)
+            {
+                Random numRandomBev = new Random();
+                int randomBev = numRandomBev.Next(3, 9);
+                customers.OrderItem = listOfItems[randomBev];
+            }
+            else if(randomItemType == 2)
+            {
+                Random numRandomMerch = new Random();
+                int randomMerch = numRandomMerch.Next(9, 12);
+                if (((Merchandise)listOfItems[randomMerch]).Stock > 0)
+                {
+                    customers.OrderItem = listOfItems[randomMerch];
+                }
+            }
+            pictureBoxOrder1.Image = customers.OrderItem.Picture;
+        }
+
+        private void timerCust_Tick(object sender, EventArgs e)
+        {
+            incTimerCust++;
+            if(incTimerCust == 1)
+            {
+                CreateCustomerOrder();
+                timerCust.Stop();
             }
         }
     }

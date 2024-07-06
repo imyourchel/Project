@@ -262,6 +262,10 @@
             // 
             this.timerGame.Tick += new System.EventHandler(this.timerGame_Tick);
             // 
+            // timerCust
+            // 
+            this.timerCust.Tick += new System.EventHandler(this.timerCust_Tick);
+            // 
             // panelDifficulty
             // 
             this.panelDifficulty.BackgroundImage = global::Project.Properties.Resources.bg_Difficulty;
