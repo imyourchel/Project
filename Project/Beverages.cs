@@ -42,6 +42,11 @@ namespace Project
                 "Size : " + this.Size;
             return data;
         }
+        public void AddingIngredients(string name, Image picture)
+        {
+            Ingredients ingredient = new Ingredients(name, picture);
+            //listOfIngredients.Add(ingredient);
+        }
         #endregion Methods
     }
 }

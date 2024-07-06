@@ -31,28 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGame));
             this.buttonPlay = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
-            this.panelSetting = new System.Windows.Forms.Panel();
-            this.pictureBoxHome = new System.Windows.Forms.PictureBox();
-            this.pictureBoxRestart = new System.Windows.Forms.PictureBox();
-            this.pictureBoxResume = new System.Windows.Forms.PictureBox();
-            this.pictureBoxVolumeBarSFX5 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxVolumeBarSFX4 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxVolumeBarSFX3 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxVolumeBarSFX2 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxVolumeBarSFX1 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxVolmeUpSFX = new System.Windows.Forms.PictureBox();
-            this.pictureBoxVolumeDownSFX = new System.Windows.Forms.PictureBox();
-            this.pictureBoxBarMusic5 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxBarMusic4 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxBarMusic3 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxBarMusic2 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxBarMusic1 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxVolumeUpMusic = new System.Windows.Forms.PictureBox();
-            this.pictureBoxVolumeDownMusic = new System.Windows.Forms.PictureBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.panelGame = new System.Windows.Forms.Panel();
+            this.labelIncomeNow = new System.Windows.Forms.Label();
+            this.labelNamePlayer = new System.Windows.Forms.Label();
             this.panelDialog2 = new System.Windows.Forms.Panel();
             this.pictureBoxEmotion2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxOrder2 = new System.Windows.Forms.PictureBox();
@@ -63,7 +44,6 @@
             this.pictureBoxButtonReceipe = new System.Windows.Forms.PictureBox();
             this.labelSmall = new System.Windows.Forms.Label();
             this.labelMedium = new System.Windows.Forms.Label();
-            this.labelLarge = new System.Windows.Forms.Label();
             this.pictureBoxMayo = new System.Windows.Forms.PictureBox();
             this.pictureBoxPlate = new System.Windows.Forms.PictureBox();
             this.pictureBoxBeverage = new System.Windows.Forms.PictureBox();
@@ -106,43 +86,53 @@
             this.panelFoodStall = new System.Windows.Forms.Panel();
             this.pictureBoxCustomer2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxCustomer1 = new System.Windows.Forms.PictureBox();
+            this.panelSetting = new System.Windows.Forms.Panel();
+            this.pictureBoxHome = new System.Windows.Forms.PictureBox();
+            this.pictureBoxRestart = new System.Windows.Forms.PictureBox();
+            this.pictureBoxResume = new System.Windows.Forms.PictureBox();
+            this.pictureBoxVolumeBarSFX5 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxVolumeBarSFX4 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxVolumeBarSFX3 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxVolumeBarSFX2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxVolumeBarSFX1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxVolmeUpSFX = new System.Windows.Forms.PictureBox();
+            this.pictureBoxVolumeDownSFX = new System.Windows.Forms.PictureBox();
+            this.pictureBoxBarMusic5 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxBarMusic4 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxBarMusic3 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxBarMusic2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxBarMusic1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxVolumeUpMusic = new System.Windows.Forms.PictureBox();
+            this.pictureBoxVolumeDownMusic = new System.Windows.Forms.PictureBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.panelTutorial = new System.Windows.Forms.Panel();
             this.buttonBackReceipe = new System.Windows.Forms.Button();
             this.buttonStartGame = new System.Windows.Forms.Button();
             this.panelDifficulty = new System.Windows.Forms.Panel();
-            this.buttonNextTutorial = new System.Windows.Forms.Button();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.panelImpossible = new System.Windows.Forms.Panel();
+            this.labelBestTimeImpossible = new System.Windows.Forms.Label();
+            this.labelBestTimeHard = new System.Windows.Forms.Label();
+            this.labelBestTimeMedium = new System.Windows.Forms.Label();
+            this.labelBestTimeEasy = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.panelHard = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
-            this.panelMedium = new System.Windows.Forms.Panel();
+            this.pictureBoxImpossible = new System.Windows.Forms.PictureBox();
+            this.pictureBoxHard = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.panelEasy = new System.Windows.Forms.Panel();
+            this.pictureBoxMedium = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.pictureBoxEasy = new System.Windows.Forms.PictureBox();
+            this.buttonNextTutorial = new System.Windows.Forms.Button();
             this.labelHighScoreImposible = new System.Windows.Forms.Label();
             this.labelHighScoreHard = new System.Windows.Forms.Label();
             this.labelHighScoreMedium = new System.Windows.Forms.Label();
             this.labelHighScoreEasy = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.pictureBoxBackCreateLoadPlayer = new System.Windows.Forms.PictureBox();
             this.panelCreateLoadPlayer = new System.Windows.Forms.Panel();
             this.radioButtonLoadPlayer = new System.Windows.Forms.RadioButton();
             this.panelLoadPlayer = new System.Windows.Forms.Panel();
-            this.labelHS = new System.Windows.Forms.Label();
             this.labelIncome = new System.Windows.Forms.Label();
-            this.labelHSLoad = new System.Windows.Forms.Label();
             this.comboBoxNameLoad = new System.Windows.Forms.ComboBox();
             this.labelIncomeLoad = new System.Windows.Forms.Label();
             this.labelNameLoad = new System.Windows.Forms.Label();
@@ -157,24 +147,7 @@
             this.buttonNextDifficult = new System.Windows.Forms.Button();
             this.radioButtonCreatePlayer = new System.Windows.Forms.RadioButton();
             this.pictureBoxBackHome = new System.Windows.Forms.PictureBox();
-            this.panelSetting.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHome)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRestart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResume)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolmeUpSFX)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeDownSFX)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeUpMusic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeDownMusic)).BeginInit();
+            this.labelLarge = new System.Windows.Forms.Label();
             this.panelGame.SuspendLayout();
             this.panelDialog2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmotion2)).BeginInit();
@@ -219,12 +192,30 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCheese)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCustomer2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCustomer1)).BeginInit();
+            this.panelSetting.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHome)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRestart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResume)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolmeUpSFX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeDownSFX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeUpMusic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeDownMusic)).BeginInit();
             this.panelTutorial.SuspendLayout();
             this.panelDifficulty.SuspendLayout();
-            this.panelImpossible.SuspendLayout();
-            this.panelHard.SuspendLayout();
-            this.panelMedium.SuspendLayout();
-            this.panelEasy.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImpossible)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHard)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMedium)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEasy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackCreateLoadPlayer)).BeginInit();
             this.panelCreateLoadPlayer.SuspendLayout();
             this.panelLoadPlayer.SuspendLayout();
@@ -260,6 +251,728 @@
             this.buttonExit.Text = "EXIT";
             this.buttonExit.UseVisualStyleBackColor = false;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
+            // panelGame
+            // 
+            this.panelGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.panelGame.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelGame.BackgroundImage")));
+            this.panelGame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelGame.Controls.Add(this.labelIncomeNow);
+            this.panelGame.Controls.Add(this.labelNamePlayer);
+            this.panelGame.Controls.Add(this.panelDialog2);
+            this.panelGame.Controls.Add(this.panelDialog1);
+            this.panelGame.Controls.Add(this.pictureBoxButtonSetting);
+            this.panelGame.Controls.Add(this.pictureBoxButtonReceipe);
+            this.panelGame.Controls.Add(this.labelSmall);
+            this.panelGame.Controls.Add(this.labelMedium);
+            this.panelGame.Controls.Add(this.labelLarge);
+            this.panelGame.Controls.Add(this.pictureBoxMayo);
+            this.panelGame.Controls.Add(this.pictureBoxPlate);
+            this.panelGame.Controls.Add(this.pictureBoxBeverage);
+            this.panelGame.Controls.Add(this.pictureBoxBevMachine);
+            this.panelGame.Controls.Add(this.pictureBoxICMachine);
+            this.panelGame.Controls.Add(this.pictureBoxCone);
+            this.panelGame.Controls.Add(this.pictureBoxServe);
+            this.panelGame.Controls.Add(this.labelRemainingCustomers);
+            this.panelGame.Controls.Add(this.labelRemainingTime);
+            this.panelGame.Controls.Add(this.labelDisplayDataPlayer);
+            this.panelGame.Controls.Add(this.pictureBoxDisplayPlayer);
+            this.panelGame.Controls.Add(this.pictureBoxRobot5);
+            this.panelGame.Controls.Add(this.pictureBoxRobot4);
+            this.panelGame.Controls.Add(this.pictureBoxRobot3);
+            this.panelGame.Controls.Add(this.pictureBoxRobot2);
+            this.panelGame.Controls.Add(this.pictureBoxRobot1);
+            this.panelGame.Controls.Add(this.pictureBoxTumblr5);
+            this.panelGame.Controls.Add(this.pictureBoxTumblr4);
+            this.panelGame.Controls.Add(this.pictureBoxTumblr3);
+            this.panelGame.Controls.Add(this.pictureBoxTumblr2);
+            this.panelGame.Controls.Add(this.pictureBoxTumblr1);
+            this.panelGame.Controls.Add(this.pictureBoxBear5);
+            this.panelGame.Controls.Add(this.pictureBoxBear4);
+            this.panelGame.Controls.Add(this.pictureBoxBear3);
+            this.panelGame.Controls.Add(this.pictureBoxBear2);
+            this.panelGame.Controls.Add(this.pictureBoxBear1);
+            this.panelGame.Controls.Add(this.pictureBox2);
+            this.panelGame.Controls.Add(this.buttonBuyMerchandiseBear);
+            this.panelGame.Controls.Add(this.pictureBox1);
+            this.panelGame.Controls.Add(this.buttonBuyMerchandiseTumblr);
+            this.panelGame.Controls.Add(this.pictureBoxCoin);
+            this.panelGame.Controls.Add(this.buttonBuyMerchandiseRobot);
+            this.panelGame.Controls.Add(this.pictureBoxIceBucket);
+            this.panelGame.Controls.Add(this.pictureBoxTopBun);
+            this.panelGame.Controls.Add(this.pictureBoxBottomBun);
+            this.panelGame.Controls.Add(this.pictureBoxLettuce);
+            this.panelGame.Controls.Add(this.pictureBoxCheese);
+            this.panelGame.Controls.Add(this.pictureBoxTomato);
+            this.panelGame.Controls.Add(this.pictureBoxPatty);
+            this.panelGame.Controls.Add(this.panelFoodStall);
+            this.panelGame.Controls.Add(this.pictureBoxCustomer2);
+            this.panelGame.Controls.Add(this.pictureBoxCustomer1);
+            this.panelGame.Location = new System.Drawing.Point(0, 0);
+            this.panelGame.Name = "panelGame";
+            this.panelGame.Size = new System.Drawing.Size(1150, 650);
+            this.panelGame.TabIndex = 8;
+            // 
+            // labelIncomeNow
+            // 
+            this.labelIncomeNow.AutoSize = true;
+            this.labelIncomeNow.BackColor = System.Drawing.Color.Transparent;
+            this.labelIncomeNow.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIncomeNow.Location = new System.Drawing.Point(435, 136);
+            this.labelIncomeNow.Name = "labelIncomeNow";
+            this.labelIncomeNow.Size = new System.Drawing.Size(82, 22);
+            this.labelIncomeNow.TabIndex = 64;
+            this.labelIncomeNow.Text = "Income : ";
+            // 
+            // labelNamePlayer
+            // 
+            this.labelNamePlayer.AutoSize = true;
+            this.labelNamePlayer.BackColor = System.Drawing.Color.Transparent;
+            this.labelNamePlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNamePlayer.Location = new System.Drawing.Point(111, 61);
+            this.labelNamePlayer.Name = "labelNamePlayer";
+            this.labelNamePlayer.Size = new System.Drawing.Size(72, 29);
+            this.labelNamePlayer.TabIndex = 63;
+            this.labelNamePlayer.Text = "Bumi";
+            // 
+            // panelDialog2
+            // 
+            this.panelDialog2.BackColor = System.Drawing.Color.Transparent;
+            this.panelDialog2.BackgroundImage = global::Project.Properties.Resources.dialog;
+            this.panelDialog2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelDialog2.Controls.Add(this.pictureBoxEmotion2);
+            this.panelDialog2.Controls.Add(this.pictureBoxOrder2);
+            this.panelDialog2.Location = new System.Drawing.Point(996, 68);
+            this.panelDialog2.Name = "panelDialog2";
+            this.panelDialog2.Size = new System.Drawing.Size(148, 89);
+            this.panelDialog2.TabIndex = 62;
+            // 
+            // pictureBoxEmotion2
+            // 
+            this.pictureBoxEmotion2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxEmotion2.BackgroundImage = global::Project.Properties.Resources.angry;
+            this.pictureBoxEmotion2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxEmotion2.Location = new System.Drawing.Point(116, 1);
+            this.pictureBoxEmotion2.Name = "pictureBoxEmotion2";
+            this.pictureBoxEmotion2.Size = new System.Drawing.Size(32, 32);
+            this.pictureBoxEmotion2.TabIndex = 61;
+            this.pictureBoxEmotion2.TabStop = false;
+            // 
+            // pictureBoxOrder2
+            // 
+            this.pictureBoxOrder2.BackColor = System.Drawing.Color.White;
+            this.pictureBoxOrder2.BackgroundImage = global::Project.Properties.Resources.burger;
+            this.pictureBoxOrder2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxOrder2.Location = new System.Drawing.Point(39, 6);
+            this.pictureBoxOrder2.Name = "pictureBoxOrder2";
+            this.pictureBoxOrder2.Size = new System.Drawing.Size(70, 70);
+            this.pictureBoxOrder2.TabIndex = 61;
+            this.pictureBoxOrder2.TabStop = false;
+            // 
+            // panelDialog1
+            // 
+            this.panelDialog1.BackColor = System.Drawing.Color.Transparent;
+            this.panelDialog1.BackgroundImage = global::Project.Properties.Resources.dialog;
+            this.panelDialog1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelDialog1.Controls.Add(this.pictureBoxEmotion1);
+            this.panelDialog1.Controls.Add(this.pictureBoxOrder1);
+            this.panelDialog1.Location = new System.Drawing.Point(821, 51);
+            this.panelDialog1.Name = "panelDialog1";
+            this.panelDialog1.Size = new System.Drawing.Size(148, 89);
+            this.panelDialog1.TabIndex = 60;
+            // 
+            // pictureBoxEmotion1
+            // 
+            this.pictureBoxEmotion1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxEmotion1.BackgroundImage = global::Project.Properties.Resources.angry;
+            this.pictureBoxEmotion1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxEmotion1.Location = new System.Drawing.Point(116, 1);
+            this.pictureBoxEmotion1.Name = "pictureBoxEmotion1";
+            this.pictureBoxEmotion1.Size = new System.Drawing.Size(32, 32);
+            this.pictureBoxEmotion1.TabIndex = 61;
+            this.pictureBoxEmotion1.TabStop = false;
+            // 
+            // pictureBoxOrder1
+            // 
+            this.pictureBoxOrder1.BackColor = System.Drawing.Color.White;
+            this.pictureBoxOrder1.BackgroundImage = global::Project.Properties.Resources.burger;
+            this.pictureBoxOrder1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxOrder1.Location = new System.Drawing.Point(39, 6);
+            this.pictureBoxOrder1.Name = "pictureBoxOrder1";
+            this.pictureBoxOrder1.Size = new System.Drawing.Size(70, 70);
+            this.pictureBoxOrder1.TabIndex = 61;
+            this.pictureBoxOrder1.TabStop = false;
+            // 
+            // pictureBoxButtonSetting
+            // 
+            this.pictureBoxButtonSetting.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxButtonSetting.BackgroundImage = global::Project.Properties.Resources.buttonSetting;
+            this.pictureBoxButtonSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxButtonSetting.Location = new System.Drawing.Point(1099, 4);
+            this.pictureBoxButtonSetting.Name = "pictureBoxButtonSetting";
+            this.pictureBoxButtonSetting.Size = new System.Drawing.Size(45, 45);
+            this.pictureBoxButtonSetting.TabIndex = 55;
+            this.pictureBoxButtonSetting.TabStop = false;
+            this.pictureBoxButtonSetting.Click += new System.EventHandler(this.pictureBoxButtonSetting_Click);
+            // 
+            // pictureBoxButtonReceipe
+            // 
+            this.pictureBoxButtonReceipe.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxButtonReceipe.BackgroundImage = global::Project.Properties.Resources.buttonReceipe;
+            this.pictureBoxButtonReceipe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxButtonReceipe.Location = new System.Drawing.Point(1050, 4);
+            this.pictureBoxButtonReceipe.Name = "pictureBoxButtonReceipe";
+            this.pictureBoxButtonReceipe.Size = new System.Drawing.Size(45, 45);
+            this.pictureBoxButtonReceipe.TabIndex = 54;
+            this.pictureBoxButtonReceipe.TabStop = false;
+            this.pictureBoxButtonReceipe.Click += new System.EventHandler(this.pictureBoxButtonReceipe_Click);
+            // 
+            // labelSmall
+            // 
+            this.labelSmall.AutoSize = true;
+            this.labelSmall.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(167)))), ((int)(((byte)(78)))));
+            this.labelSmall.Font = new System.Drawing.Font("Franklin Gothic Heavy", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSmall.ForeColor = System.Drawing.Color.White;
+            this.labelSmall.Location = new System.Drawing.Point(326, 277);
+            this.labelSmall.Name = "labelSmall";
+            this.labelSmall.Size = new System.Drawing.Size(27, 29);
+            this.labelSmall.TabIndex = 44;
+            this.labelSmall.Text = "S";
+            this.labelSmall.MouseEnter += new System.EventHandler(this.labelSmall_MouseEnter);
+            this.labelSmall.MouseLeave += new System.EventHandler(this.labelSmall_MouseLeave);
+            // 
+            // labelMedium
+            // 
+            this.labelMedium.AutoSize = true;
+            this.labelMedium.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(58)))), ((int)(((byte)(60)))));
+            this.labelMedium.Font = new System.Drawing.Font("Franklin Gothic Heavy", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMedium.ForeColor = System.Drawing.Color.White;
+            this.labelMedium.Location = new System.Drawing.Point(272, 277);
+            this.labelMedium.Margin = new System.Windows.Forms.Padding(0);
+            this.labelMedium.Name = "labelMedium";
+            this.labelMedium.Size = new System.Drawing.Size(32, 29);
+            this.labelMedium.TabIndex = 42;
+            this.labelMedium.Text = "M";
+            this.labelMedium.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelMedium.MouseEnter += new System.EventHandler(this.labelMedium_MouseEnter);
+            this.labelMedium.MouseLeave += new System.EventHandler(this.labelMedium_MouseLeave);
+            // 
+            // pictureBoxMayo
+            // 
+            this.pictureBoxMayo.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxMayo.BackgroundImage = global::Project.Properties.Resources.mayo;
+            this.pictureBoxMayo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxMayo.Location = new System.Drawing.Point(532, 321);
+            this.pictureBoxMayo.Name = "pictureBoxMayo";
+            this.pictureBoxMayo.Size = new System.Drawing.Size(30, 80);
+            this.pictureBoxMayo.TabIndex = 41;
+            this.pictureBoxMayo.TabStop = false;
+            this.pictureBoxMayo.MouseEnter += new System.EventHandler(this.pictureBoxMayo_MouseEnter);
+            this.pictureBoxMayo.MouseLeave += new System.EventHandler(this.pictureBoxMayo_MouseLeave);
+            // 
+            // pictureBoxPlate
+            // 
+            this.pictureBoxPlate.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxPlate.BackgroundImage = global::Project.Properties.Resources.plates;
+            this.pictureBoxPlate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxPlate.Location = new System.Drawing.Point(438, 321);
+            this.pictureBoxPlate.Name = "pictureBoxPlate";
+            this.pictureBoxPlate.Size = new System.Drawing.Size(80, 80);
+            this.pictureBoxPlate.TabIndex = 40;
+            this.pictureBoxPlate.TabStop = false;
+            this.pictureBoxPlate.MouseEnter += new System.EventHandler(this.pictureBoxPlate_MouseEnter);
+            this.pictureBoxPlate.MouseLeave += new System.EventHandler(this.pictureBoxPlate_MouseLeave);
+            // 
+            // pictureBoxBeverage
+            // 
+            this.pictureBoxBeverage.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxBeverage.BackgroundImage = global::Project.Properties.Resources.beverages;
+            this.pictureBoxBeverage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxBeverage.Location = new System.Drawing.Point(387, 311);
+            this.pictureBoxBeverage.Name = "pictureBoxBeverage";
+            this.pictureBoxBeverage.Size = new System.Drawing.Size(40, 90);
+            this.pictureBoxBeverage.TabIndex = 39;
+            this.pictureBoxBeverage.TabStop = false;
+            this.pictureBoxBeverage.MouseEnter += new System.EventHandler(this.pictureBoxBeverage_MouseEnter);
+            this.pictureBoxBeverage.MouseLeave += new System.EventHandler(this.pictureBoxBeverage_MouseLeave);
+            // 
+            // pictureBoxBevMachine
+            // 
+            this.pictureBoxBevMachine.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxBevMachine.BackgroundImage = global::Project.Properties.Resources.bevMachine;
+            this.pictureBoxBevMachine.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxBevMachine.Location = new System.Drawing.Point(202, 237);
+            this.pictureBoxBevMachine.Name = "pictureBoxBevMachine";
+            this.pictureBoxBevMachine.Size = new System.Drawing.Size(173, 164);
+            this.pictureBoxBevMachine.TabIndex = 38;
+            this.pictureBoxBevMachine.TabStop = false;
+            // 
+            // pictureBoxICMachine
+            // 
+            this.pictureBoxICMachine.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxICMachine.BackgroundImage = global::Project.Properties.Resources.icMachine;
+            this.pictureBoxICMachine.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxICMachine.Location = new System.Drawing.Point(15, 239);
+            this.pictureBoxICMachine.Name = "pictureBoxICMachine";
+            this.pictureBoxICMachine.Size = new System.Drawing.Size(131, 162);
+            this.pictureBoxICMachine.TabIndex = 37;
+            this.pictureBoxICMachine.TabStop = false;
+            this.pictureBoxICMachine.MouseEnter += new System.EventHandler(this.pictureBoxICMachine_MouseEnter);
+            this.pictureBoxICMachine.MouseLeave += new System.EventHandler(this.pictureBoxICMachine_MouseLeave);
+            // 
+            // pictureBoxCone
+            // 
+            this.pictureBoxCone.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxCone.BackgroundImage = global::Project.Properties.Resources.cone;
+            this.pictureBoxCone.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxCone.Location = new System.Drawing.Point(153, 311);
+            this.pictureBoxCone.Name = "pictureBoxCone";
+            this.pictureBoxCone.Size = new System.Drawing.Size(35, 90);
+            this.pictureBoxCone.TabIndex = 36;
+            this.pictureBoxCone.TabStop = false;
+            this.pictureBoxCone.MouseEnter += new System.EventHandler(this.pictureBoxCone_MouseEnter);
+            this.pictureBoxCone.MouseLeave += new System.EventHandler(this.pictureBoxCone_MouseLeave);
+            // 
+            // pictureBoxServe
+            // 
+            this.pictureBoxServe.BackColor = System.Drawing.Color.White;
+            this.pictureBoxServe.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxServe.Location = new System.Drawing.Point(596, 301);
+            this.pictureBoxServe.Name = "pictureBoxServe";
+            this.pictureBoxServe.Size = new System.Drawing.Size(100, 100);
+            this.pictureBoxServe.TabIndex = 35;
+            this.pictureBoxServe.TabStop = false;
+            // 
+            // labelRemainingCustomers
+            // 
+            this.labelRemainingCustomers.AutoSize = true;
+            this.labelRemainingCustomers.BackColor = System.Drawing.Color.Transparent;
+            this.labelRemainingCustomers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRemainingCustomers.Location = new System.Drawing.Point(435, 106);
+            this.labelRemainingCustomers.Name = "labelRemainingCustomers";
+            this.labelRemainingCustomers.Size = new System.Drawing.Size(201, 22);
+            this.labelRemainingCustomers.TabIndex = 33;
+            this.labelRemainingCustomers.Text = "Remaining Customers : ";
+            // 
+            // labelRemainingTime
+            // 
+            this.labelRemainingTime.AutoSize = true;
+            this.labelRemainingTime.BackColor = System.Drawing.Color.Transparent;
+            this.labelRemainingTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold);
+            this.labelRemainingTime.Location = new System.Drawing.Point(435, 69);
+            this.labelRemainingTime.Name = "labelRemainingTime";
+            this.labelRemainingTime.Size = new System.Drawing.Size(111, 29);
+            this.labelRemainingTime.TabIndex = 32;
+            this.labelRemainingTime.Text = "00:00:59";
+            // 
+            // labelDisplayDataPlayer
+            // 
+            this.labelDisplayDataPlayer.AutoSize = true;
+            this.labelDisplayDataPlayer.BackColor = System.Drawing.Color.Transparent;
+            this.labelDisplayDataPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDisplayDataPlayer.Location = new System.Drawing.Point(112, 91);
+            this.labelDisplayDataPlayer.Name = "labelDisplayDataPlayer";
+            this.labelDisplayDataPlayer.Size = new System.Drawing.Size(111, 66);
+            this.labelDisplayDataPlayer.TabIndex = 31;
+            this.labelDisplayDataPlayer.Text = "Prev. Time :\r\nBest Time   :\r\nHigh Score :\r\n";
+            // 
+            // pictureBoxDisplayPlayer
+            // 
+            this.pictureBoxDisplayPlayer.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxDisplayPlayer.BackgroundImage = global::Project.Properties.Resources.male;
+            this.pictureBoxDisplayPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxDisplayPlayer.Location = new System.Drawing.Point(29, 60);
+            this.pictureBoxDisplayPlayer.Name = "pictureBoxDisplayPlayer";
+            this.pictureBoxDisplayPlayer.Size = new System.Drawing.Size(88, 97);
+            this.pictureBoxDisplayPlayer.TabIndex = 30;
+            this.pictureBoxDisplayPlayer.TabStop = false;
+            // 
+            // pictureBoxRobot5
+            // 
+            this.pictureBoxRobot5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxRobot5.BackgroundImage = global::Project.Properties.Resources.robot;
+            this.pictureBoxRobot5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxRobot5.Location = new System.Drawing.Point(228, 591);
+            this.pictureBoxRobot5.Name = "pictureBoxRobot5";
+            this.pictureBoxRobot5.Size = new System.Drawing.Size(54, 54);
+            this.pictureBoxRobot5.TabIndex = 28;
+            this.pictureBoxRobot5.TabStop = false;
+            this.pictureBoxRobot5.MouseEnter += new System.EventHandler(this.pictureBoxRobot5_MouseEnter);
+            this.pictureBoxRobot5.MouseLeave += new System.EventHandler(this.pictureBoxRobot5_MouseLeave);
+            // 
+            // pictureBoxRobot4
+            // 
+            this.pictureBoxRobot4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxRobot4.BackgroundImage = global::Project.Properties.Resources.robot;
+            this.pictureBoxRobot4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxRobot4.Location = new System.Drawing.Point(173, 591);
+            this.pictureBoxRobot4.Name = "pictureBoxRobot4";
+            this.pictureBoxRobot4.Size = new System.Drawing.Size(54, 54);
+            this.pictureBoxRobot4.TabIndex = 27;
+            this.pictureBoxRobot4.TabStop = false;
+            this.pictureBoxRobot4.MouseEnter += new System.EventHandler(this.pictureBoxRobot4_MouseEnter);
+            this.pictureBoxRobot4.MouseLeave += new System.EventHandler(this.pictureBoxRobot4_MouseLeave);
+            // 
+            // pictureBoxRobot3
+            // 
+            this.pictureBoxRobot3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxRobot3.BackgroundImage = global::Project.Properties.Resources.robot;
+            this.pictureBoxRobot3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxRobot3.Location = new System.Drawing.Point(118, 591);
+            this.pictureBoxRobot3.Name = "pictureBoxRobot3";
+            this.pictureBoxRobot3.Size = new System.Drawing.Size(54, 54);
+            this.pictureBoxRobot3.TabIndex = 26;
+            this.pictureBoxRobot3.TabStop = false;
+            this.pictureBoxRobot3.MouseEnter += new System.EventHandler(this.pictureBoxRobot3_MouseEnter);
+            this.pictureBoxRobot3.MouseLeave += new System.EventHandler(this.pictureBoxRobot3_MouseLeave);
+            // 
+            // pictureBoxRobot2
+            // 
+            this.pictureBoxRobot2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxRobot2.BackgroundImage = global::Project.Properties.Resources.robot;
+            this.pictureBoxRobot2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxRobot2.Location = new System.Drawing.Point(63, 591);
+            this.pictureBoxRobot2.Name = "pictureBoxRobot2";
+            this.pictureBoxRobot2.Size = new System.Drawing.Size(54, 54);
+            this.pictureBoxRobot2.TabIndex = 25;
+            this.pictureBoxRobot2.TabStop = false;
+            this.pictureBoxRobot2.MouseEnter += new System.EventHandler(this.pictureBoxRobot2_MouseEnter);
+            this.pictureBoxRobot2.MouseLeave += new System.EventHandler(this.pictureBoxRobot2_MouseLeave);
+            // 
+            // pictureBoxRobot1
+            // 
+            this.pictureBoxRobot1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxRobot1.BackgroundImage = global::Project.Properties.Resources.robot;
+            this.pictureBoxRobot1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxRobot1.Location = new System.Drawing.Point(8, 591);
+            this.pictureBoxRobot1.Name = "pictureBoxRobot1";
+            this.pictureBoxRobot1.Size = new System.Drawing.Size(54, 54);
+            this.pictureBoxRobot1.TabIndex = 24;
+            this.pictureBoxRobot1.TabStop = false;
+            this.pictureBoxRobot1.MouseEnter += new System.EventHandler(this.pictureBoxRobot1_MouseEnter);
+            this.pictureBoxRobot1.MouseLeave += new System.EventHandler(this.pictureBoxRobot1_MouseLeave);
+            // 
+            // pictureBoxTumblr5
+            // 
+            this.pictureBoxTumblr5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxTumblr5.BackgroundImage = global::Project.Properties.Resources.tumblr;
+            this.pictureBoxTumblr5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxTumblr5.Location = new System.Drawing.Point(240, 525);
+            this.pictureBoxTumblr5.Name = "pictureBoxTumblr5";
+            this.pictureBoxTumblr5.Size = new System.Drawing.Size(32, 55);
+            this.pictureBoxTumblr5.TabIndex = 23;
+            this.pictureBoxTumblr5.TabStop = false;
+            this.pictureBoxTumblr5.MouseEnter += new System.EventHandler(this.pictureBoxTumblr5_MouseEnter);
+            this.pictureBoxTumblr5.MouseLeave += new System.EventHandler(this.pictureBoxTumblr5_MouseLeave);
+            // 
+            // pictureBoxTumblr4
+            // 
+            this.pictureBoxTumblr4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxTumblr4.BackgroundImage = global::Project.Properties.Resources.tumblr;
+            this.pictureBoxTumblr4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxTumblr4.Location = new System.Drawing.Point(184, 525);
+            this.pictureBoxTumblr4.Name = "pictureBoxTumblr4";
+            this.pictureBoxTumblr4.Size = new System.Drawing.Size(32, 55);
+            this.pictureBoxTumblr4.TabIndex = 22;
+            this.pictureBoxTumblr4.TabStop = false;
+            this.pictureBoxTumblr4.MouseEnter += new System.EventHandler(this.pictureBoxTumblr4_MouseEnter);
+            this.pictureBoxTumblr4.MouseLeave += new System.EventHandler(this.pictureBoxTumblr4_MouseLeave);
+            // 
+            // pictureBoxTumblr3
+            // 
+            this.pictureBoxTumblr3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxTumblr3.BackgroundImage = global::Project.Properties.Resources.tumblr;
+            this.pictureBoxTumblr3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxTumblr3.Location = new System.Drawing.Point(127, 525);
+            this.pictureBoxTumblr3.Name = "pictureBoxTumblr3";
+            this.pictureBoxTumblr3.Size = new System.Drawing.Size(32, 55);
+            this.pictureBoxTumblr3.TabIndex = 21;
+            this.pictureBoxTumblr3.TabStop = false;
+            this.pictureBoxTumblr3.MouseEnter += new System.EventHandler(this.pictureBoxTumblr3_MouseEnter);
+            this.pictureBoxTumblr3.MouseLeave += new System.EventHandler(this.pictureBoxTumblr3_MouseLeave);
+            // 
+            // pictureBoxTumblr2
+            // 
+            this.pictureBoxTumblr2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxTumblr2.BackgroundImage = global::Project.Properties.Resources.tumblr;
+            this.pictureBoxTumblr2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxTumblr2.Location = new System.Drawing.Point(72, 525);
+            this.pictureBoxTumblr2.Name = "pictureBoxTumblr2";
+            this.pictureBoxTumblr2.Size = new System.Drawing.Size(32, 55);
+            this.pictureBoxTumblr2.TabIndex = 20;
+            this.pictureBoxTumblr2.TabStop = false;
+            this.pictureBoxTumblr2.MouseEnter += new System.EventHandler(this.pictureBoxTumblr2_MouseEnter);
+            this.pictureBoxTumblr2.MouseLeave += new System.EventHandler(this.pictureBoxTumblr2_MouseLeave);
+            // 
+            // pictureBoxTumblr1
+            // 
+            this.pictureBoxTumblr1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxTumblr1.BackgroundImage = global::Project.Properties.Resources.tumblr;
+            this.pictureBoxTumblr1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxTumblr1.Location = new System.Drawing.Point(16, 525);
+            this.pictureBoxTumblr1.Name = "pictureBoxTumblr1";
+            this.pictureBoxTumblr1.Size = new System.Drawing.Size(32, 55);
+            this.pictureBoxTumblr1.TabIndex = 19;
+            this.pictureBoxTumblr1.TabStop = false;
+            this.pictureBoxTumblr1.MouseEnter += new System.EventHandler(this.pictureBoxTumblr1_MouseEnter);
+            this.pictureBoxTumblr1.MouseLeave += new System.EventHandler(this.pictureBoxTumblr1_MouseLeave);
+            // 
+            // pictureBoxBear5
+            // 
+            this.pictureBoxBear5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxBear5.BackgroundImage = global::Project.Properties.Resources.bear;
+            this.pictureBoxBear5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxBear5.Location = new System.Drawing.Point(233, 454);
+            this.pictureBoxBear5.Name = "pictureBoxBear5";
+            this.pictureBoxBear5.Size = new System.Drawing.Size(46, 57);
+            this.pictureBoxBear5.TabIndex = 18;
+            this.pictureBoxBear5.TabStop = false;
+            this.pictureBoxBear5.MouseEnter += new System.EventHandler(this.pictureBoxBear5_MouseEnter);
+            this.pictureBoxBear5.MouseLeave += new System.EventHandler(this.pictureBoxBear5_MouseLeave);
+            // 
+            // pictureBoxBear4
+            // 
+            this.pictureBoxBear4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxBear4.BackgroundImage = global::Project.Properties.Resources.bear;
+            this.pictureBoxBear4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxBear4.Location = new System.Drawing.Point(177, 454);
+            this.pictureBoxBear4.Name = "pictureBoxBear4";
+            this.pictureBoxBear4.Size = new System.Drawing.Size(46, 57);
+            this.pictureBoxBear4.TabIndex = 17;
+            this.pictureBoxBear4.TabStop = false;
+            this.pictureBoxBear4.MouseEnter += new System.EventHandler(this.pictureBoxBear4_MouseEnter);
+            this.pictureBoxBear4.MouseLeave += new System.EventHandler(this.pictureBoxBear4_MouseLeave);
+            // 
+            // pictureBoxBear3
+            // 
+            this.pictureBoxBear3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxBear3.BackgroundImage = global::Project.Properties.Resources.bear;
+            this.pictureBoxBear3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxBear3.Location = new System.Drawing.Point(121, 454);
+            this.pictureBoxBear3.Name = "pictureBoxBear3";
+            this.pictureBoxBear3.Size = new System.Drawing.Size(46, 57);
+            this.pictureBoxBear3.TabIndex = 16;
+            this.pictureBoxBear3.TabStop = false;
+            this.pictureBoxBear3.MouseEnter += new System.EventHandler(this.pictureBoxBear3_MouseEnter);
+            this.pictureBoxBear3.MouseLeave += new System.EventHandler(this.pictureBoxBear3_MouseLeave);
+            // 
+            // pictureBoxBear2
+            // 
+            this.pictureBoxBear2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxBear2.BackgroundImage = global::Project.Properties.Resources.bear;
+            this.pictureBoxBear2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxBear2.Location = new System.Drawing.Point(65, 454);
+            this.pictureBoxBear2.Name = "pictureBoxBear2";
+            this.pictureBoxBear2.Size = new System.Drawing.Size(46, 57);
+            this.pictureBoxBear2.TabIndex = 15;
+            this.pictureBoxBear2.TabStop = false;
+            this.pictureBoxBear2.MouseEnter += new System.EventHandler(this.pictureBoxBear2_MouseEnter);
+            this.pictureBoxBear2.MouseLeave += new System.EventHandler(this.pictureBoxBear2_MouseLeave);
+            // 
+            // pictureBoxBear1
+            // 
+            this.pictureBoxBear1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxBear1.BackgroundImage = global::Project.Properties.Resources.bear;
+            this.pictureBoxBear1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxBear1.Location = new System.Drawing.Point(9, 454);
+            this.pictureBoxBear1.Name = "pictureBoxBear1";
+            this.pictureBoxBear1.Size = new System.Drawing.Size(46, 57);
+            this.pictureBoxBear1.TabIndex = 14;
+            this.pictureBoxBear1.TabStop = false;
+            this.pictureBoxBear1.MouseEnter += new System.EventHandler(this.pictureBoxBear1_MouseEnter);
+            this.pictureBoxBear1.MouseLeave += new System.EventHandler(this.pictureBoxBear1_MouseLeave);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(217)))), ((int)(((byte)(87)))));
+            this.pictureBox2.BackgroundImage = global::Project.Properties.Resources.coin;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(389, 476);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(15, 15);
+            this.pictureBox2.TabIndex = 13;
+            this.pictureBox2.TabStop = false;
+            // 
+            // buttonBuyMerchandiseBear
+            // 
+            this.buttonBuyMerchandiseBear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(217)))), ((int)(((byte)(87)))));
+            this.buttonBuyMerchandiseBear.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBuyMerchandiseBear.ForeColor = System.Drawing.Color.White;
+            this.buttonBuyMerchandiseBear.Location = new System.Drawing.Point(304, 466);
+            this.buttonBuyMerchandiseBear.Name = "buttonBuyMerchandiseBear";
+            this.buttonBuyMerchandiseBear.Size = new System.Drawing.Size(109, 34);
+            this.buttonBuyMerchandiseBear.TabIndex = 12;
+            this.buttonBuyMerchandiseBear.Text = "BUY 50  ";
+            this.buttonBuyMerchandiseBear.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(217)))), ((int)(((byte)(87)))));
+            this.pictureBox1.BackgroundImage = global::Project.Properties.Resources.coin;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(389, 549);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(15, 15);
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
+            // buttonBuyMerchandiseTumblr
+            // 
+            this.buttonBuyMerchandiseTumblr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(217)))), ((int)(((byte)(87)))));
+            this.buttonBuyMerchandiseTumblr.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBuyMerchandiseTumblr.ForeColor = System.Drawing.Color.White;
+            this.buttonBuyMerchandiseTumblr.Location = new System.Drawing.Point(304, 539);
+            this.buttonBuyMerchandiseTumblr.Name = "buttonBuyMerchandiseTumblr";
+            this.buttonBuyMerchandiseTumblr.Size = new System.Drawing.Size(109, 34);
+            this.buttonBuyMerchandiseTumblr.TabIndex = 10;
+            this.buttonBuyMerchandiseTumblr.Text = "BUY 50  ";
+            this.buttonBuyMerchandiseTumblr.UseVisualStyleBackColor = false;
+            // 
+            // pictureBoxCoin
+            // 
+            this.pictureBoxCoin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(217)))), ((int)(((byte)(87)))));
+            this.pictureBoxCoin.BackgroundImage = global::Project.Properties.Resources.coin;
+            this.pictureBoxCoin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxCoin.Location = new System.Drawing.Point(389, 614);
+            this.pictureBoxCoin.Name = "pictureBoxCoin";
+            this.pictureBoxCoin.Size = new System.Drawing.Size(15, 15);
+            this.pictureBoxCoin.TabIndex = 9;
+            this.pictureBoxCoin.TabStop = false;
+            // 
+            // buttonBuyMerchandiseRobot
+            // 
+            this.buttonBuyMerchandiseRobot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(217)))), ((int)(((byte)(87)))));
+            this.buttonBuyMerchandiseRobot.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBuyMerchandiseRobot.ForeColor = System.Drawing.Color.White;
+            this.buttonBuyMerchandiseRobot.Location = new System.Drawing.Point(304, 604);
+            this.buttonBuyMerchandiseRobot.Name = "buttonBuyMerchandiseRobot";
+            this.buttonBuyMerchandiseRobot.Size = new System.Drawing.Size(109, 34);
+            this.buttonBuyMerchandiseRobot.TabIndex = 8;
+            this.buttonBuyMerchandiseRobot.Text = "BUY 50  ";
+            this.buttonBuyMerchandiseRobot.UseVisualStyleBackColor = false;
+            // 
+            // pictureBoxIceBucket
+            // 
+            this.pictureBoxIceBucket.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxIceBucket.BackgroundImage = global::Project.Properties.Resources.iceBucket;
+            this.pictureBoxIceBucket.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxIceBucket.Location = new System.Drawing.Point(419, 554);
+            this.pictureBoxIceBucket.Name = "pictureBoxIceBucket";
+            this.pictureBoxIceBucket.Size = new System.Drawing.Size(95, 95);
+            this.pictureBoxIceBucket.TabIndex = 6;
+            this.pictureBoxIceBucket.TabStop = false;
+            this.pictureBoxIceBucket.MouseEnter += new System.EventHandler(this.pictureBoxIceBucket_MouseEnter);
+            this.pictureBoxIceBucket.MouseLeave += new System.EventHandler(this.pictureBoxIceBucket_MouseLeave);
+            // 
+            // pictureBoxTopBun
+            // 
+            this.pictureBoxTopBun.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxTopBun.BackgroundImage = global::Project.Properties.Resources.topBun;
+            this.pictureBoxTopBun.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxTopBun.Location = new System.Drawing.Point(1045, 570);
+            this.pictureBoxTopBun.Name = "pictureBoxTopBun";
+            this.pictureBoxTopBun.Size = new System.Drawing.Size(92, 92);
+            this.pictureBoxTopBun.TabIndex = 5;
+            this.pictureBoxTopBun.TabStop = false;
+            this.pictureBoxTopBun.MouseEnter += new System.EventHandler(this.pictureBoxTopBun_MouseEnter);
+            this.pictureBoxTopBun.MouseLeave += new System.EventHandler(this.pictureBoxTopBun_MouseLeave);
+            // 
+            // pictureBoxTomato
+            // 
+            this.pictureBoxTomato.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxTomato.BackgroundImage = global::Project.Properties.Resources.tomato;
+            this.pictureBoxTomato.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxTomato.Location = new System.Drawing.Point(625, 570);
+            this.pictureBoxTomato.Name = "pictureBoxTomato";
+            this.pictureBoxTomato.Size = new System.Drawing.Size(92, 92);
+            this.pictureBoxTomato.TabIndex = 4;
+            this.pictureBoxTomato.TabStop = false;
+            this.pictureBoxTomato.MouseEnter += new System.EventHandler(this.pictureBoxTomato_MouseEnter);
+            this.pictureBoxTomato.MouseLeave += new System.EventHandler(this.pictureBoxTomato_MouseLeave);
+            // 
+            // pictureBoxBottomBun
+            // 
+            this.pictureBoxBottomBun.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxBottomBun.BackgroundImage = global::Project.Properties.Resources.bottomBun;
+            this.pictureBoxBottomBun.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxBottomBun.Location = new System.Drawing.Point(940, 570);
+            this.pictureBoxBottomBun.Name = "pictureBoxBottomBun";
+            this.pictureBoxBottomBun.Size = new System.Drawing.Size(92, 92);
+            this.pictureBoxBottomBun.TabIndex = 3;
+            this.pictureBoxBottomBun.TabStop = false;
+            this.pictureBoxBottomBun.MouseEnter += new System.EventHandler(this.pictureBoxBottomBun_MouseEnter);
+            this.pictureBoxBottomBun.MouseLeave += new System.EventHandler(this.pictureBoxBottomBun_MouseLeave);
+            // 
+            // pictureBoxLettuce
+            // 
+            this.pictureBoxLettuce.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxLettuce.BackgroundImage = global::Project.Properties.Resources.lettuce;
+            this.pictureBoxLettuce.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxLettuce.Location = new System.Drawing.Point(520, 570);
+            this.pictureBoxLettuce.Name = "pictureBoxLettuce";
+            this.pictureBoxLettuce.Size = new System.Drawing.Size(92, 92);
+            this.pictureBoxLettuce.TabIndex = 2;
+            this.pictureBoxLettuce.TabStop = false;
+            this.pictureBoxLettuce.MouseEnter += new System.EventHandler(this.pictureBoxLettuce_MouseEnter);
+            this.pictureBoxLettuce.MouseLeave += new System.EventHandler(this.pictureBoxLettuce_MouseLeave);
+            // 
+            // pictureBoxPatty
+            // 
+            this.pictureBoxPatty.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxPatty.BackgroundImage = global::Project.Properties.Resources.patty;
+            this.pictureBoxPatty.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxPatty.Location = new System.Drawing.Point(835, 570);
+            this.pictureBoxPatty.Name = "pictureBoxPatty";
+            this.pictureBoxPatty.Size = new System.Drawing.Size(92, 92);
+            this.pictureBoxPatty.TabIndex = 1;
+            this.pictureBoxPatty.TabStop = false;
+            this.pictureBoxPatty.MouseEnter += new System.EventHandler(this.pictureBoxPatty_MouseEnter);
+            this.pictureBoxPatty.MouseLeave += new System.EventHandler(this.pictureBoxPatty_MouseLeave);
+            // 
+            // pictureBoxCheese
+            // 
+            this.pictureBoxCheese.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxCheese.BackgroundImage = global::Project.Properties.Resources.cheese;
+            this.pictureBoxCheese.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxCheese.Location = new System.Drawing.Point(730, 570);
+            this.pictureBoxCheese.Name = "pictureBoxCheese";
+            this.pictureBoxCheese.Size = new System.Drawing.Size(92, 92);
+            this.pictureBoxCheese.TabIndex = 0;
+            this.pictureBoxCheese.TabStop = false;
+            this.pictureBoxCheese.MouseEnter += new System.EventHandler(this.pictureBoxCheese_MouseEnter);
+            this.pictureBoxCheese.MouseLeave += new System.EventHandler(this.pictureBoxCheese_MouseLeave);
+            // 
+            // panelFoodStall
+            // 
+            this.panelFoodStall.BackColor = System.Drawing.Color.Transparent;
+            this.panelFoodStall.BackgroundImage = global::Project.Properties.Resources.foodStall;
+            this.panelFoodStall.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelFoodStall.Location = new System.Drawing.Point(0, 350);
+            this.panelFoodStall.Name = "panelFoodStall";
+            this.panelFoodStall.Size = new System.Drawing.Size(1150, 300);
+            this.panelFoodStall.TabIndex = 58;
+            // 
+            // pictureBoxCustomer2
+            // 
+            this.pictureBoxCustomer2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxCustomer2.BackgroundImage = global::Project.Properties.Resources.jeni;
+            this.pictureBoxCustomer2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxCustomer2.Location = new System.Drawing.Point(892, 131);
+            this.pictureBoxCustomer2.Name = "pictureBoxCustomer2";
+            this.pictureBoxCustomer2.Size = new System.Drawing.Size(195, 380);
+            this.pictureBoxCustomer2.TabIndex = 59;
+            this.pictureBoxCustomer2.TabStop = false;
+            // 
+            // pictureBoxCustomer1
+            // 
+            this.pictureBoxCustomer1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxCustomer1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxCustomer1.BackgroundImage")));
+            this.pictureBoxCustomer1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxCustomer1.Location = new System.Drawing.Point(691, 133);
+            this.pictureBoxCustomer1.Name = "pictureBoxCustomer1";
+            this.pictureBoxCustomer1.Size = new System.Drawing.Size(195, 380);
+            this.pictureBoxCustomer1.TabIndex = 47;
+            this.pictureBoxCustomer1.TabStop = false;
             // 
             // panelSetting
             // 
@@ -497,655 +1210,6 @@
             this.label18.TabIndex = 0;
             this.label18.Text = "SETTING";
             // 
-            // panelGame
-            // 
-            this.panelGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
-            this.panelGame.BackgroundImage = global::Project.Properties.Resources.bg_InGame;
-            this.panelGame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelGame.Controls.Add(this.panelDialog2);
-            this.panelGame.Controls.Add(this.panelDialog1);
-            this.panelGame.Controls.Add(this.pictureBoxButtonSetting);
-            this.panelGame.Controls.Add(this.pictureBoxButtonReceipe);
-            this.panelGame.Controls.Add(this.labelSmall);
-            this.panelGame.Controls.Add(this.labelMedium);
-            this.panelGame.Controls.Add(this.labelLarge);
-            this.panelGame.Controls.Add(this.pictureBoxMayo);
-            this.panelGame.Controls.Add(this.pictureBoxPlate);
-            this.panelGame.Controls.Add(this.pictureBoxBeverage);
-            this.panelGame.Controls.Add(this.pictureBoxBevMachine);
-            this.panelGame.Controls.Add(this.pictureBoxICMachine);
-            this.panelGame.Controls.Add(this.pictureBoxCone);
-            this.panelGame.Controls.Add(this.pictureBoxServe);
-            this.panelGame.Controls.Add(this.labelRemainingCustomers);
-            this.panelGame.Controls.Add(this.labelRemainingTime);
-            this.panelGame.Controls.Add(this.labelDisplayDataPlayer);
-            this.panelGame.Controls.Add(this.pictureBoxDisplayPlayer);
-            this.panelGame.Controls.Add(this.pictureBoxRobot5);
-            this.panelGame.Controls.Add(this.pictureBoxRobot4);
-            this.panelGame.Controls.Add(this.pictureBoxRobot3);
-            this.panelGame.Controls.Add(this.pictureBoxRobot2);
-            this.panelGame.Controls.Add(this.pictureBoxRobot1);
-            this.panelGame.Controls.Add(this.pictureBoxTumblr5);
-            this.panelGame.Controls.Add(this.pictureBoxTumblr4);
-            this.panelGame.Controls.Add(this.pictureBoxTumblr3);
-            this.panelGame.Controls.Add(this.pictureBoxTumblr2);
-            this.panelGame.Controls.Add(this.pictureBoxTumblr1);
-            this.panelGame.Controls.Add(this.pictureBoxBear5);
-            this.panelGame.Controls.Add(this.pictureBoxBear4);
-            this.panelGame.Controls.Add(this.pictureBoxBear3);
-            this.panelGame.Controls.Add(this.pictureBoxBear2);
-            this.panelGame.Controls.Add(this.pictureBoxBear1);
-            this.panelGame.Controls.Add(this.pictureBox2);
-            this.panelGame.Controls.Add(this.buttonBuyMerchandiseBear);
-            this.panelGame.Controls.Add(this.pictureBox1);
-            this.panelGame.Controls.Add(this.buttonBuyMerchandiseTumblr);
-            this.panelGame.Controls.Add(this.pictureBoxCoin);
-            this.panelGame.Controls.Add(this.buttonBuyMerchandiseRobot);
-            this.panelGame.Controls.Add(this.pictureBoxIceBucket);
-            this.panelGame.Controls.Add(this.pictureBoxTopBun);
-            this.panelGame.Controls.Add(this.pictureBoxTomato);
-            this.panelGame.Controls.Add(this.pictureBoxBottomBun);
-            this.panelGame.Controls.Add(this.pictureBoxLettuce);
-            this.panelGame.Controls.Add(this.pictureBoxPatty);
-            this.panelGame.Controls.Add(this.pictureBoxCheese);
-            this.panelGame.Controls.Add(this.panelFoodStall);
-            this.panelGame.Controls.Add(this.pictureBoxCustomer2);
-            this.panelGame.Controls.Add(this.pictureBoxCustomer1);
-            this.panelGame.Location = new System.Drawing.Point(0, 0);
-            this.panelGame.Name = "panelGame";
-            this.panelGame.Size = new System.Drawing.Size(1150, 650);
-            this.panelGame.TabIndex = 8;
-            // 
-            // panelDialog2
-            // 
-            this.panelDialog2.BackColor = System.Drawing.Color.Transparent;
-            this.panelDialog2.BackgroundImage = global::Project.Properties.Resources.dialog;
-            this.panelDialog2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelDialog2.Controls.Add(this.pictureBoxEmotion2);
-            this.panelDialog2.Controls.Add(this.pictureBoxOrder2);
-            this.panelDialog2.Location = new System.Drawing.Point(996, 68);
-            this.panelDialog2.Name = "panelDialog2";
-            this.panelDialog2.Size = new System.Drawing.Size(148, 89);
-            this.panelDialog2.TabIndex = 62;
-            // 
-            // pictureBoxEmotion2
-            // 
-            this.pictureBoxEmotion2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxEmotion2.BackgroundImage = global::Project.Properties.Resources.angry;
-            this.pictureBoxEmotion2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxEmotion2.Location = new System.Drawing.Point(116, 1);
-            this.pictureBoxEmotion2.Name = "pictureBoxEmotion2";
-            this.pictureBoxEmotion2.Size = new System.Drawing.Size(32, 32);
-            this.pictureBoxEmotion2.TabIndex = 61;
-            this.pictureBoxEmotion2.TabStop = false;
-            // 
-            // pictureBoxOrder2
-            // 
-            this.pictureBoxOrder2.BackColor = System.Drawing.Color.White;
-            this.pictureBoxOrder2.BackgroundImage = global::Project.Properties.Resources.burger;
-            this.pictureBoxOrder2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxOrder2.Location = new System.Drawing.Point(39, 6);
-            this.pictureBoxOrder2.Name = "pictureBoxOrder2";
-            this.pictureBoxOrder2.Size = new System.Drawing.Size(70, 70);
-            this.pictureBoxOrder2.TabIndex = 61;
-            this.pictureBoxOrder2.TabStop = false;
-            // 
-            // panelDialog1
-            // 
-            this.panelDialog1.BackColor = System.Drawing.Color.Transparent;
-            this.panelDialog1.BackgroundImage = global::Project.Properties.Resources.dialog;
-            this.panelDialog1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelDialog1.Controls.Add(this.pictureBoxEmotion1);
-            this.panelDialog1.Controls.Add(this.pictureBoxOrder1);
-            this.panelDialog1.Location = new System.Drawing.Point(821, 51);
-            this.panelDialog1.Name = "panelDialog1";
-            this.panelDialog1.Size = new System.Drawing.Size(148, 89);
-            this.panelDialog1.TabIndex = 60;
-            // 
-            // pictureBoxEmotion1
-            // 
-            this.pictureBoxEmotion1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxEmotion1.BackgroundImage = global::Project.Properties.Resources.angry;
-            this.pictureBoxEmotion1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxEmotion1.Location = new System.Drawing.Point(116, 1);
-            this.pictureBoxEmotion1.Name = "pictureBoxEmotion1";
-            this.pictureBoxEmotion1.Size = new System.Drawing.Size(32, 32);
-            this.pictureBoxEmotion1.TabIndex = 61;
-            this.pictureBoxEmotion1.TabStop = false;
-            // 
-            // pictureBoxOrder1
-            // 
-            this.pictureBoxOrder1.BackColor = System.Drawing.Color.White;
-            this.pictureBoxOrder1.BackgroundImage = global::Project.Properties.Resources.burger;
-            this.pictureBoxOrder1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxOrder1.Location = new System.Drawing.Point(39, 6);
-            this.pictureBoxOrder1.Name = "pictureBoxOrder1";
-            this.pictureBoxOrder1.Size = new System.Drawing.Size(70, 70);
-            this.pictureBoxOrder1.TabIndex = 61;
-            this.pictureBoxOrder1.TabStop = false;
-            // 
-            // pictureBoxButtonSetting
-            // 
-            this.pictureBoxButtonSetting.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxButtonSetting.BackgroundImage = global::Project.Properties.Resources.buttonSetting;
-            this.pictureBoxButtonSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxButtonSetting.Location = new System.Drawing.Point(1099, 4);
-            this.pictureBoxButtonSetting.Name = "pictureBoxButtonSetting";
-            this.pictureBoxButtonSetting.Size = new System.Drawing.Size(45, 45);
-            this.pictureBoxButtonSetting.TabIndex = 55;
-            this.pictureBoxButtonSetting.TabStop = false;
-            this.pictureBoxButtonSetting.Click += new System.EventHandler(this.pictureBoxButtonSetting_Click);
-            // 
-            // pictureBoxButtonReceipe
-            // 
-            this.pictureBoxButtonReceipe.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxButtonReceipe.BackgroundImage = global::Project.Properties.Resources.buttonReceipe;
-            this.pictureBoxButtonReceipe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxButtonReceipe.Location = new System.Drawing.Point(1050, 4);
-            this.pictureBoxButtonReceipe.Name = "pictureBoxButtonReceipe";
-            this.pictureBoxButtonReceipe.Size = new System.Drawing.Size(45, 45);
-            this.pictureBoxButtonReceipe.TabIndex = 54;
-            this.pictureBoxButtonReceipe.TabStop = false;
-            this.pictureBoxButtonReceipe.Click += new System.EventHandler(this.pictureBoxButtonReceipe_Click);
-            // 
-            // labelSmall
-            // 
-            this.labelSmall.AutoSize = true;
-            this.labelSmall.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(167)))), ((int)(((byte)(78)))));
-            this.labelSmall.Font = new System.Drawing.Font("Franklin Gothic Heavy", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSmall.ForeColor = System.Drawing.Color.White;
-            this.labelSmall.Location = new System.Drawing.Point(326, 277);
-            this.labelSmall.Name = "labelSmall";
-            this.labelSmall.Size = new System.Drawing.Size(27, 29);
-            this.labelSmall.TabIndex = 44;
-            this.labelSmall.Text = "S";
-            // 
-            // labelMedium
-            // 
-            this.labelMedium.AutoSize = true;
-            this.labelMedium.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(58)))), ((int)(((byte)(60)))));
-            this.labelMedium.Font = new System.Drawing.Font("Franklin Gothic Heavy", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMedium.ForeColor = System.Drawing.Color.White;
-            this.labelMedium.Location = new System.Drawing.Point(273, 277);
-            this.labelMedium.Name = "labelMedium";
-            this.labelMedium.Size = new System.Drawing.Size(32, 29);
-            this.labelMedium.TabIndex = 43;
-            this.labelMedium.Text = "M";
-            // 
-            // labelLarge
-            // 
-            this.labelLarge.AutoSize = true;
-            this.labelLarge.Font = new System.Drawing.Font("Franklin Gothic Heavy", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLarge.ForeColor = System.Drawing.Color.White;
-            this.labelLarge.Location = new System.Drawing.Point(227, 277);
-            this.labelLarge.Name = "labelLarge";
-            this.labelLarge.Size = new System.Drawing.Size(25, 29);
-            this.labelLarge.TabIndex = 42;
-            this.labelLarge.Text = "L";
-            // 
-            // pictureBoxMayo
-            // 
-            this.pictureBoxMayo.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxMayo.BackgroundImage = global::Project.Properties.Resources.mayo;
-            this.pictureBoxMayo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxMayo.Location = new System.Drawing.Point(532, 321);
-            this.pictureBoxMayo.Name = "pictureBoxMayo";
-            this.pictureBoxMayo.Size = new System.Drawing.Size(30, 80);
-            this.pictureBoxMayo.TabIndex = 41;
-            this.pictureBoxMayo.TabStop = false;
-            // 
-            // pictureBoxPlate
-            // 
-            this.pictureBoxPlate.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxPlate.BackgroundImage = global::Project.Properties.Resources.plates;
-            this.pictureBoxPlate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxPlate.Location = new System.Drawing.Point(438, 321);
-            this.pictureBoxPlate.Name = "pictureBoxPlate";
-            this.pictureBoxPlate.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxPlate.TabIndex = 40;
-            this.pictureBoxPlate.TabStop = false;
-            // 
-            // pictureBoxBeverage
-            // 
-            this.pictureBoxBeverage.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxBeverage.BackgroundImage = global::Project.Properties.Resources.beverages;
-            this.pictureBoxBeverage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxBeverage.Location = new System.Drawing.Point(387, 311);
-            this.pictureBoxBeverage.Name = "pictureBoxBeverage";
-            this.pictureBoxBeverage.Size = new System.Drawing.Size(40, 90);
-            this.pictureBoxBeverage.TabIndex = 39;
-            this.pictureBoxBeverage.TabStop = false;
-            // 
-            // pictureBoxBevMachine
-            // 
-            this.pictureBoxBevMachine.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxBevMachine.BackgroundImage = global::Project.Properties.Resources.bevMachine;
-            this.pictureBoxBevMachine.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxBevMachine.Location = new System.Drawing.Point(202, 237);
-            this.pictureBoxBevMachine.Name = "pictureBoxBevMachine";
-            this.pictureBoxBevMachine.Size = new System.Drawing.Size(173, 164);
-            this.pictureBoxBevMachine.TabIndex = 38;
-            this.pictureBoxBevMachine.TabStop = false;
-            // 
-            // pictureBoxICMachine
-            // 
-            this.pictureBoxICMachine.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxICMachine.BackgroundImage = global::Project.Properties.Resources.icMachine;
-            this.pictureBoxICMachine.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxICMachine.Location = new System.Drawing.Point(15, 239);
-            this.pictureBoxICMachine.Name = "pictureBoxICMachine";
-            this.pictureBoxICMachine.Size = new System.Drawing.Size(131, 162);
-            this.pictureBoxICMachine.TabIndex = 37;
-            this.pictureBoxICMachine.TabStop = false;
-            // 
-            // pictureBoxCone
-            // 
-            this.pictureBoxCone.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxCone.BackgroundImage = global::Project.Properties.Resources.cone;
-            this.pictureBoxCone.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxCone.Location = new System.Drawing.Point(153, 311);
-            this.pictureBoxCone.Name = "pictureBoxCone";
-            this.pictureBoxCone.Size = new System.Drawing.Size(35, 90);
-            this.pictureBoxCone.TabIndex = 36;
-            this.pictureBoxCone.TabStop = false;
-            // 
-            // pictureBoxServe
-            // 
-            this.pictureBoxServe.BackColor = System.Drawing.Color.White;
-            this.pictureBoxServe.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxServe.Location = new System.Drawing.Point(596, 301);
-            this.pictureBoxServe.Name = "pictureBoxServe";
-            this.pictureBoxServe.Size = new System.Drawing.Size(100, 100);
-            this.pictureBoxServe.TabIndex = 35;
-            this.pictureBoxServe.TabStop = false;
-            // 
-            // labelRemainingCustomers
-            // 
-            this.labelRemainingCustomers.AutoSize = true;
-            this.labelRemainingCustomers.BackColor = System.Drawing.Color.Transparent;
-            this.labelRemainingCustomers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRemainingCustomers.Location = new System.Drawing.Point(444, 131);
-            this.labelRemainingCustomers.Name = "labelRemainingCustomers";
-            this.labelRemainingCustomers.Size = new System.Drawing.Size(201, 22);
-            this.labelRemainingCustomers.TabIndex = 33;
-            this.labelRemainingCustomers.Text = "Remaining Customers : ";
-            // 
-            // labelRemainingTime
-            // 
-            this.labelRemainingTime.AutoSize = true;
-            this.labelRemainingTime.BackColor = System.Drawing.Color.Transparent;
-            this.labelRemainingTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRemainingTime.Location = new System.Drawing.Point(442, 81);
-            this.labelRemainingTime.Name = "labelRemainingTime";
-            this.labelRemainingTime.Size = new System.Drawing.Size(225, 22);
-            this.labelRemainingTime.TabIndex = 32;
-            this.labelRemainingTime.Text = "Remaining Time : 00:00:59";
-            // 
-            // labelDisplayDataPlayer
-            // 
-            this.labelDisplayDataPlayer.AutoSize = true;
-            this.labelDisplayDataPlayer.BackColor = System.Drawing.Color.Transparent;
-            this.labelDisplayDataPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDisplayDataPlayer.Location = new System.Drawing.Point(115, 65);
-            this.labelDisplayDataPlayer.Name = "labelDisplayDataPlayer";
-            this.labelDisplayDataPlayer.Size = new System.Drawing.Size(122, 88);
-            this.labelDisplayDataPlayer.TabIndex = 31;
-            this.labelDisplayDataPlayer.Text = "Nama           : \r\nIncome         :\r\nBest Time   :\r\nHigh Score :\r\n";
-            // 
-            // pictureBoxDisplayPlayer
-            // 
-            this.pictureBoxDisplayPlayer.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxDisplayPlayer.BackgroundImage = global::Project.Properties.Resources.male;
-            this.pictureBoxDisplayPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxDisplayPlayer.Location = new System.Drawing.Point(29, 60);
-            this.pictureBoxDisplayPlayer.Name = "pictureBoxDisplayPlayer";
-            this.pictureBoxDisplayPlayer.Size = new System.Drawing.Size(88, 97);
-            this.pictureBoxDisplayPlayer.TabIndex = 30;
-            this.pictureBoxDisplayPlayer.TabStop = false;
-            // 
-            // pictureBoxRobot5
-            // 
-            this.pictureBoxRobot5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxRobot5.BackgroundImage = global::Project.Properties.Resources.robot;
-            this.pictureBoxRobot5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxRobot5.Location = new System.Drawing.Point(228, 591);
-            this.pictureBoxRobot5.Name = "pictureBoxRobot5";
-            this.pictureBoxRobot5.Size = new System.Drawing.Size(54, 54);
-            this.pictureBoxRobot5.TabIndex = 28;
-            this.pictureBoxRobot5.TabStop = false;
-            // 
-            // pictureBoxRobot4
-            // 
-            this.pictureBoxRobot4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxRobot4.BackgroundImage = global::Project.Properties.Resources.robot;
-            this.pictureBoxRobot4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxRobot4.Location = new System.Drawing.Point(173, 591);
-            this.pictureBoxRobot4.Name = "pictureBoxRobot4";
-            this.pictureBoxRobot4.Size = new System.Drawing.Size(54, 54);
-            this.pictureBoxRobot4.TabIndex = 27;
-            this.pictureBoxRobot4.TabStop = false;
-            // 
-            // pictureBoxRobot3
-            // 
-            this.pictureBoxRobot3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxRobot3.BackgroundImage = global::Project.Properties.Resources.robot;
-            this.pictureBoxRobot3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxRobot3.Location = new System.Drawing.Point(118, 591);
-            this.pictureBoxRobot3.Name = "pictureBoxRobot3";
-            this.pictureBoxRobot3.Size = new System.Drawing.Size(54, 54);
-            this.pictureBoxRobot3.TabIndex = 26;
-            this.pictureBoxRobot3.TabStop = false;
-            // 
-            // pictureBoxRobot2
-            // 
-            this.pictureBoxRobot2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxRobot2.BackgroundImage = global::Project.Properties.Resources.robot;
-            this.pictureBoxRobot2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxRobot2.Location = new System.Drawing.Point(63, 591);
-            this.pictureBoxRobot2.Name = "pictureBoxRobot2";
-            this.pictureBoxRobot2.Size = new System.Drawing.Size(54, 54);
-            this.pictureBoxRobot2.TabIndex = 25;
-            this.pictureBoxRobot2.TabStop = false;
-            // 
-            // pictureBoxRobot1
-            // 
-            this.pictureBoxRobot1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxRobot1.BackgroundImage = global::Project.Properties.Resources.robot;
-            this.pictureBoxRobot1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxRobot1.Location = new System.Drawing.Point(8, 591);
-            this.pictureBoxRobot1.Name = "pictureBoxRobot1";
-            this.pictureBoxRobot1.Size = new System.Drawing.Size(54, 54);
-            this.pictureBoxRobot1.TabIndex = 24;
-            this.pictureBoxRobot1.TabStop = false;
-            // 
-            // pictureBoxTumblr5
-            // 
-            this.pictureBoxTumblr5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxTumblr5.BackgroundImage = global::Project.Properties.Resources.tumblr;
-            this.pictureBoxTumblr5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxTumblr5.Location = new System.Drawing.Point(240, 525);
-            this.pictureBoxTumblr5.Name = "pictureBoxTumblr5";
-            this.pictureBoxTumblr5.Size = new System.Drawing.Size(32, 55);
-            this.pictureBoxTumblr5.TabIndex = 23;
-            this.pictureBoxTumblr5.TabStop = false;
-            // 
-            // pictureBoxTumblr4
-            // 
-            this.pictureBoxTumblr4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxTumblr4.BackgroundImage = global::Project.Properties.Resources.tumblr;
-            this.pictureBoxTumblr4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxTumblr4.Location = new System.Drawing.Point(184, 525);
-            this.pictureBoxTumblr4.Name = "pictureBoxTumblr4";
-            this.pictureBoxTumblr4.Size = new System.Drawing.Size(32, 55);
-            this.pictureBoxTumblr4.TabIndex = 22;
-            this.pictureBoxTumblr4.TabStop = false;
-            // 
-            // pictureBoxTumblr3
-            // 
-            this.pictureBoxTumblr3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxTumblr3.BackgroundImage = global::Project.Properties.Resources.tumblr;
-            this.pictureBoxTumblr3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxTumblr3.Location = new System.Drawing.Point(127, 525);
-            this.pictureBoxTumblr3.Name = "pictureBoxTumblr3";
-            this.pictureBoxTumblr3.Size = new System.Drawing.Size(32, 55);
-            this.pictureBoxTumblr3.TabIndex = 21;
-            this.pictureBoxTumblr3.TabStop = false;
-            // 
-            // pictureBoxTumblr2
-            // 
-            this.pictureBoxTumblr2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxTumblr2.BackgroundImage = global::Project.Properties.Resources.tumblr;
-            this.pictureBoxTumblr2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxTumblr2.Location = new System.Drawing.Point(72, 525);
-            this.pictureBoxTumblr2.Name = "pictureBoxTumblr2";
-            this.pictureBoxTumblr2.Size = new System.Drawing.Size(32, 55);
-            this.pictureBoxTumblr2.TabIndex = 20;
-            this.pictureBoxTumblr2.TabStop = false;
-            // 
-            // pictureBoxTumblr1
-            // 
-            this.pictureBoxTumblr1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxTumblr1.BackgroundImage = global::Project.Properties.Resources.tumblr;
-            this.pictureBoxTumblr1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxTumblr1.Location = new System.Drawing.Point(16, 525);
-            this.pictureBoxTumblr1.Name = "pictureBoxTumblr1";
-            this.pictureBoxTumblr1.Size = new System.Drawing.Size(32, 55);
-            this.pictureBoxTumblr1.TabIndex = 19;
-            this.pictureBoxTumblr1.TabStop = false;
-            // 
-            // pictureBoxBear5
-            // 
-            this.pictureBoxBear5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxBear5.BackgroundImage = global::Project.Properties.Resources.bear;
-            this.pictureBoxBear5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxBear5.Location = new System.Drawing.Point(233, 454);
-            this.pictureBoxBear5.Name = "pictureBoxBear5";
-            this.pictureBoxBear5.Size = new System.Drawing.Size(46, 57);
-            this.pictureBoxBear5.TabIndex = 18;
-            this.pictureBoxBear5.TabStop = false;
-            // 
-            // pictureBoxBear4
-            // 
-            this.pictureBoxBear4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxBear4.BackgroundImage = global::Project.Properties.Resources.bear;
-            this.pictureBoxBear4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxBear4.Location = new System.Drawing.Point(177, 454);
-            this.pictureBoxBear4.Name = "pictureBoxBear4";
-            this.pictureBoxBear4.Size = new System.Drawing.Size(46, 57);
-            this.pictureBoxBear4.TabIndex = 17;
-            this.pictureBoxBear4.TabStop = false;
-            // 
-            // pictureBoxBear3
-            // 
-            this.pictureBoxBear3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxBear3.BackgroundImage = global::Project.Properties.Resources.bear;
-            this.pictureBoxBear3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxBear3.Location = new System.Drawing.Point(121, 454);
-            this.pictureBoxBear3.Name = "pictureBoxBear3";
-            this.pictureBoxBear3.Size = new System.Drawing.Size(46, 57);
-            this.pictureBoxBear3.TabIndex = 16;
-            this.pictureBoxBear3.TabStop = false;
-            // 
-            // pictureBoxBear2
-            // 
-            this.pictureBoxBear2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxBear2.BackgroundImage = global::Project.Properties.Resources.bear;
-            this.pictureBoxBear2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxBear2.Location = new System.Drawing.Point(65, 454);
-            this.pictureBoxBear2.Name = "pictureBoxBear2";
-            this.pictureBoxBear2.Size = new System.Drawing.Size(46, 57);
-            this.pictureBoxBear2.TabIndex = 15;
-            this.pictureBoxBear2.TabStop = false;
-            // 
-            // pictureBoxBear1
-            // 
-            this.pictureBoxBear1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxBear1.BackgroundImage = global::Project.Properties.Resources.bear;
-            this.pictureBoxBear1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxBear1.Location = new System.Drawing.Point(9, 454);
-            this.pictureBoxBear1.Name = "pictureBoxBear1";
-            this.pictureBoxBear1.Size = new System.Drawing.Size(46, 57);
-            this.pictureBoxBear1.TabIndex = 14;
-            this.pictureBoxBear1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(217)))), ((int)(((byte)(87)))));
-            this.pictureBox2.BackgroundImage = global::Project.Properties.Resources.coin;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(389, 476);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(15, 15);
-            this.pictureBox2.TabIndex = 13;
-            this.pictureBox2.TabStop = false;
-            // 
-            // buttonBuyMerchandiseBear
-            // 
-            this.buttonBuyMerchandiseBear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(217)))), ((int)(((byte)(87)))));
-            this.buttonBuyMerchandiseBear.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBuyMerchandiseBear.ForeColor = System.Drawing.Color.White;
-            this.buttonBuyMerchandiseBear.Location = new System.Drawing.Point(304, 466);
-            this.buttonBuyMerchandiseBear.Name = "buttonBuyMerchandiseBear";
-            this.buttonBuyMerchandiseBear.Size = new System.Drawing.Size(109, 34);
-            this.buttonBuyMerchandiseBear.TabIndex = 12;
-            this.buttonBuyMerchandiseBear.Text = "BUY 50  ";
-            this.buttonBuyMerchandiseBear.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(217)))), ((int)(((byte)(87)))));
-            this.pictureBox1.BackgroundImage = global::Project.Properties.Resources.coin;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(389, 549);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(15, 15);
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
-            // 
-            // buttonBuyMerchandiseTumblr
-            // 
-            this.buttonBuyMerchandiseTumblr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(217)))), ((int)(((byte)(87)))));
-            this.buttonBuyMerchandiseTumblr.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBuyMerchandiseTumblr.ForeColor = System.Drawing.Color.White;
-            this.buttonBuyMerchandiseTumblr.Location = new System.Drawing.Point(304, 539);
-            this.buttonBuyMerchandiseTumblr.Name = "buttonBuyMerchandiseTumblr";
-            this.buttonBuyMerchandiseTumblr.Size = new System.Drawing.Size(109, 34);
-            this.buttonBuyMerchandiseTumblr.TabIndex = 10;
-            this.buttonBuyMerchandiseTumblr.Text = "BUY 50  ";
-            this.buttonBuyMerchandiseTumblr.UseVisualStyleBackColor = false;
-            // 
-            // pictureBoxCoin
-            // 
-            this.pictureBoxCoin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(217)))), ((int)(((byte)(87)))));
-            this.pictureBoxCoin.BackgroundImage = global::Project.Properties.Resources.coin;
-            this.pictureBoxCoin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxCoin.Location = new System.Drawing.Point(389, 614);
-            this.pictureBoxCoin.Name = "pictureBoxCoin";
-            this.pictureBoxCoin.Size = new System.Drawing.Size(15, 15);
-            this.pictureBoxCoin.TabIndex = 9;
-            this.pictureBoxCoin.TabStop = false;
-            // 
-            // buttonBuyMerchandiseRobot
-            // 
-            this.buttonBuyMerchandiseRobot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(217)))), ((int)(((byte)(87)))));
-            this.buttonBuyMerchandiseRobot.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBuyMerchandiseRobot.ForeColor = System.Drawing.Color.White;
-            this.buttonBuyMerchandiseRobot.Location = new System.Drawing.Point(304, 604);
-            this.buttonBuyMerchandiseRobot.Name = "buttonBuyMerchandiseRobot";
-            this.buttonBuyMerchandiseRobot.Size = new System.Drawing.Size(109, 34);
-            this.buttonBuyMerchandiseRobot.TabIndex = 8;
-            this.buttonBuyMerchandiseRobot.Text = "BUY 50  ";
-            this.buttonBuyMerchandiseRobot.UseVisualStyleBackColor = false;
-            // 
-            // pictureBoxIceBucket
-            // 
-            this.pictureBoxIceBucket.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxIceBucket.BackgroundImage = global::Project.Properties.Resources.iceBucket;
-            this.pictureBoxIceBucket.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxIceBucket.Location = new System.Drawing.Point(419, 554);
-            this.pictureBoxIceBucket.Name = "pictureBoxIceBucket";
-            this.pictureBoxIceBucket.Size = new System.Drawing.Size(95, 95);
-            this.pictureBoxIceBucket.TabIndex = 6;
-            this.pictureBoxIceBucket.TabStop = false;
-            // 
-            // pictureBoxTopBun
-            // 
-            this.pictureBoxTopBun.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxTopBun.BackgroundImage = global::Project.Properties.Resources.topBun;
-            this.pictureBoxTopBun.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxTopBun.Location = new System.Drawing.Point(1045, 570);
-            this.pictureBoxTopBun.Name = "pictureBoxTopBun";
-            this.pictureBoxTopBun.Size = new System.Drawing.Size(92, 92);
-            this.pictureBoxTopBun.TabIndex = 5;
-            this.pictureBoxTopBun.TabStop = false;
-            // 
-            // pictureBoxTomato
-            // 
-            this.pictureBoxTomato.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxTomato.BackgroundImage = global::Project.Properties.Resources.tomato;
-            this.pictureBoxTomato.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxTomato.Location = new System.Drawing.Point(835, 570);
-            this.pictureBoxTomato.Name = "pictureBoxTomato";
-            this.pictureBoxTomato.Size = new System.Drawing.Size(92, 92);
-            this.pictureBoxTomato.TabIndex = 4;
-            this.pictureBoxTomato.TabStop = false;
-            // 
-            // pictureBoxBottomBun
-            // 
-            this.pictureBoxBottomBun.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxBottomBun.BackgroundImage = global::Project.Properties.Resources.bottomBun;
-            this.pictureBoxBottomBun.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxBottomBun.Location = new System.Drawing.Point(940, 570);
-            this.pictureBoxBottomBun.Name = "pictureBoxBottomBun";
-            this.pictureBoxBottomBun.Size = new System.Drawing.Size(92, 92);
-            this.pictureBoxBottomBun.TabIndex = 3;
-            this.pictureBoxBottomBun.TabStop = false;
-            // 
-            // pictureBoxLettuce
-            // 
-            this.pictureBoxLettuce.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxLettuce.BackgroundImage = global::Project.Properties.Resources.lettuce;
-            this.pictureBoxLettuce.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxLettuce.Location = new System.Drawing.Point(730, 570);
-            this.pictureBoxLettuce.Name = "pictureBoxLettuce";
-            this.pictureBoxLettuce.Size = new System.Drawing.Size(92, 92);
-            this.pictureBoxLettuce.TabIndex = 2;
-            this.pictureBoxLettuce.TabStop = false;
-            // 
-            // pictureBoxPatty
-            // 
-            this.pictureBoxPatty.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxPatty.BackgroundImage = global::Project.Properties.Resources.patty;
-            this.pictureBoxPatty.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxPatty.Location = new System.Drawing.Point(625, 570);
-            this.pictureBoxPatty.Name = "pictureBoxPatty";
-            this.pictureBoxPatty.Size = new System.Drawing.Size(92, 92);
-            this.pictureBoxPatty.TabIndex = 1;
-            this.pictureBoxPatty.TabStop = false;
-            // 
-            // pictureBoxCheese
-            // 
-            this.pictureBoxCheese.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxCheese.BackgroundImage = global::Project.Properties.Resources.cheese;
-            this.pictureBoxCheese.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxCheese.Location = new System.Drawing.Point(520, 570);
-            this.pictureBoxCheese.Name = "pictureBoxCheese";
-            this.pictureBoxCheese.Size = new System.Drawing.Size(92, 92);
-            this.pictureBoxCheese.TabIndex = 0;
-            this.pictureBoxCheese.TabStop = false;
-            // 
-            // panelFoodStall
-            // 
-            this.panelFoodStall.BackColor = System.Drawing.Color.Transparent;
-            this.panelFoodStall.BackgroundImage = global::Project.Properties.Resources.foodStall;
-            this.panelFoodStall.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelFoodStall.Location = new System.Drawing.Point(0, 350);
-            this.panelFoodStall.Name = "panelFoodStall";
-            this.panelFoodStall.Size = new System.Drawing.Size(1150, 300);
-            this.panelFoodStall.TabIndex = 58;
-            // 
-            // pictureBoxCustomer2
-            // 
-            this.pictureBoxCustomer2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxCustomer2.BackgroundImage = global::Project.Properties.Resources.jeni;
-            this.pictureBoxCustomer2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxCustomer2.Location = new System.Drawing.Point(892, 131);
-            this.pictureBoxCustomer2.Name = "pictureBoxCustomer2";
-            this.pictureBoxCustomer2.Size = new System.Drawing.Size(195, 380);
-            this.pictureBoxCustomer2.TabIndex = 59;
-            this.pictureBoxCustomer2.TabStop = false;
-            // 
-            // pictureBoxCustomer1
-            // 
-            this.pictureBoxCustomer1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxCustomer1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxCustomer1.BackgroundImage")));
-            this.pictureBoxCustomer1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxCustomer1.Location = new System.Drawing.Point(691, 133);
-            this.pictureBoxCustomer1.Name = "pictureBoxCustomer1";
-            this.pictureBoxCustomer1.Size = new System.Drawing.Size(195, 380);
-            this.pictureBoxCustomer1.TabIndex = 47;
-            this.pictureBoxCustomer1.TabStop = false;
-            // 
             // panelTutorial
             // 
             this.panelTutorial.BackgroundImage = global::Project.Properties.Resources.bg_Tutorial;
@@ -1185,35 +1249,170 @@
             // 
             // panelDifficulty
             // 
-            this.panelDifficulty.BackgroundImage = global::Project.Properties.Resources.bg_Difficulty;
+            this.panelDifficulty.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelDifficulty.BackgroundImage")));
             this.panelDifficulty.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelDifficulty.Controls.Add(this.labelBestTimeImpossible);
+            this.panelDifficulty.Controls.Add(this.labelBestTimeHard);
+            this.panelDifficulty.Controls.Add(this.labelBestTimeMedium);
+            this.panelDifficulty.Controls.Add(this.labelBestTimeEasy);
+            this.panelDifficulty.Controls.Add(this.label13);
+            this.panelDifficulty.Controls.Add(this.label12);
+            this.panelDifficulty.Controls.Add(this.pictureBoxImpossible);
+            this.panelDifficulty.Controls.Add(this.pictureBoxHard);
+            this.panelDifficulty.Controls.Add(this.label11);
+            this.panelDifficulty.Controls.Add(this.pictureBoxMedium);
+            this.panelDifficulty.Controls.Add(this.label10);
+            this.panelDifficulty.Controls.Add(this.pictureBoxEasy);
             this.panelDifficulty.Controls.Add(this.buttonNextTutorial);
-            this.panelDifficulty.Controls.Add(this.label17);
-            this.panelDifficulty.Controls.Add(this.label16);
-            this.panelDifficulty.Controls.Add(this.label15);
-            this.panelDifficulty.Controls.Add(this.label14);
-            this.panelDifficulty.Controls.Add(this.panelImpossible);
-            this.panelDifficulty.Controls.Add(this.panelHard);
-            this.panelDifficulty.Controls.Add(this.panelMedium);
-            this.panelDifficulty.Controls.Add(this.panelEasy);
             this.panelDifficulty.Controls.Add(this.labelHighScoreImposible);
             this.panelDifficulty.Controls.Add(this.labelHighScoreHard);
             this.panelDifficulty.Controls.Add(this.labelHighScoreMedium);
             this.panelDifficulty.Controls.Add(this.labelHighScoreEasy);
-            this.panelDifficulty.Controls.Add(this.label9);
-            this.panelDifficulty.Controls.Add(this.label8);
-            this.panelDifficulty.Controls.Add(this.label7);
-            this.panelDifficulty.Controls.Add(this.label6);
-            this.panelDifficulty.Controls.Add(this.label5);
-            this.panelDifficulty.Controls.Add(this.label4);
-            this.panelDifficulty.Controls.Add(this.label3);
-            this.panelDifficulty.Controls.Add(this.label2);
-            this.panelDifficulty.Controls.Add(this.label1);
             this.panelDifficulty.Controls.Add(this.pictureBoxBackCreateLoadPlayer);
             this.panelDifficulty.Location = new System.Drawing.Point(0, 0);
             this.panelDifficulty.Name = "panelDifficulty";
             this.panelDifficulty.Size = new System.Drawing.Size(1150, 650);
             this.panelDifficulty.TabIndex = 9;
+            // 
+            // labelBestTimeImpossible
+            // 
+            this.labelBestTimeImpossible.AutoSize = true;
+            this.labelBestTimeImpossible.BackColor = System.Drawing.Color.Transparent;
+            this.labelBestTimeImpossible.Font = new System.Drawing.Font("Franklin Gothic Medium", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBestTimeImpossible.Location = new System.Drawing.Point(859, 276);
+            this.labelBestTimeImpossible.Name = "labelBestTimeImpossible";
+            this.labelBestTimeImpossible.Size = new System.Drawing.Size(179, 38);
+            this.labelBestTimeImpossible.TabIndex = 44;
+            this.labelBestTimeImpossible.Text = "00 : 00 : 00";
+            // 
+            // labelBestTimeHard
+            // 
+            this.labelBestTimeHard.AutoSize = true;
+            this.labelBestTimeHard.BackColor = System.Drawing.Color.Transparent;
+            this.labelBestTimeHard.Font = new System.Drawing.Font("Franklin Gothic Medium", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBestTimeHard.Location = new System.Drawing.Point(601, 276);
+            this.labelBestTimeHard.Name = "labelBestTimeHard";
+            this.labelBestTimeHard.Size = new System.Drawing.Size(179, 38);
+            this.labelBestTimeHard.TabIndex = 43;
+            this.labelBestTimeHard.Text = "00 : 00 : 00";
+            // 
+            // labelBestTimeMedium
+            // 
+            this.labelBestTimeMedium.AutoSize = true;
+            this.labelBestTimeMedium.BackColor = System.Drawing.Color.Transparent;
+            this.labelBestTimeMedium.Font = new System.Drawing.Font("Franklin Gothic Medium", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBestTimeMedium.Location = new System.Drawing.Point(346, 276);
+            this.labelBestTimeMedium.Name = "labelBestTimeMedium";
+            this.labelBestTimeMedium.Size = new System.Drawing.Size(179, 38);
+            this.labelBestTimeMedium.TabIndex = 42;
+            this.labelBestTimeMedium.Text = "00 : 00 : 00";
+            // 
+            // labelBestTimeEasy
+            // 
+            this.labelBestTimeEasy.AutoSize = true;
+            this.labelBestTimeEasy.BackColor = System.Drawing.Color.Transparent;
+            this.labelBestTimeEasy.Font = new System.Drawing.Font("Franklin Gothic Medium", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBestTimeEasy.Location = new System.Drawing.Point(83, 271);
+            this.labelBestTimeEasy.Name = "labelBestTimeEasy";
+            this.labelBestTimeEasy.Size = new System.Drawing.Size(179, 38);
+            this.labelBestTimeEasy.TabIndex = 41;
+            this.labelBestTimeEasy.Text = "00 : 00 : 00";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.White;
+            this.label13.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(880, 485);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(157, 38);
+            this.label13.TabIndex = 28;
+            this.label13.Text = "Impossible";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.White;
+            this.label12.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(661, 485);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(78, 38);
+            this.label12.TabIndex = 28;
+            this.label12.Text = "Hard";
+            // 
+            // pictureBoxImpossible
+            // 
+            this.pictureBoxImpossible.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxImpossible.BackgroundImage = global::Project.Properties.Resources.imposible;
+            this.pictureBoxImpossible.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxImpossible.Location = new System.Drawing.Point(854, 480);
+            this.pictureBoxImpossible.Name = "pictureBoxImpossible";
+            this.pictureBoxImpossible.Size = new System.Drawing.Size(211, 57);
+            this.pictureBoxImpossible.TabIndex = 40;
+            this.pictureBoxImpossible.TabStop = false;
+            this.pictureBoxImpossible.MouseEnter += new System.EventHandler(this.pictureBoxImpossible_MouseEnter);
+            this.pictureBoxImpossible.MouseLeave += new System.EventHandler(this.pictureBoxImpossible_MouseLeave);
+            // 
+            // pictureBoxHard
+            // 
+            this.pictureBoxHard.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxHard.BackgroundImage = global::Project.Properties.Resources.hard;
+            this.pictureBoxHard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxHard.Location = new System.Drawing.Point(596, 480);
+            this.pictureBoxHard.Name = "pictureBoxHard";
+            this.pictureBoxHard.Size = new System.Drawing.Size(211, 57);
+            this.pictureBoxHard.TabIndex = 39;
+            this.pictureBoxHard.TabStop = false;
+            this.pictureBoxHard.MouseEnter += new System.EventHandler(this.pictureBoxHard_MouseEnter);
+            this.pictureBoxHard.MouseLeave += new System.EventHandler(this.pictureBoxHard_MouseLeave);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.White;
+            this.label11.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(389, 485);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(122, 38);
+            this.label11.TabIndex = 28;
+            this.label11.Text = "Medium";
+            // 
+            // pictureBoxMedium
+            // 
+            this.pictureBoxMedium.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxMedium.BackgroundImage = global::Project.Properties.Resources.medium;
+            this.pictureBoxMedium.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxMedium.Location = new System.Drawing.Point(341, 480);
+            this.pictureBoxMedium.Name = "pictureBoxMedium";
+            this.pictureBoxMedium.Size = new System.Drawing.Size(211, 57);
+            this.pictureBoxMedium.TabIndex = 38;
+            this.pictureBoxMedium.TabStop = false;
+            this.pictureBoxMedium.MouseEnter += new System.EventHandler(this.pictureBoxMedium_MouseEnter);
+            this.pictureBoxMedium.MouseLeave += new System.EventHandler(this.pictureBoxMedium_MouseLeave);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.White;
+            this.label10.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(146, 486);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(76, 38);
+            this.label10.TabIndex = 28;
+            this.label10.Text = "Easy";
+            // 
+            // pictureBoxEasy
+            // 
+            this.pictureBoxEasy.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxEasy.BackgroundImage = global::Project.Properties.Resources.easy;
+            this.pictureBoxEasy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxEasy.Location = new System.Drawing.Point(79, 480);
+            this.pictureBoxEasy.Name = "pictureBoxEasy";
+            this.pictureBoxEasy.Size = new System.Drawing.Size(211, 57);
+            this.pictureBoxEasy.TabIndex = 37;
+            this.pictureBoxEasy.TabStop = false;
+            this.pictureBoxEasy.MouseEnter += new System.EventHandler(this.pictureBoxEasy_MouseEnter);
+            this.pictureBoxEasy.MouseLeave += new System.EventHandler(this.pictureBoxEasy_MouseLeave);
             // 
             // buttonNextTutorial
             // 
@@ -1228,144 +1427,12 @@
             this.buttonNextTutorial.UseVisualStyleBackColor = false;
             this.buttonNextTutorial.Click += new System.EventHandler(this.buttonNextTutorial_Click);
             // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Font = new System.Drawing.Font("Franklin Gothic Medium", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(892, 335);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(135, 36);
-            this.label17.TabIndex = 36;
-            this.label17.Text = "Challenge";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Franklin Gothic Medium", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(634, 335);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(135, 36);
-            this.label16.TabIndex = 35;
-            this.label16.Text = "Challenge";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Franklin Gothic Medium", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(376, 335);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(135, 36);
-            this.label15.TabIndex = 34;
-            this.label15.Text = "Challenge";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Franklin Gothic Medium", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(118, 335);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(135, 36);
-            this.label14.TabIndex = 33;
-            this.label14.Text = "Challenge";
-            // 
-            // panelImpossible
-            // 
-            this.panelImpossible.BackColor = System.Drawing.Color.Transparent;
-            this.panelImpossible.BackgroundImage = global::Project.Properties.Resources.imposible;
-            this.panelImpossible.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelImpossible.Controls.Add(this.label13);
-            this.panelImpossible.Location = new System.Drawing.Point(854, 480);
-            this.panelImpossible.Name = "panelImpossible";
-            this.panelImpossible.Size = new System.Drawing.Size(211, 57);
-            this.panelImpossible.TabIndex = 32;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Franklin Gothic Demi", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(26, 6);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(159, 38);
-            this.label13.TabIndex = 28;
-            this.label13.Text = "Impossible";
-            // 
-            // panelHard
-            // 
-            this.panelHard.BackColor = System.Drawing.Color.Transparent;
-            this.panelHard.BackgroundImage = global::Project.Properties.Resources.hard;
-            this.panelHard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelHard.Controls.Add(this.label12);
-            this.panelHard.Location = new System.Drawing.Point(596, 480);
-            this.panelHard.Name = "panelHard";
-            this.panelHard.Size = new System.Drawing.Size(211, 57);
-            this.panelHard.TabIndex = 31;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Franklin Gothic Demi", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(67, 6);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(78, 38);
-            this.label12.TabIndex = 28;
-            this.label12.Text = "Hard";
-            // 
-            // panelMedium
-            // 
-            this.panelMedium.BackColor = System.Drawing.Color.Transparent;
-            this.panelMedium.BackgroundImage = global::Project.Properties.Resources.medium;
-            this.panelMedium.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelMedium.Controls.Add(this.label11);
-            this.panelMedium.Location = new System.Drawing.Point(338, 480);
-            this.panelMedium.Name = "panelMedium";
-            this.panelMedium.Size = new System.Drawing.Size(211, 57);
-            this.panelMedium.TabIndex = 30;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Franklin Gothic Demi", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(44, 6);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(124, 38);
-            this.label11.TabIndex = 28;
-            this.label11.Text = "Medium";
-            // 
-            // panelEasy
-            // 
-            this.panelEasy.BackColor = System.Drawing.Color.Transparent;
-            this.panelEasy.BackgroundImage = global::Project.Properties.Resources.easy;
-            this.panelEasy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelEasy.Controls.Add(this.label10);
-            this.panelEasy.Location = new System.Drawing.Point(79, 480);
-            this.panelEasy.Name = "panelEasy";
-            this.panelEasy.Size = new System.Drawing.Size(211, 57);
-            this.panelEasy.TabIndex = 29;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Franklin Gothic Demi", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(67, 6);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(77, 38);
-            this.label10.TabIndex = 28;
-            this.label10.Text = "Easy";
-            // 
             // labelHighScoreImposible
             // 
             this.labelHighScoreImposible.AutoSize = true;
             this.labelHighScoreImposible.BackColor = System.Drawing.Color.Transparent;
             this.labelHighScoreImposible.Font = new System.Drawing.Font("Franklin Gothic Demi", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHighScoreImposible.Location = new System.Drawing.Point(940, 237);
+            this.labelHighScoreImposible.Location = new System.Drawing.Point(937, 205);
             this.labelHighScoreImposible.Name = "labelHighScoreImposible";
             this.labelHighScoreImposible.Size = new System.Drawing.Size(41, 43);
             this.labelHighScoreImposible.TabIndex = 23;
@@ -1376,7 +1443,7 @@
             this.labelHighScoreHard.AutoSize = true;
             this.labelHighScoreHard.BackColor = System.Drawing.Color.Transparent;
             this.labelHighScoreHard.Font = new System.Drawing.Font("Franklin Gothic Demi", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHighScoreHard.Location = new System.Drawing.Point(649, 237);
+            this.labelHighScoreHard.Location = new System.Drawing.Point(644, 205);
             this.labelHighScoreHard.Name = "labelHighScoreHard";
             this.labelHighScoreHard.Size = new System.Drawing.Size(107, 43);
             this.labelHighScoreHard.TabIndex = 22;
@@ -1387,7 +1454,7 @@
             this.labelHighScoreMedium.AutoSize = true;
             this.labelHighScoreMedium.BackColor = System.Drawing.Color.Transparent;
             this.labelHighScoreMedium.Font = new System.Drawing.Font("Franklin Gothic Demi", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHighScoreMedium.Location = new System.Drawing.Point(391, 237);
+            this.labelHighScoreMedium.Location = new System.Drawing.Point(386, 205);
             this.labelHighScoreMedium.Name = "labelHighScoreMedium";
             this.labelHighScoreMedium.Size = new System.Drawing.Size(107, 43);
             this.labelHighScoreMedium.TabIndex = 21;
@@ -1398,110 +1465,11 @@
             this.labelHighScoreEasy.AutoSize = true;
             this.labelHighScoreEasy.BackColor = System.Drawing.Color.Transparent;
             this.labelHighScoreEasy.Font = new System.Drawing.Font("Franklin Gothic Demi", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHighScoreEasy.Location = new System.Drawing.Point(133, 237);
+            this.labelHighScoreEasy.Location = new System.Drawing.Point(127, 205);
             this.labelHighScoreEasy.Name = "labelHighScoreEasy";
             this.labelHighScoreEasy.Size = new System.Drawing.Size(107, 43);
             this.labelHighScoreEasy.TabIndex = 20;
             this.labelHighScoreEasy.Text = "1234";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Franklin Gothic Medium", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(915, 210);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(92, 21);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "In this level";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Franklin Gothic Medium", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(656, 210);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(92, 21);
-            this.label8.TabIndex = 18;
-            this.label8.Text = "In this level";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Franklin Gothic Medium", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(398, 210);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 21);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "In this level";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Franklin Gothic Medium", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(139, 210);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(92, 21);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "In this level";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Franklin Gothic Medium", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(892, 175);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(135, 36);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Highscore";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Franklin Gothic Medium", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(634, 175);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(135, 36);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Highscore";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Franklin Gothic Medium", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(376, 175);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(135, 36);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Highscore";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Franklin Gothic Medium", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(118, 175);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 36);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Highscore";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Franklin Gothic Demi", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(401, 56);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(370, 47);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "SELECT DIFFICULTY";
             // 
             // pictureBoxBackCreateLoadPlayer
             // 
@@ -1546,9 +1514,7 @@
             // 
             // panelLoadPlayer
             // 
-            this.panelLoadPlayer.Controls.Add(this.labelHS);
             this.panelLoadPlayer.Controls.Add(this.labelIncome);
-            this.panelLoadPlayer.Controls.Add(this.labelHSLoad);
             this.panelLoadPlayer.Controls.Add(this.comboBoxNameLoad);
             this.panelLoadPlayer.Controls.Add(this.labelIncomeLoad);
             this.panelLoadPlayer.Controls.Add(this.labelNameLoad);
@@ -1558,41 +1524,22 @@
             this.panelLoadPlayer.Size = new System.Drawing.Size(406, 367);
             this.panelLoadPlayer.TabIndex = 8;
             // 
-            // labelHS
-            // 
-            this.labelHS.AutoSize = true;
-            this.labelHS.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHS.Location = new System.Drawing.Point(158, 318);
-            this.labelHS.Name = "labelHS";
-            this.labelHS.Size = new System.Drawing.Size(48, 25);
-            this.labelHS.TabIndex = 22;
-            this.labelHS.Text = "200";
-            // 
             // labelIncome
             // 
             this.labelIncome.AutoSize = true;
             this.labelIncome.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelIncome.Location = new System.Drawing.Point(158, 277);
+            this.labelIncome.Location = new System.Drawing.Point(158, 307);
             this.labelIncome.Name = "labelIncome";
             this.labelIncome.Size = new System.Drawing.Size(48, 25);
             this.labelIncome.TabIndex = 21;
             this.labelIncome.Text = "200";
             // 
-            // labelHSLoad
-            // 
-            this.labelHSLoad.AutoSize = true;
-            this.labelHSLoad.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHSLoad.Location = new System.Drawing.Point(45, 318);
-            this.labelHSLoad.Name = "labelHSLoad";
-            this.labelHSLoad.Size = new System.Drawing.Size(114, 25);
-            this.labelHSLoad.TabIndex = 20;
-            this.labelHSLoad.Text = "High Score :";
-            // 
             // comboBoxNameLoad
             // 
+            this.comboBoxNameLoad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxNameLoad.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxNameLoad.FormattingEnabled = true;
-            this.comboBoxNameLoad.Location = new System.Drawing.Point(163, 235);
+            this.comboBoxNameLoad.Location = new System.Drawing.Point(163, 252);
             this.comboBoxNameLoad.Name = "comboBoxNameLoad";
             this.comboBoxNameLoad.Size = new System.Drawing.Size(176, 33);
             this.comboBoxNameLoad.TabIndex = 19;
@@ -1601,7 +1548,7 @@
             // 
             this.labelIncomeLoad.AutoSize = true;
             this.labelIncomeLoad.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelIncomeLoad.Location = new System.Drawing.Point(75, 277);
+            this.labelIncomeLoad.Location = new System.Drawing.Point(75, 307);
             this.labelIncomeLoad.Name = "labelIncomeLoad";
             this.labelIncomeLoad.Size = new System.Drawing.Size(85, 25);
             this.labelIncomeLoad.TabIndex = 15;
@@ -1611,7 +1558,7 @@
             // 
             this.labelNameLoad.AutoSize = true;
             this.labelNameLoad.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNameLoad.Location = new System.Drawing.Point(88, 238);
+            this.labelNameLoad.Location = new System.Drawing.Point(88, 255);
             this.labelNameLoad.Name = "labelNameLoad";
             this.labelNameLoad.Size = new System.Drawing.Size(73, 25);
             this.labelNameLoad.TabIndex = 13;
@@ -1621,7 +1568,7 @@
             // 
             this.pictureBoxLoadPlayer.BackgroundImage = global::Project.Properties.Resources.female;
             this.pictureBoxLoadPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxLoadPlayer.Location = new System.Drawing.Point(125, 36);
+            this.pictureBoxLoadPlayer.Location = new System.Drawing.Point(131, 36);
             this.pictureBoxLoadPlayer.Name = "pictureBoxLoadPlayer";
             this.pictureBoxLoadPlayer.Size = new System.Drawing.Size(178, 187);
             this.pictureBoxLoadPlayer.TabIndex = 5;
@@ -1740,17 +1687,31 @@
             this.pictureBoxBackHome.TabStop = false;
             this.pictureBoxBackHome.Click += new System.EventHandler(this.pictureBoxBackHome_Click);
             // 
+            // labelLarge
+            // 
+            this.labelLarge.AutoSize = true;
+            this.labelLarge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.labelLarge.Font = new System.Drawing.Font("Franklin Gothic Heavy", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLarge.ForeColor = System.Drawing.Color.White;
+            this.labelLarge.Location = new System.Drawing.Point(227, 277);
+            this.labelLarge.Name = "labelLarge";
+            this.labelLarge.Size = new System.Drawing.Size(25, 29);
+            this.labelLarge.TabIndex = 42;
+            this.labelLarge.Text = "L";
+            this.labelLarge.MouseEnter += new System.EventHandler(this.labelLarge_MouseEnter);
+            this.labelLarge.MouseLeave += new System.EventHandler(this.labelLarge_MouseLeave);
+            // 
             // FormGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1149, 650);
-            this.Controls.Add(this.panelCreateLoadPlayer);
-            this.Controls.Add(this.panelSetting);
             this.Controls.Add(this.panelGame);
+            this.Controls.Add(this.panelSetting);
             this.Controls.Add(this.panelTutorial);
             this.Controls.Add(this.panelDifficulty);
+            this.Controls.Add(this.panelCreateLoadPlayer);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonPlay);
             this.DoubleBuffered = true;
@@ -1758,25 +1719,6 @@
             this.Name = "FormGame";
             this.Text = "Food Wars";
             this.Load += new System.EventHandler(this.FormGame_Load);
-            this.panelSetting.ResumeLayout(false);
-            this.panelSetting.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHome)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRestart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResume)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolmeUpSFX)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeDownSFX)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeUpMusic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeDownMusic)).EndInit();
             this.panelGame.ResumeLayout(false);
             this.panelGame.PerformLayout();
             this.panelDialog2.ResumeLayout(false);
@@ -1822,17 +1764,32 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCheese)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCustomer2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCustomer1)).EndInit();
+            this.panelSetting.ResumeLayout(false);
+            this.panelSetting.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHome)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRestart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResume)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolmeUpSFX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeDownSFX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeUpMusic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeDownMusic)).EndInit();
             this.panelTutorial.ResumeLayout(false);
             this.panelDifficulty.ResumeLayout(false);
             this.panelDifficulty.PerformLayout();
-            this.panelImpossible.ResumeLayout(false);
-            this.panelImpossible.PerformLayout();
-            this.panelHard.ResumeLayout(false);
-            this.panelHard.PerformLayout();
-            this.panelMedium.ResumeLayout(false);
-            this.panelMedium.PerformLayout();
-            this.panelEasy.ResumeLayout(false);
-            this.panelEasy.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImpossible)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHard)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMedium)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEasy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackCreateLoadPlayer)).EndInit();
             this.panelCreateLoadPlayer.ResumeLayout(false);
             this.panelCreateLoadPlayer.PerformLayout();
@@ -1865,41 +1822,22 @@
         private System.Windows.Forms.Panel panelCreateLoadPlayer;
         private System.Windows.Forms.RadioButton radioButtonFemale;
         private System.Windows.Forms.RadioButton radioButtonMale;
-        private System.Windows.Forms.Label labelHSLoad;
         private System.Windows.Forms.ComboBox comboBoxNameLoad;
         private System.Windows.Forms.Label labelIncomeLoad;
         private System.Windows.Forms.Label labelNameLoad;
         private System.Windows.Forms.TextBox textBoxNameCreate;
-        protected internal System.Windows.Forms.Label labelHS;
         protected internal System.Windows.Forms.Label labelIncome;
         private System.Windows.Forms.PictureBox pictureBoxBackCreateLoadPlayer;
         private System.Windows.Forms.Panel panelDifficulty;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label labelHighScoreEasy;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label labelHighScoreImposible;
         private System.Windows.Forms.Label labelHighScoreHard;
         private System.Windows.Forms.Label labelHighScoreMedium;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Panel panelMedium;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Panel panelEasy;
-        private System.Windows.Forms.Panel panelHard;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Panel panelImpossible;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button buttonNextTutorial;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panelTutorial;
         private System.Windows.Forms.Panel panelGame;
         private System.Windows.Forms.PictureBox pictureBoxBottomBun;
@@ -1941,7 +1879,6 @@
         private System.Windows.Forms.PictureBox pictureBoxBeverage;
         private System.Windows.Forms.PictureBox pictureBoxBevMachine;
         private System.Windows.Forms.PictureBox pictureBoxMayo;
-        private System.Windows.Forms.Label labelLarge;
         private System.Windows.Forms.Label labelSmall;
         private System.Windows.Forms.Label labelMedium;
         private System.Windows.Forms.PictureBox pictureBoxCustomer1;
@@ -1978,5 +1915,16 @@
         private System.Windows.Forms.PictureBox pictureBoxHome;
         private System.Windows.Forms.PictureBox pictureBoxRestart;
         private System.Windows.Forms.PictureBox pictureBoxResume;
+        private System.Windows.Forms.PictureBox pictureBoxEasy;
+        private System.Windows.Forms.PictureBox pictureBoxMedium;
+        private System.Windows.Forms.PictureBox pictureBoxImpossible;
+        private System.Windows.Forms.PictureBox pictureBoxHard;
+        private System.Windows.Forms.Label labelBestTimeImpossible;
+        private System.Windows.Forms.Label labelBestTimeHard;
+        private System.Windows.Forms.Label labelBestTimeMedium;
+        private System.Windows.Forms.Label labelBestTimeEasy;
+        private System.Windows.Forms.Label labelNamePlayer;
+        private System.Windows.Forms.Label labelIncomeNow;
+        private System.Windows.Forms.Label labelLarge;
     }
 }

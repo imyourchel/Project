@@ -10,24 +10,26 @@ namespace Project
 {
     public class Players
     {
-        #region Fields
+        #region Fields        
         private string name;
         private int income;
         private Image picture;
         private Time time;
         private List<int> highScore;
         private List<Merchandise> stockMerchandise;
+        private List<Time> bestTime;
         #endregion Fields       
 
         #region Constructors
-        public Players(string name, int income, Image picture, Time time, List<int> highScore, List<Merchandise> stockMerchandise)
+        public Players(string name, int income, Image picture, Time time)
         {
             this.Name = name;
             this.Income = income;
             this.Picture = picture;
             this.Time = time;
-            this.HighScore = highScore;
-            this.StockMerchandise = stockMerchandise;
+            this.HighScore = new List<int>();
+            this.StockMerchandise = new List<Merchandise>();
+            this.BestTime = new List<Time>();
         }
         #endregion Constructors
 
@@ -66,6 +68,7 @@ namespace Project
         public Time Time { get => time; set => time = value; }
         public List<int> HighScore { get => highScore; set => highScore = value; }
         public List<Merchandise> StockMerchandise { get => stockMerchandise; set => stockMerchandise = value; }
+        public List<Time> BestTime { get => bestTime; set => bestTime = value; }
         #endregion Properties
 
         #region Methods

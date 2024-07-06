@@ -17,13 +17,6 @@
       <FileName>Items.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Project.Ingredients">
-    <Position X="2.25" Y="7.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAgAAAAIAAAAAAAAAAAQQAAAAEAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Ingredients.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Project.Foods">
     <Position X="2.25" Y="4.75" Width="1.5" />
     <AssociationLine Name="ListOfIngredients" Type="Project.Ingredients">
@@ -42,7 +35,7 @@
   <Class Name="Project.Beverages">
     <Position X="4.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAgAAAAIAAAQAAAAAgAAAAIAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAgAAAAIAAAQAAAAAgAAAAIAAACAAAAAA=</HashCode>
       <FileName>Beverages.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -63,7 +56,7 @@
   <Class Name="Project.Players">
     <Position X="9.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAABgAAAAIAAAAAAAAAgAYQAIAIGAAAAAgAAAAAAAQA=</HashCode>
+      <HashCode>AAAJgAAAAIAAAAAAAAAgAYQAIAIGAAAAAgAAAAAACQA=</HashCode>
       <FileName>Players.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -72,6 +65,13 @@
     <ShowAsCollectionAssociation>
       <Property Name="StockMerchandise" />
     </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Project.Ingredients">
+    <Position X="2.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAIAAAAAAAAAAAQQAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Ingredients.cs</FileName>
+    </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
