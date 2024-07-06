@@ -21,6 +21,7 @@ namespace Project
         List<Players> listOfPlayer = new List<Players>();
         List<Items> listOfItems = new List<Items>();
         Items item;
+        Merchandise merchandise;
 
         int custEasy = 8;
         int custMedium = 12;
@@ -33,12 +34,18 @@ namespace Project
         int timeMedium = 40;
         int timeHard = 50;
         int timeImpossible = 60;
+
+        bool easy;
+        bool medium;
+        bool hard;
+        bool impossible;
+
         int selectedIngCount;
         int incTimerCust;
         public FormGame()
         {
             InitializeComponent();
-        }        
+        }
         private void BackgroundVisible()
         {
             this.BackgroundImage = Properties.Resources.background;
@@ -120,31 +127,43 @@ namespace Project
                     else if (radioButtonFemale.Checked)
                     {
                         pic = Properties.Resources.female;
-                    }                    
+                    }
+                    //default value
+                    player = new Players(textBoxNameCreate.Text, 0, pic);
+                    player.HighScore = new List<int>{ 0,0,0,0};
                     time = new Time(0,0,0);
-                    player = new Players(textBoxNameCreate.Text, 0, pic,time);
+                    player.BestTime = new List<Time> { time,time,time,time};
+                    player.PrevTime = new List<Time> { time,time,time,time};                                                            
                 }
                 //Load Player
                 else
                 {
                     player = (Players)comboBoxNameLoad.SelectedItem;
-
-                    labelIncome.Text = player.Income.ToString();
-
                 }
                 //display Panel Difficulty
                 panelCreateLoadPlayer.Visible = false;
                 panelDifficulty.Visible = true;
                 panelDifficulty.BackgroundImage = Properties.Resources.bg_Difficulty;
                 panelDifficulty.BackgroundImageLayout = ImageLayout.Stretch;
+
                 this.labelEasy.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 this.labelMedium.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 this.labelHard.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 this.labelImpossible.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                
+                this.labelHighScoreEasy.Text = player.HighScore[0].ToString();
+                this.labelHighScoreMedium.Text = player.HighScore[1].ToString();
+                this.labelHighScoreHard.Text = player.HighScore[2].ToString();
+                this.labelHighScoreImpossible.Text = player.HighScore[3].ToString();
+
+                this.labelBestTimeEasy.Text = player.BestTime[0].Display();
+                this.labelBestTimeMedium.Text = player.BestTime[1].Display();
+                this.labelBestTimeHard.Text = player.BestTime[2].Display();
+                this.labelBestTimeImpossible.Text = player.BestTime[3].Display();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message,"ERROR");
             }
         }
 
@@ -156,31 +175,57 @@ namespace Project
 
         private void buttonNextTutorial_Click(object sender, EventArgs e)
         {
-            buttonStartGame.Visible = true;
-            buttonBackReceipe.Visible = false;
-            panelDifficulty.Visible = false;
-            panelTutorial.Visible = true;
-            panelTutorial.BackgroundImage = Properties.Resources.bg_Tutorial;
-            panelTutorial.BackgroundImageLayout = ImageLayout.Stretch;
-            if (labelEasy.Font.Name == "Franklin Gothic Demi")
+            try
             {
-                timeChoose = timeEasy;
-                remainingCusts = custEasy;
+                if (labelEasy.Font.Name == "Franklin Gothic Demi")
+                {
+                    easy = true;
+                    medium = false;
+                    hard = false;
+                    impossible = false;
+                    timeChoose = timeEasy;
+                    remainingCusts = custEasy;
+                }
+                else if (labelMedium.Font.Name == "Franklin Gothic Demi")
+                {
+                    easy = false;
+                    medium = true;
+                    hard = false;
+                    impossible = false;
+                    timeChoose = timeMedium;
+                    remainingCusts = custMedium;
+                }
+                else if (labelHard.Font.Name == "Franklin Gothic Demi")
+                {
+                    easy = false;
+                    medium = false;
+                    hard = true;
+                    impossible = false;
+                    timeChoose = timeHard;
+                    remainingCusts = custHard;
+                }
+                else if (labelImpossible.Font.Name == "Franklin Gothic Demi")
+                {
+                    easy = false;
+                    medium = false;
+                    hard = false;
+                    impossible = true;
+                    timeChoose = timeImpossible;
+                    remainingCusts = custImpossible;
+                }
+                else
+                {
+                    throw (new ArgumentException("Select Difficulty Level"));
+                }
+                buttonBackReceipe.Visible = false;
+                panelDifficulty.Visible = false;
+                panelTutorial.Visible = true;
+                panelTutorial.BackgroundImage = Properties.Resources.bg_Tutorial;
+                panelTutorial.BackgroundImageLayout = ImageLayout.Stretch;
             }
-            else if (labelMedium.Font.Name == "Franklin Gothic Demi")
+            catch(Exception ex)
             {
-                timeChoose = timeMedium;
-                remainingCusts = custMedium;
-            }
-            else if (labelHard.Font.Name == "Franklin Gothic Demi")
-            {
-                timeChoose = timeHard;
-                remainingCusts = custHard;
-            }
-            else if (labelImpossible.Font.Name == "Franklin Gothic Demi")
-            {
-                timeChoose = timeImpossible;
-                remainingCusts = custImpossible;
+                MessageBox.Show(ex.Message,"ERROR");
             }
         }
 
@@ -193,7 +238,29 @@ namespace Project
             labelRemainingTime.Text = time.Display();
             timerGame.Start();
             labelRemainingCustomers.Text = "Remaining Customers : " + remainingCusts.ToString();
-            labelNamePlayer.Text = player.Name;
+            labelNamePlayer.Text = player.Name;            
+            StallDisplay();
+
+            //Selected level
+            int selected;
+            if (easy)
+            {
+                selected = 0;
+            }
+            else if (medium)
+            {
+                selected = 1;
+            }
+            else if (hard)
+            {
+                selected = 2;
+            }
+            else 
+            { 
+                selected = 3; 
+            }
+            labelDisplayDataPlayer.Text = player.Display(selected);
+            labelIncomeNow.Text = player.Income.ToString();
         }        
         private void pictureBoxButtonReceipe_Click(object sender, EventArgs e)
         {
@@ -682,15 +749,15 @@ namespace Project
 
             pictureBoxPlate.Tag = ((Foods)item).ListOfIngredients[0].Name;
             pictureBoxLettuce.Tag = ((Foods)item).ListOfIngredients[1].Name;
-            pictureBoxTopBun.Tag = ((Foods)item).ListOfIngredients[2].Name;
+            pictureBoxMayo.Tag = ((Foods)item).ListOfIngredients[2].Name;
 
             pictureBoxPlate.Image = ((Foods)item).ListOfIngredients[0].Picture;
             pictureBoxLettuce.Image = ((Foods)item).ListOfIngredients[1].Picture;
-            pictureBoxTopBun.Image = ((Foods)item).ListOfIngredients[2].Picture;
+            pictureBoxMayo.Image = ((Foods)item).ListOfIngredients[2].Picture;
 
             pictureBoxPlate.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxLettuce.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxTopBun.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxMayo.SizeMode = PictureBoxSizeMode.StretchImage;
 
 
             item = new Foods("icecream", Properties.Resources.iceCream, 10);
@@ -869,7 +936,7 @@ namespace Project
 
             #endregion Merchandise
 
-        }
+        }   
 
         private void pictureBoxHome_Click(object sender, EventArgs e)
         {
@@ -891,6 +958,7 @@ namespace Project
             labelRemainingTime.Text = time.Display();
         }
 
+        #region Label Difficulty Click
         private void labelEasy_Click(object sender, EventArgs e)
         {
             this.labelEasy.Font = new System.Drawing.Font("Franklin Gothic Demi", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -954,6 +1022,7 @@ namespace Project
             this.labelMedium.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHard.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
         }
+        #endregion Panel Difficulty Click
 
         private void timerGame_Tick(object sender, EventArgs e)
         {

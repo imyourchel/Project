@@ -32,6 +32,48 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGame));
             this.buttonPlay = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
+            this.timerGame = new System.Windows.Forms.Timer(this.components);
+            this.timerCust = new System.Windows.Forms.Timer(this.components);
+            this.panelDifficulty = new System.Windows.Forms.Panel();
+            this.labelBestTimeImpossible = new System.Windows.Forms.Label();
+            this.labelBestTimeHard = new System.Windows.Forms.Label();
+            this.labelBestTimeMedium = new System.Windows.Forms.Label();
+            this.labelBestTimeEasy = new System.Windows.Forms.Label();
+            this.labelImpossible = new System.Windows.Forms.Label();
+            this.labelHard = new System.Windows.Forms.Label();
+            this.pictureBoxImpossible = new System.Windows.Forms.PictureBox();
+            this.pictureBoxHard = new System.Windows.Forms.PictureBox();
+            this.labelMedium = new System.Windows.Forms.Label();
+            this.pictureBoxMedium = new System.Windows.Forms.PictureBox();
+            this.labelEasy = new System.Windows.Forms.Label();
+            this.pictureBoxEasy = new System.Windows.Forms.PictureBox();
+            this.buttonNextTutorial = new System.Windows.Forms.Button();
+            this.labelHighScoreImpossible = new System.Windows.Forms.Label();
+            this.labelHighScoreHard = new System.Windows.Forms.Label();
+            this.labelHighScoreMedium = new System.Windows.Forms.Label();
+            this.labelHighScoreEasy = new System.Windows.Forms.Label();
+            this.pictureBoxBackCreateLoadPlayer = new System.Windows.Forms.PictureBox();
+            this.panelSetting = new System.Windows.Forms.Panel();
+            this.pictureBoxHome = new System.Windows.Forms.PictureBox();
+            this.pictureBoxRestart = new System.Windows.Forms.PictureBox();
+            this.pictureBoxResume = new System.Windows.Forms.PictureBox();
+            this.pictureBoxVolumeBarSFX5 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxVolumeBarSFX4 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxVolumeBarSFX3 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxVolumeBarSFX2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxVolumeBarSFX1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxVolmeUpSFX = new System.Windows.Forms.PictureBox();
+            this.pictureBoxVolumeDownSFX = new System.Windows.Forms.PictureBox();
+            this.pictureBoxBarMusic5 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxBarMusic4 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxBarMusic3 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxBarMusic2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxBarMusic1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxVolumeUpMusic = new System.Windows.Forms.PictureBox();
+            this.pictureBoxVolumeDownMusic = new System.Windows.Forms.PictureBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.panelGame = new System.Windows.Forms.Panel();
             this.pictureBoxBevM = new System.Windows.Forms.PictureBox();
             this.pictureBoxBevS = new System.Windows.Forms.PictureBox();
@@ -88,49 +130,9 @@
             this.panelFoodStall = new System.Windows.Forms.Panel();
             this.pictureBoxCustomer2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxCustomer1 = new System.Windows.Forms.PictureBox();
-            this.panelSetting = new System.Windows.Forms.Panel();
-            this.pictureBoxHome = new System.Windows.Forms.PictureBox();
-            this.pictureBoxRestart = new System.Windows.Forms.PictureBox();
-            this.pictureBoxResume = new System.Windows.Forms.PictureBox();
-            this.pictureBoxVolumeBarSFX5 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxVolumeBarSFX4 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxVolumeBarSFX3 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxVolumeBarSFX2 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxVolumeBarSFX1 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxVolmeUpSFX = new System.Windows.Forms.PictureBox();
-            this.pictureBoxVolumeDownSFX = new System.Windows.Forms.PictureBox();
-            this.pictureBoxBarMusic5 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxBarMusic4 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxBarMusic3 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxBarMusic2 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxBarMusic1 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxVolumeUpMusic = new System.Windows.Forms.PictureBox();
-            this.pictureBoxVolumeDownMusic = new System.Windows.Forms.PictureBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.panelTutorial = new System.Windows.Forms.Panel();
             this.buttonBackReceipe = new System.Windows.Forms.Button();
             this.buttonStartGame = new System.Windows.Forms.Button();
-            this.panelDifficulty = new System.Windows.Forms.Panel();
-            this.labelBestTimeImpossible = new System.Windows.Forms.Label();
-            this.labelBestTimeHard = new System.Windows.Forms.Label();
-            this.labelBestTimeMedium = new System.Windows.Forms.Label();
-            this.labelBestTimeEasy = new System.Windows.Forms.Label();
-            this.labelImpossible = new System.Windows.Forms.Label();
-            this.labelHard = new System.Windows.Forms.Label();
-            this.pictureBoxImpossible = new System.Windows.Forms.PictureBox();
-            this.pictureBoxHard = new System.Windows.Forms.PictureBox();
-            this.labelMedium = new System.Windows.Forms.Label();
-            this.pictureBoxMedium = new System.Windows.Forms.PictureBox();
-            this.labelEasy = new System.Windows.Forms.Label();
-            this.pictureBoxEasy = new System.Windows.Forms.PictureBox();
-            this.buttonNextTutorial = new System.Windows.Forms.Button();
-            this.labelHighScoreImposible = new System.Windows.Forms.Label();
-            this.labelHighScoreHard = new System.Windows.Forms.Label();
-            this.labelHighScoreMedium = new System.Windows.Forms.Label();
-            this.labelHighScoreEasy = new System.Windows.Forms.Label();
-            this.pictureBoxBackCreateLoadPlayer = new System.Windows.Forms.PictureBox();
             this.panelCreateLoadPlayer = new System.Windows.Forms.Panel();
             this.radioButtonLoadPlayer = new System.Windows.Forms.RadioButton();
             this.panelLoadPlayer = new System.Windows.Forms.Panel();
@@ -149,8 +151,30 @@
             this.buttonNextDifficult = new System.Windows.Forms.Button();
             this.radioButtonCreatePlayer = new System.Windows.Forms.RadioButton();
             this.pictureBoxBackHome = new System.Windows.Forms.PictureBox();
-            this.timerGame = new System.Windows.Forms.Timer(this.components);
-            this.timerCust = new System.Windows.Forms.Timer(this.components);
+            this.panelDifficulty.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImpossible)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHard)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMedium)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEasy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackCreateLoadPlayer)).BeginInit();
+            this.panelSetting.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHome)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRestart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResume)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolmeUpSFX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeDownSFX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeUpMusic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeDownMusic)).BeginInit();
             this.panelGame.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBevM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBevS)).BeginInit();
@@ -198,31 +222,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPatty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCustomer2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCustomer1)).BeginInit();
-            this.panelSetting.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHome)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRestart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResume)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolmeUpSFX)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeDownSFX)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeUpMusic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeDownMusic)).BeginInit();
             this.panelTutorial.SuspendLayout();
-            this.panelDifficulty.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImpossible)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHard)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMedium)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEasy)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackCreateLoadPlayer)).BeginInit();
             this.panelCreateLoadPlayer.SuspendLayout();
             this.panelLoadPlayer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadPlayer)).BeginInit();
@@ -257,6 +257,496 @@
             this.buttonExit.Text = "EXIT";
             this.buttonExit.UseVisualStyleBackColor = false;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
+            // timerGame
+            // 
+            this.timerGame.Tick += new System.EventHandler(this.timerGame_Tick);
+            // 
+            // panelDifficulty
+            // 
+            this.panelDifficulty.BackgroundImage = global::Project.Properties.Resources.bg_Difficulty;
+            this.panelDifficulty.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelDifficulty.Controls.Add(this.labelBestTimeImpossible);
+            this.panelDifficulty.Controls.Add(this.labelBestTimeHard);
+            this.panelDifficulty.Controls.Add(this.labelBestTimeMedium);
+            this.panelDifficulty.Controls.Add(this.labelBestTimeEasy);
+            this.panelDifficulty.Controls.Add(this.labelImpossible);
+            this.panelDifficulty.Controls.Add(this.labelHard);
+            this.panelDifficulty.Controls.Add(this.pictureBoxImpossible);
+            this.panelDifficulty.Controls.Add(this.pictureBoxHard);
+            this.panelDifficulty.Controls.Add(this.labelMedium);
+            this.panelDifficulty.Controls.Add(this.pictureBoxMedium);
+            this.panelDifficulty.Controls.Add(this.labelEasy);
+            this.panelDifficulty.Controls.Add(this.pictureBoxEasy);
+            this.panelDifficulty.Controls.Add(this.buttonNextTutorial);
+            this.panelDifficulty.Controls.Add(this.labelHighScoreImpossible);
+            this.panelDifficulty.Controls.Add(this.labelHighScoreHard);
+            this.panelDifficulty.Controls.Add(this.labelHighScoreMedium);
+            this.panelDifficulty.Controls.Add(this.labelHighScoreEasy);
+            this.panelDifficulty.Controls.Add(this.pictureBoxBackCreateLoadPlayer);
+            this.panelDifficulty.Location = new System.Drawing.Point(0, 0);
+            this.panelDifficulty.Name = "panelDifficulty";
+            this.panelDifficulty.Size = new System.Drawing.Size(1150, 650);
+            this.panelDifficulty.TabIndex = 9;
+            // 
+            // labelBestTimeImpossible
+            // 
+            this.labelBestTimeImpossible.AutoSize = true;
+            this.labelBestTimeImpossible.BackColor = System.Drawing.Color.Transparent;
+            this.labelBestTimeImpossible.Font = new System.Drawing.Font("Franklin Gothic Medium", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBestTimeImpossible.Location = new System.Drawing.Point(860, 276);
+            this.labelBestTimeImpossible.Name = "labelBestTimeImpossible";
+            this.labelBestTimeImpossible.Size = new System.Drawing.Size(179, 38);
+            this.labelBestTimeImpossible.TabIndex = 44;
+            this.labelBestTimeImpossible.Text = "00 : 00 : 00";
+            this.labelBestTimeImpossible.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelBestTimeHard
+            // 
+            this.labelBestTimeHard.AutoSize = true;
+            this.labelBestTimeHard.BackColor = System.Drawing.Color.Transparent;
+            this.labelBestTimeHard.Font = new System.Drawing.Font("Franklin Gothic Medium", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBestTimeHard.Location = new System.Drawing.Point(602, 276);
+            this.labelBestTimeHard.Name = "labelBestTimeHard";
+            this.labelBestTimeHard.Size = new System.Drawing.Size(179, 38);
+            this.labelBestTimeHard.TabIndex = 43;
+            this.labelBestTimeHard.Text = "00 : 00 : 00";
+            this.labelBestTimeHard.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelBestTimeMedium
+            // 
+            this.labelBestTimeMedium.AutoSize = true;
+            this.labelBestTimeMedium.BackColor = System.Drawing.Color.Transparent;
+            this.labelBestTimeMedium.Font = new System.Drawing.Font("Franklin Gothic Medium", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBestTimeMedium.Location = new System.Drawing.Point(347, 276);
+            this.labelBestTimeMedium.Name = "labelBestTimeMedium";
+            this.labelBestTimeMedium.Size = new System.Drawing.Size(179, 38);
+            this.labelBestTimeMedium.TabIndex = 42;
+            this.labelBestTimeMedium.Text = "00 : 00 : 00";
+            this.labelBestTimeMedium.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelBestTimeEasy
+            // 
+            this.labelBestTimeEasy.AutoSize = true;
+            this.labelBestTimeEasy.BackColor = System.Drawing.Color.Transparent;
+            this.labelBestTimeEasy.Font = new System.Drawing.Font("Franklin Gothic Medium", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBestTimeEasy.Location = new System.Drawing.Point(84, 271);
+            this.labelBestTimeEasy.Name = "labelBestTimeEasy";
+            this.labelBestTimeEasy.Size = new System.Drawing.Size(179, 38);
+            this.labelBestTimeEasy.TabIndex = 41;
+            this.labelBestTimeEasy.Text = "00 : 00 : 00";
+            this.labelBestTimeEasy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelImpossible
+            // 
+            this.labelImpossible.AutoSize = true;
+            this.labelImpossible.BackColor = System.Drawing.Color.White;
+            this.labelImpossible.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelImpossible.Location = new System.Drawing.Point(880, 485);
+            this.labelImpossible.Name = "labelImpossible";
+            this.labelImpossible.Size = new System.Drawing.Size(157, 38);
+            this.labelImpossible.TabIndex = 28;
+            this.labelImpossible.Text = "Impossible";
+            this.labelImpossible.Click += new System.EventHandler(this.labelImpossible_Click);
+            // 
+            // labelHard
+            // 
+            this.labelHard.AutoSize = true;
+            this.labelHard.BackColor = System.Drawing.Color.White;
+            this.labelHard.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHard.Location = new System.Drawing.Point(661, 485);
+            this.labelHard.Name = "labelHard";
+            this.labelHard.Size = new System.Drawing.Size(78, 38);
+            this.labelHard.TabIndex = 28;
+            this.labelHard.Text = "Hard";
+            this.labelHard.Click += new System.EventHandler(this.labelHard_Click);
+            // 
+            // pictureBoxImpossible
+            // 
+            this.pictureBoxImpossible.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxImpossible.BackgroundImage = global::Project.Properties.Resources.imposible;
+            this.pictureBoxImpossible.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxImpossible.Location = new System.Drawing.Point(854, 480);
+            this.pictureBoxImpossible.Name = "pictureBoxImpossible";
+            this.pictureBoxImpossible.Size = new System.Drawing.Size(211, 57);
+            this.pictureBoxImpossible.TabIndex = 40;
+            this.pictureBoxImpossible.TabStop = false;
+            this.pictureBoxImpossible.Click += new System.EventHandler(this.pictureBoxImpossible_Click);
+            this.pictureBoxImpossible.MouseEnter += new System.EventHandler(this.pictureBoxImpossible_MouseEnter);
+            this.pictureBoxImpossible.MouseLeave += new System.EventHandler(this.pictureBoxImpossible_MouseLeave);
+            // 
+            // pictureBoxHard
+            // 
+            this.pictureBoxHard.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxHard.BackgroundImage = global::Project.Properties.Resources.hard;
+            this.pictureBoxHard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxHard.Location = new System.Drawing.Point(596, 480);
+            this.pictureBoxHard.Name = "pictureBoxHard";
+            this.pictureBoxHard.Size = new System.Drawing.Size(211, 57);
+            this.pictureBoxHard.TabIndex = 39;
+            this.pictureBoxHard.TabStop = false;
+            this.pictureBoxHard.Click += new System.EventHandler(this.pictureBoxHard_Click);
+            this.pictureBoxHard.MouseEnter += new System.EventHandler(this.pictureBoxHard_MouseEnter);
+            this.pictureBoxHard.MouseLeave += new System.EventHandler(this.pictureBoxHard_MouseLeave);
+            // 
+            // labelMedium
+            // 
+            this.labelMedium.AutoSize = true;
+            this.labelMedium.BackColor = System.Drawing.Color.White;
+            this.labelMedium.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMedium.Location = new System.Drawing.Point(386, 485);
+            this.labelMedium.Name = "labelMedium";
+            this.labelMedium.Size = new System.Drawing.Size(122, 38);
+            this.labelMedium.TabIndex = 28;
+            this.labelMedium.Text = "Medium";
+            this.labelMedium.Click += new System.EventHandler(this.labelMedium_Click);
+            // 
+            // pictureBoxMedium
+            // 
+            this.pictureBoxMedium.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxMedium.BackgroundImage = global::Project.Properties.Resources.medium;
+            this.pictureBoxMedium.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxMedium.Location = new System.Drawing.Point(341, 480);
+            this.pictureBoxMedium.Name = "pictureBoxMedium";
+            this.pictureBoxMedium.Size = new System.Drawing.Size(211, 57);
+            this.pictureBoxMedium.TabIndex = 38;
+            this.pictureBoxMedium.TabStop = false;
+            this.pictureBoxMedium.Click += new System.EventHandler(this.pictureBoxMedium_Click);
+            this.pictureBoxMedium.MouseEnter += new System.EventHandler(this.pictureBoxMedium_MouseEnter);
+            this.pictureBoxMedium.MouseLeave += new System.EventHandler(this.pictureBoxMedium_MouseLeave);
+            // 
+            // labelEasy
+            // 
+            this.labelEasy.AutoSize = true;
+            this.labelEasy.BackColor = System.Drawing.Color.White;
+            this.labelEasy.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEasy.Location = new System.Drawing.Point(146, 486);
+            this.labelEasy.Name = "labelEasy";
+            this.labelEasy.Size = new System.Drawing.Size(76, 38);
+            this.labelEasy.TabIndex = 28;
+            this.labelEasy.Text = "Easy";
+            this.labelEasy.Click += new System.EventHandler(this.labelEasy_Click);
+            // 
+            // pictureBoxEasy
+            // 
+            this.pictureBoxEasy.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxEasy.BackgroundImage = global::Project.Properties.Resources.easy;
+            this.pictureBoxEasy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxEasy.Location = new System.Drawing.Point(79, 480);
+            this.pictureBoxEasy.Name = "pictureBoxEasy";
+            this.pictureBoxEasy.Size = new System.Drawing.Size(211, 57);
+            this.pictureBoxEasy.TabIndex = 37;
+            this.pictureBoxEasy.TabStop = false;
+            this.pictureBoxEasy.Click += new System.EventHandler(this.pictureBoxEasy_Click);
+            this.pictureBoxEasy.MouseEnter += new System.EventHandler(this.pictureBoxEasy_MouseEnter);
+            this.pictureBoxEasy.MouseLeave += new System.EventHandler(this.pictureBoxEasy_MouseLeave);
+            // 
+            // buttonNextTutorial
+            // 
+            this.buttonNextTutorial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(217)))), ((int)(((byte)(87)))));
+            this.buttonNextTutorial.Font = new System.Drawing.Font("Franklin Gothic Demi", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNextTutorial.ForeColor = System.Drawing.Color.White;
+            this.buttonNextTutorial.Location = new System.Drawing.Point(485, 565);
+            this.buttonNextTutorial.Name = "buttonNextTutorial";
+            this.buttonNextTutorial.Size = new System.Drawing.Size(180, 60);
+            this.buttonNextTutorial.TabIndex = 10;
+            this.buttonNextTutorial.Text = "NEXT";
+            this.buttonNextTutorial.UseVisualStyleBackColor = false;
+            this.buttonNextTutorial.Click += new System.EventHandler(this.buttonNextTutorial_Click);
+            // 
+            // labelHighScoreImpossible
+            // 
+            this.labelHighScoreImpossible.BackColor = System.Drawing.Color.Transparent;
+            this.labelHighScoreImpossible.Font = new System.Drawing.Font("Franklin Gothic Demi", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHighScoreImpossible.Location = new System.Drawing.Point(903, 202);
+            this.labelHighScoreImpossible.Name = "labelHighScoreImpossible";
+            this.labelHighScoreImpossible.Size = new System.Drawing.Size(120, 45);
+            this.labelHighScoreImpossible.TabIndex = 23;
+            this.labelHighScoreImpossible.Text = "0";
+            this.labelHighScoreImpossible.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelHighScoreHard
+            // 
+            this.labelHighScoreHard.BackColor = System.Drawing.Color.Transparent;
+            this.labelHighScoreHard.Font = new System.Drawing.Font("Franklin Gothic Demi", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHighScoreHard.Location = new System.Drawing.Point(643, 202);
+            this.labelHighScoreHard.Name = "labelHighScoreHard";
+            this.labelHighScoreHard.Size = new System.Drawing.Size(120, 45);
+            this.labelHighScoreHard.TabIndex = 22;
+            this.labelHighScoreHard.Text = "1234";
+            this.labelHighScoreHard.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelHighScoreMedium
+            // 
+            this.labelHighScoreMedium.BackColor = System.Drawing.Color.Transparent;
+            this.labelHighScoreMedium.Font = new System.Drawing.Font("Franklin Gothic Demi", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHighScoreMedium.Location = new System.Drawing.Point(383, 202);
+            this.labelHighScoreMedium.Name = "labelHighScoreMedium";
+            this.labelHighScoreMedium.Size = new System.Drawing.Size(120, 45);
+            this.labelHighScoreMedium.TabIndex = 21;
+            this.labelHighScoreMedium.Text = "1234";
+            this.labelHighScoreMedium.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelHighScoreEasy
+            // 
+            this.labelHighScoreEasy.BackColor = System.Drawing.Color.Transparent;
+            this.labelHighScoreEasy.Font = new System.Drawing.Font("Franklin Gothic Demi", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHighScoreEasy.Location = new System.Drawing.Point(123, 202);
+            this.labelHighScoreEasy.Name = "labelHighScoreEasy";
+            this.labelHighScoreEasy.Size = new System.Drawing.Size(120, 45);
+            this.labelHighScoreEasy.TabIndex = 20;
+            this.labelHighScoreEasy.Text = "1234";
+            this.labelHighScoreEasy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBoxBackCreateLoadPlayer
+            // 
+            this.pictureBoxBackCreateLoadPlayer.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxBackCreateLoadPlayer.BackgroundImage = global::Project.Properties.Resources.back;
+            this.pictureBoxBackCreateLoadPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxBackCreateLoadPlayer.Location = new System.Drawing.Point(12, 12);
+            this.pictureBoxBackCreateLoadPlayer.Name = "pictureBoxBackCreateLoadPlayer";
+            this.pictureBoxBackCreateLoadPlayer.Size = new System.Drawing.Size(75, 75);
+            this.pictureBoxBackCreateLoadPlayer.TabIndex = 10;
+            this.pictureBoxBackCreateLoadPlayer.TabStop = false;
+            this.pictureBoxBackCreateLoadPlayer.Click += new System.EventHandler(this.pictureBoxBackCreateLoadPlayer_Click);
+            // 
+            // panelSetting
+            // 
+            this.panelSetting.BackColor = System.Drawing.Color.Transparent;
+            this.panelSetting.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelSetting.BackgroundImage")));
+            this.panelSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelSetting.Controls.Add(this.pictureBoxHome);
+            this.panelSetting.Controls.Add(this.pictureBoxRestart);
+            this.panelSetting.Controls.Add(this.pictureBoxResume);
+            this.panelSetting.Controls.Add(this.pictureBoxVolumeBarSFX5);
+            this.panelSetting.Controls.Add(this.pictureBoxVolumeBarSFX4);
+            this.panelSetting.Controls.Add(this.pictureBoxVolumeBarSFX3);
+            this.panelSetting.Controls.Add(this.pictureBoxVolumeBarSFX2);
+            this.panelSetting.Controls.Add(this.pictureBoxVolumeBarSFX1);
+            this.panelSetting.Controls.Add(this.pictureBoxVolmeUpSFX);
+            this.panelSetting.Controls.Add(this.pictureBoxVolumeDownSFX);
+            this.panelSetting.Controls.Add(this.pictureBoxBarMusic5);
+            this.panelSetting.Controls.Add(this.pictureBoxBarMusic4);
+            this.panelSetting.Controls.Add(this.pictureBoxBarMusic3);
+            this.panelSetting.Controls.Add(this.pictureBoxBarMusic2);
+            this.panelSetting.Controls.Add(this.pictureBoxBarMusic1);
+            this.panelSetting.Controls.Add(this.pictureBoxVolumeUpMusic);
+            this.panelSetting.Controls.Add(this.pictureBoxVolumeDownMusic);
+            this.panelSetting.Controls.Add(this.label20);
+            this.panelSetting.Controls.Add(this.label19);
+            this.panelSetting.Controls.Add(this.label18);
+            this.panelSetting.Location = new System.Drawing.Point(0, 0);
+            this.panelSetting.Name = "panelSetting";
+            this.panelSetting.Size = new System.Drawing.Size(1150, 650);
+            this.panelSetting.TabIndex = 9;
+            // 
+            // pictureBoxHome
+            // 
+            this.pictureBoxHome.BackgroundImage = global::Project.Properties.Resources.buttonHomeSetting;
+            this.pictureBoxHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxHome.Location = new System.Drawing.Point(775, 465);
+            this.pictureBoxHome.Name = "pictureBoxHome";
+            this.pictureBoxHome.Size = new System.Drawing.Size(125, 125);
+            this.pictureBoxHome.TabIndex = 19;
+            this.pictureBoxHome.TabStop = false;
+            this.pictureBoxHome.Click += new System.EventHandler(this.pictureBoxHome_Click);
+            // 
+            // pictureBoxRestart
+            // 
+            this.pictureBoxRestart.BackgroundImage = global::Project.Properties.Resources.buttonRestartSetting;
+            this.pictureBoxRestart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxRestart.Location = new System.Drawing.Point(250, 465);
+            this.pictureBoxRestart.Name = "pictureBoxRestart";
+            this.pictureBoxRestart.Size = new System.Drawing.Size(125, 125);
+            this.pictureBoxRestart.TabIndex = 18;
+            this.pictureBoxRestart.TabStop = false;
+            this.pictureBoxRestart.Click += new System.EventHandler(this.pictureBoxRestart_Click);
+            // 
+            // pictureBoxResume
+            // 
+            this.pictureBoxResume.BackgroundImage = global::Project.Properties.Resources.buttonResumeSetting;
+            this.pictureBoxResume.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxResume.Location = new System.Drawing.Point(505, 375);
+            this.pictureBoxResume.Name = "pictureBoxResume";
+            this.pictureBoxResume.Size = new System.Drawing.Size(140, 140);
+            this.pictureBoxResume.TabIndex = 17;
+            this.pictureBoxResume.TabStop = false;
+            this.pictureBoxResume.Click += new System.EventHandler(this.pictureBoxResume_Click);
+            // 
+            // pictureBoxVolumeBarSFX5
+            // 
+            this.pictureBoxVolumeBarSFX5.BackgroundImage = global::Project.Properties.Resources.volumeBarFull;
+            this.pictureBoxVolumeBarSFX5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxVolumeBarSFX5.Location = new System.Drawing.Point(830, 262);
+            this.pictureBoxVolumeBarSFX5.Name = "pictureBoxVolumeBarSFX5";
+            this.pictureBoxVolumeBarSFX5.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxVolumeBarSFX5.TabIndex = 16;
+            this.pictureBoxVolumeBarSFX5.TabStop = false;
+            // 
+            // pictureBoxVolumeBarSFX4
+            // 
+            this.pictureBoxVolumeBarSFX4.BackgroundImage = global::Project.Properties.Resources.volumeBarFull;
+            this.pictureBoxVolumeBarSFX4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxVolumeBarSFX4.Location = new System.Drawing.Point(780, 262);
+            this.pictureBoxVolumeBarSFX4.Name = "pictureBoxVolumeBarSFX4";
+            this.pictureBoxVolumeBarSFX4.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxVolumeBarSFX4.TabIndex = 15;
+            this.pictureBoxVolumeBarSFX4.TabStop = false;
+            // 
+            // pictureBoxVolumeBarSFX3
+            // 
+            this.pictureBoxVolumeBarSFX3.BackgroundImage = global::Project.Properties.Resources.volumeBarFull;
+            this.pictureBoxVolumeBarSFX3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxVolumeBarSFX3.Location = new System.Drawing.Point(730, 262);
+            this.pictureBoxVolumeBarSFX3.Name = "pictureBoxVolumeBarSFX3";
+            this.pictureBoxVolumeBarSFX3.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxVolumeBarSFX3.TabIndex = 14;
+            this.pictureBoxVolumeBarSFX3.TabStop = false;
+            // 
+            // pictureBoxVolumeBarSFX2
+            // 
+            this.pictureBoxVolumeBarSFX2.BackgroundImage = global::Project.Properties.Resources.volumeBarFull;
+            this.pictureBoxVolumeBarSFX2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxVolumeBarSFX2.Location = new System.Drawing.Point(680, 262);
+            this.pictureBoxVolumeBarSFX2.Name = "pictureBoxVolumeBarSFX2";
+            this.pictureBoxVolumeBarSFX2.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxVolumeBarSFX2.TabIndex = 13;
+            this.pictureBoxVolumeBarSFX2.TabStop = false;
+            // 
+            // pictureBoxVolumeBarSFX1
+            // 
+            this.pictureBoxVolumeBarSFX1.BackgroundImage = global::Project.Properties.Resources.volumeBarFull;
+            this.pictureBoxVolumeBarSFX1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxVolumeBarSFX1.Location = new System.Drawing.Point(630, 262);
+            this.pictureBoxVolumeBarSFX1.Name = "pictureBoxVolumeBarSFX1";
+            this.pictureBoxVolumeBarSFX1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxVolumeBarSFX1.TabIndex = 12;
+            this.pictureBoxVolumeBarSFX1.TabStop = false;
+            // 
+            // pictureBoxVolmeUpSFX
+            // 
+            this.pictureBoxVolmeUpSFX.BackgroundImage = global::Project.Properties.Resources.buttonVolUp;
+            this.pictureBoxVolmeUpSFX.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxVolmeUpSFX.Location = new System.Drawing.Point(880, 262);
+            this.pictureBoxVolmeUpSFX.Name = "pictureBoxVolmeUpSFX";
+            this.pictureBoxVolmeUpSFX.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxVolmeUpSFX.TabIndex = 11;
+            this.pictureBoxVolmeUpSFX.TabStop = false;
+            // 
+            // pictureBoxVolumeDownSFX
+            // 
+            this.pictureBoxVolumeDownSFX.BackgroundImage = global::Project.Properties.Resources.buttonVolDown;
+            this.pictureBoxVolumeDownSFX.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxVolumeDownSFX.Location = new System.Drawing.Point(580, 262);
+            this.pictureBoxVolumeDownSFX.Name = "pictureBoxVolumeDownSFX";
+            this.pictureBoxVolumeDownSFX.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxVolumeDownSFX.TabIndex = 10;
+            this.pictureBoxVolumeDownSFX.TabStop = false;
+            // 
+            // pictureBoxBarMusic5
+            // 
+            this.pictureBoxBarMusic5.BackgroundImage = global::Project.Properties.Resources.volumeBarFull;
+            this.pictureBoxBarMusic5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxBarMusic5.Location = new System.Drawing.Point(830, 155);
+            this.pictureBoxBarMusic5.Name = "pictureBoxBarMusic5";
+            this.pictureBoxBarMusic5.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxBarMusic5.TabIndex = 9;
+            this.pictureBoxBarMusic5.TabStop = false;
+            // 
+            // pictureBoxBarMusic4
+            // 
+            this.pictureBoxBarMusic4.BackgroundImage = global::Project.Properties.Resources.volumeBarFull;
+            this.pictureBoxBarMusic4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxBarMusic4.Location = new System.Drawing.Point(780, 155);
+            this.pictureBoxBarMusic4.Name = "pictureBoxBarMusic4";
+            this.pictureBoxBarMusic4.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxBarMusic4.TabIndex = 8;
+            this.pictureBoxBarMusic4.TabStop = false;
+            // 
+            // pictureBoxBarMusic3
+            // 
+            this.pictureBoxBarMusic3.BackgroundImage = global::Project.Properties.Resources.volumeBarFull;
+            this.pictureBoxBarMusic3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxBarMusic3.Location = new System.Drawing.Point(730, 155);
+            this.pictureBoxBarMusic3.Name = "pictureBoxBarMusic3";
+            this.pictureBoxBarMusic3.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxBarMusic3.TabIndex = 7;
+            this.pictureBoxBarMusic3.TabStop = false;
+            // 
+            // pictureBoxBarMusic2
+            // 
+            this.pictureBoxBarMusic2.BackgroundImage = global::Project.Properties.Resources.volumeBarFull;
+            this.pictureBoxBarMusic2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxBarMusic2.Location = new System.Drawing.Point(680, 155);
+            this.pictureBoxBarMusic2.Name = "pictureBoxBarMusic2";
+            this.pictureBoxBarMusic2.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxBarMusic2.TabIndex = 6;
+            this.pictureBoxBarMusic2.TabStop = false;
+            // 
+            // pictureBoxBarMusic1
+            // 
+            this.pictureBoxBarMusic1.BackgroundImage = global::Project.Properties.Resources.volumeBarFull;
+            this.pictureBoxBarMusic1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxBarMusic1.Location = new System.Drawing.Point(630, 155);
+            this.pictureBoxBarMusic1.Name = "pictureBoxBarMusic1";
+            this.pictureBoxBarMusic1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxBarMusic1.TabIndex = 5;
+            this.pictureBoxBarMusic1.TabStop = false;
+            // 
+            // pictureBoxVolumeUpMusic
+            // 
+            this.pictureBoxVolumeUpMusic.BackgroundImage = global::Project.Properties.Resources.buttonVolUp;
+            this.pictureBoxVolumeUpMusic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxVolumeUpMusic.Location = new System.Drawing.Point(880, 155);
+            this.pictureBoxVolumeUpMusic.Name = "pictureBoxVolumeUpMusic";
+            this.pictureBoxVolumeUpMusic.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxVolumeUpMusic.TabIndex = 4;
+            this.pictureBoxVolumeUpMusic.TabStop = false;
+            // 
+            // pictureBoxVolumeDownMusic
+            // 
+            this.pictureBoxVolumeDownMusic.BackgroundImage = global::Project.Properties.Resources.buttonVolDown;
+            this.pictureBoxVolumeDownMusic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxVolumeDownMusic.Location = new System.Drawing.Point(580, 155);
+            this.pictureBoxVolumeDownMusic.Name = "pictureBoxVolumeDownMusic";
+            this.pictureBoxVolumeDownMusic.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxVolumeDownMusic.TabIndex = 3;
+            this.pictureBoxVolumeDownMusic.TabStop = false;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.Transparent;
+            this.label20.Font = new System.Drawing.Font("Humnst777 BlkCn BT", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.White;
+            this.label20.Location = new System.Drawing.Point(211, 259);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(277, 57);
+            this.label20.TabIndex = 2;
+            this.label20.Text = "SFX Volume ";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.Transparent;
+            this.label19.Font = new System.Drawing.Font("Humnst777 BlkCn BT", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.White;
+            this.label19.Location = new System.Drawing.Point(211, 151);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(321, 57);
+            this.label19.TabIndex = 1;
+            this.label19.Text = "Music Volume ";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.Transparent;
+            this.label18.Font = new System.Drawing.Font("Humnst777 BlkCn BT", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(450, 56);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(251, 73);
+            this.label18.TabIndex = 0;
+            this.label18.Text = "SETTING";
             // 
             // panelGame
             // 
@@ -988,244 +1478,6 @@
             this.pictureBoxCustomer1.TabIndex = 47;
             this.pictureBoxCustomer1.TabStop = false;
             // 
-            // panelSetting
-            // 
-            this.panelSetting.BackColor = System.Drawing.Color.Transparent;
-            this.panelSetting.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelSetting.BackgroundImage")));
-            this.panelSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelSetting.Controls.Add(this.pictureBoxHome);
-            this.panelSetting.Controls.Add(this.pictureBoxRestart);
-            this.panelSetting.Controls.Add(this.pictureBoxResume);
-            this.panelSetting.Controls.Add(this.pictureBoxVolumeBarSFX5);
-            this.panelSetting.Controls.Add(this.pictureBoxVolumeBarSFX4);
-            this.panelSetting.Controls.Add(this.pictureBoxVolumeBarSFX3);
-            this.panelSetting.Controls.Add(this.pictureBoxVolumeBarSFX2);
-            this.panelSetting.Controls.Add(this.pictureBoxVolumeBarSFX1);
-            this.panelSetting.Controls.Add(this.pictureBoxVolmeUpSFX);
-            this.panelSetting.Controls.Add(this.pictureBoxVolumeDownSFX);
-            this.panelSetting.Controls.Add(this.pictureBoxBarMusic5);
-            this.panelSetting.Controls.Add(this.pictureBoxBarMusic4);
-            this.panelSetting.Controls.Add(this.pictureBoxBarMusic3);
-            this.panelSetting.Controls.Add(this.pictureBoxBarMusic2);
-            this.panelSetting.Controls.Add(this.pictureBoxBarMusic1);
-            this.panelSetting.Controls.Add(this.pictureBoxVolumeUpMusic);
-            this.panelSetting.Controls.Add(this.pictureBoxVolumeDownMusic);
-            this.panelSetting.Controls.Add(this.label20);
-            this.panelSetting.Controls.Add(this.label19);
-            this.panelSetting.Controls.Add(this.label18);
-            this.panelSetting.Location = new System.Drawing.Point(0, 0);
-            this.panelSetting.Name = "panelSetting";
-            this.panelSetting.Size = new System.Drawing.Size(1150, 650);
-            this.panelSetting.TabIndex = 9;
-            // 
-            // pictureBoxHome
-            // 
-            this.pictureBoxHome.BackgroundImage = global::Project.Properties.Resources.buttonHomeSetting;
-            this.pictureBoxHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxHome.Location = new System.Drawing.Point(775, 465);
-            this.pictureBoxHome.Name = "pictureBoxHome";
-            this.pictureBoxHome.Size = new System.Drawing.Size(125, 125);
-            this.pictureBoxHome.TabIndex = 19;
-            this.pictureBoxHome.TabStop = false;
-            this.pictureBoxHome.Click += new System.EventHandler(this.pictureBoxHome_Click);
-            // 
-            // pictureBoxRestart
-            // 
-            this.pictureBoxRestart.BackgroundImage = global::Project.Properties.Resources.buttonRestartSetting;
-            this.pictureBoxRestart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxRestart.Location = new System.Drawing.Point(250, 465);
-            this.pictureBoxRestart.Name = "pictureBoxRestart";
-            this.pictureBoxRestart.Size = new System.Drawing.Size(125, 125);
-            this.pictureBoxRestart.TabIndex = 18;
-            this.pictureBoxRestart.TabStop = false;
-            this.pictureBoxRestart.Click += new System.EventHandler(this.pictureBoxRestart_Click);
-            // 
-            // pictureBoxResume
-            // 
-            this.pictureBoxResume.BackgroundImage = global::Project.Properties.Resources.buttonResumeSetting;
-            this.pictureBoxResume.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxResume.Location = new System.Drawing.Point(505, 375);
-            this.pictureBoxResume.Name = "pictureBoxResume";
-            this.pictureBoxResume.Size = new System.Drawing.Size(140, 140);
-            this.pictureBoxResume.TabIndex = 17;
-            this.pictureBoxResume.TabStop = false;
-            this.pictureBoxResume.Click += new System.EventHandler(this.pictureBoxResume_Click);
-            // 
-            // pictureBoxVolumeBarSFX5
-            // 
-            this.pictureBoxVolumeBarSFX5.BackgroundImage = global::Project.Properties.Resources.volumeBarFull;
-            this.pictureBoxVolumeBarSFX5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxVolumeBarSFX5.Location = new System.Drawing.Point(830, 262);
-            this.pictureBoxVolumeBarSFX5.Name = "pictureBoxVolumeBarSFX5";
-            this.pictureBoxVolumeBarSFX5.Size = new System.Drawing.Size(50, 50);
-            this.pictureBoxVolumeBarSFX5.TabIndex = 16;
-            this.pictureBoxVolumeBarSFX5.TabStop = false;
-            // 
-            // pictureBoxVolumeBarSFX4
-            // 
-            this.pictureBoxVolumeBarSFX4.BackgroundImage = global::Project.Properties.Resources.volumeBarFull;
-            this.pictureBoxVolumeBarSFX4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxVolumeBarSFX4.Location = new System.Drawing.Point(780, 262);
-            this.pictureBoxVolumeBarSFX4.Name = "pictureBoxVolumeBarSFX4";
-            this.pictureBoxVolumeBarSFX4.Size = new System.Drawing.Size(50, 50);
-            this.pictureBoxVolumeBarSFX4.TabIndex = 15;
-            this.pictureBoxVolumeBarSFX4.TabStop = false;
-            // 
-            // pictureBoxVolumeBarSFX3
-            // 
-            this.pictureBoxVolumeBarSFX3.BackgroundImage = global::Project.Properties.Resources.volumeBarFull;
-            this.pictureBoxVolumeBarSFX3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxVolumeBarSFX3.Location = new System.Drawing.Point(730, 262);
-            this.pictureBoxVolumeBarSFX3.Name = "pictureBoxVolumeBarSFX3";
-            this.pictureBoxVolumeBarSFX3.Size = new System.Drawing.Size(50, 50);
-            this.pictureBoxVolumeBarSFX3.TabIndex = 14;
-            this.pictureBoxVolumeBarSFX3.TabStop = false;
-            // 
-            // pictureBoxVolumeBarSFX2
-            // 
-            this.pictureBoxVolumeBarSFX2.BackgroundImage = global::Project.Properties.Resources.volumeBarFull;
-            this.pictureBoxVolumeBarSFX2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxVolumeBarSFX2.Location = new System.Drawing.Point(680, 262);
-            this.pictureBoxVolumeBarSFX2.Name = "pictureBoxVolumeBarSFX2";
-            this.pictureBoxVolumeBarSFX2.Size = new System.Drawing.Size(50, 50);
-            this.pictureBoxVolumeBarSFX2.TabIndex = 13;
-            this.pictureBoxVolumeBarSFX2.TabStop = false;
-            // 
-            // pictureBoxVolumeBarSFX1
-            // 
-            this.pictureBoxVolumeBarSFX1.BackgroundImage = global::Project.Properties.Resources.volumeBarFull;
-            this.pictureBoxVolumeBarSFX1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxVolumeBarSFX1.Location = new System.Drawing.Point(630, 262);
-            this.pictureBoxVolumeBarSFX1.Name = "pictureBoxVolumeBarSFX1";
-            this.pictureBoxVolumeBarSFX1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBoxVolumeBarSFX1.TabIndex = 12;
-            this.pictureBoxVolumeBarSFX1.TabStop = false;
-            // 
-            // pictureBoxVolmeUpSFX
-            // 
-            this.pictureBoxVolmeUpSFX.BackgroundImage = global::Project.Properties.Resources.buttonVolUp;
-            this.pictureBoxVolmeUpSFX.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxVolmeUpSFX.Location = new System.Drawing.Point(880, 262);
-            this.pictureBoxVolmeUpSFX.Name = "pictureBoxVolmeUpSFX";
-            this.pictureBoxVolmeUpSFX.Size = new System.Drawing.Size(50, 50);
-            this.pictureBoxVolmeUpSFX.TabIndex = 11;
-            this.pictureBoxVolmeUpSFX.TabStop = false;
-            // 
-            // pictureBoxVolumeDownSFX
-            // 
-            this.pictureBoxVolumeDownSFX.BackgroundImage = global::Project.Properties.Resources.buttonVolDown;
-            this.pictureBoxVolumeDownSFX.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxVolumeDownSFX.Location = new System.Drawing.Point(580, 262);
-            this.pictureBoxVolumeDownSFX.Name = "pictureBoxVolumeDownSFX";
-            this.pictureBoxVolumeDownSFX.Size = new System.Drawing.Size(50, 50);
-            this.pictureBoxVolumeDownSFX.TabIndex = 10;
-            this.pictureBoxVolumeDownSFX.TabStop = false;
-            // 
-            // pictureBoxBarMusic5
-            // 
-            this.pictureBoxBarMusic5.BackgroundImage = global::Project.Properties.Resources.volumeBarFull;
-            this.pictureBoxBarMusic5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxBarMusic5.Location = new System.Drawing.Point(830, 155);
-            this.pictureBoxBarMusic5.Name = "pictureBoxBarMusic5";
-            this.pictureBoxBarMusic5.Size = new System.Drawing.Size(50, 50);
-            this.pictureBoxBarMusic5.TabIndex = 9;
-            this.pictureBoxBarMusic5.TabStop = false;
-            // 
-            // pictureBoxBarMusic4
-            // 
-            this.pictureBoxBarMusic4.BackgroundImage = global::Project.Properties.Resources.volumeBarFull;
-            this.pictureBoxBarMusic4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxBarMusic4.Location = new System.Drawing.Point(780, 155);
-            this.pictureBoxBarMusic4.Name = "pictureBoxBarMusic4";
-            this.pictureBoxBarMusic4.Size = new System.Drawing.Size(50, 50);
-            this.pictureBoxBarMusic4.TabIndex = 8;
-            this.pictureBoxBarMusic4.TabStop = false;
-            // 
-            // pictureBoxBarMusic3
-            // 
-            this.pictureBoxBarMusic3.BackgroundImage = global::Project.Properties.Resources.volumeBarFull;
-            this.pictureBoxBarMusic3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxBarMusic3.Location = new System.Drawing.Point(730, 155);
-            this.pictureBoxBarMusic3.Name = "pictureBoxBarMusic3";
-            this.pictureBoxBarMusic3.Size = new System.Drawing.Size(50, 50);
-            this.pictureBoxBarMusic3.TabIndex = 7;
-            this.pictureBoxBarMusic3.TabStop = false;
-            // 
-            // pictureBoxBarMusic2
-            // 
-            this.pictureBoxBarMusic2.BackgroundImage = global::Project.Properties.Resources.volumeBarFull;
-            this.pictureBoxBarMusic2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxBarMusic2.Location = new System.Drawing.Point(680, 155);
-            this.pictureBoxBarMusic2.Name = "pictureBoxBarMusic2";
-            this.pictureBoxBarMusic2.Size = new System.Drawing.Size(50, 50);
-            this.pictureBoxBarMusic2.TabIndex = 6;
-            this.pictureBoxBarMusic2.TabStop = false;
-            // 
-            // pictureBoxBarMusic1
-            // 
-            this.pictureBoxBarMusic1.BackgroundImage = global::Project.Properties.Resources.volumeBarFull;
-            this.pictureBoxBarMusic1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxBarMusic1.Location = new System.Drawing.Point(630, 155);
-            this.pictureBoxBarMusic1.Name = "pictureBoxBarMusic1";
-            this.pictureBoxBarMusic1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBoxBarMusic1.TabIndex = 5;
-            this.pictureBoxBarMusic1.TabStop = false;
-            // 
-            // pictureBoxVolumeUpMusic
-            // 
-            this.pictureBoxVolumeUpMusic.BackgroundImage = global::Project.Properties.Resources.buttonVolUp;
-            this.pictureBoxVolumeUpMusic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxVolumeUpMusic.Location = new System.Drawing.Point(880, 155);
-            this.pictureBoxVolumeUpMusic.Name = "pictureBoxVolumeUpMusic";
-            this.pictureBoxVolumeUpMusic.Size = new System.Drawing.Size(50, 50);
-            this.pictureBoxVolumeUpMusic.TabIndex = 4;
-            this.pictureBoxVolumeUpMusic.TabStop = false;
-            // 
-            // pictureBoxVolumeDownMusic
-            // 
-            this.pictureBoxVolumeDownMusic.BackgroundImage = global::Project.Properties.Resources.buttonVolDown;
-            this.pictureBoxVolumeDownMusic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxVolumeDownMusic.Location = new System.Drawing.Point(580, 155);
-            this.pictureBoxVolumeDownMusic.Name = "pictureBoxVolumeDownMusic";
-            this.pictureBoxVolumeDownMusic.Size = new System.Drawing.Size(50, 50);
-            this.pictureBoxVolumeDownMusic.TabIndex = 3;
-            this.pictureBoxVolumeDownMusic.TabStop = false;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.Transparent;
-            this.label20.Font = new System.Drawing.Font("Humnst777 BlkCn BT", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(211, 259);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(277, 57);
-            this.label20.TabIndex = 2;
-            this.label20.Text = "SFX Volume ";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.Color.Transparent;
-            this.label19.Font = new System.Drawing.Font("Humnst777 BlkCn BT", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(211, 151);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(321, 57);
-            this.label19.TabIndex = 1;
-            this.label19.Text = "Music Volume ";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.Font = new System.Drawing.Font("Humnst777 BlkCn BT", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(450, 56);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(251, 73);
-            this.label18.TabIndex = 0;
-            this.label18.Text = "SETTING";
-            // 
             // panelTutorial
             // 
             this.panelTutorial.BackgroundImage = global::Project.Properties.Resources.bg_Tutorial;
@@ -1262,250 +1514,6 @@
             this.buttonStartGame.Text = "START";
             this.buttonStartGame.UseVisualStyleBackColor = false;
             this.buttonStartGame.Click += new System.EventHandler(this.buttonStartGame_Click);
-            // 
-            // panelDifficulty
-            // 
-            this.panelDifficulty.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelDifficulty.BackgroundImage")));
-            this.panelDifficulty.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelDifficulty.Controls.Add(this.labelBestTimeImpossible);
-            this.panelDifficulty.Controls.Add(this.labelBestTimeHard);
-            this.panelDifficulty.Controls.Add(this.labelBestTimeMedium);
-            this.panelDifficulty.Controls.Add(this.labelBestTimeEasy);
-            this.panelDifficulty.Controls.Add(this.labelImpossible);
-            this.panelDifficulty.Controls.Add(this.labelHard);
-            this.panelDifficulty.Controls.Add(this.pictureBoxImpossible);
-            this.panelDifficulty.Controls.Add(this.pictureBoxHard);
-            this.panelDifficulty.Controls.Add(this.labelMedium);
-            this.panelDifficulty.Controls.Add(this.pictureBoxMedium);
-            this.panelDifficulty.Controls.Add(this.labelEasy);
-            this.panelDifficulty.Controls.Add(this.pictureBoxEasy);
-            this.panelDifficulty.Controls.Add(this.buttonNextTutorial);
-            this.panelDifficulty.Controls.Add(this.labelHighScoreImposible);
-            this.panelDifficulty.Controls.Add(this.labelHighScoreHard);
-            this.panelDifficulty.Controls.Add(this.labelHighScoreMedium);
-            this.panelDifficulty.Controls.Add(this.labelHighScoreEasy);
-            this.panelDifficulty.Controls.Add(this.pictureBoxBackCreateLoadPlayer);
-            this.panelDifficulty.Location = new System.Drawing.Point(0, 0);
-            this.panelDifficulty.Name = "panelDifficulty";
-            this.panelDifficulty.Size = new System.Drawing.Size(1150, 650);
-            this.panelDifficulty.TabIndex = 9;
-            // 
-            // labelBestTimeImpossible
-            // 
-            this.labelBestTimeImpossible.AutoSize = true;
-            this.labelBestTimeImpossible.BackColor = System.Drawing.Color.Transparent;
-            this.labelBestTimeImpossible.Font = new System.Drawing.Font("Franklin Gothic Medium", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBestTimeImpossible.Location = new System.Drawing.Point(859, 276);
-            this.labelBestTimeImpossible.Name = "labelBestTimeImpossible";
-            this.labelBestTimeImpossible.Size = new System.Drawing.Size(179, 38);
-            this.labelBestTimeImpossible.TabIndex = 44;
-            this.labelBestTimeImpossible.Text = "00 : 00 : 00";
-            // 
-            // labelBestTimeHard
-            // 
-            this.labelBestTimeHard.AutoSize = true;
-            this.labelBestTimeHard.BackColor = System.Drawing.Color.Transparent;
-            this.labelBestTimeHard.Font = new System.Drawing.Font("Franklin Gothic Medium", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBestTimeHard.Location = new System.Drawing.Point(601, 276);
-            this.labelBestTimeHard.Name = "labelBestTimeHard";
-            this.labelBestTimeHard.Size = new System.Drawing.Size(179, 38);
-            this.labelBestTimeHard.TabIndex = 43;
-            this.labelBestTimeHard.Text = "00 : 00 : 00";
-            // 
-            // labelBestTimeMedium
-            // 
-            this.labelBestTimeMedium.AutoSize = true;
-            this.labelBestTimeMedium.BackColor = System.Drawing.Color.Transparent;
-            this.labelBestTimeMedium.Font = new System.Drawing.Font("Franklin Gothic Medium", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBestTimeMedium.Location = new System.Drawing.Point(346, 276);
-            this.labelBestTimeMedium.Name = "labelBestTimeMedium";
-            this.labelBestTimeMedium.Size = new System.Drawing.Size(179, 38);
-            this.labelBestTimeMedium.TabIndex = 42;
-            this.labelBestTimeMedium.Text = "00 : 00 : 00";
-            // 
-            // labelBestTimeEasy
-            // 
-            this.labelBestTimeEasy.AutoSize = true;
-            this.labelBestTimeEasy.BackColor = System.Drawing.Color.Transparent;
-            this.labelBestTimeEasy.Font = new System.Drawing.Font("Franklin Gothic Medium", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBestTimeEasy.Location = new System.Drawing.Point(83, 271);
-            this.labelBestTimeEasy.Name = "labelBestTimeEasy";
-            this.labelBestTimeEasy.Size = new System.Drawing.Size(179, 38);
-            this.labelBestTimeEasy.TabIndex = 41;
-            this.labelBestTimeEasy.Text = "00 : 00 : 00";
-            // 
-            // labelImpossible
-            // 
-            this.labelImpossible.AutoSize = true;
-            this.labelImpossible.BackColor = System.Drawing.Color.White;
-            this.labelImpossible.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelImpossible.Location = new System.Drawing.Point(880, 485);
-            this.labelImpossible.Name = "labelImpossible";
-            this.labelImpossible.Size = new System.Drawing.Size(157, 38);
-            this.labelImpossible.TabIndex = 28;
-            this.labelImpossible.Text = "Impossible";
-            this.labelImpossible.Click += new System.EventHandler(this.labelImpossible_Click);
-            // 
-            // labelHard
-            // 
-            this.labelHard.AutoSize = true;
-            this.labelHard.BackColor = System.Drawing.Color.White;
-            this.labelHard.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHard.Location = new System.Drawing.Point(661, 485);
-            this.labelHard.Name = "labelHard";
-            this.labelHard.Size = new System.Drawing.Size(78, 38);
-            this.labelHard.TabIndex = 28;
-            this.labelHard.Text = "Hard";
-            this.labelHard.Click += new System.EventHandler(this.labelHard_Click);
-            // 
-            // pictureBoxImpossible
-            // 
-            this.pictureBoxImpossible.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxImpossible.BackgroundImage = global::Project.Properties.Resources.imposible;
-            this.pictureBoxImpossible.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxImpossible.Location = new System.Drawing.Point(854, 480);
-            this.pictureBoxImpossible.Name = "pictureBoxImpossible";
-            this.pictureBoxImpossible.Size = new System.Drawing.Size(211, 57);
-            this.pictureBoxImpossible.TabIndex = 40;
-            this.pictureBoxImpossible.TabStop = false;
-            this.pictureBoxImpossible.Click += new System.EventHandler(this.pictureBoxImpossible_Click);
-            this.pictureBoxImpossible.MouseEnter += new System.EventHandler(this.pictureBoxImpossible_MouseEnter);
-            this.pictureBoxImpossible.MouseLeave += new System.EventHandler(this.pictureBoxImpossible_MouseLeave);
-            // 
-            // pictureBoxHard
-            // 
-            this.pictureBoxHard.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxHard.BackgroundImage = global::Project.Properties.Resources.hard;
-            this.pictureBoxHard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxHard.Location = new System.Drawing.Point(596, 480);
-            this.pictureBoxHard.Name = "pictureBoxHard";
-            this.pictureBoxHard.Size = new System.Drawing.Size(211, 57);
-            this.pictureBoxHard.TabIndex = 39;
-            this.pictureBoxHard.TabStop = false;
-            this.pictureBoxHard.Click += new System.EventHandler(this.pictureBoxHard_Click);
-            this.pictureBoxHard.MouseEnter += new System.EventHandler(this.pictureBoxHard_MouseEnter);
-            this.pictureBoxHard.MouseLeave += new System.EventHandler(this.pictureBoxHard_MouseLeave);
-            // 
-            // labelMedium
-            // 
-            this.labelMedium.AutoSize = true;
-            this.labelMedium.BackColor = System.Drawing.Color.White;
-            this.labelMedium.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMedium.Location = new System.Drawing.Point(389, 485);
-            this.labelMedium.Name = "labelMedium";
-            this.labelMedium.Size = new System.Drawing.Size(122, 38);
-            this.labelMedium.TabIndex = 28;
-            this.labelMedium.Text = "Medium";
-            this.labelMedium.Click += new System.EventHandler(this.labelMedium_Click);
-            // 
-            // pictureBoxMedium
-            // 
-            this.pictureBoxMedium.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxMedium.BackgroundImage = global::Project.Properties.Resources.medium;
-            this.pictureBoxMedium.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxMedium.Location = new System.Drawing.Point(341, 480);
-            this.pictureBoxMedium.Name = "pictureBoxMedium";
-            this.pictureBoxMedium.Size = new System.Drawing.Size(211, 57);
-            this.pictureBoxMedium.TabIndex = 38;
-            this.pictureBoxMedium.TabStop = false;
-            this.pictureBoxMedium.Click += new System.EventHandler(this.pictureBoxMedium_Click);
-            this.pictureBoxMedium.MouseEnter += new System.EventHandler(this.pictureBoxMedium_MouseEnter);
-            this.pictureBoxMedium.MouseLeave += new System.EventHandler(this.pictureBoxMedium_MouseLeave);
-            // 
-            // labelEasy
-            // 
-            this.labelEasy.AutoSize = true;
-            this.labelEasy.BackColor = System.Drawing.Color.White;
-            this.labelEasy.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEasy.Location = new System.Drawing.Point(146, 486);
-            this.labelEasy.Name = "labelEasy";
-            this.labelEasy.Size = new System.Drawing.Size(76, 38);
-            this.labelEasy.TabIndex = 28;
-            this.labelEasy.Text = "Easy";
-            this.labelEasy.Click += new System.EventHandler(this.labelEasy_Click);
-            // 
-            // pictureBoxEasy
-            // 
-            this.pictureBoxEasy.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxEasy.BackgroundImage = global::Project.Properties.Resources.easy;
-            this.pictureBoxEasy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxEasy.Location = new System.Drawing.Point(79, 480);
-            this.pictureBoxEasy.Name = "pictureBoxEasy";
-            this.pictureBoxEasy.Size = new System.Drawing.Size(211, 57);
-            this.pictureBoxEasy.TabIndex = 37;
-            this.pictureBoxEasy.TabStop = false;
-            this.pictureBoxEasy.Click += new System.EventHandler(this.pictureBoxEasy_Click);
-            this.pictureBoxEasy.MouseEnter += new System.EventHandler(this.pictureBoxEasy_MouseEnter);
-            this.pictureBoxEasy.MouseLeave += new System.EventHandler(this.pictureBoxEasy_MouseLeave);
-            // 
-            // buttonNextTutorial
-            // 
-            this.buttonNextTutorial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(217)))), ((int)(((byte)(87)))));
-            this.buttonNextTutorial.Font = new System.Drawing.Font("Franklin Gothic Demi", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonNextTutorial.ForeColor = System.Drawing.Color.White;
-            this.buttonNextTutorial.Location = new System.Drawing.Point(485, 565);
-            this.buttonNextTutorial.Name = "buttonNextTutorial";
-            this.buttonNextTutorial.Size = new System.Drawing.Size(180, 60);
-            this.buttonNextTutorial.TabIndex = 10;
-            this.buttonNextTutorial.Text = "NEXT";
-            this.buttonNextTutorial.UseVisualStyleBackColor = false;
-            this.buttonNextTutorial.Click += new System.EventHandler(this.buttonNextTutorial_Click);
-            // 
-            // labelHighScoreImposible
-            // 
-            this.labelHighScoreImposible.AutoSize = true;
-            this.labelHighScoreImposible.BackColor = System.Drawing.Color.Transparent;
-            this.labelHighScoreImposible.Font = new System.Drawing.Font("Franklin Gothic Demi", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHighScoreImposible.Location = new System.Drawing.Point(937, 205);
-            this.labelHighScoreImposible.Name = "labelHighScoreImposible";
-            this.labelHighScoreImposible.Size = new System.Drawing.Size(41, 43);
-            this.labelHighScoreImposible.TabIndex = 23;
-            this.labelHighScoreImposible.Text = "0";
-            // 
-            // labelHighScoreHard
-            // 
-            this.labelHighScoreHard.AutoSize = true;
-            this.labelHighScoreHard.BackColor = System.Drawing.Color.Transparent;
-            this.labelHighScoreHard.Font = new System.Drawing.Font("Franklin Gothic Demi", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHighScoreHard.Location = new System.Drawing.Point(644, 205);
-            this.labelHighScoreHard.Name = "labelHighScoreHard";
-            this.labelHighScoreHard.Size = new System.Drawing.Size(107, 43);
-            this.labelHighScoreHard.TabIndex = 22;
-            this.labelHighScoreHard.Text = "1234";
-            // 
-            // labelHighScoreMedium
-            // 
-            this.labelHighScoreMedium.AutoSize = true;
-            this.labelHighScoreMedium.BackColor = System.Drawing.Color.Transparent;
-            this.labelHighScoreMedium.Font = new System.Drawing.Font("Franklin Gothic Demi", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHighScoreMedium.Location = new System.Drawing.Point(386, 205);
-            this.labelHighScoreMedium.Name = "labelHighScoreMedium";
-            this.labelHighScoreMedium.Size = new System.Drawing.Size(107, 43);
-            this.labelHighScoreMedium.TabIndex = 21;
-            this.labelHighScoreMedium.Text = "1234";
-            // 
-            // labelHighScoreEasy
-            // 
-            this.labelHighScoreEasy.AutoSize = true;
-            this.labelHighScoreEasy.BackColor = System.Drawing.Color.Transparent;
-            this.labelHighScoreEasy.Font = new System.Drawing.Font("Franklin Gothic Demi", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHighScoreEasy.Location = new System.Drawing.Point(127, 205);
-            this.labelHighScoreEasy.Name = "labelHighScoreEasy";
-            this.labelHighScoreEasy.Size = new System.Drawing.Size(107, 43);
-            this.labelHighScoreEasy.TabIndex = 20;
-            this.labelHighScoreEasy.Text = "1234";
-            // 
-            // pictureBoxBackCreateLoadPlayer
-            // 
-            this.pictureBoxBackCreateLoadPlayer.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxBackCreateLoadPlayer.BackgroundImage = global::Project.Properties.Resources.back;
-            this.pictureBoxBackCreateLoadPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxBackCreateLoadPlayer.Location = new System.Drawing.Point(12, 12);
-            this.pictureBoxBackCreateLoadPlayer.Name = "pictureBoxBackCreateLoadPlayer";
-            this.pictureBoxBackCreateLoadPlayer.Size = new System.Drawing.Size(75, 75);
-            this.pictureBoxBackCreateLoadPlayer.TabIndex = 10;
-            this.pictureBoxBackCreateLoadPlayer.TabStop = false;
-            this.pictureBoxBackCreateLoadPlayer.Click += new System.EventHandler(this.pictureBoxBackCreateLoadPlayer_Click);
             // 
             // panelCreateLoadPlayer
             // 
@@ -1711,20 +1719,16 @@
             this.pictureBoxBackHome.TabStop = false;
             this.pictureBoxBackHome.Click += new System.EventHandler(this.pictureBoxBackHome_Click);
             // 
-            // timerGame
-            // 
-            this.timerGame.Tick += new System.EventHandler(this.timerGame_Tick);
-            // 
             // FormGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1149, 650);
-            this.Controls.Add(this.panelSetting);
-            this.Controls.Add(this.panelGame);
             this.Controls.Add(this.panelCreateLoadPlayer);
+            this.Controls.Add(this.panelGame);
             this.Controls.Add(this.panelDifficulty);
+            this.Controls.Add(this.panelSetting);
             this.Controls.Add(this.panelTutorial);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonPlay);
@@ -1733,6 +1737,32 @@
             this.Name = "FormGame";
             this.Text = "Food Wars";
             this.Load += new System.EventHandler(this.FormGame_Load);
+            this.panelDifficulty.ResumeLayout(false);
+            this.panelDifficulty.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImpossible)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHard)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMedium)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEasy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackCreateLoadPlayer)).EndInit();
+            this.panelSetting.ResumeLayout(false);
+            this.panelSetting.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHome)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRestart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResume)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolmeUpSFX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeDownSFX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeUpMusic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeDownMusic)).EndInit();
             this.panelGame.ResumeLayout(false);
             this.panelGame.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBevM)).EndInit();
@@ -1781,33 +1811,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPatty)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCustomer2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCustomer1)).EndInit();
-            this.panelSetting.ResumeLayout(false);
-            this.panelSetting.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHome)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRestart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResume)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeBarSFX1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolmeUpSFX)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeDownSFX)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarMusic1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeUpMusic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeDownMusic)).EndInit();
             this.panelTutorial.ResumeLayout(false);
-            this.panelDifficulty.ResumeLayout(false);
-            this.panelDifficulty.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImpossible)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHard)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMedium)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEasy)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackCreateLoadPlayer)).EndInit();
             this.panelCreateLoadPlayer.ResumeLayout(false);
             this.panelCreateLoadPlayer.PerformLayout();
             this.panelLoadPlayer.ResumeLayout(false);
@@ -1847,7 +1851,7 @@
         private System.Windows.Forms.PictureBox pictureBoxBackCreateLoadPlayer;
         private System.Windows.Forms.Panel panelDifficulty;
         private System.Windows.Forms.Label labelHighScoreEasy;
-        private System.Windows.Forms.Label labelHighScoreImposible;
+        private System.Windows.Forms.Label labelHighScoreImpossible;
         private System.Windows.Forms.Label labelHighScoreHard;
         private System.Windows.Forms.Label labelHighScoreMedium;
         private System.Windows.Forms.Label labelEasy;
