@@ -273,5 +273,14 @@
   <ItemGroup>
     <None Include="Resources\Background %2810%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_Lose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_Win.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonExit.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

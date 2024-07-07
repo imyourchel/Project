@@ -69,6 +69,8 @@ namespace Project
             panelTutorial.Visible = false;
             panelGame.Visible = false;
             panelSetting.Visible = false;
+            panelWin.Visible= false;
+            panelLose.Visible = false;
             timerCust.Enabled = false;
             timerCust.Interval= 1000;
             timerGame.Enabled = false;
@@ -132,7 +134,7 @@ namespace Project
                     //default value
                     player = new Players(textBoxNameCreate.Text, 0, pic);
                     player.HighScore = new List<int>{ 0,0,0,0};
-                    time = new Time(0,0,0);
+                    time = new Time(0,0,0);                    
                     player.BestTime = new List<Time> { time,time,time,time};
                     player.PrevTime = new List<Time> { time,time,time,time};                                                            
                 }
@@ -241,6 +243,7 @@ namespace Project
             labelRemainingCustomers.Text = "Remaining Customers : " + remainingCusts.ToString();
             labelNamePlayer.Text = player.Name;            
             StallDisplay();
+            
 
             //Selected level
             int selected;
@@ -262,6 +265,12 @@ namespace Project
             }
             labelDisplayDataPlayer.Text = player.Display(selected);
             labelIncomeNow.Text = player.Income.ToString();
+
+            //tes
+            CreateCustomers();
+            //Merchandise merchandise = (Merchandise)customers.OrderItem;
+            //player.StockMerchandise = new List<Merchandise> { merchandise, merchandise, merchandise };
+            //label1.Text = player.StockMerchandise[0].Stock.ToString();
         }        
         private void pictureBoxButtonReceipe_Click(object sender, EventArgs e)
         {
@@ -1093,22 +1102,36 @@ namespace Project
             else if(randomItemType == 2)
             {
                 Random numRandomMerch = new Random();
-                int randomMerch = numRandomMerch.Next(9, 12);
-                if (((Merchandise)listOfItems[randomMerch]).Stock > 0)
-                {
-                    customers.OrderItem = listOfItems[randomMerch];
-                }
+                int randomMerch = numRandomMerch.Next(9, 12);                
+                customers.OrderItem = listOfItems[randomMerch];                
             }
             pictureBoxOrder1.Image = customers.OrderItem.Picture;
+            pictureBoxOrder1.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         private void timerCust_Tick(object sender, EventArgs e)
         {
             incTimerCust++;
-            if(incTimerCust == 1)
+            if (incTimerCust == 1 && pictureBoxServe.Tag.ToString() == "none")
             {
                 CreateCustomerOrder();
                 timerCust.Stop();
+            }
+            else if (incTimerCust == 1 && pictureBoxServe.Tag.ToString() == "done")
+            {
+                panelDialog1.Visible= false;
+                pictureBoxServe.Image = null;
+                pictureBoxCustomer1.Image = null;
+                incTimerCust = 0;
+                timerCust.Stop();
+                if (remainingCusts > 0)
+                {
+                    CreateCustomers();
+                }
+                else
+                {
+                    panelWin.Visible = true;
+                }
             }
         }
     }
