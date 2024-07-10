@@ -161,6 +161,7 @@
             this.pictureBoxExit = new System.Windows.Forms.PictureBox();
             this.pictureBoxLoseToHome = new System.Windows.Forms.PictureBox();
             this.pictureBoxPlayAgain = new System.Windows.Forms.PictureBox();
+            this.timerEmotion1 = new System.Windows.Forms.Timer(this.components);
             this.panelWin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxQuit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWinToHome)).BeginInit();
@@ -278,10 +279,12 @@
             // 
             // timerGame
             // 
+            this.timerGame.Interval = 1000;
             this.timerGame.Tick += new System.EventHandler(this.timerGame_Tick);
             // 
             // timerCust
             // 
+            this.timerCust.Interval = 1000;
             this.timerCust.Tick += new System.EventHandler(this.timerCust_Tick);
             // 
             // panelWin
@@ -316,6 +319,7 @@
             this.pictureBoxQuit.Size = new System.Drawing.Size(100, 100);
             this.pictureBoxQuit.TabIndex = 20;
             this.pictureBoxQuit.TabStop = false;
+            this.pictureBoxQuit.Click += new System.EventHandler(this.pictureBoxQuit_Click);
             // 
             // pictureBoxWinToHome
             // 
@@ -327,6 +331,7 @@
             this.pictureBoxWinToHome.Size = new System.Drawing.Size(100, 100);
             this.pictureBoxWinToHome.TabIndex = 19;
             this.pictureBoxWinToHome.TabStop = false;
+            this.pictureBoxWinToHome.Click += new System.EventHandler(this.pictureBoxWinToHome_Click);
             // 
             // pictureBoxButtonPlayAgain
             // 
@@ -338,6 +343,7 @@
             this.pictureBoxButtonPlayAgain.Size = new System.Drawing.Size(120, 120);
             this.pictureBoxButtonPlayAgain.TabIndex = 18;
             this.pictureBoxButtonPlayAgain.TabStop = false;
+            this.pictureBoxButtonPlayAgain.Click += new System.EventHandler(this.pictureBoxButtonPlayAgain_Click);
             // 
             // panelSetting
             // 
@@ -893,7 +899,6 @@
             this.labelRemainingCustomers.Size = new System.Drawing.Size(201, 22);
             this.labelRemainingCustomers.TabIndex = 33;
             this.labelRemainingCustomers.Text = "Remaining Customers : ";
-            this.labelRemainingCustomers.Click += new System.EventHandler(this.labelRemainingCustomers_Click);
             // 
             // labelRemainingTime
             // 
@@ -1857,6 +1862,7 @@
             this.pictureBoxExit.Size = new System.Drawing.Size(100, 100);
             this.pictureBoxExit.TabIndex = 20;
             this.pictureBoxExit.TabStop = false;
+            this.pictureBoxExit.Click += new System.EventHandler(this.pictureBoxExit_Click);
             // 
             // pictureBoxLoseToHome
             // 
@@ -1868,6 +1874,7 @@
             this.pictureBoxLoseToHome.Size = new System.Drawing.Size(100, 100);
             this.pictureBoxLoseToHome.TabIndex = 19;
             this.pictureBoxLoseToHome.TabStop = false;
+            this.pictureBoxLoseToHome.Click += new System.EventHandler(this.pictureBoxLoseToHome_Click);
             // 
             // pictureBoxPlayAgain
             // 
@@ -1879,6 +1886,12 @@
             this.pictureBoxPlayAgain.Size = new System.Drawing.Size(120, 120);
             this.pictureBoxPlayAgain.TabIndex = 18;
             this.pictureBoxPlayAgain.TabStop = false;
+            this.pictureBoxPlayAgain.Click += new System.EventHandler(this.pictureBoxPlayAgain_Click);
+            // 
+            // timerEmotion1
+            // 
+            this.timerEmotion1.Interval = 1000;
+            this.timerEmotion1.Tick += new System.EventHandler(this.timerEmotion1_Tick);
             // 
             // FormGame
             // 
@@ -1886,10 +1899,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1149, 650);
-            this.Controls.Add(this.panelGame);
-            this.Controls.Add(this.panelWin);
             this.Controls.Add(this.panelLose);
             this.Controls.Add(this.panelSetting);
+            this.Controls.Add(this.panelWin);
+            this.Controls.Add(this.panelGame);
             this.Controls.Add(this.panelCreateLoadPlayer);
             this.Controls.Add(this.panelDifficulty);
             this.Controls.Add(this.panelTutorial);
@@ -2132,5 +2145,6 @@
         private System.Windows.Forms.PictureBox pictureBoxExit;
         private System.Windows.Forms.PictureBox pictureBoxLoseToHome;
         private System.Windows.Forms.PictureBox pictureBoxPlayAgain;
+        private System.Windows.Forms.Timer timerEmotion1;
     }
 }

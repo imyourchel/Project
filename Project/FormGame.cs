@@ -24,10 +24,10 @@ namespace Project
         Items item;
         Customers customers;
 
-        int custEasy = 8;
-        int custMedium = 12;
-        int custHard = 18;
-        int custImpossible = 25;
+        int custEasy = 5;
+        int custMedium = 8;
+        int custHard = 12;
+        int custImpossible = 20;
         int remainingCusts;
 
         int timeChoose;
@@ -43,6 +43,7 @@ namespace Project
 
         int selectedIngCount;
         int incTimerCust;
+        int incTimerEmotion1;
         public FormGame()
         {
             InitializeComponent();
@@ -76,6 +77,8 @@ namespace Project
             timerCust.Interval= 1000;
             timerGame.Enabled = false;
             timerGame.Interval= 1000;
+            timerEmotion1.Enabled = false;
+            timerEmotion1.Interval= 1000;
         }
         private void buttonPlay_Click(object sender, EventArgs e)
         {
@@ -102,7 +105,7 @@ namespace Project
         }
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to exit the game?", "Exit Message", MessageBoxButtons.YesNo,
+            if (MessageBox.Show("Are you sure want to exit the game?", "Exit Message", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Application.Exit();
@@ -267,6 +270,9 @@ namespace Project
             labelRemainingCustomers.Text = "Remaining Customers : " + remainingCusts.ToString();
             labelNamePlayer.Text = player.Name;            
             StallDisplay();            
+            timerEmotion1.Start();
+            incTimerEmotion1 = 0;
+
 
             //Selected level
             int selected;
@@ -327,21 +333,29 @@ namespace Project
         #region InGame
         private void pictureBoxHome_Click(object sender, EventArgs e)
         {
-            panelSetting.Visible = false;
-            panelGame.Visible = false;
-            panelCreateLoadPlayer.Visible = false;
-            panelDifficulty.Visible = false;
-            panelTutorial.Visible = false;
-            BackgroundVisible();
+            panelWin.Visible = false;
+            FormGame_Load(pictureBoxWinToHome, e);
         }
         private void pictureBoxRestart_Click(object sender, EventArgs e)
         {
             panelSetting.Visible = false;
-            panelGame.Visible = true;
-            timerGame.Stop();
-            time = new Time(0, 0, timeChoose);
-            timerGame.Start();
-            labelRemainingTime.Text = time.Display();
+            if (labelEasy.Font.Name == "Franklin Gothic Demi")
+            {
+                remainingCusts = custEasy;
+            }
+            else if (labelMedium.Font.Name == "Franklin Gothic Demi")
+            {
+                remainingCusts = custMedium;
+            }
+            else if (labelHard.Font.Name == "Franklin Gothic Demi")
+            {
+                remainingCusts = custHard;
+            }
+            else if (labelImpossible.Font.Name == "Franklin Gothic Demi")
+            {
+                remainingCusts = custImpossible;
+            }
+            buttonStartGame_Click(pictureBoxRestart, e);
         }
         private void StallDisplay()
         {
@@ -363,6 +377,14 @@ namespace Project
             pictureBoxTomato.Tag = ((Foods)item).ListOfIngredients[4].Name;
             pictureBoxLettuce.Tag = ((Foods)item).ListOfIngredients[5].Name;
             pictureBoxTopBun.Tag = ((Foods)item).ListOfIngredients[6].Name;
+
+            pictureBoxPlate.Image = ((Foods)item).ListOfIngredients[0].Picture;
+            pictureBoxBottomBun.Image = ((Foods)item).ListOfIngredients[1].Picture;
+            pictureBoxPatty.Image = ((Foods)item).ListOfIngredients[2].Picture;
+            pictureBoxCheese.Image = ((Foods)item).ListOfIngredients[3].Picture;
+            pictureBoxTomato.Image = ((Foods)item).ListOfIngredients[4].Picture;
+            pictureBoxLettuce.Image = ((Foods)item).ListOfIngredients[5].Picture;
+            pictureBoxTopBun.Image = ((Foods)item).ListOfIngredients[6].Picture;
 
             pictureBoxPlate.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxBottomBun.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -577,7 +599,7 @@ namespace Project
             if (time.Hour == 0 && time.Minute == 0 && time.Second == 0)
             {
                 timerGame.Stop();
-                MessageBox.Show("Gameover");
+                panelLose.Visible = true;
             }
         }
         private void CreateCustomers()
@@ -612,6 +634,7 @@ namespace Project
         {
             Random numRandomItemType = new Random();
             int randomItemType = numRandomItemType.Next(0, 3);
+            randomItemType = 0;
             if(randomItemType == 0) //Foods
             {
                 if(customers.Type == "male")
@@ -647,7 +670,7 @@ namespace Project
             pictureBoxServe.Image = order.Picture;
             pictureBoxServe.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxServe.Tag = "done";
-            pictureBoxOrder1.Image = Properties.Resources.angry;
+            pictureBoxOrder1.Image = Properties.Resources.coin;
             player.Income += order.Price;
             selectedIngCount = 0;
             remainingCusts--;
@@ -655,6 +678,12 @@ namespace Project
             incTimerCust = 0;
             timerCust.Start();
             //PlaySound("correct");
+        }
+        private void WrongOrder()
+        {
+            pictureBoxServe.Image = Properties.Resources.wrong;
+            selectedIngCount = 0;
+            //PlaySound("fail");
         }
         private void timerCust_Tick(object sender, EventArgs e)
         {
@@ -701,13 +730,13 @@ namespace Project
                     }
                     else
                     {
-                        //WrongOrder();
+                        WrongOrder();
                     }
                 }
                 else
                 {
                     selectedIngCount = 0;
-                    //WrongOrder();
+                    WrongOrder();
                 }
             }
             else if (type == "beverages")
@@ -728,13 +757,13 @@ namespace Project
                     }
                     else
                     {
-                        //WrongOrder();
+                        WrongOrder();
                     }
                 }
                 else
                 {
                     selectedIngCount = 0;
-                    //WrongOrder();
+                    WrongOrder();
                 }
             }
             else if (type == "merchandise")
@@ -751,12 +780,12 @@ namespace Project
                     }
                     else
                     {
-                        //WrongOrder();
+                        WrongOrder();
                     }
                 }
                 else
                 {
-                    //WrongOrder();
+                    WrongOrder();
                 }
 
             }
@@ -1369,9 +1398,98 @@ namespace Project
             }
         }
 
-        private void labelRemainingCustomers_Click(object sender, EventArgs e)
+        private void timerEmotion1_Tick(object sender, EventArgs e)
         {
+            incTimerEmotion1++;
+            Image image = null;
+            if(incTimerEmotion1 <= 3)
+            {
+                image = Properties.Resources.happy;
+            }
+            else if (incTimerEmotion1 > 3 && incTimerEmotion1 <= 7 )
+            {
+                image = Properties.Resources.flat;
+            }
+            else if (incTimerEmotion1 > 7)
+            {
+                image = Properties.Resources.angry;
+            }
+            pictureBoxEmotion1.Image = image;
+            pictureBoxEmotion1.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
 
+        private void pictureBoxButtonPlayAgain_Click(object sender, EventArgs e)
+        {
+            panelWin.Visible = false;
+            if (labelEasy.Font.Name == "Franklin Gothic Demi")
+            {
+                remainingCusts = custEasy;
+            }
+            else if (labelMedium.Font.Name == "Franklin Gothic Demi")
+            {
+                remainingCusts = custMedium;
+            }
+            else if (labelHard.Font.Name == "Franklin Gothic Demi")
+            {
+                remainingCusts = custHard;
+            }
+            else if (labelImpossible.Font.Name == "Franklin Gothic Demi")
+            {
+                remainingCusts = custImpossible;
+            }
+            buttonStartGame_Click(pictureBoxButtonPlayAgain, e);
+        }
+
+        private void pictureBoxQuit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure want to exit the game?", "Exit Message", MessageBoxButtons.YesNo,
+               MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void pictureBoxWinToHome_Click(object sender, EventArgs e)
+        {
+            panelWin.Visible = false;
+            FormGame_Load(pictureBoxWinToHome, e);
+        }
+
+        private void pictureBoxPlayAgain_Click(object sender, EventArgs e)
+        {
+            panelLose.Visible = false;
+            if (labelEasy.Font.Name == "Franklin Gothic Demi")
+            {
+                remainingCusts = custEasy;
+            }
+            else if (labelMedium.Font.Name == "Franklin Gothic Demi")
+            {
+                remainingCusts = custMedium;
+            }
+            else if (labelHard.Font.Name == "Franklin Gothic Demi")
+            {
+                remainingCusts = custHard;
+            }
+            else if (labelImpossible.Font.Name == "Franklin Gothic Demi")
+            {
+                remainingCusts = custImpossible;
+            }
+            buttonStartGame_Click(pictureBoxPlayAgain, e);
+        }
+
+        private void pictureBoxLoseToHome_Click(object sender, EventArgs e)
+        {
+            panelLose.Visible = false;
+            FormGame_Load(pictureBoxLoseToHome, e);
+        }
+
+        private void pictureBoxExit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure want to exit the game?", "Exit Message", MessageBoxButtons.YesNo,
+              MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }

@@ -50,14 +50,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Project.Time">
-    <Position X="11.75" Y="4.25" Width="1.5" />
+    <Position X="11.25" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAAAAAAAAoAAAQIAAAAAACIAAAAiAAAAAAA=</HashCode>
       <FileName>Time.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Project.Players">
-    <Position X="9.25" Y="4.25" Width="1.5" />
+    <Position X="8.75" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAIgAAAAIAAAAAAAAAgAYQAIAIGAAAAAgAQAAAAGAA=</HashCode>
       <FileName>Players.cs</FileName>

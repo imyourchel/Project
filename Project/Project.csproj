@@ -282,5 +282,8 @@
   <ItemGroup>
     <None Include="Resources\buttonExit.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wrong %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
