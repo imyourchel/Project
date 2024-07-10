@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Reflection.Emit;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Policy;
@@ -23,6 +24,7 @@ namespace Project
         List<Items> listOfItems = new List<Items>();
         Items item;
         Customers customers;
+        Customers customer2;
 
         int custEasy = 5;
         int custMedium = 8;
@@ -44,6 +46,12 @@ namespace Project
         int selectedIngCount;
         int incTimerCust;
         int incTimerEmotion1;
+        List<bool> stockBear;
+        List<bool> stockTumblr;
+        List<bool> stockRobot;
+        Customers tempCust;
+        Customers tempOrder;
+        bool first = true;
         public FormGame()
         {
             InitializeComponent();
@@ -79,6 +87,8 @@ namespace Project
             timerGame.Interval= 1000;
             timerEmotion1.Enabled = false;
             timerEmotion1.Interval= 1000;
+            timerEmotion2.Enabled = false;
+            timerEmotion2.Interval = 1000;
         }
         private void buttonPlay_Click(object sender, EventArgs e)
         {
@@ -162,7 +172,11 @@ namespace Project
                     //default value
                     player = new Players(textBoxNameCreate.Text, 0, pic);
                     player.HighScore = new List<int>{ 0,0,0,0};
-                    time = new Time(0,0,0);                    
+                    time = new Time(0,0,0);
+                    stockBear = new List<bool> { true, true, true, true, true };
+                    stockRobot = new List<bool> { true, true, true, true, true };
+                    stockTumblr = new List<bool> { true, true, true, true, true };
+
                     player.BestTime = new List<Time> { time,time,time,time};
                     player.PrevTime = new List<Time> { time,time,time,time};                                                            
                 }
@@ -170,6 +184,26 @@ namespace Project
                 else
                 {
                     player = (Players)comboBoxNameLoad.SelectedItem;
+                    foreach(Items i in player.StockMerchandise)
+                    {
+                        if(i is Merchandise)
+                        {
+                            Merchandise merch = (Merchandise)i;
+                            if (merch.Name == "bear")
+                            {
+                                stockBear = merch.ListStock;
+                            }
+                            else if (merch.Name == "tumblr")
+                            {
+                                stockTumblr = merch.ListStock;
+                            }
+                            else if (merch.Name == "robot")
+                            {
+                                stockRobot = merch.ListStock;
+                            }
+                        }
+                    }
+                    //stock = player.StockMerchandise;
                 }
                 //display Panel Difficulty
                 panelCreateLoadPlayer.Visible = false;
@@ -259,49 +293,6 @@ namespace Project
             panelDifficulty.Visible = false;
         }
 
-        private void buttonStartGame_Click(object sender, EventArgs e)
-        {
-            panelTutorial.Visible = false;
-            panelGame.Visible = true;
-            panelGame.BackgroundImageLayout = ImageLayout.Stretch;
-            time = new Time(0, 0, timeChoose);
-            labelRemainingTime.Text = time.Display();
-            timerGame.Start();
-            labelRemainingCustomers.Text = "Remaining Customers : " + remainingCusts.ToString();
-            labelNamePlayer.Text = player.Name;            
-            StallDisplay();            
-            timerEmotion1.Start();
-            incTimerEmotion1 = 0;
-
-
-            //Selected level
-            int selected;
-            if (easy)
-            {
-                selected = 0;
-            }
-            else if (medium)
-            {
-                selected = 1;
-            }
-            else if (hard)
-            {
-                selected = 2;
-            }
-            else 
-            { 
-                selected = 3; 
-            }
-            labelDisplayDataPlayer.Text = player.Display(selected);
-            labelIncomeNow.Text = player.Income.ToString();
-
-            //tes
-            CreateCustomers();
-            //Items item = (Items)customers.OrderItem;
-            //Merchandise merch = (Merchandise)item;
-            //player.StockMerchandise = new List<Merchandise> { merch, merch, merch };
-            //label1.Text = player.StockMerchandise[0].Stock.ToString();
-        }        
         private void pictureBoxButtonReceipe_Click(object sender, EventArgs e)
         {
             panelGame.Visible = false;
@@ -527,9 +518,10 @@ namespace Project
             pictureBoxIceBucket.SizeMode = PictureBoxSizeMode.StretchImage;
             #endregion Beverages
 
-            #region Merchandise            
-            item = new Merchandise(5, "bear", Properties.Resources.bear, 100);
-            listOfItems.Add(item);
+            #region Merchandise     
+            
+            item = new Merchandise(stockBear, "bear", Properties.Resources.bear, 100);
+            listOfItems.Add(item);            
             pictureBoxBear1.Tag = ((Merchandise)item).Name;
             pictureBoxBear2.Tag = ((Merchandise)item).Name;
             pictureBoxBear3.Tag = ((Merchandise)item).Name;
@@ -548,7 +540,7 @@ namespace Project
             pictureBoxBear4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxBear5.SizeMode = PictureBoxSizeMode.StretchImage;
 
-            item = new Merchandise(5, "tumblr", Properties.Resources.tumblr, 100);
+            item = new Merchandise(stockTumblr, "tumblr", Properties.Resources.tumblr, 100);
             listOfItems.Add(item);
             pictureBoxTumblr1.Tag = ((Merchandise)item).Name;
             pictureBoxTumblr2.Tag = ((Merchandise)item).Name;
@@ -568,7 +560,7 @@ namespace Project
             pictureBoxTumblr4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxTumblr5.SizeMode = PictureBoxSizeMode.StretchImage;
 
-            item = new Merchandise(5, "robot", Properties.Resources.robot, 100);
+            item = new Merchandise(stockRobot, "robot", Properties.Resources.robot, 100);
             listOfItems.Add(item);
             pictureBoxRobot1.Tag = ((Merchandise)item).Name;
             pictureBoxRobot2.Tag = ((Merchandise)item).Name;
@@ -602,21 +594,71 @@ namespace Project
                 panelLose.Visible = true;
             }
         }
+        private void buttonStartGame_Click(object sender, EventArgs e)
+        {
+            panelTutorial.Visible = false;
+            panelGame.Visible = true;
+            panelGame.BackgroundImageLayout = ImageLayout.Stretch;
+            time = new Time(0, 0, timeChoose);
+            labelRemainingTime.Text = time.Display();
+            timerGame.Start();
+            labelRemainingCustomers.Text = "Remaining Customers : " + remainingCusts.ToString();
+            labelNamePlayer.Text = player.Name;
+            StallDisplay();
+            timerEmotion1.Start();
+            incTimerEmotion1 = 0;
+
+            //Selected level
+            int selected;
+            if (easy)
+            {
+                selected = 0;
+            }
+            else if (medium)
+            {
+                selected = 1;
+            }
+            else if (hard)
+            {
+                selected = 2;
+            }
+            else
+            {
+                selected = 3;
+            }
+            labelDisplayDataPlayer.Text = player.Display(selected);
+            labelIncomeNow.Text = player.Income.ToString();
+
+            //tes
+            CreateCustomers();
+            CreateCustomers2();
+            //Items item = (Items)customers.OrderItem;
+            //Merchandise merch = (Merchandise)item;
+            //player.StockMerchandise = new List<Merchandise> { merch, merch, merch };
+            //label1.Text = player.StockMerchandise[0].Stock.ToString();
+        }
         private void CreateCustomers()
         {
-            Random numRandomCust = new Random();
-            int randomCust = numRandomCust.Next(0, 3);
-            if (randomCust == 0)
+            if (first == true)
             {
-                customers = new Customers("Dustin", Properties.Resources.dustin, "male", null);
+                Random numRandomCust = new Random();
+                int randomCust = numRandomCust.Next(0, 3);
+                if (randomCust == 0)
+                {
+                    customers = new Customers("Dustin", Properties.Resources.dustin, "male", null);
+                }
+                else if (randomCust == 1)
+                {
+                    customers = new Customers("Jeni", Properties.Resources.jeni, "female", null);
+                }
+                else if (randomCust == 2)
+                {
+                    customers = new Customers("Bumi", Properties.Resources.bumi, "kid", null);
+                }
             }
-            else if (randomCust == 1)
+            else
             {
-                customers = new Customers("Jeni", Properties.Resources.jeni, "female", null);
-            }
-            else if(randomCust == 2)
-            {
-                customers = new Customers("Bumi", Properties.Resources.bumi, "kid", null);
+                customers = tempCust;
             }
             pictureBoxCustomer1.Image = customers.Picture;
             pictureBoxCustomer1.BackColor = Color.Transparent;
@@ -630,40 +672,113 @@ namespace Project
 
             timerCust.Start();
         }
+        private void CreateCustomers2()
+        {
+            if (first == false)
+            {
+                CreateCustomers();
+            }
+            Random numRandomCust = new Random();
+            int randomCust = numRandomCust.Next(0, 3);
+            if (randomCust == 0)
+            {
+                customer2 = new Customers("Dustin", Properties.Resources.dustin, "male", null);
+            }
+            else if (randomCust == 1)
+            {
+                customer2 = new Customers("Jeni", Properties.Resources.jeni, "female", null);
+            }
+            else if (randomCust == 2)
+            {
+                customer2 = new Customers("Bumi", Properties.Resources.bumi, "kid", null);
+            }           
+            tempCust = customer2;
+            pictureBoxCustomer2.Image = tempCust.Picture;
+            pictureBoxCustomer2.BackColor = Color.Transparent;
+            pictureBoxCustomer2.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            panelDialog2.BackgroundImage = Properties.Resources.dialog;
+            panelDialog2.BackgroundImageLayout = ImageLayout.Stretch;
+        }
         private void CreateCustomerOrder()
         {
+            if (first == true)
+            {
+                Random numRandomItemType = new Random();
+                int randomItemType = numRandomItemType.Next(0, 3);
+                if (randomItemType == 0) //Foods
+                {
+                    if (customers.Type == "male")
+                    {
+                        customers.OrderItem = listOfItems[0];
+                    }
+                    else if (customers.Type == "female")
+                    {
+                        customers.OrderItem = listOfItems[1];
+                    }
+                    else if (customers.Type == "kid")
+                    {
+                        customers.OrderItem = listOfItems[2];
+                    }
+                }
+                else if (randomItemType == 1)
+                {
+                    Random numRandomBev = new Random();
+                    int randomBev = numRandomBev.Next(3, 9);
+                    customers.OrderItem = listOfItems[randomBev];
+                }
+                else if (randomItemType == 2)
+                {
+                    Random numRandomMerch = new Random();
+                    int randomMerch = numRandomMerch.Next(9, 12);
+                    customers.OrderItem = listOfItems[randomMerch];
+                } 
+            }
+            else
+            {
+                customers = tempOrder;
+            }
+            pictureBoxOrder1.Image = customers.OrderItem.Picture;
+            pictureBoxOrder1.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
+        private void CreateCustomerOrder2()
+        {
+            if (first == false)
+            {
+                CreateCustomerOrder();
+            }
             Random numRandomItemType = new Random();
             int randomItemType = numRandomItemType.Next(0, 3);
-            randomItemType = 0;
-            if(randomItemType == 0) //Foods
+            if (randomItemType == 0) //Foods
             {
-                if(customers.Type == "male")
+                if (customer2.Type == "male")
                 {
-                    customers.OrderItem = listOfItems[0];
+                    customer2.OrderItem = listOfItems[0];
                 }
-                else if(customers.Type == "female")
+                else if (customer2.Type == "female")
                 {
-                    customers.OrderItem = listOfItems[1];
+                    customer2.OrderItem = listOfItems[1];
                 }
-                else if(customers.Type == "kid")
+                else if (customer2.Type == "kid")
                 {
-                    customers.OrderItem = listOfItems[2];
+                    customer2.OrderItem = listOfItems[2];
                 }
             }
             else if (randomItemType == 1)
             {
                 Random numRandomBev = new Random();
                 int randomBev = numRandomBev.Next(3, 9);
-                customers.OrderItem = listOfItems[randomBev];
+                customer2.OrderItem = listOfItems[randomBev];
             }
-            else if(randomItemType == 2)
+            else if (randomItemType == 2)
             {
                 Random numRandomMerch = new Random();
-                int randomMerch = numRandomMerch.Next(9, 12);                
-                customers.OrderItem = listOfItems[randomMerch];                
-            }
-            pictureBoxOrder1.Image = customers.OrderItem.Picture;
-            pictureBoxOrder1.SizeMode = PictureBoxSizeMode.StretchImage;
+                int randomMerch = numRandomMerch.Next(9, 12);
+                customer2.OrderItem = listOfItems[randomMerch];
+            }            
+            tempOrder = customer2;
+            pictureBoxOrder2.Image = tempOrder.OrderItem.Picture;
+            pictureBoxOrder2.SizeMode = PictureBoxSizeMode.StretchImage;
         }
         private void CorrectOrder(Items order)
         {
@@ -685,13 +800,16 @@ namespace Project
             selectedIngCount = 0;
             //PlaySound("fail");
         }
+        
         private void timerCust_Tick(object sender, EventArgs e)
         {
-            incTimerCust++;
+            incTimerCust++;            
             if (incTimerCust == 1 && pictureBoxServe.Tag.ToString() == "none")
             {
-                CreateCustomerOrder();
+                if (first == true){ CreateCustomerOrder();CreateCustomerOrder2(); }
+                else { CreateCustomerOrder2(); }
                 timerCust.Stop();
+                first = false;
             }
             else if (incTimerCust == 1 && pictureBoxServe.Tag.ToString() == "done")
             {
@@ -702,7 +820,7 @@ namespace Project
                 timerCust.Stop();
                 if (remainingCusts > 0)
                 {
-                    CreateCustomers();
+                    CreateCustomers2();
                 }
                 else
                 {
@@ -775,7 +893,7 @@ namespace Project
                     pictureBoxServe.SizeMode = PictureBoxSizeMode.StretchImage;
                     if (PictureBox.Tag.ToString() == merchOrder.Name)
                     {
-                        merchOrder.Sell();                        
+                        merchOrder.Sell(1);                        
                         CorrectOrder(merchOrder);
                     }
                     else
@@ -1396,27 +1514,7 @@ namespace Project
                 listOfPlayer = (List<Players>)formatter.Deserialize(myFile);
                 myFile.Close();
             }
-        }
-
-        private void timerEmotion1_Tick(object sender, EventArgs e)
-        {
-            incTimerEmotion1++;
-            Image image = null;
-            if(incTimerEmotion1 <= 3)
-            {
-                image = Properties.Resources.happy;
-            }
-            else if (incTimerEmotion1 > 3 && incTimerEmotion1 <= 7 )
-            {
-                image = Properties.Resources.flat;
-            }
-            else if (incTimerEmotion1 > 7)
-            {
-                image = Properties.Resources.angry;
-            }
-            pictureBoxEmotion1.Image = image;
-            pictureBoxEmotion1.SizeMode = PictureBoxSizeMode.StretchImage;
-        }
+        }       
 
         private void pictureBoxButtonPlayAgain_Click(object sender, EventArgs e)
         {
@@ -1490,6 +1588,30 @@ namespace Project
             {
                 Application.Exit();
             }
+        }
+
+        private void timerEmotion2_Tick(object sender, EventArgs e)
+        {
+
+        }
+        private void timerEmotion1_Tick(object sender, EventArgs e)
+        {
+            incTimerEmotion1++;
+            Image image = null;
+            if (incTimerEmotion1 <= 4)
+            {
+                image = Properties.Resources.happy;
+            }
+            else if (incTimerEmotion1 > 4 && incTimerEmotion1 <= 7)
+            {
+                image = Properties.Resources.flat;
+            }
+            else if (incTimerEmotion1 > 7)
+            {
+                image = Properties.Resources.angry;
+            }
+            pictureBoxEmotion1.Image = image;
+            pictureBoxEmotion1.SizeMode = PictureBoxSizeMode.StretchImage;
         }
     }
 }

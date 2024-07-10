@@ -162,6 +162,7 @@
             this.pictureBoxLoseToHome = new System.Windows.Forms.PictureBox();
             this.pictureBoxPlayAgain = new System.Windows.Forms.PictureBox();
             this.timerEmotion1 = new System.Windows.Forms.Timer(this.components);
+            this.timerEmotion2 = new System.Windows.Forms.Timer(this.components);
             this.panelWin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxQuit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWinToHome)).BeginInit();
@@ -714,7 +715,7 @@
             this.panelDialog2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelDialog2.Controls.Add(this.pictureBoxEmotion2);
             this.panelDialog2.Controls.Add(this.pictureBoxOrder2);
-            this.panelDialog2.Location = new System.Drawing.Point(996, 68);
+            this.panelDialog2.Location = new System.Drawing.Point(996, 51);
             this.panelDialog2.Name = "panelDialog2";
             this.panelDialog2.Size = new System.Drawing.Size(148, 89);
             this.panelDialog2.TabIndex = 62;
@@ -733,7 +734,6 @@
             // pictureBoxOrder2
             // 
             this.pictureBoxOrder2.BackColor = System.Drawing.Color.White;
-            this.pictureBoxOrder2.BackgroundImage = global::Project.Properties.Resources.burger;
             this.pictureBoxOrder2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxOrder2.Location = new System.Drawing.Point(39, 6);
             this.pictureBoxOrder2.Name = "pictureBoxOrder2";
@@ -1323,7 +1323,6 @@
             // pictureBoxCustomer2
             // 
             this.pictureBoxCustomer2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxCustomer2.BackgroundImage = global::Project.Properties.Resources.jeni;
             this.pictureBoxCustomer2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxCustomer2.Location = new System.Drawing.Point(892, 131);
             this.pictureBoxCustomer2.Name = "pictureBoxCustomer2";
@@ -1893,16 +1892,20 @@
             this.timerEmotion1.Interval = 1000;
             this.timerEmotion1.Tick += new System.EventHandler(this.timerEmotion1_Tick);
             // 
+            // timerEmotion2
+            // 
+            this.timerEmotion2.Tick += new System.EventHandler(this.timerEmotion2_Tick);
+            // 
             // FormGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1149, 650);
+            this.Controls.Add(this.panelGame);
             this.Controls.Add(this.panelLose);
             this.Controls.Add(this.panelSetting);
             this.Controls.Add(this.panelWin);
-            this.Controls.Add(this.panelGame);
             this.Controls.Add(this.panelCreateLoadPlayer);
             this.Controls.Add(this.panelDifficulty);
             this.Controls.Add(this.panelTutorial);
@@ -2146,5 +2149,6 @@
         private System.Windows.Forms.PictureBox pictureBoxLoseToHome;
         private System.Windows.Forms.PictureBox pictureBoxPlayAgain;
         private System.Windows.Forms.Timer timerEmotion1;
+        private System.Windows.Forms.Timer timerEmotion2;
     }
 }

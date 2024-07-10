@@ -9,18 +9,18 @@ namespace Project
     public class Merchandise : Items
     {
         #region Fields
-        private int stock;
+        private List<bool> listStock;
         #endregion Fields
 
         #region Constructors
-        public Merchandise(int stock, string name, Image picture, int price) : base(name, picture, price)
+        public Merchandise(List<bool> stock, string name, Image picture, int price) : base(name, picture, price)
         {
-            this.Stock = stock;
+            this.ListStock = stock;
         }
         #endregion Constructors
 
         #region Properties
-        public int Stock { get => stock; set => stock = value; }
+        public List<bool> ListStock { get => listStock; set => listStock = value; }
         #endregion Properties
 
         #region Methods
@@ -29,9 +29,9 @@ namespace Project
             throw new System.NotImplementedException();
         }
 
-        public void Sell()
+        public void Sell(int i)
         {
-            this.Stock = this.Stock - 1;
+            this.ListStock[i] = false;
         }
         #endregion Methods
     }
