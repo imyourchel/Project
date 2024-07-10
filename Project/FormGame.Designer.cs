@@ -61,8 +61,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.panelGame = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.pictureBoxBevM = new System.Windows.Forms.PictureBox();
             this.pictureBoxBevS = new System.Windows.Forms.PictureBox();
             this.pictureBoxBevL = new System.Windows.Forms.PictureBox();
@@ -584,8 +582,6 @@
             this.panelGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
             this.panelGame.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelGame.BackgroundImage")));
             this.panelGame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelGame.Controls.Add(this.label2);
-            this.panelGame.Controls.Add(this.label1);
             this.panelGame.Controls.Add(this.pictureBoxBevM);
             this.panelGame.Controls.Add(this.pictureBoxBevS);
             this.panelGame.Controls.Add(this.pictureBoxBevL);
@@ -641,24 +637,6 @@
             this.panelGame.Name = "panelGame";
             this.panelGame.Size = new System.Drawing.Size(1150, 650);
             this.panelGame.TabIndex = 8;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(580, 151);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 16);
-            this.label2.TabIndex = 69;
-            this.label2.Text = "label2";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(563, 73);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 16);
-            this.label1.TabIndex = 68;
-            this.label1.Text = "label1";
             // 
             // pictureBoxBevM
             // 
@@ -915,6 +893,7 @@
             this.labelRemainingCustomers.Size = new System.Drawing.Size(201, 22);
             this.labelRemainingCustomers.TabIndex = 33;
             this.labelRemainingCustomers.Text = "Remaining Customers : ";
+            this.labelRemainingCustomers.Click += new System.EventHandler(this.labelRemainingCustomers_Click);
             // 
             // labelRemainingTime
             // 
@@ -2153,7 +2132,5 @@
         private System.Windows.Forms.PictureBox pictureBoxExit;
         private System.Windows.Forms.PictureBox pictureBoxLoseToHome;
         private System.Windows.Forms.PictureBox pictureBoxPlayAgain;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
     }
 }

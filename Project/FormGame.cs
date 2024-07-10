@@ -47,6 +47,7 @@ namespace Project
         {
             InitializeComponent();
         }
+        #region setting panel game
         private void BackgroundVisible()
         {
             this.BackgroundImage = Properties.Resources.background;
@@ -76,7 +77,6 @@ namespace Project
             timerGame.Enabled = false;
             timerGame.Interval= 1000;
         }
-
         private void buttonPlay_Click(object sender, EventArgs e)
         {
             radioButtonLoadPlayer.Checked = false;
@@ -100,7 +100,6 @@ namespace Project
             comboBoxNameLoad.DataSource = listOfPlayer;
             comboBoxNameLoad.DisplayMember = "Name";
         }
-
         private void buttonExit_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to exit the game?", "Exit Message", MessageBoxButtons.YesNo,
@@ -114,6 +113,32 @@ namespace Project
         {
             BackgroundVisible();
             panelCreateLoadPlayer.Visible = false;
+        }
+        private void radioButtonCreatePlayer_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButtonCreatePlayer.Checked == true)
+            {
+                panelLoadPlayer.Enabled = false;
+                panelCreatePlayer.Enabled = true;
+            }
+            else if (radioButtonLoadPlayer.Checked == true)
+            {
+                panelLoadPlayer.Enabled = true;
+                panelCreatePlayer.Enabled = false;
+            }
+        }
+        private void radioButtonLoadPlayer_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButtonCreatePlayer.Checked == true)
+            {
+                panelLoadPlayer.Enabled = false;
+                panelCreatePlayer.Enabled = true;
+            }
+            else if (radioButtonLoadPlayer.Checked == true)
+            {
+                panelLoadPlayer.Enabled = true;
+                panelCreatePlayer.Enabled = false;
+            }
         }
         private void buttonNextDifficult_Click(object sender, EventArgs e)
         {
@@ -168,12 +193,6 @@ namespace Project
             {
                 MessageBox.Show(ex.Message,"ERROR");
             }
-        }
-
-        private void pictureBoxBackCreateLoadPlayer_Click(object sender, EventArgs e)
-        {
-            panelCreateLoadPlayer.Visible = true;
-            panelDifficulty.Visible = false;
         }
 
         private void buttonNextTutorial_Click(object sender, EventArgs e)
@@ -231,6 +250,11 @@ namespace Project
                 MessageBox.Show(ex.Message,"ERROR");
             }
         }
+        private void pictureBoxBackCreateLoadPlayer_Click(object sender, EventArgs e)
+        {
+            panelCreateLoadPlayer.Visible = true;
+            panelDifficulty.Visible = false;
+        }
 
         private void buttonStartGame_Click(object sender, EventArgs e)
         {
@@ -279,73 +303,46 @@ namespace Project
             buttonStartGame.Visible = false;
             buttonBackReceipe.Visible = true;
         }
-
         private void buttonBackReceipe_Click(object sender, EventArgs e)
         {
             panelTutorial.Visible = false;
             panelGame.Visible=true;
         }       
-
         private void pictureBoxButtonSetting_Click(object sender, EventArgs e)
         {
             timerGame.Stop();
             panelSetting.Visible = true;
             panelGame.Visible=false;
         }
-
         private void pictureBoxResume_Click(object sender, EventArgs e)
         {
             timerGame.Start();
             panelSetting.Visible = false;
             panelGame.Visible = true;
         }
-
-        private void radioButtonCreatePlayer_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioButtonCreatePlayer.Checked == true)
-            {
-                panelLoadPlayer.Enabled = false;
-                panelCreatePlayer.Enabled = true;
-            }
-            else if (radioButtonLoadPlayer.Checked == true)
-            {
-                panelLoadPlayer.Enabled = true;
-                panelCreatePlayer.Enabled = false;
-            }
-        }
-
-        private void radioButtonLoadPlayer_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioButtonCreatePlayer.Checked == true)
-            {
-                panelLoadPlayer.Enabled = false;
-                panelCreatePlayer.Enabled = true;
-            }
-            else if (radioButtonLoadPlayer.Checked == true)
-            {
-                panelLoadPlayer.Enabled = true;
-                panelCreatePlayer.Enabled = false;
-            }
-        }
-        public void SaveToFile()
-        {
-            FileStream myFile = new FileStream("PlayerData", FileMode.Create, FileAccess.Write);
-            BinaryFormatter formatter = new BinaryFormatter();
-            formatter.Serialize(myFile, listOfPlayer);
-            myFile.Close();
-        }
-        public void ReadFromFile()
-        {
-            if (File.Exists("PlayerData"))
-            {
-                FileStream myFile = new FileStream("PlayerData", FileMode.Open, FileAccess.Read);
-                BinaryFormatter formatter = new BinaryFormatter();
-                listOfPlayer = (List<Players>)formatter.Deserialize(myFile);
-                myFile.Close();
-            }
-        }
+        #endregion setting panel game
 
 
+
+        #region InGame
+        private void pictureBoxHome_Click(object sender, EventArgs e)
+        {
+            panelSetting.Visible = false;
+            panelGame.Visible = false;
+            panelCreateLoadPlayer.Visible = false;
+            panelDifficulty.Visible = false;
+            panelTutorial.Visible = false;
+            BackgroundVisible();
+        }
+        private void pictureBoxRestart_Click(object sender, EventArgs e)
+        {
+            panelSetting.Visible = false;
+            panelGame.Visible = true;
+            timerGame.Stop();
+            time = new Time(0, 0, timeChoose);
+            timerGame.Start();
+            labelRemainingTime.Text = time.Display();
+        }
         private void StallDisplay()
         {
             #region Foods
@@ -573,27 +570,6 @@ namespace Project
 
         }   
 
-        private void pictureBoxHome_Click(object sender, EventArgs e)
-        {
-            panelSetting.Visible = false;
-            panelGame.Visible = false;
-            panelCreateLoadPlayer.Visible = false;
-            panelDifficulty.Visible = false;
-            panelTutorial.Visible = false;
-            BackgroundVisible();
-        }
-
-        private void pictureBoxRestart_Click(object sender, EventArgs e)
-        {
-            panelSetting.Visible = false;
-            panelGame.Visible = true;
-            timerGame.Stop();
-            time = new Time(0, 0, timeChoose);
-            timerGame.Start();
-            labelRemainingTime.Text = time.Display();
-        }
-
-
         private void timerGame_Tick(object sender, EventArgs e)
         {
             time.Add(-1);
@@ -604,7 +580,6 @@ namespace Project
                 MessageBox.Show("Gameover");
             }
         }
-
         private void CreateCustomers()
         {
             Random numRandomCust = new Random();
@@ -676,7 +651,7 @@ namespace Project
             player.Income += order.Price;
             selectedIngCount = 0;
             remainingCusts--;
-            labelRemainingCustomers.Text = "Remaining \nCustomers: " + remainingCusts.ToString();
+            labelRemainingCustomers.Text = "Remaining Customers: " + remainingCusts.ToString();
             incTimerCust = 0;
             timerCust.Start();
             //PlaySound("correct");
@@ -691,7 +666,7 @@ namespace Project
             }
             else if (incTimerCust == 1 && pictureBoxServe.Tag.ToString() == "done")
             {
-                panelDialog1.Visible= false;
+                panelDialog1.Visible= true;
                 pictureBoxServe.Image = null;
                 pictureBoxCustomer1.Image = null;
                 incTimerCust = 0;
@@ -771,19 +746,7 @@ namespace Project
                     pictureBoxServe.SizeMode = PictureBoxSizeMode.StretchImage;
                     if (PictureBox.Tag.ToString() == merchOrder.Name)
                     {
-                        merchOrder.Sell();
-                        if (merchOrder.Name == "bear")
-                        {
-                            label1.Text = merchOrder.Stock.ToString() + "x";
-                        }
-                        else if (merchOrder.Name == "tumblr")
-                        {
-                            label2.Text = merchOrder.Stock.ToString() + "x";
-                        }
-                        else if (merchOrder.Name == "robot")
-                        {
-                            label2.Text = merchOrder.Stock.ToString() + "x";
-                        }
+                        merchOrder.Sell();                        
                         CorrectOrder(merchOrder);
                     }
                     else
@@ -1386,5 +1349,29 @@ namespace Project
             ServeOrder(pictureBoxRobot1, "merchandise");
         }
         #endregion picbox click
+        #endregion InGame
+
+        public void SaveToFile()
+        {
+            FileStream myFile = new FileStream("PlayerData", FileMode.Create, FileAccess.Write);
+            BinaryFormatter formatter = new BinaryFormatter();
+            formatter.Serialize(myFile, listOfPlayer);
+            myFile.Close();
+        }
+        public void ReadFromFile()
+        {
+            if (File.Exists("PlayerData"))
+            {
+                FileStream myFile = new FileStream("PlayerData", FileMode.Open, FileAccess.Read);
+                BinaryFormatter formatter = new BinaryFormatter();
+                listOfPlayer = (List<Players>)formatter.Deserialize(myFile);
+                myFile.Close();
+            }
+        }
+
+        private void labelRemainingCustomers_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
