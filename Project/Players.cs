@@ -15,7 +15,7 @@ namespace Project
         private int income;
         private Image picture;
         private List<int> highScore;
-        private List<Merchandise> stockMerchandise;
+        private List<Items> stockMerchandise;
         private List<Time> bestTime;
         private List<Time> prevTime;
         #endregion Fields       
@@ -27,7 +27,7 @@ namespace Project
             this.Income = income;
             this.Picture = picture;
             this.HighScore = new List<int>();
-            this.StockMerchandise = new List<Merchandise>();
+            this.StockMerchandise = new List<Items>();
             this.BestTime = new List<Time>();
             this.prevTime = new List<Time>();
         }
@@ -66,7 +66,7 @@ namespace Project
             }
         }
         public List<int> HighScore { get => highScore; set => highScore = value; }
-        public List<Merchandise> StockMerchandise { get => stockMerchandise; set => stockMerchandise = value; }
+        public List<Items> StockMerchandise { get => stockMerchandise; set => stockMerchandise = value; }
         public List<Time> BestTime { get => bestTime; set => bestTime = value; }
         public List<Time> PrevTime { get => prevTime; set => prevTime = value; }
         #endregion Properties
