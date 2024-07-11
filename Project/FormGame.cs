@@ -13,6 +13,7 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WMPLib;
 
 namespace Project
 {
@@ -26,10 +27,12 @@ namespace Project
         Customers customers;
         Customers customer2;
 
-        int custEasy = 5;
-        int custMedium = 8;
-        int custHard = 12;
-        int custImpossible = 20;
+        int tempScore;
+
+        int custEasy = 8;
+        int custMedium = 15;
+        int custHard = 23;
+        int custImpossible = 32;
         int remainingCusts;
 
         int timeChoose;
@@ -46,12 +49,19 @@ namespace Project
         int selectedIngCount;
         int incTimerCust;
         int incTimerEmotion1;
+
         List<bool> stockBear;
         List<bool> stockTumblr;
         List<bool> stockRobot;
+
         Customers tempCust;
         Customers tempOrder;
+
         bool first = true;
+
+        WindowsMediaPlayer sound1 = new WindowsMediaPlayer();
+        WindowsMediaPlayer sound2 = new WindowsMediaPlayer();
+
         public FormGame()
         {
             InitializeComponent();
@@ -73,6 +83,7 @@ namespace Project
         }
         private void FormGame_Load(object sender, EventArgs e)
         {
+            PlaySound("game");
             BackgroundVisible();
             panelCreateLoadPlayer.Visible = false;
             panelDifficulty.Visible = false;
@@ -92,6 +103,7 @@ namespace Project
         }
         private void buttonPlay_Click(object sender, EventArgs e)
         {
+            PlaySound("button");
             radioButtonLoadPlayer.Checked = false;
             radioButtonMale.Checked = false;
             radioButtonFemale.Checked = false;
@@ -115,15 +127,16 @@ namespace Project
         }
         private void buttonExit_Click(object sender, EventArgs e)
         {
+            PlaySound("button");
             if (MessageBox.Show("Are you sure want to exit the game?", "Exit Message", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Application.Exit();
             }
         }
-
         private void pictureBoxBackHome_Click(object sender, EventArgs e)
         {
+            PlaySound("button");
             BackgroundVisible();
             panelCreateLoadPlayer.Visible = false;
         }
@@ -156,7 +169,8 @@ namespace Project
         private void buttonNextDifficult_Click(object sender, EventArgs e)
         {
             try
-            {                
+            {
+                PlaySound("button");
                 //create Player
                 if (radioButtonCreatePlayer.Checked)
                 {
@@ -171,14 +185,14 @@ namespace Project
                     }
                     //default value
                     player = new Players(textBoxNameCreate.Text, 0, pic);
-                    player.HighScore = new List<int>{ 0,0,0,0};
+                    player.HighScore = new List<int>{0,0,0,0};
                     time = new Time(0,0,0);
                     stockBear = new List<bool> { true, true, true, true, true };
                     stockRobot = new List<bool> { true, true, true, true, true };
                     stockTumblr = new List<bool> { true, true, true, true, true };
 
-                    player.BestTime = new List<Time> { time,time,time,time};
-                    player.PrevTime = new List<Time> { time,time,time,time};                                                            
+                    player.BestTime = new List<Time> {time,time,time,time};
+                    player.PrevTime = new List<Time> {time,time,time,time};                                                            
                 }
                 //Load Player
                 else
@@ -236,6 +250,7 @@ namespace Project
         {
             try
             {
+                PlaySound("button");
                 if (labelEasy.Font.Name == "Franklin Gothic Demi")
                 {
                     easy = true;
@@ -289,12 +304,18 @@ namespace Project
         }
         private void pictureBoxBackCreateLoadPlayer_Click(object sender, EventArgs e)
         {
+            PlaySound("button");
             panelCreateLoadPlayer.Visible = true;
             panelDifficulty.Visible = false;
         }
 
         private void pictureBoxButtonReceipe_Click(object sender, EventArgs e)
         {
+            PlaySound("button");
+            timerCust.Stop();
+            timerGame.Stop();
+            timerEmotion1.Stop();
+            timerEmotion2.Stop();
             panelGame.Visible = false;
             panelTutorial.Visible=true;
             buttonStartGame.Visible = false;
@@ -302,33 +323,46 @@ namespace Project
         }
         private void buttonBackReceipe_Click(object sender, EventArgs e)
         {
+            PlaySound("button");
+            timerCust.Start();
+            timerGame.Start();
+            timerEmotion1.Start();
+            timerEmotion2.Start();
             panelTutorial.Visible = false;
             panelGame.Visible=true;
         }       
         private void pictureBoxButtonSetting_Click(object sender, EventArgs e)
         {
+            PlaySound("button");
+            timerCust.Stop();
             timerGame.Stop();
+            timerEmotion1.Stop();
+            timerEmotion2.Stop();
             panelSetting.Visible = true;
             panelGame.Visible=false;
         }
         private void pictureBoxResume_Click(object sender, EventArgs e)
         {
+            PlaySound("button");
+            timerCust.Start();
             timerGame.Start();
+            timerEmotion1.Start();
+            timerEmotion2.Start();
             panelSetting.Visible = false;
             panelGame.Visible = true;
         }
         #endregion setting panel game
 
-
-
         #region InGame
         private void pictureBoxHome_Click(object sender, EventArgs e)
         {
+            PlaySound("button");
             panelWin.Visible = false;
             FormGame_Load(pictureBoxWinToHome, e);
         }
         private void pictureBoxRestart_Click(object sender, EventArgs e)
         {
+            PlaySound("button");
             panelSetting.Visible = false;
             if (labelEasy.Font.Name == "Franklin Gothic Demi")
             {
@@ -590,12 +624,19 @@ namespace Project
             labelRemainingTime.Text = time.Display();
             if (time.Hour == 0 && time.Minute == 0 && time.Second == 0)
             {
-                timerGame.Stop();
-                panelLose.Visible = true;
+                if (remainingCusts != 0)
+                {
+                    timerGame.Stop();
+                    panelGame.Visible = false;
+                    panelLose.Visible = true;
+                    PlaySound("lose");
+                }
             }
         }
         private void buttonStartGame_Click(object sender, EventArgs e)
         {
+            PlaySound("button");
+            PlaySound("play");
             panelTutorial.Visible = false;
             panelGame.Visible = true;
             panelGame.BackgroundImageLayout = ImageLayout.Stretch;
@@ -708,18 +749,9 @@ namespace Project
                 int randomItemType = numRandomItemType.Next(0, 3);
                 if (randomItemType == 0) //Foods
                 {
-                    if (customers.Type == "male")
-                    {
-                        customers.OrderItem = listOfItems[0];
-                    }
-                    else if (customers.Type == "female")
-                    {
-                        customers.OrderItem = listOfItems[1];
-                    }
-                    else if (customers.Type == "kid")
-                    {
-                        customers.OrderItem = listOfItems[2];
-                    }
+                    Random numRandomFood = new Random();
+                    int randomFood = numRandomFood.Next(0, 3);
+                    customers.OrderItem = listOfItems[randomFood];
                 }
                 else if (randomItemType == 1)
                 {
@@ -792,13 +824,13 @@ namespace Project
             labelRemainingCustomers.Text = "Remaining Customers: " + remainingCusts.ToString();
             incTimerCust = 0;
             timerCust.Start();
-            //PlaySound("correct");
+            PlaySound("correct");
         }
         private void WrongOrder()
         {
             pictureBoxServe.Image = Properties.Resources.wrong;
             selectedIngCount = 0;
-            //PlaySound("fail");
+            PlaySound("fail");
         }
         
         private void timerCust_Tick(object sender, EventArgs e)
@@ -825,7 +857,9 @@ namespace Project
                 else
                 {
                     timerGame.Stop();
+                    panelGame.Visible = false;
                     panelWin.Visible = true;
+                    PlaySound("win");
                 }
             }
         }
@@ -1286,6 +1320,7 @@ namespace Project
         #region Label Difficulty Click
         private void labelEasy_Click(object sender, EventArgs e)
         {
+            PlaySound("click");
             this.labelEasy.Font = new System.Drawing.Font("Franklin Gothic Demi", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMedium.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHard.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1294,6 +1329,7 @@ namespace Project
 
         private void pictureBoxEasy_Click(object sender, EventArgs e)
         {
+            PlaySound("click");
             this.labelEasy.Font = new System.Drawing.Font("Franklin Gothic Demi", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMedium.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHard.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1302,6 +1338,7 @@ namespace Project
 
         private void labelMedium_Click(object sender, EventArgs e)
         {
+            PlaySound("click");
             this.labelMedium.Font = new System.Drawing.Font("Franklin Gothic Demi", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelEasy.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHard.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1310,6 +1347,7 @@ namespace Project
 
         private void pictureBoxMedium_Click(object sender, EventArgs e)
         {
+            PlaySound("click");
             this.labelMedium.Font = new System.Drawing.Font("Franklin Gothic Demi", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelEasy.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHard.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1318,6 +1356,7 @@ namespace Project
 
         private void labelHard_Click(object sender, EventArgs e)
         {
+            PlaySound("click");
             this.labelHard.Font = new System.Drawing.Font("Franklin Gothic Demi", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelEasy.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMedium.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1326,6 +1365,7 @@ namespace Project
 
         private void pictureBoxHard_Click(object sender, EventArgs e)
         {
+            PlaySound("click");
             this.labelHard.Font = new System.Drawing.Font("Franklin Gothic Demi", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelEasy.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMedium.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1334,6 +1374,7 @@ namespace Project
 
         private void labelImpossible_Click(object sender, EventArgs e)
         {
+            PlaySound("click");
             this.labelImpossible.Font = new System.Drawing.Font("Franklin Gothic Demi", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelEasy.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMedium.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1342,6 +1383,7 @@ namespace Project
 
         private void pictureBoxImpossible_Click(object sender, EventArgs e)
         {
+            PlaySound("click");
             this.labelImpossible.Font = new System.Drawing.Font("Franklin Gothic Demi", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelEasy.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMedium.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1351,148 +1393,178 @@ namespace Project
         #region picbox click
         private void pictureBoxTopBun_Click(object sender, EventArgs e)
         {
+            PlaySound("click");
             ServeOrder(pictureBoxTopBun, "foods");
         }
 
         private void pictureBoxBottomBun_Click(object sender, EventArgs e)
         {
+            PlaySound("click"); 
             ServeOrder(pictureBoxBottomBun, "foods");
         }
 
         private void pictureBoxPatty_Click(object sender, EventArgs e)
         {
+            PlaySound("click"); 
             ServeOrder(pictureBoxPatty, "foods");
         }
 
         private void pictureBoxCheese_Click(object sender, EventArgs e)
         {
+            PlaySound("click"); 
             ServeOrder(pictureBoxCheese, "foods");
         }
         private void pictureBoxTomato_Click(object sender, EventArgs e)
         {
+            PlaySound("click"); 
             ServeOrder(pictureBoxTomato, "foods");
         }
 
         private void pictureBoxLettuce_Click(object sender, EventArgs e)
         {
+            PlaySound("click"); 
             ServeOrder(pictureBoxLettuce, "foods");
         }
 
         private void pictureBoxPlate_Click(object sender, EventArgs e)
         {
+            PlaySound("click"); 
             ServeOrder(pictureBoxPlate, "foods");
         }
 
         private void pictureBoxMayo_Click(object sender, EventArgs e)
         {
+            PlaySound("click"); 
             ServeOrder(pictureBoxMayo, "foods");
         }
         private void pictureBoxCone_Click(object sender, EventArgs e)
         {
+            PlaySound("click"); 
             ServeOrder(pictureBoxCone, "foods");
         }
 
         private void pictureBoxICMachine_Click(object sender, EventArgs e)
         {
+            PlaySound("click"); 
             ServeOrder(pictureBoxICMachine, "foods");
         }
         private void pictureBoxIceBucket_Click(object sender, EventArgs e)
         {
+            PlaySound("click"); 
             ServeOrder(pictureBoxIceBucket, "beverages");
         }
 
         private void pictureBoxBeverage_Click(object sender, EventArgs e)
         {
+            PlaySound("click"); 
             ServeOrder(pictureBoxBeverage, "beverages");
         }
 
         private void pictureBoxBevL_Click(object sender, EventArgs e)
         {
+            PlaySound("click"); 
             ServeOrder(pictureBoxBevL, "beverages");
         }
 
         private void pictureBoxBevM_Click(object sender, EventArgs e)
         {
+            PlaySound("click"); 
             ServeOrder(pictureBoxBevM, "beverages");
         }
 
         private void pictureBoxBevS_Click(object sender, EventArgs e)
         {
+            PlaySound("click"); 
             ServeOrder(pictureBoxBevS, "beverages");
         }
 
         private void pictureBoxBear5_Click(object sender, EventArgs e)
         {
+            PlaySound("click"); 
             ServeOrder(pictureBoxBear5, "merchandise");
         }
 
         private void pictureBoxBear4_Click(object sender, EventArgs e)
         {
+            PlaySound("click"); 
             ServeOrder(pictureBoxBear4, "merchandise");
         }
 
         private void pictureBoxBear3_Click(object sender, EventArgs e)
         {
+            PlaySound("click"); 
             ServeOrder(pictureBoxBear3, "merchandise");
         }
 
         private void pictureBoxBear2_Click(object sender, EventArgs e)
         {
+            PlaySound("click"); 
             ServeOrder(pictureBoxBear2, "merchandise");
         }
 
         private void pictureBoxBear1_Click(object sender, EventArgs e)
         {
+            PlaySound("click"); 
             ServeOrder(pictureBoxBear1, "merchandise");
         }
 
         private void pictureBoxTumblr5_Click(object sender, EventArgs e)
         {
+            PlaySound("click"); 
             ServeOrder(pictureBoxTumblr5, "merchandise");
         }
 
         private void pictureBoxTumblr4_Click(object sender, EventArgs e)
         {
+            PlaySound("click"); 
             ServeOrder(pictureBoxTumblr4, "merchandise");
         }
 
         private void pictureBoxTumblr3_Click(object sender, EventArgs e)
         {
+            PlaySound("click"); 
             ServeOrder(pictureBoxTumblr3, "merchandise");
         }
 
         private void pictureBoxTumblr2_Click(object sender, EventArgs e)
         {
+            PlaySound("click"); 
             ServeOrder(pictureBoxTumblr2, "merchandise");
         }
 
         private void pictureBoxTumblr1_Click(object sender, EventArgs e)
         {
+            PlaySound("click"); 
             ServeOrder(pictureBoxTumblr1, "merchandise");
         }
 
         private void pictureBoxRobot5_Click(object sender, EventArgs e)
         {
+            PlaySound("click"); 
             ServeOrder(pictureBoxRobot5, "merchandise");
         }
 
         private void pictureBoxRobot4_Click(object sender, EventArgs e)
         {
+            PlaySound("click"); 
             ServeOrder(pictureBoxRobot4, "merchandise");
         }
 
         private void pictureBoxRobot3_Click(object sender, EventArgs e)
         {
+            PlaySound("click"); 
             ServeOrder(pictureBoxRobot3, "merchandise");
         }
 
         private void pictureBoxRobot2_Click(object sender, EventArgs e)
         {
+            PlaySound("click"); 
             ServeOrder(pictureBoxRobot2, "merchandise");
         }
 
         private void pictureBoxRobot1_Click(object sender, EventArgs e)
         {
+            PlaySound("click"); 
             ServeOrder(pictureBoxRobot1, "merchandise");
         }
         #endregion picbox click
@@ -1518,6 +1590,7 @@ namespace Project
 
         private void pictureBoxButtonPlayAgain_Click(object sender, EventArgs e)
         {
+            PlaySound("button");
             panelWin.Visible = false;
             if (labelEasy.Font.Name == "Franklin Gothic Demi")
             {
@@ -1540,6 +1613,7 @@ namespace Project
 
         private void pictureBoxQuit_Click(object sender, EventArgs e)
         {
+            PlaySound("button");
             if (MessageBox.Show("Are you sure want to exit the game?", "Exit Message", MessageBoxButtons.YesNo,
                MessageBoxIcon.Question) == DialogResult.Yes)
             {
@@ -1549,12 +1623,14 @@ namespace Project
 
         private void pictureBoxWinToHome_Click(object sender, EventArgs e)
         {
+            PlaySound("button");
             panelWin.Visible = false;
             FormGame_Load(pictureBoxWinToHome, e);
         }
 
         private void pictureBoxPlayAgain_Click(object sender, EventArgs e)
         {
+            PlaySound("button");
             panelLose.Visible = false;
             if (labelEasy.Font.Name == "Franklin Gothic Demi")
             {
@@ -1577,12 +1653,14 @@ namespace Project
 
         private void pictureBoxLoseToHome_Click(object sender, EventArgs e)
         {
+            PlaySound("button");
             panelLose.Visible = false;
             FormGame_Load(pictureBoxLoseToHome, e);
         }
 
         private void pictureBoxExit_Click(object sender, EventArgs e)
         {
+            PlaySound("button");
             if (MessageBox.Show("Are you sure want to exit the game?", "Exit Message", MessageBoxButtons.YesNo,
               MessageBoxIcon.Question) == DialogResult.Yes)
             {
@@ -1612,6 +1690,68 @@ namespace Project
             }
             pictureBoxEmotion1.Image = image;
             pictureBoxEmotion1.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
+        private void PlaySound(string type)
+        {
+            if (type == "fail")
+            {
+                sound1.URL = Application.StartupPath + "\\sound\\fail.mp3";
+                sound1.controls.play();
+            }
+            else if (type == "correct")
+            {
+                sound1.URL = Application.StartupPath + "\\sound\\correct.mp3";
+                sound1.controls.play();
+            }
+            else if (type == "button")
+            {
+                sound1.URL = Application.StartupPath + "\\sound\\button.mp3";
+                sound1.controls.play();
+            }
+            else if (type == "click")
+            {
+                sound1.URL = Application.StartupPath + "\\sound\\click.mp3";
+                sound1.controls.play();
+            }
+            else if (type == "lose")
+            {
+                sound2.URL = Application.StartupPath + "\\sound\\lose.mp3";
+                sound2.controls.play();
+            }
+            else if (type == "win")
+            {
+                sound2.URL = Application.StartupPath + "\\sound\\win.mp3";
+                sound2.controls.play();
+            }
+            else if (type == "play")
+            {
+                sound2.URL = Application.StartupPath + "\\sound\\play.mp3";
+                sound2.controls.play();
+            }
+            else if (type == "game")
+            {
+                sound2.URL = Application.StartupPath + "\\sound\\game.mp3";
+                sound2.controls.play();
+            }
+            else if (type == "stop")
+            {
+                sound2.controls.stop();
+            }
+        }
+
+        private void buttonBuyMerchandiseBear_Click(object sender, EventArgs e)
+        {
+            PlaySound("click");
+        }
+
+        private void buttonBuyMerchandiseTumblr_Click(object sender, EventArgs e)
+        {
+            PlaySound("click");
+        }
+
+        private void buttonBuyMerchandiseRobot_Click(object sender, EventArgs e)
+        {
+            PlaySound("click");
         }
     }
 }

@@ -1165,6 +1165,7 @@
             this.buttonBuyMerchandiseBear.TabIndex = 12;
             this.buttonBuyMerchandiseBear.Text = "BUY 50  ";
             this.buttonBuyMerchandiseBear.UseVisualStyleBackColor = false;
+            this.buttonBuyMerchandiseBear.Click += new System.EventHandler(this.buttonBuyMerchandiseBear_Click);
             // 
             // pictureBox1
             // 
@@ -1188,6 +1189,7 @@
             this.buttonBuyMerchandiseTumblr.TabIndex = 10;
             this.buttonBuyMerchandiseTumblr.Text = "BUY 50  ";
             this.buttonBuyMerchandiseTumblr.UseVisualStyleBackColor = false;
+            this.buttonBuyMerchandiseTumblr.Click += new System.EventHandler(this.buttonBuyMerchandiseTumblr_Click);
             // 
             // pictureBoxCoin
             // 
@@ -1211,6 +1213,7 @@
             this.buttonBuyMerchandiseRobot.TabIndex = 8;
             this.buttonBuyMerchandiseRobot.Text = "BUY 50  ";
             this.buttonBuyMerchandiseRobot.UseVisualStyleBackColor = false;
+            this.buttonBuyMerchandiseRobot.Click += new System.EventHandler(this.buttonBuyMerchandiseRobot_Click);
             // 
             // pictureBoxIceBucket
             // 
@@ -1546,7 +1549,7 @@
             // 
             // panelDifficulty
             // 
-            this.panelDifficulty.BackgroundImage = global::Project.Properties.Resources.bg_Difficulty;
+            this.panelDifficulty.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelDifficulty.BackgroundImage")));
             this.panelDifficulty.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelDifficulty.Controls.Add(this.labelBestTimeImpossible);
             this.panelDifficulty.Controls.Add(this.labelBestTimeHard);
