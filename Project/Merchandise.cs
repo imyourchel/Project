@@ -29,9 +29,27 @@ namespace Project
             throw new System.NotImplementedException();
         }
 
-        public void Sell(int i)
+        public void Sell()
         {
-            this.ListStock[i] = false;
+            for (int i = 0; i < listStock.Count; i++)
+            {
+                if (listStock[i] == true)
+                {
+                    listStock[i] = false;
+                    break;
+                }
+            }
+        }
+        public void Buy()
+        {
+            for (int i = 0; i < listStock.Count; i++)
+            {
+                if (listStock[i] == false)
+                {
+                    listStock[i] = true;
+                    break;
+                }
+            }
         }
         #endregion Methods
     }

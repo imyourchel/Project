@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -18,7 +19,7 @@ using WMPLib;
 namespace Project
 {
     public partial class FormGame : Form
-    {
+    {       
         Players player;
         Time time;
         List<Players> listOfPlayer = new List<Players>();
@@ -65,7 +66,7 @@ namespace Project
         int incTimerEmotion1;
         int incTimerEmotion2;
         int tempEmotion;
-        bool timeFirst = true;//bingung dipake atau gak
+        bool timeFirst = true;
 
         List<bool> stockBear;
         List<bool> stockTumblr;
@@ -83,7 +84,8 @@ namespace Project
         {
             InitializeComponent();
         }
-        #region setting panel game
+        #region home - tutorial
+        //panel home
         private void BackgroundVisible()
         {
             this.BackgroundImage = Properties.Resources.background;
@@ -151,6 +153,8 @@ namespace Project
                 Application.Exit();
             }
         }
+
+        //panel create player
         private void pictureBoxBackHome_Click(object sender, EventArgs e)
         {
             PlaySound("button");
@@ -264,6 +268,13 @@ namespace Project
             }
         }
 
+        //panel difficult
+        private void pictureBoxBackCreateLoadPlayer_Click(object sender, EventArgs e)
+        {
+            PlaySound("button");
+            panelCreateLoadPlayer.Visible = true;
+            panelDifficulty.Visible = false;
+        }
         private void buttonNextTutorial_Click(object sender, EventArgs e)
         {
             try
@@ -320,458 +331,18 @@ namespace Project
                 MessageBox.Show(ex.Message,"ERROR");
             }
         }
-        private void pictureBoxBackCreateLoadPlayer_Click(object sender, EventArgs e)
-        {
-            PlaySound("button");
-            panelCreateLoadPlayer.Visible = true;
-            panelDifficulty.Visible = false;
-        }
 
-        private void pictureBoxButtonReceipe_Click(object sender, EventArgs e)
-        {
-            PlaySound("button");
-            timerCust.Stop();
-            timerGame.Stop();
-            timerEmotion1.Stop();
-            timerEmotion2.Stop();
-            panelGame.Visible = false;
-            panelTutorial.Visible=true;
-            buttonStartGame.Visible = false;
-            buttonBackReceipe.Visible = true;
-        }
-        private void buttonBackReceipe_Click(object sender, EventArgs e)
-        {
-            PlaySound("button");
-            timerCust.Start();
-            timerGame.Start();
-            timerEmotion1.Start();
-            timerEmotion2.Start();
-            panelTutorial.Visible = false;
-            panelGame.Visible=true;
-        }       
-        private void pictureBoxButtonSetting_Click(object sender, EventArgs e)
-        {
-            PlaySound("button");
-            timerCust.Stop();
-            timerGame.Stop();
-            timerEmotion1.Stop();
-            timerEmotion2.Stop();
-            panelSetting.Visible = true;
-            panelGame.Visible=false;
-        }
-        private void pictureBoxResume_Click(object sender, EventArgs e)
-        {
-            PlaySound("button");
-            timerCust.Start();
-            timerGame.Start();
-            timerEmotion1.Start();
-            timerEmotion2.Start();
-            panelSetting.Visible = false;
-            panelGame.Visible = true;
-        }
-        #endregion setting panel game
-
-        private void pictureBoxHome_Click(object sender, EventArgs e)
-        {
-            PlaySound("button");
-            panelWin.Visible = false;
-            FormGame_Load(pictureBoxWinToHome, e);
-        }
-        private void pictureBoxRestart_Click(object sender, EventArgs e)
-        {
-            PlaySound("button");
-            foreach(int i in listTempIncome)
-            {
-                tempIncome += i;
-            }
-            player.Income = (player.Income) - tempIncome;
-            tempIncome = 0;
-            listTempIncome.Clear();
-            panelSetting.Visible = false;
-            if (labelEasy.Font.Name == "Franklin Gothic Demi")
-            {
-                remainingCusts = custEasy;
-            }
-            else if (labelMedium.Font.Name == "Franklin Gothic Demi")
-            {
-                remainingCusts = custMedium;
-            }
-            else if (labelHard.Font.Name == "Franklin Gothic Demi")
-            {
-                remainingCusts = custHard;
-            }
-            else if (labelImpossible.Font.Name == "Franklin Gothic Demi")
-            {
-                remainingCusts = custImpossible;
-            }
-            buttonStartGame_Click(pictureBoxRestart, e);
-        }
-        private void displayBear(Items item)
-        {
-            Merchandise merch = (Merchandise)item;
-            int i = 0;
-            foreach(bool stock in merch.ListStock)
-            {
-                if(stock == true)
-                {
-                    i++;
-                }
-            }
-            if(i == 5)
-            {
-                pictureBoxBear1.Enabled = true;
-                pictureBoxBear2.Enabled = true;
-                pictureBoxBear3.Enabled = true;
-                pictureBoxBear4.Enabled = true;
-                pictureBoxBear5.Enabled = true;
-
-                pictureBoxBear1.Image = ((Merchandise)item).Picture;
-                pictureBoxBear2.Image = ((Merchandise)item).Picture;
-                pictureBoxBear3.Image = ((Merchandise)item).Picture;
-                pictureBoxBear4.Image = ((Merchandise)item).Picture;
-                pictureBoxBear5.Image = ((Merchandise)item).Picture;
-
-                pictureBoxBear1.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBoxBear2.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBoxBear3.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBoxBear4.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBoxBear5.SizeMode = PictureBoxSizeMode.StretchImage;
-            }
-            else if (i == 4)
-            {
-                pictureBoxBear1.Enabled = true;
-                pictureBoxBear2.Enabled = true;
-                pictureBoxBear3.Enabled = true;
-                pictureBoxBear4.Enabled = true;
-
-                pictureBoxBear1.Image = ((Merchandise)item).Picture;
-                pictureBoxBear2.Image = ((Merchandise)item).Picture;
-                pictureBoxBear3.Image = ((Merchandise)item).Picture;
-                pictureBoxBear4.Image = ((Merchandise)item).Picture;                
-
-                pictureBoxBear1.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBoxBear2.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBoxBear3.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBoxBear4.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBoxBear5.Image = null;
-                pictureBoxBear5.Enabled = false;
-            }
-            else if (i == 3)
-            {
-                pictureBoxBear1.Enabled = true;
-                pictureBoxBear2.Enabled = true;
-                pictureBoxBear3.Enabled = true;
-
-                pictureBoxBear1.Image = ((Merchandise)item).Picture;
-                pictureBoxBear2.Image = ((Merchandise)item).Picture;
-                pictureBoxBear3.Image = ((Merchandise)item).Picture;
-
-                pictureBoxBear1.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBoxBear2.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBoxBear3.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBoxBear4.Image= null;
-                pictureBoxBear5.Enabled = false;
-                pictureBoxBear5.Image = null;
-                pictureBoxBear5.Enabled = false;
-            }
-            else if (i == 2)
-            {
-                pictureBoxBear1.Enabled = true;
-                pictureBoxBear2.Enabled = true;
-
-                pictureBoxBear1.Image = ((Merchandise)item).Picture;
-                pictureBoxBear2.Image = ((Merchandise)item).Picture;
-
-                pictureBoxBear1.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBoxBear2.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBoxBear3.Image = null;
-                pictureBoxBear3.Enabled = false;
-                pictureBoxBear4.Image = null;
-                pictureBoxBear5.Enabled = false;
-                pictureBoxBear5.Image = null;
-                pictureBoxBear5.Enabled = false;
-            }
-            else if (i == 1)
-            {
-                pictureBoxBear1.Enabled = true;
-                pictureBoxBear1.Image = ((Merchandise)item).Picture;
-                pictureBoxBear1.SizeMode = PictureBoxSizeMode.StretchImage;
-
-                pictureBoxBear2.Image = null;
-                pictureBoxBear2.Enabled = false;
-                pictureBoxBear3.Image = null;
-                pictureBoxBear3.Enabled = false;
-                pictureBoxBear4.Image = null;
-                pictureBoxBear5.Enabled = false;
-                pictureBoxBear5.Image = null;
-                pictureBoxBear5.Enabled = false;
-            }
-        }
-        private void StallDisplay()
-        {
-            #region Foods
-            item = new Foods("burger", Properties.Resources.burger, 50);
-            listOfItems.Add(item);
-            ((Foods)item).AddingIngredients("plate", Properties.Resources.plates, Properties.Resources.burger1);
-            ((Foods)item).AddingIngredients("bottombun", Properties.Resources.bottomBun, Properties.Resources.burger2);
-            ((Foods)item).AddingIngredients("patty", Properties.Resources.patty, Properties.Resources.burger3);
-            ((Foods)item).AddingIngredients("cheese", Properties.Resources.cheese, Properties.Resources.burger4);
-            ((Foods)item).AddingIngredients("tomato", Properties.Resources.tomato, Properties.Resources.burger5);
-            ((Foods)item).AddingIngredients("lettuce", Properties.Resources.lettuce, Properties.Resources.burger6);
-            ((Foods)item).AddingIngredients("topbun", Properties.Resources.topBun, Properties.Resources.burger);
-
-            pictureBoxPlate.Tag = ((Foods)item).ListOfIngredients[0].Name;
-            pictureBoxBottomBun.Tag = ((Foods)item).ListOfIngredients[1].Name;
-            pictureBoxPatty.Tag = ((Foods)item).ListOfIngredients[2].Name;
-            pictureBoxCheese.Tag = ((Foods)item).ListOfIngredients[3].Name;
-            pictureBoxTomato.Tag = ((Foods)item).ListOfIngredients[4].Name;
-            pictureBoxLettuce.Tag = ((Foods)item).ListOfIngredients[5].Name;
-            pictureBoxTopBun.Tag = ((Foods)item).ListOfIngredients[6].Name;
-
-            pictureBoxPlate.Image = ((Foods)item).ListOfIngredients[0].Picture;
-            pictureBoxBottomBun.Image = ((Foods)item).ListOfIngredients[1].Picture;
-            pictureBoxPatty.Image = ((Foods)item).ListOfIngredients[2].Picture;
-            pictureBoxCheese.Image = ((Foods)item).ListOfIngredients[3].Picture;
-            pictureBoxTomato.Image = ((Foods)item).ListOfIngredients[4].Picture;
-            pictureBoxLettuce.Image = ((Foods)item).ListOfIngredients[5].Picture;
-            pictureBoxTopBun.Image = ((Foods)item).ListOfIngredients[6].Picture;
-
-            pictureBoxPlate.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxBottomBun.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxPatty.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxCheese.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxTomato.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxLettuce.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxTopBun.SizeMode = PictureBoxSizeMode.StretchImage;
-
-
-            item = new Foods("salad", Properties.Resources.salad, 25);
-            listOfItems.Add(item);
-            ((Foods)item).AddingIngredients("plate", Properties.Resources.plates, Properties.Resources.salad1);
-            ((Foods)item).AddingIngredients("lettuce", Properties.Resources.lettuce, Properties.Resources.salad2);
-            ((Foods)item).AddingIngredients("mayo", Properties.Resources.mayo, Properties.Resources.salad);
-
-            pictureBoxPlate.Tag = ((Foods)item).ListOfIngredients[0].Name;
-            pictureBoxLettuce.Tag = ((Foods)item).ListOfIngredients[1].Name;
-            pictureBoxMayo.Tag = ((Foods)item).ListOfIngredients[2].Name;
-
-            pictureBoxPlate.Image = ((Foods)item).ListOfIngredients[0].Picture;
-            pictureBoxLettuce.Image = ((Foods)item).ListOfIngredients[1].Picture;
-            pictureBoxMayo.Image = ((Foods)item).ListOfIngredients[2].Picture;
-
-            pictureBoxPlate.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxLettuce.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxMayo.SizeMode = PictureBoxSizeMode.StretchImage;
-
-
-            item = new Foods("icecream", Properties.Resources.iceCream, 10);
-            listOfItems.Add(item);
-            ((Foods)item).AddingIngredients("cone", Properties.Resources.cone, Properties.Resources.icesream1);
-            ((Foods)item).AddingIngredients("ice", Properties.Resources.icMachine, Properties.Resources.iceCream);
-
-            pictureBoxCone.Tag = ((Foods)item).ListOfIngredients[0].Name;
-            pictureBoxICMachine.Tag = ((Foods)item).ListOfIngredients[1].Name;
-
-            pictureBoxCone.Image = ((Foods)item).ListOfIngredients[0].Picture;
-            pictureBoxICMachine.Image = ((Foods)item).ListOfIngredients[1].Picture;
-
-            pictureBoxCone.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxICMachine.SizeMode = PictureBoxSizeMode.StretchImage;
-            #endregion Foods
-
-            #region Beverages
-            item = new Beverages(false, "L", "coffeeLHot", Properties.Resources.hotL, 25);
-            listOfItems.Add(item);
-            ((Beverages)item).AddingIngredients("cup", Properties.Resources.beverages, Properties.Resources.cup);            
-            ((Beverages)item).AddingIngredients("coffee", Properties.Resources.textL, Properties.Resources.hotL);
-
-            pictureBoxBeverage.Tag = ((Beverages)item).ListOfIngredients[0].Name;
-            pictureBoxBevL.Tag = ((Beverages)item).ListOfIngredients[1].Name;
-
-            pictureBoxBeverage.Image = ((Beverages)item).ListOfIngredients[0].Picture;
-            pictureBoxBevL.Image = ((Beverages)item).ListOfIngredients[1].Picture;
-
-            pictureBoxBeverage.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxBevL.SizeMode = PictureBoxSizeMode.StretchImage;
-
-            item = new Beverages(false, "M", "coffeeMHot", Properties.Resources.hotM, 20);
-            listOfItems.Add(item);
-            ((Beverages)item).AddingIngredients("cup", Properties.Resources.beverages, Properties.Resources.cup);
-            ((Beverages)item).AddingIngredients("coffee", Properties.Resources.textM, Properties.Resources.hotM);
-
-            pictureBoxBeverage.Tag = ((Beverages)item).ListOfIngredients[0].Name;
-            pictureBoxBevM.Tag = ((Beverages)item).ListOfIngredients[1].Name;
-
-            pictureBoxBeverage.Image = ((Beverages)item).ListOfIngredients[0].Picture;
-            pictureBoxBevM.Image = ((Beverages)item).ListOfIngredients[1].Picture;
-
-            pictureBoxBeverage.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxBevM.SizeMode = PictureBoxSizeMode.StretchImage;
-
-            item = new Beverages(false, "S", "coffeeSHot", Properties.Resources.hotS, 15);
-            listOfItems.Add(item);
-            ((Beverages)item).AddingIngredients("cup", Properties.Resources.beverages, Properties.Resources.cup);
-            ((Beverages)item).AddingIngredients("coffee", Properties.Resources.textS, Properties.Resources.hotS);
-
-            pictureBoxBeverage.Tag = ((Beverages)item).ListOfIngredients[0].Name;
-            pictureBoxBevS.Tag = ((Beverages)item).ListOfIngredients[1].Name;
-
-            pictureBoxBeverage.Image = ((Beverages)item).ListOfIngredients[0].Picture;
-            pictureBoxBevS.Image = ((Beverages)item).ListOfIngredients[1].Picture;
-
-            pictureBoxBeverage.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxBevS.SizeMode = PictureBoxSizeMode.StretchImage;
-
-            item = new Beverages(true, "L", "coffeeLCold", Properties.Resources.coldL, 25);
-            listOfItems.Add(item);
-            ((Beverages)item).AddingIngredients("cup", Properties.Resources.beverages, Properties.Resources.cup);
-            ((Beverages)item).AddingIngredients("coffee", Properties.Resources.textL, Properties.Resources.coldL);
-            ((Beverages)item).AddingIngredients("ice", Properties.Resources.iceBucket, Properties.Resources.coldL);
-
-            pictureBoxBeverage.Tag = ((Beverages)item).ListOfIngredients[0].Name;
-            pictureBoxBevL.Tag = ((Beverages)item).ListOfIngredients[1].Name;
-            pictureBoxIceBucket.Tag = ((Beverages)item).ListOfIngredients[2].Name;
-
-            pictureBoxBeverage.Image = ((Beverages)item).ListOfIngredients[0].Picture;
-            pictureBoxBevL.Image = ((Beverages)item).ListOfIngredients[1].Picture;
-            pictureBoxIceBucket.Image = ((Beverages)item).ListOfIngredients[2].Picture;
-
-            pictureBoxBeverage.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxBevL.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxIceBucket.SizeMode = PictureBoxSizeMode.StretchImage;
-
-            item = new Beverages(true, "M", "coffeeMCold", Properties.Resources.coldM, 20);
-            listOfItems.Add(item);
-            ((Beverages)item).AddingIngredients("cup", Properties.Resources.beverages, Properties.Resources.cup);
-            ((Beverages)item).AddingIngredients("coffee", Properties.Resources.textM, Properties.Resources.coldM);
-            ((Beverages)item).AddingIngredients("ice", Properties.Resources.iceBucket, Properties.Resources.coldM);
-
-            pictureBoxBeverage.Tag = ((Beverages)item).ListOfIngredients[0].Name;
-            pictureBoxBevM.Tag = ((Beverages)item).ListOfIngredients[1].Name;
-            pictureBoxIceBucket.Tag = ((Beverages)item).ListOfIngredients[2].Name;
-
-            pictureBoxBeverage.Image = ((Beverages)item).ListOfIngredients[0].Picture;
-            pictureBoxBevM.Image = ((Beverages)item).ListOfIngredients[1].Picture;
-            pictureBoxIceBucket.Image = ((Beverages)item).ListOfIngredients[2].Picture;
-
-            pictureBoxBeverage.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxBevM.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxIceBucket.SizeMode = PictureBoxSizeMode.StretchImage;
-
-            item = new Beverages(true, "S", "coffeeSCold", Properties.Resources.coldS, 15);
-            listOfItems.Add(item);
-            ((Beverages)item).AddingIngredients("cup", Properties.Resources.beverages, Properties.Resources.cup);
-            ((Beverages)item).AddingIngredients("coffee", Properties.Resources.textS, Properties.Resources.coldS);
-            ((Beverages)item).AddingIngredients("ice", Properties.Resources.iceBucket, Properties.Resources.coldS);
-
-            pictureBoxBeverage.Tag = ((Beverages)item).ListOfIngredients[0].Name;
-            pictureBoxBevS.Tag = ((Beverages)item).ListOfIngredients[1].Name;
-            pictureBoxIceBucket.Tag = ((Beverages)item).ListOfIngredients[2].Name;
-
-            pictureBoxBeverage.Image = ((Beverages)item).ListOfIngredients[0].Picture;
-            pictureBoxBevS.Image = ((Beverages)item).ListOfIngredients[1].Picture;
-            pictureBoxIceBucket.Image = ((Beverages)item).ListOfIngredients[2].Picture;
-
-            pictureBoxBeverage.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxBevS.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxIceBucket.SizeMode = PictureBoxSizeMode.StretchImage;
-            #endregion Beverages
-
-            #region Merchandise     
-            if (newPlayer == true)
-            {
-                item = new Merchandise(stockBear, "bear", Properties.Resources.bear, 100);
-                listOfItems.Add(item);
-                pictureBoxBear1.Tag = ((Merchandise)item).Name;
-                pictureBoxBear2.Tag = ((Merchandise)item).Name;
-                pictureBoxBear3.Tag = ((Merchandise)item).Name;
-                pictureBoxBear4.Tag = ((Merchandise)item).Name;
-                pictureBoxBear5.Tag = ((Merchandise)item).Name;
-
-                pictureBoxBear1.Image = ((Merchandise)item).Picture;
-                pictureBoxBear2.Image = ((Merchandise)item).Picture;
-                pictureBoxBear3.Image = ((Merchandise)item).Picture;
-                pictureBoxBear4.Image = ((Merchandise)item).Picture;
-                pictureBoxBear5.Image = ((Merchandise)item).Picture;                
-
-                pictureBoxBear1.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBoxBear2.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBoxBear3.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBoxBear4.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBoxBear5.SizeMode = PictureBoxSizeMode.StretchImage;
-
-                
-                item = new Merchandise(stockTumblr, "tumblr", Properties.Resources.tumblr, 100);
-                listOfItems.Add(item);
-                pictureBoxTumblr1.Tag = ((Merchandise)item).Name;
-                pictureBoxTumblr2.Tag = ((Merchandise)item).Name;
-                pictureBoxTumblr3.Tag = ((Merchandise)item).Name;
-                pictureBoxTumblr4.Tag = ((Merchandise)item).Name;
-                pictureBoxTumblr5.Tag = ((Merchandise)item).Name;
-
-                pictureBoxTumblr1.Image = ((Merchandise)item).Picture;
-                pictureBoxTumblr2.Image = ((Merchandise)item).Picture;
-                pictureBoxTumblr3.Image = ((Merchandise)item).Picture;
-                pictureBoxTumblr4.Image = ((Merchandise)item).Picture;
-                pictureBoxTumblr5.Image = ((Merchandise)item).Picture;
-
-                pictureBoxTumblr1.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBoxTumblr2.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBoxTumblr3.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBoxTumblr4.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBoxTumblr5.SizeMode = PictureBoxSizeMode.StretchImage;
-
-
-                item = new Merchandise(stockRobot, "robot", Properties.Resources.robot, 100);
-                listOfItems.Add(item);
-                pictureBoxRobot1.Tag = ((Merchandise)item).Name;
-                pictureBoxRobot2.Tag = ((Merchandise)item).Name;
-                pictureBoxRobot3.Tag = ((Merchandise)item).Name;
-                pictureBoxRobot4.Tag = ((Merchandise)item).Name;
-                pictureBoxRobot5.Tag = ((Merchandise)item).Name;
-
-                pictureBoxRobot1.Image = ((Merchandise)item).Picture;
-                pictureBoxRobot2.Image = ((Merchandise)item).Picture;
-                pictureBoxRobot3.Image = ((Merchandise)item).Picture;
-                pictureBoxRobot4.Image = ((Merchandise)item).Picture;
-                pictureBoxRobot5.Image = ((Merchandise)item).Picture;
-
-                pictureBoxRobot1.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBoxRobot2.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBoxRobot3.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBoxRobot4.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBoxRobot5.SizeMode = PictureBoxSizeMode.StretchImage;
-            }
-            //load player
-            else
-            {
-                item = (Merchandise)player.StockMerchandise[0];//bear
-                displayBear(item);
-                item = (Merchandise)player.StockMerchandise[1];//tumblr
-                item = (Merchandise)player.StockMerchandise[2];//robot
-            }                    
-            #endregion Merchandise
-        }   
-
-        private void timerGame_Tick(object sender, EventArgs e)
-        {
-            time.Add(-1);
-            labelRemainingTime.Text = time.Display();
-            if (time.Hour == 0 && time.Minute == 0 && time.Second == 0)
-            {
-                if (remainingCusts != 0)
-                {
-                    timerGame.Stop();
-                    panelGame.Visible = false;
-                    panelLose.Visible = true;
-                    PlaySound("lose");
-                }
-            }
-        }
+        //panel Tutorial
         private void buttonStartGame_Click(object sender, EventArgs e)
         {
             PlaySound("button");
             PlaySound("play");
+
+            first = true;
+            last = false;
+            pictureBoxCustomer2.Visible = true;
+            panelDialog2.Visible = true;
+
             panelTutorial.Visible = false;
             panelGame.Visible = true;
             panelGame.BackgroundImageLayout = ImageLayout.Stretch;
@@ -810,120 +381,167 @@ namespace Project
             CreateCustomers();
             CreateCustomers2();
         }
-        private void CorrectOrder(Items order)
+        #endregion home - tutorial
+
+        #region InGame
+        #region button
+        private void pictureBoxButtonSetting_Click(object sender, EventArgs e)
         {
-            pictureBoxServe.Image = order.Picture;
-            pictureBoxServe.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxServe.Tag = "done";
-            pictureBoxOrder1.Image = Properties.Resources.coin;
-            listTempIncome.Add(order.Price);
-            player.Income += order.Price;
-            selectedIngCount = 0;
-            remainingCusts--;
-            labelRemainingCustomers.Text = "Remaining Customers: " + remainingCusts.ToString();
-            labelIncomeNow.Text=player.Income.ToString();
-            incTimerCust = 0;
+            PlaySound("button");
+            timerCust.Stop();
+            timerGame.Stop();
+            timerEmotion1.Stop();
+            timerEmotion2.Stop();
+            panelSetting.Visible = true;
+            panelGame.Visible=false;
+        }
+        private void pictureBoxResume_Click(object sender, EventArgs e)
+        {
+            PlaySound("button");
             timerCust.Start();
-            PlaySound("correct");
+            timerGame.Start();
+            timerEmotion1.Start();
+            timerEmotion2.Start();
+            panelSetting.Visible = false;
+            panelGame.Visible = true;
         }
-        private void WrongOrder()
+        private void buttonBackReceipe_Click(object sender, EventArgs e)
         {
-            pictureBoxServe.Image = Properties.Resources.wrong;
-            selectedIngCount = 0;
-            PlaySound("fail");
-        }
-        
-        private void ServeOrder(PictureBox PictureBox, string type)
+            PlaySound("button");
+            timerCust.Start();
+            timerGame.Start();
+            timerEmotion1.Start();
+            timerEmotion2.Start();
+            panelTutorial.Visible = false;
+            panelGame.Visible=true;
+        }       
+        private void pictureBoxButtonReceipe_Click(object sender, EventArgs e)
         {
-            if (type == "foods")
+            PlaySound("button");
+            timerCust.Stop();
+            timerGame.Stop();
+            timerEmotion1.Stop();
+            timerEmotion2.Stop();
+            panelGame.Visible = false;
+            panelTutorial.Visible=true;
+            buttonStartGame.Visible = false;
+            buttonBackReceipe.Visible = true;
+        }
+        private void pictureBoxHome_Click(object sender, EventArgs e)
+        {
+            PlaySound("button");
+            panelWin.Visible = false;
+            FormGame_Load(pictureBoxWinToHome, e);
+        }
+        private void pictureBoxRestart_Click(object sender, EventArgs e)
+        {
+            PlaySound("button");
+            foreach(int i in listTempIncome)
             {
-                if (customers.OrderItem is Foods)
-                {
-                    Foods foodOrder = (Foods)customers.OrderItem;
-                    if (PictureBox.Tag.ToString() == foodOrder.ListOfIngredients[selectedIngCount].Name)
-                    {
-                        selectedIngCount++;
-                        pictureBoxServe.Image = foodOrder.ListOfIngredients[selectedIngCount-1].ServePicture;
-                        pictureBoxServe.SizeMode = PictureBoxSizeMode.StretchImage;
-                        if (selectedIngCount == foodOrder.ListOfIngredients.Count)
-                        {
-                            CorrectOrder(foodOrder);
-                            timeFirst = false;
-                            tempEmotion = incTimerEmotion2;
-                            incTimerEmotion1 = tempEmotion;
-                            incTimerEmotion2 = 0;
-                        }
-                    }
-                    else
-                    {
-                        WrongOrder();
-                    }
-                }
-                else
-                {
-                    selectedIngCount = 0;
-                    WrongOrder();
-                }
+                tempIncome += i;
             }
-            else if (type == "beverages")
+            player.Income = (player.Income) - tempIncome;
+            tempIncome = 0;
+            listTempIncome.Clear();
+            panelSetting.Visible = false;
+            if (labelEasy.Font.Name == "Franklin Gothic Demi")
             {
-                if (customers.OrderItem is Beverages)
-                {
-                    Beverages bevOrder = (Beverages)customers.OrderItem;
-                    if (PictureBox.Tag.ToString() == bevOrder.ListOfIngredients[selectedIngCount].Name)
-                    {
-                        selectedIngCount++;
-                        pictureBoxServe.Image = bevOrder.ListOfIngredients[selectedIngCount-1].ServePicture ;
-                        pictureBoxServe.SizeMode = PictureBoxSizeMode.StretchImage;
-
-                        if (selectedIngCount == bevOrder.ListOfIngredients.Count)
-                        {
-                            CorrectOrder(bevOrder);
-                            timeFirst = false; 
-                            tempEmotion = incTimerEmotion2;
-                            incTimerEmotion1 = tempEmotion;
-                            incTimerEmotion2 = 0;
-                        }
-                    }
-                    else
-                    {
-                        WrongOrder();
-                    }
-                }
-                else
-                {
-                    selectedIngCount = 0;
-                    WrongOrder();
-                }
+                remainingCusts = custEasy;
             }
-            else if (type == "merchandise")
+            else if (labelMedium.Font.Name == "Franklin Gothic Demi")
             {
-                if (customers.OrderItem is Merchandise)
-                {
-                    Merchandise merchOrder = (Merchandise)customers.OrderItem;
-                    pictureBoxServe.Image = PictureBox.Image;
-                    pictureBoxServe.SizeMode = PictureBoxSizeMode.StretchImage;
-                    if (PictureBox.Tag.ToString() == merchOrder.Name)
-                    {
-                        merchOrder.Sell(1);                        
-                        CorrectOrder(merchOrder);
-                        timeFirst = false;
-                        tempEmotion = incTimerEmotion2;
-                        incTimerEmotion1 = tempEmotion;
-                        incTimerEmotion2 = 0;
-                    }
-                    else
-                    {
-                        WrongOrder();
-                    }
-                }
-                else
-                {
-                    WrongOrder();
-                }
-
+                remainingCusts = custMedium;
+            }
+            else if (labelHard.Font.Name == "Franklin Gothic Demi")
+            {
+                remainingCusts = custHard;
+            }
+            else if (labelImpossible.Font.Name == "Franklin Gothic Demi")
+            {
+                remainingCusts = custImpossible;
+            }
+            buttonStartGame_Click(pictureBoxRestart, e);
+        }
+        private void pictureBoxButtonPlayAgain_Click(object sender, EventArgs e)
+        {
+            PlaySound("button");
+            foreach(int i in listTempIncome)
+            {
+                tempIncome += i;
+            }
+            player.Income = (player.Income) - tempIncome;
+            panelWin.Visible = false;
+            if (labelEasy.Font.Name == "Franklin Gothic Demi")
+            {
+                remainingCusts = custEasy;
+            }
+            else if (labelMedium.Font.Name == "Franklin Gothic Demi")
+            {
+                remainingCusts = custMedium;
+            }
+            else if (labelHard.Font.Name == "Franklin Gothic Demi")
+            {
+                remainingCusts = custHard;
+            }
+            else if (labelImpossible.Font.Name == "Franklin Gothic Demi")
+            {
+                remainingCusts = custImpossible;
+            }
+            buttonStartGame_Click(pictureBoxButtonPlayAgain, e);
+        }
+        private void pictureBoxQuit_Click(object sender, EventArgs e)
+        {
+            PlaySound("button");
+            if (MessageBox.Show("Are you sure want to exit the game?", "Exit Message", MessageBoxButtons.YesNo,
+               MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
             }
         }
+        private void pictureBoxWinToHome_Click(object sender, EventArgs e)
+        {
+            PlaySound("button");
+            panelWin.Visible = false;
+            FormGame_Load(pictureBoxWinToHome, e);
+        }
+        private void pictureBoxPlayAgain_Click(object sender, EventArgs e)
+        {
+            PlaySound("button");
+            panelLose.Visible = false;
+            if (labelEasy.Font.Name == "Franklin Gothic Demi")
+            {
+                remainingCusts = custEasy;
+            }
+            else if (labelMedium.Font.Name == "Franklin Gothic Demi")
+            {
+                remainingCusts = custMedium;
+            }
+            else if (labelHard.Font.Name == "Franklin Gothic Demi")
+            {
+                remainingCusts = custHard;
+            }
+            else if (labelImpossible.Font.Name == "Franklin Gothic Demi")
+            {
+                remainingCusts = custImpossible;
+            }
+            buttonStartGame_Click(pictureBoxPlayAgain, e);
+        }
+        private void pictureBoxLoseToHome_Click(object sender, EventArgs e)
+        {
+            PlaySound("button");
+            panelLose.Visible = false;
+            FormGame_Load(pictureBoxLoseToHome, e);
+        }
+        private void pictureBoxExit_Click(object sender, EventArgs e)
+        {
+            PlaySound("button");
+            if (MessageBox.Show("Are you sure want to exit the game?", "Exit Message", MessageBoxButtons.YesNo,
+              MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+        #endregion button
 
         #region PictureBox Mouse
         private void ChangePictureBoxColor(PictureBox pictureBox, string status)
@@ -1299,7 +917,7 @@ namespace Project
             ChangePictureBoxColorBev(pictureBoxBevS, "leave", color);
         }
         #endregion Foods & Beverages
-        #endregion PictureBox Mouse
+        #endregion PictureBox Mouse        
 
         #region Label Difficulty Click
         private void labelEasy_Click(object sender, EventArgs e)
@@ -1554,108 +1172,742 @@ namespace Project
         }
         #endregion picbox click
 
-        public void SaveToFile()
+        private void displayBear(Items item)
         {
-            FileStream myFile = new FileStream("PlayerData", FileMode.Create, FileAccess.Write);
-            BinaryFormatter formatter = new BinaryFormatter();
-            formatter.Serialize(myFile, listOfPlayer);
-            myFile.Close();
-        }
-        public void ReadFromFile()
-        {
-            if (File.Exists("PlayerData"))
+            Merchandise merch = (Merchandise)item;
+            int i = 0;
+            foreach(bool stock in merch.ListStock)
             {
-                FileStream myFile = new FileStream("PlayerData", FileMode.Open, FileAccess.Read);
-                BinaryFormatter formatter = new BinaryFormatter();
-                listOfPlayer = (List<Players>)formatter.Deserialize(myFile);
-                myFile.Close();
+                if(stock == true)
+                {
+                    i++;
+                }
             }
-        }       
+            if(i == 5)
+            {
+                pictureBoxBear1.Enabled = true;
+                pictureBoxBear2.Enabled = true;
+                pictureBoxBear3.Enabled = true;
+                pictureBoxBear4.Enabled = true;
+                pictureBoxBear5.Enabled = true;
 
-        private void pictureBoxButtonPlayAgain_Click(object sender, EventArgs e)
-        {
-            PlaySound("button");
-            foreach(int i in listTempIncome)
-            {
-                tempIncome += i;
-            }
-            player.Income = (player.Income) - tempIncome;
-            panelWin.Visible = false;
-            if (labelEasy.Font.Name == "Franklin Gothic Demi")
-            {
-                remainingCusts = custEasy;
-            }
-            else if (labelMedium.Font.Name == "Franklin Gothic Demi")
-            {
-                remainingCusts = custMedium;
-            }
-            else if (labelHard.Font.Name == "Franklin Gothic Demi")
-            {
-                remainingCusts = custHard;
-            }
-            else if (labelImpossible.Font.Name == "Franklin Gothic Demi")
-            {
-                remainingCusts = custImpossible;
-            }
-            buttonStartGame_Click(pictureBoxButtonPlayAgain, e);
-        }
+                pictureBoxBear1.Image = ((Merchandise)item).Picture;
+                pictureBoxBear2.Image = ((Merchandise)item).Picture;
+                pictureBoxBear3.Image = ((Merchandise)item).Picture;
+                pictureBoxBear4.Image = ((Merchandise)item).Picture;
+                pictureBoxBear5.Image = ((Merchandise)item).Picture;
 
-        private void pictureBoxQuit_Click(object sender, EventArgs e)
-        {
-            PlaySound("button");
-            if (MessageBox.Show("Are you sure want to exit the game?", "Exit Message", MessageBoxButtons.YesNo,
-               MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                Application.Exit();
+                pictureBoxBear1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxBear2.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxBear3.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxBear4.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxBear5.SizeMode = PictureBoxSizeMode.StretchImage;
             }
-        }
+            else if (i == 4)
+            {
+                pictureBoxBear1.Enabled = true;
+                pictureBoxBear2.Enabled = true;
+                pictureBoxBear3.Enabled = true;
+                pictureBoxBear4.Enabled = true;
 
-        private void pictureBoxWinToHome_Click(object sender, EventArgs e)
-        {
-            PlaySound("button");
-            panelWin.Visible = false;
-            FormGame_Load(pictureBoxWinToHome, e);
-        }
+                pictureBoxBear1.Image = ((Merchandise)item).Picture;
+                pictureBoxBear2.Image = ((Merchandise)item).Picture;
+                pictureBoxBear3.Image = ((Merchandise)item).Picture;
+                pictureBoxBear4.Image = ((Merchandise)item).Picture;                
 
-        private void pictureBoxPlayAgain_Click(object sender, EventArgs e)
-        {
-            PlaySound("button");
-            panelLose.Visible = false;
-            if (labelEasy.Font.Name == "Franklin Gothic Demi")
-            {
-                remainingCusts = custEasy;
+                pictureBoxBear1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxBear2.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxBear3.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxBear4.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxBear5.Image = null;
+                pictureBoxBear5.Enabled = false;
             }
-            else if (labelMedium.Font.Name == "Franklin Gothic Demi")
+            else if (i == 3)
             {
-                remainingCusts = custMedium;
-            }
-            else if (labelHard.Font.Name == "Franklin Gothic Demi")
-            {
-                remainingCusts = custHard;
-            }
-            else if (labelImpossible.Font.Name == "Franklin Gothic Demi")
-            {
-                remainingCusts = custImpossible;
-            }
-            buttonStartGame_Click(pictureBoxPlayAgain, e);
-        }
+                pictureBoxBear1.Enabled = true;
+                pictureBoxBear2.Enabled = true;
+                pictureBoxBear3.Enabled = true;
 
-        private void pictureBoxLoseToHome_Click(object sender, EventArgs e)
-        {
-            PlaySound("button");
-            panelLose.Visible = false;
-            FormGame_Load(pictureBoxLoseToHome, e);
-        }
+                pictureBoxBear1.Image = ((Merchandise)item).Picture;
+                pictureBoxBear2.Image = ((Merchandise)item).Picture;
+                pictureBoxBear3.Image = ((Merchandise)item).Picture;
 
-        private void pictureBoxExit_Click(object sender, EventArgs e)
-        {
-            PlaySound("button");
-            if (MessageBox.Show("Are you sure want to exit the game?", "Exit Message", MessageBoxButtons.YesNo,
-              MessageBoxIcon.Question) == DialogResult.Yes)
+                pictureBoxBear1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxBear2.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxBear3.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxBear4.Image= null;
+                pictureBoxBear4.Enabled = false;
+                pictureBoxBear5.Image = null;
+                pictureBoxBear5.Enabled = false;
+            }
+            else if (i == 2)
             {
-                Application.Exit();
+                pictureBoxBear1.Enabled = true;
+                pictureBoxBear2.Enabled = true;
+
+                pictureBoxBear1.Image = ((Merchandise)item).Picture;
+                pictureBoxBear2.Image = ((Merchandise)item).Picture;
+
+                pictureBoxBear1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxBear2.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxBear3.Image = null;
+                pictureBoxBear3.Enabled = false;
+                pictureBoxBear4.Image = null;
+                pictureBoxBear4.Enabled = false;
+                pictureBoxBear5.Image = null;
+                pictureBoxBear5.Enabled = false;
+            }
+            else if (i == 1)
+            {
+                pictureBoxBear1.Enabled = true;
+                pictureBoxBear1.Image = ((Merchandise)item).Picture;
+                pictureBoxBear1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                pictureBoxBear2.Image = null;
+                pictureBoxBear2.Enabled = false;
+                pictureBoxBear3.Image = null;
+                pictureBoxBear3.Enabled = false;
+                pictureBoxBear4.Image = null;
+                pictureBoxBear4.Enabled = false;
+                pictureBoxBear5.Image = null;
+                pictureBoxBear5.Enabled = false;
+            }
+            else if (i == 0)
+            {                
+                pictureBoxBear1.Image = null;
+                pictureBoxBear1.Enabled = false;
+                pictureBoxBear2.Image = null;
+                pictureBoxBear2.Enabled = false;
+                pictureBoxBear3.Image = null;
+                pictureBoxBear3.Enabled = false;
+                pictureBoxBear4.Image = null;
+                pictureBoxBear4.Enabled = false;
+                pictureBoxBear5.Image = null;
+                pictureBoxBear5.Enabled = false;
             }
         }
+        private void displayTumblr(Items item)
+        {
+            Merchandise merch = (Merchandise)item;
+            int i = 0;
+            foreach (bool stock in merch.ListStock)
+            {
+                if (stock == true)
+                {
+                    i++;
+                }
+            }
+            if (i == 5)
+            {
+                pictureBoxTumblr1.Enabled = true;
+                pictureBoxTumblr2.Enabled = true;
+                pictureBoxTumblr3.Enabled = true;
+                pictureBoxTumblr4.Enabled = true;
+                pictureBoxTumblr5.Enabled = true;
+
+                pictureBoxTumblr1.Image = ((Merchandise)item).Picture;
+                pictureBoxTumblr2.Image = ((Merchandise)item).Picture;
+                pictureBoxTumblr3.Image = ((Merchandise)item).Picture;
+                pictureBoxTumblr4.Image = ((Merchandise)item).Picture;
+                pictureBoxTumblr5.Image = ((Merchandise)item).Picture;
+
+                pictureBoxTumblr1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxTumblr2.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxTumblr3.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxTumblr4.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxTumblr5.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+            else if (i == 4)
+            {
+                pictureBoxTumblr1.Enabled = true;
+                pictureBoxTumblr2.Enabled = true;
+                pictureBoxTumblr3.Enabled = true;
+                pictureBoxTumblr4.Enabled = true;
+
+                pictureBoxTumblr1.Image = ((Merchandise)item).Picture;
+                pictureBoxTumblr2.Image = ((Merchandise)item).Picture;
+                pictureBoxTumblr3.Image = ((Merchandise)item).Picture;
+                pictureBoxTumblr4.Image = ((Merchandise)item).Picture;
+
+                pictureBoxTumblr1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxTumblr2.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxTumblr3.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxTumblr4.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxTumblr5.Image = null;
+                pictureBoxTumblr5.Enabled = false;
+            }
+            else if (i == 3)
+            {
+                pictureBoxTumblr1.Enabled = true;
+                pictureBoxTumblr2.Enabled = true;
+                pictureBoxTumblr3.Enabled = true;
+
+                pictureBoxTumblr1.Image = ((Merchandise)item).Picture;
+                pictureBoxTumblr2.Image = ((Merchandise)item).Picture;
+                pictureBoxTumblr3.Image = ((Merchandise)item).Picture;
+
+                pictureBoxTumblr1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxTumblr2.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxTumblr3.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxTumblr4.Image = null;
+                pictureBoxTumblr4.Enabled = false;
+                pictureBoxTumblr5.Image = null;
+                pictureBoxTumblr5.Enabled = false;
+            }
+            else if (i == 2)
+            {
+                pictureBoxTumblr1.Enabled = true;
+                pictureBoxTumblr2.Enabled = true;
+
+                pictureBoxTumblr1.Image = ((Merchandise)item).Picture;
+                pictureBoxTumblr2.Image = ((Merchandise)item).Picture;
+
+                pictureBoxTumblr1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxTumblr2.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxTumblr3.Image = null;
+                pictureBoxTumblr3.Enabled = false;
+                pictureBoxTumblr4.Image = null;
+                pictureBoxTumblr4.Enabled = false;
+                pictureBoxTumblr5.Image = null;
+                pictureBoxTumblr5.Enabled = false;
+            }
+            else if (i == 1)
+            {
+                pictureBoxTumblr1.Enabled = true;
+                pictureBoxTumblr1.Image = ((Merchandise)item).Picture;                
+                pictureBoxTumblr1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                pictureBoxTumblr2.Image = null;
+                pictureBoxTumblr2.Enabled = false;
+                pictureBoxTumblr3.Image = null;
+                pictureBoxTumblr3.Enabled = false;
+                pictureBoxTumblr4.Image = null;
+                pictureBoxTumblr4.Enabled = false;
+                pictureBoxTumblr5.Image = null;
+                pictureBoxTumblr5.Enabled = false;
+            }
+            else if (i == 0)
+            {
+                pictureBoxTumblr1.Image = null;
+                pictureBoxTumblr1.Enabled = false;
+                pictureBoxTumblr2.Image = null;
+                pictureBoxTumblr2.Enabled = false;
+                pictureBoxTumblr3.Image = null;
+                pictureBoxTumblr3.Enabled = false;
+                pictureBoxTumblr4.Image = null;
+                pictureBoxTumblr4.Enabled = false;
+                pictureBoxTumblr5.Image = null;
+                pictureBoxTumblr5.Enabled = false;
+            }
+        }
+        private void displayRobot(Items item)
+        {
+            Merchandise merch = (Merchandise)item;
+            int i = 0;
+            foreach (bool stock in merch.ListStock)
+            {
+                if (stock == true)
+                {
+                    i++;
+                }
+            }
+            if (i == 5)
+            {
+                pictureBoxRobot1.Enabled = true;
+                pictureBoxRobot2.Enabled = true;
+                pictureBoxRobot3.Enabled = true;
+                pictureBoxRobot4.Enabled = true;
+                pictureBoxRobot5.Enabled = true;
+
+                pictureBoxRobot1.Image = ((Merchandise)item).Picture;
+                pictureBoxRobot2.Image = ((Merchandise)item).Picture;
+                pictureBoxRobot3.Image = ((Merchandise)item).Picture;
+                pictureBoxRobot4.Image = ((Merchandise)item).Picture;
+                pictureBoxRobot5.Image = ((Merchandise)item).Picture;
+
+                pictureBoxRobot1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxRobot2.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxRobot3.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxRobot4.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxRobot5.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+            else if (i == 4)
+            {
+                pictureBoxRobot1.Enabled = true;
+                pictureBoxRobot2.Enabled = true;
+                pictureBoxRobot3.Enabled = true;
+                pictureBoxRobot4.Enabled = true;
+                
+                pictureBoxRobot1.Image = ((Merchandise)item).Picture;
+                pictureBoxRobot2.Image = ((Merchandise)item).Picture;
+                pictureBoxRobot3.Image = ((Merchandise)item).Picture;
+                pictureBoxRobot4.Image = ((Merchandise)item).Picture;
+                
+                pictureBoxRobot1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxRobot2.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxRobot3.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxRobot4.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                pictureBoxRobot5.Image = null;
+                pictureBoxRobot5.Enabled = false;
+            }
+            else if (i == 3)
+            {
+                pictureBoxRobot1.Enabled = true;
+                pictureBoxRobot2.Enabled = true;
+                pictureBoxRobot3.Enabled = true;
+                
+                pictureBoxRobot1.Image = ((Merchandise)item).Picture;
+                pictureBoxRobot2.Image = ((Merchandise)item).Picture;
+                pictureBoxRobot3.Image = ((Merchandise)item).Picture;
+                
+                pictureBoxRobot1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxRobot2.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxRobot3.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                pictureBoxRobot4.Image = null;
+                pictureBoxRobot4.Enabled = false;
+                pictureBoxRobot5.Image = null;
+                pictureBoxRobot5.Enabled = false;
+            }
+            else if (i == 2)
+            {
+                pictureBoxRobot1.Enabled = true;
+                pictureBoxRobot2.Enabled = true;
+
+                pictureBoxRobot1.Image = ((Merchandise)item).Picture;
+                pictureBoxRobot2.Image = ((Merchandise)item).Picture;
+                
+                pictureBoxRobot1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxRobot2.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                pictureBoxRobot3.Image = null;
+                pictureBoxRobot3.Enabled = false;
+                pictureBoxRobot4.Image = null;
+                pictureBoxRobot4.Enabled = false;
+                pictureBoxRobot5.Image = null;
+                pictureBoxRobot5.Enabled = false;
+            }
+            else if (i == 1)
+            {
+                pictureBoxRobot1.Enabled = true;
+                pictureBoxRobot1.Image = ((Merchandise)item).Picture;
+                pictureBoxRobot1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                pictureBoxRobot2.Image = null;
+                pictureBoxRobot2.Enabled = false;
+                pictureBoxRobot3.Image = null;
+                pictureBoxRobot3.Enabled = false;
+                pictureBoxRobot4.Image = null;
+                pictureBoxRobot4.Enabled = false;
+                pictureBoxRobot5.Image = null;
+                pictureBoxRobot5.Enabled = false;
+            }
+            else if (i == 0)
+            {
+                pictureBoxRobot1.Enabled = false;
+                pictureBoxRobot1.Image = null;
+                pictureBoxRobot2.Image = null;
+                pictureBoxRobot2.Enabled = false;
+                pictureBoxRobot3.Image = null;
+                pictureBoxRobot3.Enabled = false;
+                pictureBoxRobot4.Image = null;
+                pictureBoxRobot4.Enabled = false;
+                pictureBoxRobot5.Image = null;
+                pictureBoxRobot5.Enabled = false;
+            }
+        }
+        private void StallDisplay()
+        {
+            #region Foods
+            item = new Foods("burger", Properties.Resources.burger, 50);
+            listOfItems.Add(item);
+            ((Foods)item).AddingIngredients("plate", Properties.Resources.plates, Properties.Resources.burger1);
+            ((Foods)item).AddingIngredients("bottombun", Properties.Resources.bottomBun, Properties.Resources.burger2);
+            ((Foods)item).AddingIngredients("patty", Properties.Resources.patty, Properties.Resources.burger3);
+            ((Foods)item).AddingIngredients("cheese", Properties.Resources.cheese, Properties.Resources.burger4);
+            ((Foods)item).AddingIngredients("tomato", Properties.Resources.tomato, Properties.Resources.burger5);
+            ((Foods)item).AddingIngredients("lettuce", Properties.Resources.lettuce, Properties.Resources.burger6);
+            ((Foods)item).AddingIngredients("topbun", Properties.Resources.topBun, Properties.Resources.burger);
+
+            pictureBoxPlate.Tag = ((Foods)item).ListOfIngredients[0].Name;
+            pictureBoxBottomBun.Tag = ((Foods)item).ListOfIngredients[1].Name;
+            pictureBoxPatty.Tag = ((Foods)item).ListOfIngredients[2].Name;
+            pictureBoxCheese.Tag = ((Foods)item).ListOfIngredients[3].Name;
+            pictureBoxTomato.Tag = ((Foods)item).ListOfIngredients[4].Name;
+            pictureBoxLettuce.Tag = ((Foods)item).ListOfIngredients[5].Name;
+            pictureBoxTopBun.Tag = ((Foods)item).ListOfIngredients[6].Name;
+
+            pictureBoxPlate.Image = ((Foods)item).ListOfIngredients[0].Picture;
+            pictureBoxBottomBun.Image = ((Foods)item).ListOfIngredients[1].Picture;
+            pictureBoxPatty.Image = ((Foods)item).ListOfIngredients[2].Picture;
+            pictureBoxCheese.Image = ((Foods)item).ListOfIngredients[3].Picture;
+            pictureBoxTomato.Image = ((Foods)item).ListOfIngredients[4].Picture;
+            pictureBoxLettuce.Image = ((Foods)item).ListOfIngredients[5].Picture;
+            pictureBoxTopBun.Image = ((Foods)item).ListOfIngredients[6].Picture;
+
+            pictureBoxPlate.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxBottomBun.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxPatty.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxCheese.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxTomato.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxLettuce.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxTopBun.SizeMode = PictureBoxSizeMode.StretchImage;
+
+
+            item = new Foods("salad", Properties.Resources.salad, 25);
+            listOfItems.Add(item);
+            ((Foods)item).AddingIngredients("plate", Properties.Resources.plates, Properties.Resources.salad1);
+            ((Foods)item).AddingIngredients("lettuce", Properties.Resources.lettuce, Properties.Resources.salad2);
+            ((Foods)item).AddingIngredients("mayo", Properties.Resources.mayo, Properties.Resources.salad);
+
+            pictureBoxPlate.Tag = ((Foods)item).ListOfIngredients[0].Name;
+            pictureBoxLettuce.Tag = ((Foods)item).ListOfIngredients[1].Name;
+            pictureBoxMayo.Tag = ((Foods)item).ListOfIngredients[2].Name;
+
+            pictureBoxPlate.Image = ((Foods)item).ListOfIngredients[0].Picture;
+            pictureBoxLettuce.Image = ((Foods)item).ListOfIngredients[1].Picture;
+            pictureBoxMayo.Image = ((Foods)item).ListOfIngredients[2].Picture;
+
+            pictureBoxPlate.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxLettuce.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxMayo.SizeMode = PictureBoxSizeMode.StretchImage;
+
+
+            item = new Foods("icecream", Properties.Resources.iceCream, 10);
+            listOfItems.Add(item);
+            ((Foods)item).AddingIngredients("cone", Properties.Resources.cone, Properties.Resources.icesream1);
+            ((Foods)item).AddingIngredients("ice", Properties.Resources.icMachine, Properties.Resources.iceCream);
+
+            pictureBoxCone.Tag = ((Foods)item).ListOfIngredients[0].Name;
+            pictureBoxICMachine.Tag = ((Foods)item).ListOfIngredients[1].Name;
+
+            pictureBoxCone.Image = ((Foods)item).ListOfIngredients[0].Picture;
+            pictureBoxICMachine.Image = ((Foods)item).ListOfIngredients[1].Picture;
+
+            pictureBoxCone.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxICMachine.SizeMode = PictureBoxSizeMode.StretchImage;
+            #endregion Foods
+
+            #region Beverages
+            item = new Beverages(false, "L", "coffeeLHot", Properties.Resources.hotL, 25);
+            listOfItems.Add(item);
+            ((Beverages)item).AddingIngredients("cup", Properties.Resources.beverages, Properties.Resources.cup);            
+            ((Beverages)item).AddingIngredients("coffee", Properties.Resources.textL, Properties.Resources.hotL);
+
+            pictureBoxBeverage.Tag = ((Beverages)item).ListOfIngredients[0].Name;
+            pictureBoxBevL.Tag = ((Beverages)item).ListOfIngredients[1].Name;
+
+            pictureBoxBeverage.Image = ((Beverages)item).ListOfIngredients[0].Picture;
+            pictureBoxBevL.Image = ((Beverages)item).ListOfIngredients[1].Picture;
+
+            pictureBoxBeverage.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxBevL.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            item = new Beverages(false, "M", "coffeeMHot", Properties.Resources.hotM, 20);
+            listOfItems.Add(item);
+            ((Beverages)item).AddingIngredients("cup", Properties.Resources.beverages, Properties.Resources.cup);
+            ((Beverages)item).AddingIngredients("coffee", Properties.Resources.textM, Properties.Resources.hotM);
+
+            pictureBoxBeverage.Tag = ((Beverages)item).ListOfIngredients[0].Name;
+            pictureBoxBevM.Tag = ((Beverages)item).ListOfIngredients[1].Name;
+
+            pictureBoxBeverage.Image = ((Beverages)item).ListOfIngredients[0].Picture;
+            pictureBoxBevM.Image = ((Beverages)item).ListOfIngredients[1].Picture;
+
+            pictureBoxBeverage.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxBevM.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            item = new Beverages(false, "S", "coffeeSHot", Properties.Resources.hotS, 15);
+            listOfItems.Add(item);
+            ((Beverages)item).AddingIngredients("cup", Properties.Resources.beverages, Properties.Resources.cup);
+            ((Beverages)item).AddingIngredients("coffee", Properties.Resources.textS, Properties.Resources.hotS);
+
+            pictureBoxBeverage.Tag = ((Beverages)item).ListOfIngredients[0].Name;
+            pictureBoxBevS.Tag = ((Beverages)item).ListOfIngredients[1].Name;
+
+            pictureBoxBeverage.Image = ((Beverages)item).ListOfIngredients[0].Picture;
+            pictureBoxBevS.Image = ((Beverages)item).ListOfIngredients[1].Picture;
+
+            pictureBoxBeverage.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxBevS.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            item = new Beverages(true, "L", "coffeeLCold", Properties.Resources.coldL, 25);
+            listOfItems.Add(item);
+            ((Beverages)item).AddingIngredients("cup", Properties.Resources.beverages, Properties.Resources.cup);
+            ((Beverages)item).AddingIngredients("coffee", Properties.Resources.textL, Properties.Resources.coldL);
+            ((Beverages)item).AddingIngredients("ice", Properties.Resources.iceBucket, Properties.Resources.coldL);
+
+            pictureBoxBeverage.Tag = ((Beverages)item).ListOfIngredients[0].Name;
+            pictureBoxBevL.Tag = ((Beverages)item).ListOfIngredients[1].Name;
+            pictureBoxIceBucket.Tag = ((Beverages)item).ListOfIngredients[2].Name;
+
+            pictureBoxBeverage.Image = ((Beverages)item).ListOfIngredients[0].Picture;
+            pictureBoxBevL.Image = ((Beverages)item).ListOfIngredients[1].Picture;
+            pictureBoxIceBucket.Image = ((Beverages)item).ListOfIngredients[2].Picture;
+
+            pictureBoxBeverage.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxBevL.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxIceBucket.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            item = new Beverages(true, "M", "coffeeMCold", Properties.Resources.coldM, 20);
+            listOfItems.Add(item);
+            ((Beverages)item).AddingIngredients("cup", Properties.Resources.beverages, Properties.Resources.cup);
+            ((Beverages)item).AddingIngredients("coffee", Properties.Resources.textM, Properties.Resources.coldM);
+            ((Beverages)item).AddingIngredients("ice", Properties.Resources.iceBucket, Properties.Resources.coldM);
+
+            pictureBoxBeverage.Tag = ((Beverages)item).ListOfIngredients[0].Name;
+            pictureBoxBevM.Tag = ((Beverages)item).ListOfIngredients[1].Name;
+            pictureBoxIceBucket.Tag = ((Beverages)item).ListOfIngredients[2].Name;
+
+            pictureBoxBeverage.Image = ((Beverages)item).ListOfIngredients[0].Picture;
+            pictureBoxBevM.Image = ((Beverages)item).ListOfIngredients[1].Picture;
+            pictureBoxIceBucket.Image = ((Beverages)item).ListOfIngredients[2].Picture;
+
+            pictureBoxBeverage.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxBevM.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxIceBucket.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            item = new Beverages(true, "S", "coffeeSCold", Properties.Resources.coldS, 15);
+            listOfItems.Add(item);
+            ((Beverages)item).AddingIngredients("cup", Properties.Resources.beverages, Properties.Resources.cup);
+            ((Beverages)item).AddingIngredients("coffee", Properties.Resources.textS, Properties.Resources.coldS);
+            ((Beverages)item).AddingIngredients("ice", Properties.Resources.iceBucket, Properties.Resources.coldS);
+
+            pictureBoxBeverage.Tag = ((Beverages)item).ListOfIngredients[0].Name;
+            pictureBoxBevS.Tag = ((Beverages)item).ListOfIngredients[1].Name;
+            pictureBoxIceBucket.Tag = ((Beverages)item).ListOfIngredients[2].Name;
+
+            pictureBoxBeverage.Image = ((Beverages)item).ListOfIngredients[0].Picture;
+            pictureBoxBevS.Image = ((Beverages)item).ListOfIngredients[1].Picture;
+            pictureBoxIceBucket.Image = ((Beverages)item).ListOfIngredients[2].Picture;
+
+            pictureBoxBeverage.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxBevS.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxIceBucket.SizeMode = PictureBoxSizeMode.StretchImage;
+            #endregion Beverages
+
+            #region Merchandise     
+            if (newPlayer == true)
+            {
+                item = new Merchandise(stockBear, "bear", Properties.Resources.bear, 100);
+                listOfItems.Add(item);
+                pictureBoxBear1.Enabled = true;
+                pictureBoxBear2.Enabled = true;
+                pictureBoxBear3.Enabled = true;
+                pictureBoxBear4.Enabled = true;
+                pictureBoxBear5.Enabled = true;
+
+                pictureBoxBear1.Tag = ((Merchandise)item).Name;
+                pictureBoxBear2.Tag = ((Merchandise)item).Name;
+                pictureBoxBear3.Tag = ((Merchandise)item).Name;
+                pictureBoxBear4.Tag = ((Merchandise)item).Name;
+                pictureBoxBear5.Tag = ((Merchandise)item).Name;
+
+                pictureBoxBear1.Image = ((Merchandise)item).Picture;
+                pictureBoxBear2.Image = ((Merchandise)item).Picture;
+                pictureBoxBear3.Image = ((Merchandise)item).Picture;
+                pictureBoxBear4.Image = ((Merchandise)item).Picture;
+                pictureBoxBear5.Image = ((Merchandise)item).Picture;                
+
+                pictureBoxBear1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxBear2.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxBear3.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxBear4.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxBear5.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                
+                item = new Merchandise(stockTumblr, "tumblr", Properties.Resources.tumblr, 100);
+                listOfItems.Add(item);
+                pictureBoxTumblr1.Enabled = true;
+                pictureBoxTumblr2.Enabled = true;
+                pictureBoxTumblr3.Enabled = true;
+                pictureBoxTumblr4.Enabled = true;
+                pictureBoxTumblr5.Enabled = true;
+
+                pictureBoxTumblr1.Tag = ((Merchandise)item).Name;
+                pictureBoxTumblr2.Tag = ((Merchandise)item).Name;
+                pictureBoxTumblr3.Tag = ((Merchandise)item).Name;
+                pictureBoxTumblr4.Tag = ((Merchandise)item).Name;
+                pictureBoxTumblr5.Tag = ((Merchandise)item).Name;
+
+                pictureBoxTumblr1.Image = ((Merchandise)item).Picture;
+                pictureBoxTumblr2.Image = ((Merchandise)item).Picture;
+                pictureBoxTumblr3.Image = ((Merchandise)item).Picture;
+                pictureBoxTumblr4.Image = ((Merchandise)item).Picture;
+                pictureBoxTumblr5.Image = ((Merchandise)item).Picture;
+
+                pictureBoxTumblr1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxTumblr2.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxTumblr3.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxTumblr4.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxTumblr5.SizeMode = PictureBoxSizeMode.StretchImage;
+
+
+                item = new Merchandise(stockRobot, "robot", Properties.Resources.robot, 100);
+                listOfItems.Add(item);
+                pictureBoxRobot1.Enabled = true;
+                pictureBoxRobot2.Enabled = true;
+                pictureBoxRobot3.Enabled = true;
+                pictureBoxRobot4.Enabled = true;
+                pictureBoxRobot5.Enabled = true;
+
+                pictureBoxRobot1.Tag = ((Merchandise)item).Name;
+                pictureBoxRobot2.Tag = ((Merchandise)item).Name;
+                pictureBoxRobot3.Tag = ((Merchandise)item).Name;
+                pictureBoxRobot4.Tag = ((Merchandise)item).Name;
+                pictureBoxRobot5.Tag = ((Merchandise)item).Name;
+
+                pictureBoxRobot1.Image = ((Merchandise)item).Picture;
+                pictureBoxRobot2.Image = ((Merchandise)item).Picture;
+                pictureBoxRobot3.Image = ((Merchandise)item).Picture;
+                pictureBoxRobot4.Image = ((Merchandise)item).Picture;
+                pictureBoxRobot5.Image = ((Merchandise)item).Picture;
+
+                pictureBoxRobot1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxRobot2.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxRobot3.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxRobot4.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxRobot5.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+            //load player
+            else
+            {
+                item = (Merchandise)player.StockMerchandise[0];//bear
+                displayBear(item);
+                item = (Merchandise)player.StockMerchandise[1];//tumblr                                                              
+                displayTumblr(item);    
+                item = (Merchandise)player.StockMerchandise[2];//robot
+                displayRobot(item);
+            }                    
+            #endregion Merchandise
+        }   
+        
+        private void CorrectOrder(Items order)
+        {
+            pictureBoxServe.Image = order.Picture;
+            pictureBoxServe.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxServe.Tag = "done";
+            pictureBoxOrder1.Image = Properties.Resources.coin;
+            listTempIncome.Add(order.Price);
+            player.Income += order.Price;
+            selectedIngCount = 0;
+            remainingCusts--;
+            labelRemainingCustomers.Text = "Remaining Customers: " + remainingCusts.ToString();
+            labelIncomeNow.Text=player.Income.ToString();
+            incTimerCust = 0;
+            timerCust.Start();
+            PlaySound("correct");
+        }
+        private void WrongOrder()
+        {
+            pictureBoxServe.Image = Properties.Resources.wrong;
+            selectedIngCount = 0;
+            PlaySound("fail");
+        }        
+        private void ServeOrder(PictureBox PictureBox, string type)
+        {
+            if (type == "foods")
+            {
+                if (customers.OrderItem is Foods)
+                {
+                    Foods foodOrder = (Foods)customers.OrderItem;
+                    if (PictureBox.Tag.ToString() == foodOrder.ListOfIngredients[selectedIngCount].Name)
+                    {
+                        selectedIngCount++;
+                        pictureBoxServe.Image = foodOrder.ListOfIngredients[selectedIngCount-1].ServePicture;
+                        pictureBoxServe.SizeMode = PictureBoxSizeMode.StretchImage;
+                        if (selectedIngCount == foodOrder.ListOfIngredients.Count)
+                        {
+                            CorrectOrder(foodOrder);
+                            timeFirst = false;
+                            tempEmotion = incTimerEmotion2;
+                            incTimerEmotion1 = tempEmotion;
+                            incTimerEmotion2 = 0;
+                        }
+                    }
+                    else
+                    {
+                        WrongOrder();
+                    }
+                }
+                else
+                {
+                    selectedIngCount = 0;
+                    WrongOrder();
+                }
+            }
+            else if (type == "beverages")
+            {
+                if (customers.OrderItem is Beverages)
+                {
+                    Beverages bevOrder = (Beverages)customers.OrderItem;
+                    if (PictureBox.Tag.ToString() == bevOrder.ListOfIngredients[selectedIngCount].Name)
+                    {
+                        selectedIngCount++;
+                        pictureBoxServe.Image = bevOrder.ListOfIngredients[selectedIngCount-1].ServePicture ;
+                        pictureBoxServe.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                        if (selectedIngCount == bevOrder.ListOfIngredients.Count)
+                        {
+                            CorrectOrder(bevOrder);
+                            timeFirst = false; 
+                            tempEmotion = incTimerEmotion2;
+                            incTimerEmotion1 = tempEmotion;
+                            incTimerEmotion2 = 0;
+                        }
+                    }
+                    else
+                    {
+                        WrongOrder();
+                    }
+                }
+                else
+                {
+                    selectedIngCount = 0;
+                    WrongOrder();
+                }
+            }
+            else if (type == "merchandise")
+            {
+                if (customers.OrderItem is Merchandise)
+                {
+                    Merchandise merchOrder = (Merchandise)customers.OrderItem;
+                    pictureBoxServe.Image = PictureBox.Image;
+                    pictureBoxServe.SizeMode = PictureBoxSizeMode.StretchImage;
+                    if (PictureBox.Tag.ToString() == merchOrder.Name)
+                    {
+                        merchOrder.Sell();
+                        if (merchOrder.Name == "bear")
+                        {
+                            displayBear(merchOrder);
+                        }
+                        if (merchOrder.Name == "tumblr")
+                        {
+                            displayTumblr(merchOrder);
+                        }
+                        if (merchOrder.Name == "robot")
+                        {
+                            displayRobot(merchOrder);
+                        }
+                        CorrectOrder(merchOrder);
+                        timeFirst = false;
+                        tempEmotion = incTimerEmotion2;
+                        incTimerEmotion1 = tempEmotion;
+                        incTimerEmotion2 = 0;
+                    }
+                    else
+                    {
+                        WrongOrder();
+                    }
+                }
+                else
+                {
+                    WrongOrder();
+                }
+
+            }
+        }        
 
         private void CreateCustomerOrder()
         {
@@ -1699,7 +1951,8 @@ namespace Project
                 }
                 Random numRandomItemType = new Random();
                 int randomItemType = numRandomItemType.Next(0, 3);
-                if (randomItemType == 0) //Foods
+                randomItemType = 2;
+                if (randomItemType == 0) 
                 {
                     Random numRandomFood = new Random();
                     int randomFood = numRandomFood.Next(0, 3);
@@ -1715,6 +1968,7 @@ namespace Project
                 {
                     Random numRandomMerch = new Random();
                     int randomMerch = numRandomMerch.Next(9, 12);
+                    randomMerch = 9;
                     customer2.OrderItem = listOfItems[randomMerch];
                 }
                 tempOrder = customer2;
@@ -1838,6 +2092,21 @@ namespace Project
                 }
             }
         }
+        private void timerGame_Tick(object sender, EventArgs e)
+        {
+            time.Add(-1);
+            labelRemainingTime.Text = time.Display();
+            if (time.Hour == 0 && time.Minute == 0 && time.Second == 0)
+            {
+                if (remainingCusts != 0)
+                {
+                    timerGame.Stop();
+                    panelGame.Visible = false;
+                    panelLose.Visible = true;
+                    PlaySound("lose");
+                }
+            }
+        }
         private void timerEmotion2_Tick(object sender, EventArgs e)
         {
             incTimerEmotion2++;
@@ -1900,68 +2169,70 @@ namespace Project
             }
             
         }
-        private void PlaySound(string type)
-        {
-            if (type == "fail")
-            {
-                sound1.URL = Application.StartupPath + "\\sound\\fail.mp3";
-                sound1.controls.play();
-            }
-            else if (type == "correct")
-            {
-                sound1.URL = Application.StartupPath + "\\sound\\correct.mp3";
-                sound1.controls.play();
-            }
-            else if (type == "button")
-            {
-                sound1.URL = Application.StartupPath + "\\sound\\button.mp3";
-                sound1.controls.play();
-            }
-            else if (type == "click")
-            {
-                sound1.URL = Application.StartupPath + "\\sound\\click.mp3";
-                sound1.controls.play();
-            }
-            else if (type == "lose")
-            {
-                sound2.URL = Application.StartupPath + "\\sound\\lose.mp3";
-                sound2.controls.play();
-            }
-            else if (type == "win")
-            {
-                sound2.URL = Application.StartupPath + "\\sound\\win.mp3";
-                sound2.controls.play();
-            }
-            //else if (type == "play")
-            //{
-            //    sound2.URL = Application.StartupPath + "\\sound\\play.mp3";
-            //    sound2.controls.play();
-            //}
-            //else if (type == "game")
-            //{
-            //    sound2.URL = Application.StartupPath + "\\sound\\game.mp3";
-            //    sound2.controls.play();
-            //}
-            else if (type == "stop")
-            {
-                sound2.controls.stop();
-            }
-        }
 
         private void buttonBuyMerchandiseBear_Click(object sender, EventArgs e)
         {
             PlaySound("click");
+            Items item = listOfItems[9];
+            Merchandise merch = (Merchandise)item;
+            bool full = true;
+            foreach (bool i in merch.ListStock)
+            {
+                if(i == false)
+                {
+                    full = false; break;
+                }
+            }
+            if(full == false)
+            {
+                //pengecekan income (cukup atau tidak)
+                merch.Buy();                
+            }            
+            displayBear(item);
         }
-
         private void buttonBuyMerchandiseTumblr_Click(object sender, EventArgs e)
         {
             PlaySound("click");
+            Items item = listOfItems[10];
+            Merchandise merch = (Merchandise)item;
+            bool full = true;
+            foreach (bool i in merch.ListStock)
+            {
+                if (i == false)
+                {
+                    full = false; break;
+                }
+            }
+            if (full == false)
+            {
+                //pengecekan income (cukup atau tidak)
+                merch.Buy();                
+            }
+            displayTumblr(item);
         }
-
         private void buttonBuyMerchandiseRobot_Click(object sender, EventArgs e)
         {
             PlaySound("click");
+            Items item = listOfItems[11];
+            Merchandise merch = (Merchandise)item;
+            bool full = true;
+            foreach (bool i in merch.ListStock)
+            {
+                if (i == false)
+                {
+                    full = false; break;
+                }
+            }
+            if (full == false)
+            {
+                //pengecekan income (cukup atau tidak)
+                merch.Buy();
+            }
+            displayRobot(item);
         }
+        #endregion InGame
+
+        #region Sound
         #region Volume up down
         private void pictureBoxVolumeDownMusic_Click(object sender, EventArgs e)
         {
@@ -2223,5 +2494,71 @@ namespace Project
             }
         }
         #endregion Volume up down
+        private void PlaySound(string type)
+        {
+            //if (type == "fail")
+            //{
+            //    sound1.URL = Application.StartupPath + "\\sound\\fail.mp3";
+            //    sound1.controls.play();
+            //}
+            //else if (type == "correct")
+            //{
+            //    sound1.URL = Application.StartupPath + "\\sound\\correct.mp3";
+            //    sound1.controls.play();
+            //}
+            //else if (type == "button")
+            //{
+            //    sound1.URL = Application.StartupPath + "\\sound\\button.mp3";
+            //    sound1.controls.play();
+            //}
+            //else if (type == "click")
+            //{
+            //    sound1.URL = Application.StartupPath + "\\sound\\click.mp3";
+            //    sound1.controls.play();
+            //}
+            //else if (type == "lose")
+            //{
+            //    sound2.URL = Application.StartupPath + "\\sound\\lose.mp3";
+            //    sound2.controls.play();
+            //}
+            //else if (type == "win")
+            //{
+            //    sound2.URL = Application.StartupPath + "\\sound\\win.mp3";
+            //    sound2.controls.play();
+            //}
+            //else if (type == "play")
+            //{
+            //    sound2.URL = Application.StartupPath + "\\sound\\play.mp3";
+            //    sound2.controls.play();
+            //}
+            //else if (type == "game")
+            //{
+            //    sound2.URL = Application.StartupPath + "\\sound\\game.mp3";
+            //    sound2.controls.play();
+            //}
+            //else if (type == "stop")
+            //{
+            //    sound2.controls.stop();
+            //}
+        }
+        #endregion Sound
+
+        public void SaveToFile()
+        {
+            FileStream myFile = new FileStream("PlayerData", FileMode.Create, FileAccess.Write);
+            BinaryFormatter formatter = new BinaryFormatter();
+            formatter.Serialize(myFile, listOfPlayer);
+            myFile.Close();
+        }
+        public void ReadFromFile()
+        {
+            if (File.Exists("PlayerData"))
+            {
+                FileStream myFile = new FileStream("PlayerData", FileMode.Open, FileAccess.Read);
+                BinaryFormatter formatter = new BinaryFormatter();
+                listOfPlayer = (List<Players>)formatter.Deserialize(myFile);
+                myFile.Close();
+            }
+        }
     }
 }

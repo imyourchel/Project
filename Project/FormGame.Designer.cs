@@ -727,7 +727,7 @@
             this.panelDialog2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelDialog2.Controls.Add(this.pictureBoxEmotion2);
             this.panelDialog2.Controls.Add(this.pictureBoxOrder2);
-            this.panelDialog2.Location = new System.Drawing.Point(996, 51);
+            this.panelDialog2.Location = new System.Drawing.Point(984, 49);
             this.panelDialog2.Name = "panelDialog2";
             this.panelDialog2.Size = new System.Drawing.Size(148, 89);
             this.panelDialog2.TabIndex = 62;
@@ -735,7 +735,6 @@
             // pictureBoxEmotion2
             // 
             this.pictureBoxEmotion2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxEmotion2.BackgroundImage = global::Project.Properties.Resources.angry;
             this.pictureBoxEmotion2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxEmotion2.Location = new System.Drawing.Point(116, 1);
             this.pictureBoxEmotion2.Name = "pictureBoxEmotion2";
@@ -760,7 +759,7 @@
             this.panelDialog1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelDialog1.Controls.Add(this.pictureBoxEmotion1);
             this.panelDialog1.Controls.Add(this.pictureBoxOrder1);
-            this.panelDialog1.Location = new System.Drawing.Point(821, 51);
+            this.panelDialog1.Location = new System.Drawing.Point(804, 51);
             this.panelDialog1.Name = "panelDialog1";
             this.panelDialog1.Size = new System.Drawing.Size(148, 89);
             this.panelDialog1.TabIndex = 60;
@@ -768,7 +767,6 @@
             // pictureBoxEmotion1
             // 
             this.pictureBoxEmotion1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxEmotion1.BackgroundImage = global::Project.Properties.Resources.angry;
             this.pictureBoxEmotion1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxEmotion1.Location = new System.Drawing.Point(116, 1);
             this.pictureBoxEmotion1.Name = "pictureBoxEmotion1";
@@ -948,7 +946,6 @@
             // pictureBoxRobot5
             // 
             this.pictureBoxRobot5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxRobot5.BackgroundImage = global::Project.Properties.Resources.robot;
             this.pictureBoxRobot5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxRobot5.Location = new System.Drawing.Point(228, 591);
             this.pictureBoxRobot5.Name = "pictureBoxRobot5";
@@ -962,7 +959,6 @@
             // pictureBoxRobot4
             // 
             this.pictureBoxRobot4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxRobot4.BackgroundImage = global::Project.Properties.Resources.robot;
             this.pictureBoxRobot4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxRobot4.Location = new System.Drawing.Point(173, 591);
             this.pictureBoxRobot4.Name = "pictureBoxRobot4";
@@ -976,7 +972,6 @@
             // pictureBoxRobot3
             // 
             this.pictureBoxRobot3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxRobot3.BackgroundImage = global::Project.Properties.Resources.robot;
             this.pictureBoxRobot3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxRobot3.Location = new System.Drawing.Point(118, 591);
             this.pictureBoxRobot3.Name = "pictureBoxRobot3";
@@ -990,7 +985,6 @@
             // pictureBoxRobot2
             // 
             this.pictureBoxRobot2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxRobot2.BackgroundImage = global::Project.Properties.Resources.robot;
             this.pictureBoxRobot2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxRobot2.Location = new System.Drawing.Point(63, 591);
             this.pictureBoxRobot2.Name = "pictureBoxRobot2";
@@ -1004,7 +998,6 @@
             // pictureBoxRobot1
             // 
             this.pictureBoxRobot1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxRobot1.BackgroundImage = global::Project.Properties.Resources.robot;
             this.pictureBoxRobot1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxRobot1.Location = new System.Drawing.Point(8, 591);
             this.pictureBoxRobot1.Name = "pictureBoxRobot1";
@@ -1018,7 +1011,6 @@
             // pictureBoxTumblr5
             // 
             this.pictureBoxTumblr5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxTumblr5.BackgroundImage = global::Project.Properties.Resources.tumblr;
             this.pictureBoxTumblr5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxTumblr5.Location = new System.Drawing.Point(240, 525);
             this.pictureBoxTumblr5.Name = "pictureBoxTumblr5";
@@ -1032,7 +1024,6 @@
             // pictureBoxTumblr4
             // 
             this.pictureBoxTumblr4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxTumblr4.BackgroundImage = global::Project.Properties.Resources.tumblr;
             this.pictureBoxTumblr4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxTumblr4.Location = new System.Drawing.Point(184, 525);
             this.pictureBoxTumblr4.Name = "pictureBoxTumblr4";
@@ -1046,7 +1037,6 @@
             // pictureBoxTumblr3
             // 
             this.pictureBoxTumblr3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxTumblr3.BackgroundImage = global::Project.Properties.Resources.tumblr;
             this.pictureBoxTumblr3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxTumblr3.Location = new System.Drawing.Point(127, 525);
             this.pictureBoxTumblr3.Name = "pictureBoxTumblr3";
@@ -1060,7 +1050,6 @@
             // pictureBoxTumblr2
             // 
             this.pictureBoxTumblr2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxTumblr2.BackgroundImage = global::Project.Properties.Resources.tumblr;
             this.pictureBoxTumblr2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxTumblr2.Location = new System.Drawing.Point(72, 525);
             this.pictureBoxTumblr2.Name = "pictureBoxTumblr2";
@@ -1074,7 +1063,6 @@
             // pictureBoxTumblr1
             // 
             this.pictureBoxTumblr1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxTumblr1.BackgroundImage = global::Project.Properties.Resources.tumblr;
             this.pictureBoxTumblr1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxTumblr1.Location = new System.Drawing.Point(16, 525);
             this.pictureBoxTumblr1.Name = "pictureBoxTumblr1";
@@ -1114,7 +1102,6 @@
             // pictureBoxBear3
             // 
             this.pictureBoxBear3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxBear3.BackgroundImage = global::Project.Properties.Resources.bear;
             this.pictureBoxBear3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxBear3.Location = new System.Drawing.Point(121, 454);
             this.pictureBoxBear3.Name = "pictureBoxBear3";
@@ -1128,7 +1115,6 @@
             // pictureBoxBear2
             // 
             this.pictureBoxBear2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxBear2.BackgroundImage = global::Project.Properties.Resources.bear;
             this.pictureBoxBear2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxBear2.Location = new System.Drawing.Point(65, 454);
             this.pictureBoxBear2.Name = "pictureBoxBear2";
@@ -1142,7 +1128,6 @@
             // pictureBoxBear1
             // 
             this.pictureBoxBear1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxBear1.BackgroundImage = global::Project.Properties.Resources.bear;
             this.pictureBoxBear1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxBear1.Location = new System.Drawing.Point(9, 454);
             this.pictureBoxBear1.Name = "pictureBoxBear1";
@@ -1337,7 +1322,7 @@
             // 
             this.pictureBoxCustomer2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxCustomer2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxCustomer2.Location = new System.Drawing.Point(892, 131);
+            this.pictureBoxCustomer2.Location = new System.Drawing.Point(882, 136);
             this.pictureBoxCustomer2.Name = "pictureBoxCustomer2";
             this.pictureBoxCustomer2.Size = new System.Drawing.Size(195, 380);
             this.pictureBoxCustomer2.TabIndex = 59;
@@ -1347,7 +1332,7 @@
             // 
             this.pictureBoxCustomer1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxCustomer1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxCustomer1.Location = new System.Drawing.Point(691, 133);
+            this.pictureBoxCustomer1.Location = new System.Drawing.Point(689, 138);
             this.pictureBoxCustomer1.Name = "pictureBoxCustomer1";
             this.pictureBoxCustomer1.Size = new System.Drawing.Size(195, 380);
             this.pictureBoxCustomer1.TabIndex = 47;
@@ -1915,13 +1900,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1149, 650);
+            this.Controls.Add(this.panelDifficulty);
+            this.Controls.Add(this.panelTutorial);
             this.Controls.Add(this.panelGame);
             this.Controls.Add(this.panelSetting);
             this.Controls.Add(this.panelLose);
             this.Controls.Add(this.panelWin);
             this.Controls.Add(this.panelCreateLoadPlayer);
-            this.Controls.Add(this.panelDifficulty);
-            this.Controls.Add(this.panelTutorial);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonPlay);
             this.DoubleBuffered = true;
