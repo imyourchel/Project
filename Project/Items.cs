@@ -6,6 +6,7 @@ using System.Text;
 
 namespace Project
 {
+    [Serializable]
     public abstract class Items
     {
         #region Fields

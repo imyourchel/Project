@@ -94,9 +94,6 @@
     <None Include="Resources\Background %286%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bg select.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\aset oop %282%29.png" />
   </ItemGroup>
   <ItemGroup>
@@ -325,6 +322,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\select plyer.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

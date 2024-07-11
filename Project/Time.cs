@@ -6,6 +6,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace Project
 {
+    [Serializable]
     public class Time
     {
         #region Fields

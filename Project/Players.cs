@@ -8,6 +8,7 @@ using System.Windows.Forms;
 
 namespace Project
 {
+    [Serializable]
     public class Players
     {
         #region Fields        

@@ -116,24 +116,6 @@
             this.panelFoodStall = new System.Windows.Forms.Panel();
             this.pictureBoxCustomer2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxCustomer1 = new System.Windows.Forms.PictureBox();
-            this.panelCreateLoadPlayer = new System.Windows.Forms.Panel();
-            this.radioButtonLoadPlayer = new System.Windows.Forms.RadioButton();
-            this.panelLoadPlayer = new System.Windows.Forms.Panel();
-            this.labelIncome = new System.Windows.Forms.Label();
-            this.comboBoxNameLoad = new System.Windows.Forms.ComboBox();
-            this.labelIncomeLoad = new System.Windows.Forms.Label();
-            this.labelNameLoad = new System.Windows.Forms.Label();
-            this.pictureBoxLoadPlayer = new System.Windows.Forms.PictureBox();
-            this.panelCreatePlayer = new System.Windows.Forms.Panel();
-            this.textBoxNameCreate = new System.Windows.Forms.TextBox();
-            this.radioButtonFemale = new System.Windows.Forms.RadioButton();
-            this.radioButtonMale = new System.Windows.Forms.RadioButton();
-            this.labelNameCreate = new System.Windows.Forms.Label();
-            this.pictureBoxMale = new System.Windows.Forms.PictureBox();
-            this.pictureBoxFemale = new System.Windows.Forms.PictureBox();
-            this.buttonNextDifficult = new System.Windows.Forms.Button();
-            this.radioButtonCreatePlayer = new System.Windows.Forms.RadioButton();
-            this.pictureBoxBackHome = new System.Windows.Forms.PictureBox();
             this.panelDifficulty = new System.Windows.Forms.Panel();
             this.labelBestTimeImpossible = new System.Windows.Forms.Label();
             this.labelBestTimeHard = new System.Windows.Forms.Label();
@@ -232,13 +214,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPatty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCustomer2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCustomer1)).BeginInit();
-            this.panelCreateLoadPlayer.SuspendLayout();
-            this.panelLoadPlayer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadPlayer)).BeginInit();
-            this.panelCreatePlayer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMale)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFemale)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackHome)).BeginInit();
             this.panelDifficulty.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImpossible)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHard)).BeginInit();
@@ -1338,210 +1313,6 @@
             this.pictureBoxCustomer1.TabIndex = 47;
             this.pictureBoxCustomer1.TabStop = false;
             // 
-            // panelCreateLoadPlayer
-            // 
-            this.panelCreateLoadPlayer.BackColor = System.Drawing.Color.Transparent;
-            this.panelCreateLoadPlayer.BackgroundImage = global::Project.Properties.Resources.bg_CreateLoadPlayer;
-            this.panelCreateLoadPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelCreateLoadPlayer.Controls.Add(this.radioButtonLoadPlayer);
-            this.panelCreateLoadPlayer.Controls.Add(this.panelLoadPlayer);
-            this.panelCreateLoadPlayer.Controls.Add(this.panelCreatePlayer);
-            this.panelCreateLoadPlayer.Controls.Add(this.buttonNextDifficult);
-            this.panelCreateLoadPlayer.Controls.Add(this.radioButtonCreatePlayer);
-            this.panelCreateLoadPlayer.Controls.Add(this.pictureBoxBackHome);
-            this.panelCreateLoadPlayer.Location = new System.Drawing.Point(0, 0);
-            this.panelCreateLoadPlayer.Name = "panelCreateLoadPlayer";
-            this.panelCreateLoadPlayer.Size = new System.Drawing.Size(1150, 650);
-            this.panelCreateLoadPlayer.TabIndex = 2;
-            // 
-            // radioButtonLoadPlayer
-            // 
-            this.radioButtonLoadPlayer.AutoSize = true;
-            this.radioButtonLoadPlayer.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonLoadPlayer.Location = new System.Drawing.Point(677, 94);
-            this.radioButtonLoadPlayer.Name = "radioButtonLoadPlayer";
-            this.radioButtonLoadPlayer.Size = new System.Drawing.Size(147, 33);
-            this.radioButtonLoadPlayer.TabIndex = 1;
-            this.radioButtonLoadPlayer.TabStop = true;
-            this.radioButtonLoadPlayer.Text = "LOAD PLAYER";
-            this.radioButtonLoadPlayer.UseVisualStyleBackColor = true;
-            this.radioButtonLoadPlayer.CheckedChanged += new System.EventHandler(this.radioButtonLoadPlayer_CheckedChanged);
-            // 
-            // panelLoadPlayer
-            // 
-            this.panelLoadPlayer.Controls.Add(this.labelIncome);
-            this.panelLoadPlayer.Controls.Add(this.comboBoxNameLoad);
-            this.panelLoadPlayer.Controls.Add(this.labelIncomeLoad);
-            this.panelLoadPlayer.Controls.Add(this.labelNameLoad);
-            this.panelLoadPlayer.Controls.Add(this.pictureBoxLoadPlayer);
-            this.panelLoadPlayer.Location = new System.Drawing.Point(649, 133);
-            this.panelLoadPlayer.Name = "panelLoadPlayer";
-            this.panelLoadPlayer.Size = new System.Drawing.Size(406, 367);
-            this.panelLoadPlayer.TabIndex = 8;
-            // 
-            // labelIncome
-            // 
-            this.labelIncome.AutoSize = true;
-            this.labelIncome.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelIncome.Location = new System.Drawing.Point(158, 307);
-            this.labelIncome.Name = "labelIncome";
-            this.labelIncome.Size = new System.Drawing.Size(48, 25);
-            this.labelIncome.TabIndex = 21;
-            this.labelIncome.Text = "200";
-            // 
-            // comboBoxNameLoad
-            // 
-            this.comboBoxNameLoad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxNameLoad.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxNameLoad.FormattingEnabled = true;
-            this.comboBoxNameLoad.Location = new System.Drawing.Point(163, 252);
-            this.comboBoxNameLoad.Name = "comboBoxNameLoad";
-            this.comboBoxNameLoad.Size = new System.Drawing.Size(176, 33);
-            this.comboBoxNameLoad.TabIndex = 19;
-            // 
-            // labelIncomeLoad
-            // 
-            this.labelIncomeLoad.AutoSize = true;
-            this.labelIncomeLoad.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelIncomeLoad.Location = new System.Drawing.Point(75, 307);
-            this.labelIncomeLoad.Name = "labelIncomeLoad";
-            this.labelIncomeLoad.Size = new System.Drawing.Size(85, 25);
-            this.labelIncomeLoad.TabIndex = 15;
-            this.labelIncomeLoad.Text = "Income :";
-            // 
-            // labelNameLoad
-            // 
-            this.labelNameLoad.AutoSize = true;
-            this.labelNameLoad.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNameLoad.Location = new System.Drawing.Point(88, 255);
-            this.labelNameLoad.Name = "labelNameLoad";
-            this.labelNameLoad.Size = new System.Drawing.Size(73, 25);
-            this.labelNameLoad.TabIndex = 13;
-            this.labelNameLoad.Text = "Name :";
-            // 
-            // pictureBoxLoadPlayer
-            // 
-            this.pictureBoxLoadPlayer.BackgroundImage = global::Project.Properties.Resources.female;
-            this.pictureBoxLoadPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxLoadPlayer.Location = new System.Drawing.Point(131, 36);
-            this.pictureBoxLoadPlayer.Name = "pictureBoxLoadPlayer";
-            this.pictureBoxLoadPlayer.Size = new System.Drawing.Size(178, 187);
-            this.pictureBoxLoadPlayer.TabIndex = 5;
-            this.pictureBoxLoadPlayer.TabStop = false;
-            // 
-            // panelCreatePlayer
-            // 
-            this.panelCreatePlayer.Controls.Add(this.textBoxNameCreate);
-            this.panelCreatePlayer.Controls.Add(this.radioButtonFemale);
-            this.panelCreatePlayer.Controls.Add(this.radioButtonMale);
-            this.panelCreatePlayer.Controls.Add(this.labelNameCreate);
-            this.panelCreatePlayer.Controls.Add(this.pictureBoxMale);
-            this.panelCreatePlayer.Controls.Add(this.pictureBoxFemale);
-            this.panelCreatePlayer.Location = new System.Drawing.Point(93, 133);
-            this.panelCreatePlayer.Name = "panelCreatePlayer";
-            this.panelCreatePlayer.Size = new System.Drawing.Size(393, 367);
-            this.panelCreatePlayer.TabIndex = 7;
-            // 
-            // textBoxNameCreate
-            // 
-            this.textBoxNameCreate.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNameCreate.Location = new System.Drawing.Point(151, 285);
-            this.textBoxNameCreate.Name = "textBoxNameCreate";
-            this.textBoxNameCreate.Size = new System.Drawing.Size(150, 30);
-            this.textBoxNameCreate.TabIndex = 12;
-            // 
-            // radioButtonFemale
-            // 
-            this.radioButtonFemale.AutoSize = true;
-            this.radioButtonFemale.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonFemale.Location = new System.Drawing.Point(224, 229);
-            this.radioButtonFemale.Name = "radioButtonFemale";
-            this.radioButtonFemale.Size = new System.Drawing.Size(98, 29);
-            this.radioButtonFemale.TabIndex = 11;
-            this.radioButtonFemale.TabStop = true;
-            this.radioButtonFemale.Text = "Female";
-            this.radioButtonFemale.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonMale
-            // 
-            this.radioButtonMale.AutoSize = true;
-            this.radioButtonMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonMale.Location = new System.Drawing.Point(61, 229);
-            this.radioButtonMale.Name = "radioButtonMale";
-            this.radioButtonMale.Size = new System.Drawing.Size(76, 29);
-            this.radioButtonMale.TabIndex = 10;
-            this.radioButtonMale.TabStop = true;
-            this.radioButtonMale.Text = "Male";
-            this.radioButtonMale.UseVisualStyleBackColor = true;
-            // 
-            // labelNameCreate
-            // 
-            this.labelNameCreate.AutoSize = true;
-            this.labelNameCreate.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNameCreate.Location = new System.Drawing.Point(76, 286);
-            this.labelNameCreate.Name = "labelNameCreate";
-            this.labelNameCreate.Size = new System.Drawing.Size(73, 25);
-            this.labelNameCreate.TabIndex = 9;
-            this.labelNameCreate.Text = "Name :";
-            // 
-            // pictureBoxMale
-            // 
-            this.pictureBoxMale.BackgroundImage = global::Project.Properties.Resources.male;
-            this.pictureBoxMale.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxMale.Location = new System.Drawing.Point(15, 36);
-            this.pictureBoxMale.Name = "pictureBoxMale";
-            this.pictureBoxMale.Size = new System.Drawing.Size(178, 187);
-            this.pictureBoxMale.TabIndex = 3;
-            this.pictureBoxMale.TabStop = false;
-            // 
-            // pictureBoxFemale
-            // 
-            this.pictureBoxFemale.BackgroundImage = global::Project.Properties.Resources.female;
-            this.pictureBoxFemale.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxFemale.Location = new System.Drawing.Point(188, 36);
-            this.pictureBoxFemale.Name = "pictureBoxFemale";
-            this.pictureBoxFemale.Size = new System.Drawing.Size(178, 187);
-            this.pictureBoxFemale.TabIndex = 4;
-            this.pictureBoxFemale.TabStop = false;
-            // 
-            // buttonNextDifficult
-            // 
-            this.buttonNextDifficult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(217)))), ((int)(((byte)(87)))));
-            this.buttonNextDifficult.Font = new System.Drawing.Font("Franklin Gothic Demi", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonNextDifficult.ForeColor = System.Drawing.Color.White;
-            this.buttonNextDifficult.Location = new System.Drawing.Point(485, 546);
-            this.buttonNextDifficult.Name = "buttonNextDifficult";
-            this.buttonNextDifficult.Size = new System.Drawing.Size(180, 60);
-            this.buttonNextDifficult.TabIndex = 6;
-            this.buttonNextDifficult.Text = "NEXT";
-            this.buttonNextDifficult.UseVisualStyleBackColor = false;
-            this.buttonNextDifficult.Click += new System.EventHandler(this.buttonNextDifficult_Click);
-            // 
-            // radioButtonCreatePlayer
-            // 
-            this.radioButtonCreatePlayer.AutoSize = true;
-            this.radioButtonCreatePlayer.Checked = true;
-            this.radioButtonCreatePlayer.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonCreatePlayer.Location = new System.Drawing.Point(108, 94);
-            this.radioButtonCreatePlayer.Name = "radioButtonCreatePlayer";
-            this.radioButtonCreatePlayer.Size = new System.Drawing.Size(167, 33);
-            this.radioButtonCreatePlayer.TabIndex = 0;
-            this.radioButtonCreatePlayer.TabStop = true;
-            this.radioButtonCreatePlayer.Text = "CREATE PLAYER";
-            this.radioButtonCreatePlayer.UseVisualStyleBackColor = true;
-            this.radioButtonCreatePlayer.CheckedChanged += new System.EventHandler(this.radioButtonCreatePlayer_CheckedChanged);
-            // 
-            // pictureBoxBackHome
-            // 
-            this.pictureBoxBackHome.BackgroundImage = global::Project.Properties.Resources.back;
-            this.pictureBoxBackHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxBackHome.Location = new System.Drawing.Point(12, 12);
-            this.pictureBoxBackHome.Name = "pictureBoxBackHome";
-            this.pictureBoxBackHome.Size = new System.Drawing.Size(75, 75);
-            this.pictureBoxBackHome.TabIndex = 2;
-            this.pictureBoxBackHome.TabStop = false;
-            this.pictureBoxBackHome.Click += new System.EventHandler(this.pictureBoxBackHome_Click);
-            // 
             // panelDifficulty
             // 
             this.panelDifficulty.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelDifficulty.BackgroundImage")));
@@ -1906,7 +1677,6 @@
             this.Controls.Add(this.panelSetting);
             this.Controls.Add(this.panelLose);
             this.Controls.Add(this.panelWin);
-            this.Controls.Add(this.panelCreateLoadPlayer);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonPlay);
             this.DoubleBuffered = true;
@@ -1986,16 +1756,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPatty)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCustomer2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCustomer1)).EndInit();
-            this.panelCreateLoadPlayer.ResumeLayout(false);
-            this.panelCreateLoadPlayer.PerformLayout();
-            this.panelLoadPlayer.ResumeLayout(false);
-            this.panelLoadPlayer.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadPlayer)).EndInit();
-            this.panelCreatePlayer.ResumeLayout(false);
-            this.panelCreatePlayer.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMale)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFemale)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackHome)).EndInit();
             this.panelDifficulty.ResumeLayout(false);
             this.panelDifficulty.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImpossible)).EndInit();
@@ -2017,24 +1777,6 @@
 
         private System.Windows.Forms.Button buttonPlay;
         private System.Windows.Forms.Button buttonExit;
-        private System.Windows.Forms.RadioButton radioButtonLoadPlayer;
-        private System.Windows.Forms.PictureBox pictureBoxBackHome;
-        private System.Windows.Forms.PictureBox pictureBoxLoadPlayer;
-        private System.Windows.Forms.Button buttonNextDifficult;
-        private System.Windows.Forms.Panel panelCreatePlayer;
-        private System.Windows.Forms.Label labelNameCreate;
-        private System.Windows.Forms.RadioButton radioButtonCreatePlayer;
-        private System.Windows.Forms.PictureBox pictureBoxMale;
-        private System.Windows.Forms.PictureBox pictureBoxFemale;
-        private System.Windows.Forms.Panel panelLoadPlayer;
-        private System.Windows.Forms.Panel panelCreateLoadPlayer;
-        private System.Windows.Forms.RadioButton radioButtonFemale;
-        private System.Windows.Forms.RadioButton radioButtonMale;
-        private System.Windows.Forms.ComboBox comboBoxNameLoad;
-        private System.Windows.Forms.Label labelIncomeLoad;
-        private System.Windows.Forms.Label labelNameLoad;
-        private System.Windows.Forms.TextBox textBoxNameCreate;
-        protected internal System.Windows.Forms.Label labelIncome;
         private System.Windows.Forms.PictureBox pictureBoxBackCreateLoadPlayer;
         private System.Windows.Forms.Panel panelDifficulty;
         private System.Windows.Forms.Label labelHighScoreEasy;
