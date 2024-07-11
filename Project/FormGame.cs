@@ -30,6 +30,8 @@ namespace Project
         int tempIncome=0;
         List<int> listTempIncome = new List<int>();
 
+        bool newPlayer;
+
         int custEasy = 8;
         int custMedium = 15;
         int custHard = 23;
@@ -207,7 +209,8 @@ namespace Project
                     stockTumblr = new List<bool> { true, true, true, true, true };
 
                     player.BestTime = new List<Time> {time,time,time,time};
-                    player.PrevTime = new List<Time> {time,time,time,time};                                                            
+                    player.PrevTime = new List<Time> {time,time,time,time};
+                    newPlayer = true;
                 }
                 //Load Player
                 else
@@ -232,7 +235,7 @@ namespace Project
                             }
                         }
                     }
-                    //stock = player.StockMerchandise;
+                    newPlayer = false;
                 }
                 //display Panel Difficulty
                 panelCreateLoadPlayer.Visible = false;
@@ -402,6 +405,107 @@ namespace Project
                 remainingCusts = custImpossible;
             }
             buttonStartGame_Click(pictureBoxRestart, e);
+        }
+        private void displayBear(Items item)
+        {
+            Merchandise merch = (Merchandise)item;
+            int i = 0;
+            foreach(bool stock in merch.ListStock)
+            {
+                if(stock == true)
+                {
+                    i++;
+                }
+            }
+            if(i == 5)
+            {
+                pictureBoxBear1.Enabled = true;
+                pictureBoxBear2.Enabled = true;
+                pictureBoxBear3.Enabled = true;
+                pictureBoxBear4.Enabled = true;
+                pictureBoxBear5.Enabled = true;
+
+                pictureBoxBear1.Image = ((Merchandise)item).Picture;
+                pictureBoxBear2.Image = ((Merchandise)item).Picture;
+                pictureBoxBear3.Image = ((Merchandise)item).Picture;
+                pictureBoxBear4.Image = ((Merchandise)item).Picture;
+                pictureBoxBear5.Image = ((Merchandise)item).Picture;
+
+                pictureBoxBear1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxBear2.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxBear3.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxBear4.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxBear5.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+            else if (i == 4)
+            {
+                pictureBoxBear1.Enabled = true;
+                pictureBoxBear2.Enabled = true;
+                pictureBoxBear3.Enabled = true;
+                pictureBoxBear4.Enabled = true;
+
+                pictureBoxBear1.Image = ((Merchandise)item).Picture;
+                pictureBoxBear2.Image = ((Merchandise)item).Picture;
+                pictureBoxBear3.Image = ((Merchandise)item).Picture;
+                pictureBoxBear4.Image = ((Merchandise)item).Picture;                
+
+                pictureBoxBear1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxBear2.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxBear3.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxBear4.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxBear5.Image = null;
+                pictureBoxBear5.Enabled = false;
+            }
+            else if (i == 3)
+            {
+                pictureBoxBear1.Enabled = true;
+                pictureBoxBear2.Enabled = true;
+                pictureBoxBear3.Enabled = true;
+
+                pictureBoxBear1.Image = ((Merchandise)item).Picture;
+                pictureBoxBear2.Image = ((Merchandise)item).Picture;
+                pictureBoxBear3.Image = ((Merchandise)item).Picture;
+
+                pictureBoxBear1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxBear2.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxBear3.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxBear4.Image= null;
+                pictureBoxBear5.Enabled = false;
+                pictureBoxBear5.Image = null;
+                pictureBoxBear5.Enabled = false;
+            }
+            else if (i == 2)
+            {
+                pictureBoxBear1.Enabled = true;
+                pictureBoxBear2.Enabled = true;
+
+                pictureBoxBear1.Image = ((Merchandise)item).Picture;
+                pictureBoxBear2.Image = ((Merchandise)item).Picture;
+
+                pictureBoxBear1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxBear2.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxBear3.Image = null;
+                pictureBoxBear3.Enabled = false;
+                pictureBoxBear4.Image = null;
+                pictureBoxBear5.Enabled = false;
+                pictureBoxBear5.Image = null;
+                pictureBoxBear5.Enabled = false;
+            }
+            else if (i == 1)
+            {
+                pictureBoxBear1.Enabled = true;
+                pictureBoxBear1.Image = ((Merchandise)item).Picture;
+                pictureBoxBear1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                pictureBoxBear2.Image = null;
+                pictureBoxBear2.Enabled = false;
+                pictureBoxBear3.Image = null;
+                pictureBoxBear3.Enabled = false;
+                pictureBoxBear4.Image = null;
+                pictureBoxBear5.Enabled = false;
+                pictureBoxBear5.Image = null;
+                pictureBoxBear5.Enabled = false;
+            }
         }
         private void StallDisplay()
         {
@@ -574,67 +678,78 @@ namespace Project
             #endregion Beverages
 
             #region Merchandise     
-            
-            item = new Merchandise(stockBear, "bear", Properties.Resources.bear, 100);
-            listOfItems.Add(item);
-            pictureBoxBear1.Tag = ((Merchandise)item).Name;
-            pictureBoxBear2.Tag = ((Merchandise)item).Name;
-            pictureBoxBear3.Tag = ((Merchandise)item).Name;
-            pictureBoxBear4.Tag = ((Merchandise)item).Name;
-            pictureBoxBear5.Tag = ((Merchandise)item).Name;
+            if (newPlayer == true)
+            {
+                item = new Merchandise(stockBear, "bear", Properties.Resources.bear, 100);
+                listOfItems.Add(item);
+                pictureBoxBear1.Tag = ((Merchandise)item).Name;
+                pictureBoxBear2.Tag = ((Merchandise)item).Name;
+                pictureBoxBear3.Tag = ((Merchandise)item).Name;
+                pictureBoxBear4.Tag = ((Merchandise)item).Name;
+                pictureBoxBear5.Tag = ((Merchandise)item).Name;
 
-            pictureBoxBear1.Image = ((Merchandise)item).Picture;
-            pictureBoxBear2.Image = ((Merchandise)item).Picture;
-            pictureBoxBear3.Image = ((Merchandise)item).Picture;
-            pictureBoxBear4.Image = ((Merchandise)item).Picture;
-            pictureBoxBear5.Image = ((Merchandise)item).Picture;
+                pictureBoxBear1.Image = ((Merchandise)item).Picture;
+                pictureBoxBear2.Image = ((Merchandise)item).Picture;
+                pictureBoxBear3.Image = ((Merchandise)item).Picture;
+                pictureBoxBear4.Image = ((Merchandise)item).Picture;
+                pictureBoxBear5.Image = ((Merchandise)item).Picture;                
 
-            pictureBoxBear1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxBear2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxBear3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxBear4.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxBear5.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxBear1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxBear2.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxBear3.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxBear4.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxBear5.SizeMode = PictureBoxSizeMode.StretchImage;
 
-            item = new Merchandise(stockTumblr, "tumblr", Properties.Resources.tumblr, 100);
-            listOfItems.Add(item);
-            pictureBoxTumblr1.Tag = ((Merchandise)item).Name;
-            pictureBoxTumblr2.Tag = ((Merchandise)item).Name;
-            pictureBoxTumblr3.Tag = ((Merchandise)item).Name;
-            pictureBoxTumblr4.Tag = ((Merchandise)item).Name;
-            pictureBoxTumblr5.Tag = ((Merchandise)item).Name;
+                
+                item = new Merchandise(stockTumblr, "tumblr", Properties.Resources.tumblr, 100);
+                listOfItems.Add(item);
+                pictureBoxTumblr1.Tag = ((Merchandise)item).Name;
+                pictureBoxTumblr2.Tag = ((Merchandise)item).Name;
+                pictureBoxTumblr3.Tag = ((Merchandise)item).Name;
+                pictureBoxTumblr4.Tag = ((Merchandise)item).Name;
+                pictureBoxTumblr5.Tag = ((Merchandise)item).Name;
 
-            pictureBoxTumblr1.Image = ((Merchandise)item).Picture;
-            pictureBoxTumblr2.Image = ((Merchandise)item).Picture;
-            pictureBoxTumblr3.Image = ((Merchandise)item).Picture;
-            pictureBoxTumblr4.Image = ((Merchandise)item).Picture;
-            pictureBoxTumblr5.Image = ((Merchandise)item).Picture;
+                pictureBoxTumblr1.Image = ((Merchandise)item).Picture;
+                pictureBoxTumblr2.Image = ((Merchandise)item).Picture;
+                pictureBoxTumblr3.Image = ((Merchandise)item).Picture;
+                pictureBoxTumblr4.Image = ((Merchandise)item).Picture;
+                pictureBoxTumblr5.Image = ((Merchandise)item).Picture;
 
-            pictureBoxTumblr1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxTumblr2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxTumblr3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxTumblr4.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxTumblr5.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxTumblr1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxTumblr2.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxTumblr3.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxTumblr4.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxTumblr5.SizeMode = PictureBoxSizeMode.StretchImage;
 
-            item = new Merchandise(stockRobot, "robot", Properties.Resources.robot, 100);
-            listOfItems.Add(item);
-            pictureBoxRobot1.Tag = ((Merchandise)item).Name;
-            pictureBoxRobot2.Tag = ((Merchandise)item).Name;
-            pictureBoxRobot3.Tag = ((Merchandise)item).Name;
-            pictureBoxRobot4.Tag = ((Merchandise)item).Name;
-            pictureBoxRobot5.Tag = ((Merchandise)item).Name;
 
-            pictureBoxRobot1.Image = ((Merchandise)item).Picture;
-            pictureBoxRobot2.Image = ((Merchandise)item).Picture;
-            pictureBoxRobot3.Image = ((Merchandise)item).Picture;
-            pictureBoxRobot4.Image = ((Merchandise)item).Picture;
-            pictureBoxRobot5.Image = ((Merchandise)item).Picture;
+                item = new Merchandise(stockRobot, "robot", Properties.Resources.robot, 100);
+                listOfItems.Add(item);
+                pictureBoxRobot1.Tag = ((Merchandise)item).Name;
+                pictureBoxRobot2.Tag = ((Merchandise)item).Name;
+                pictureBoxRobot3.Tag = ((Merchandise)item).Name;
+                pictureBoxRobot4.Tag = ((Merchandise)item).Name;
+                pictureBoxRobot5.Tag = ((Merchandise)item).Name;
 
-            pictureBoxRobot1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxRobot2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxRobot3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxRobot4.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxRobot5.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxRobot1.Image = ((Merchandise)item).Picture;
+                pictureBoxRobot2.Image = ((Merchandise)item).Picture;
+                pictureBoxRobot3.Image = ((Merchandise)item).Picture;
+                pictureBoxRobot4.Image = ((Merchandise)item).Picture;
+                pictureBoxRobot5.Image = ((Merchandise)item).Picture;
 
+                pictureBoxRobot1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxRobot2.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxRobot3.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxRobot4.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxRobot5.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+            //load player
+            else
+            {
+                item = (Merchandise)player.StockMerchandise[0];//bear
+                displayBear(item);
+                item = (Merchandise)player.StockMerchandise[1];//tumblr
+                item = (Merchandise)player.StockMerchandise[2];//robot
+            }                    
             #endregion Merchandise
         }   
 
@@ -733,6 +848,10 @@ namespace Project
                         if (selectedIngCount == foodOrder.ListOfIngredients.Count)
                         {
                             CorrectOrder(foodOrder);
+                            timeFirst = false;
+                            tempEmotion = incTimerEmotion2;
+                            incTimerEmotion1 = tempEmotion;
+                            incTimerEmotion2 = 0;
                         }
                     }
                     else
@@ -760,6 +879,10 @@ namespace Project
                         if (selectedIngCount == bevOrder.ListOfIngredients.Count)
                         {
                             CorrectOrder(bevOrder);
+                            timeFirst = false; 
+                            tempEmotion = incTimerEmotion2;
+                            incTimerEmotion1 = tempEmotion;
+                            incTimerEmotion2 = 0;
                         }
                     }
                     else
@@ -784,6 +907,10 @@ namespace Project
                     {
                         merchOrder.Sell(1);                        
                         CorrectOrder(merchOrder);
+                        timeFirst = false;
+                        tempEmotion = incTimerEmotion2;
+                        incTimerEmotion1 = tempEmotion;
+                        incTimerEmotion2 = 0;
                     }
                     else
                     {
@@ -1714,40 +1841,64 @@ namespace Project
         private void timerEmotion2_Tick(object sender, EventArgs e)
         {
             incTimerEmotion2++;
-            Image image = null;
-            if (incTimerEmotion1 <= 7)
+            Image image2 = null;
+            if (incTimerEmotion2 <= 7)
             {
-                image = Properties.Resources.happy;
+                image2 = Properties.Resources.happy;
             }
-            else if (incTimerEmotion1 > 7 && incTimerEmotion1 <= 14)
+            else if (incTimerEmotion2 > 7 && incTimerEmotion2 <= 14)
             {
-                image = Properties.Resources.flat;
+                image2 = Properties.Resources.flat;
             }
-            else if (incTimerEmotion1 > 7)
+            else if (incTimerEmotion2 > 7)
             {
-                image = Properties.Resources.angry;
+                image2 = Properties.Resources.angry;
             }
-            pictureBoxEmotion2.Image = image;
+            pictureBoxEmotion2.Image = image2;
             pictureBoxEmotion2.SizeMode = PictureBoxSizeMode.StretchImage;
         }
         private void timerEmotion1_Tick(object sender, EventArgs e)
         {
-            Image image = null;
-            incTimerEmotion1++;
-            if (incTimerEmotion1 <= 4)
+            if(timeFirst == true)
             {
-                image = Properties.Resources.happy;
+                Image image = null;
+                incTimerEmotion1++;
+                if (incTimerEmotion1 <= 4)
+                {
+                    image = Properties.Resources.happy;
+                }
+                else if (incTimerEmotion1 > 4 && incTimerEmotion1 <= 7)
+                {
+                    image = Properties.Resources.flat;
+                }
+                else if (incTimerEmotion1 > 7)
+                {
+                    image = Properties.Resources.angry;
+                }
+                pictureBoxEmotion1.Image = image;
+                pictureBoxEmotion1.SizeMode = PictureBoxSizeMode.StretchImage;                
             }
-            else if (incTimerEmotion1 > 4 && incTimerEmotion1 <= 7)
-            {
-                image = Properties.Resources.flat;
+            else
+            {                          
+                Image image = null;
+                incTimerEmotion1++;
+                if (incTimerEmotion1 <= 8)
+                {
+                    image = Properties.Resources.happy;
+                }
+                else if (incTimerEmotion1 > 8 && incTimerEmotion1 <= 14)
+                {
+                    image = Properties.Resources.flat;
+                }
+                else if (incTimerEmotion1 > 14)
+                {
+                    image = Properties.Resources.angry;
+                }
+                pictureBoxEmotion1.Image = image;
+                pictureBoxEmotion1.SizeMode = PictureBoxSizeMode.StretchImage;
+                incTimerEmotion1++;
             }
-            else if (incTimerEmotion1 > 7)
-            {
-                image = Properties.Resources.angry;
-            }
-            pictureBoxEmotion1.Image = image;
-            pictureBoxEmotion1.SizeMode = PictureBoxSizeMode.StretchImage;
+            
         }
         private void PlaySound(string type)
         {
@@ -1781,16 +1932,16 @@ namespace Project
                 sound2.URL = Application.StartupPath + "\\sound\\win.mp3";
                 sound2.controls.play();
             }
-            else if (type == "play")
-            {
-                sound2.URL = Application.StartupPath + "\\sound\\play.mp3";
-                sound2.controls.play();
-            }
-            else if (type == "game")
-            {
-                sound2.URL = Application.StartupPath + "\\sound\\game.mp3";
-                sound2.controls.play();
-            }
+            //else if (type == "play")
+            //{
+            //    sound2.URL = Application.StartupPath + "\\sound\\play.mp3";
+            //    sound2.controls.play();
+            //}
+            //else if (type == "game")
+            //{
+            //    sound2.URL = Application.StartupPath + "\\sound\\game.mp3";
+            //    sound2.controls.play();
+            //}
             else if (type == "stop")
             {
                 sound2.controls.stop();
@@ -1811,7 +1962,7 @@ namespace Project
         {
             PlaySound("click");
         }
-        #region Volume
+        #region Volume up down
         private void pictureBoxVolumeDownMusic_Click(object sender, EventArgs e)
         {
             PlaySound("button");
@@ -2071,6 +2222,6 @@ namespace Project
                 barSFX5 = true;
             }
         }
-        #endregion Volume
+        #endregion Volume up down
     }
 }

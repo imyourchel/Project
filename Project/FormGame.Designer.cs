@@ -1088,7 +1088,6 @@
             // pictureBoxBear5
             // 
             this.pictureBoxBear5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxBear5.BackgroundImage = global::Project.Properties.Resources.bear;
             this.pictureBoxBear5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxBear5.Location = new System.Drawing.Point(233, 454);
             this.pictureBoxBear5.Name = "pictureBoxBear5";
@@ -1102,7 +1101,6 @@
             // pictureBoxBear4
             // 
             this.pictureBoxBear4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxBear4.BackgroundImage = global::Project.Properties.Resources.bear;
             this.pictureBoxBear4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxBear4.Location = new System.Drawing.Point(177, 454);
             this.pictureBoxBear4.Name = "pictureBoxBear4";
@@ -1917,8 +1915,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1149, 650);
-            this.Controls.Add(this.panelSetting);
             this.Controls.Add(this.panelGame);
+            this.Controls.Add(this.panelSetting);
             this.Controls.Add(this.panelLose);
             this.Controls.Add(this.panelWin);
             this.Controls.Add(this.panelCreateLoadPlayer);
