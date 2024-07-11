@@ -27,7 +27,8 @@ namespace Project
         Customers customers;
         Customers customer2;
 
-        int tempScore;
+        int tempIncome=0;
+        List<int> listTempIncome = new List<int>();
 
         int custEasy = 8;
         int custMedium = 15;
@@ -783,18 +784,9 @@ namespace Project
             int randomItemType = numRandomItemType.Next(0, 3);
             if (randomItemType == 0) //Foods
             {
-                if (customer2.Type == "male")
-                {
-                    customer2.OrderItem = listOfItems[0];
-                }
-                else if (customer2.Type == "female")
-                {
-                    customer2.OrderItem = listOfItems[1];
-                }
-                else if (customer2.Type == "kid")
-                {
-                    customer2.OrderItem = listOfItems[2];
-                }
+                Random numRandomFood = new Random();
+                int randomFood = numRandomFood.Next(0, 3);
+                customer2.OrderItem = listOfItems[randomFood];
             }
             else if (randomItemType == 1)
             {
@@ -818,6 +810,7 @@ namespace Project
             pictureBoxServe.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxServe.Tag = "done";
             pictureBoxOrder1.Image = Properties.Resources.coin;
+            listTempIncome.Add(order.Price);
             player.Income += order.Price;
             selectedIngCount = 0;
             remainingCusts--;
@@ -1591,6 +1584,11 @@ namespace Project
         private void pictureBoxButtonPlayAgain_Click(object sender, EventArgs e)
         {
             PlaySound("button");
+            foreach(int i in listTempIncome)
+            {
+                tempIncome += i;
+            }
+            player.Income = (player.Income) - tempIncome;
             panelWin.Visible = false;
             if (labelEasy.Font.Name == "Franklin Gothic Demi")
             {
