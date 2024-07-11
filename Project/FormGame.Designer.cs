@@ -468,6 +468,9 @@
             this.pictureBoxVolmeUpSFX.Size = new System.Drawing.Size(50, 50);
             this.pictureBoxVolmeUpSFX.TabIndex = 11;
             this.pictureBoxVolmeUpSFX.TabStop = false;
+            this.pictureBoxVolmeUpSFX.Click += new System.EventHandler(this.pictureBoxVolmeUpSFX_Click);
+            this.pictureBoxVolmeUpSFX.MouseEnter += new System.EventHandler(this.pictureBoxVolmeUpSFX_MouseEnter);
+            this.pictureBoxVolmeUpSFX.MouseLeave += new System.EventHandler(this.pictureBoxVolmeUpSFX_MouseLeave);
             // 
             // pictureBoxVolumeDownSFX
             // 
@@ -478,6 +481,9 @@
             this.pictureBoxVolumeDownSFX.Size = new System.Drawing.Size(50, 50);
             this.pictureBoxVolumeDownSFX.TabIndex = 10;
             this.pictureBoxVolumeDownSFX.TabStop = false;
+            this.pictureBoxVolumeDownSFX.Click += new System.EventHandler(this.pictureBoxVolumeDownSFX_Click);
+            this.pictureBoxVolumeDownSFX.MouseEnter += new System.EventHandler(this.pictureBoxVolumeDownSFX_MouseEnter);
+            this.pictureBoxVolumeDownSFX.MouseLeave += new System.EventHandler(this.pictureBoxVolumeDownSFX_MouseLeave);
             // 
             // pictureBoxBarMusic5
             // 
@@ -538,6 +544,9 @@
             this.pictureBoxVolumeUpMusic.Size = new System.Drawing.Size(50, 50);
             this.pictureBoxVolumeUpMusic.TabIndex = 4;
             this.pictureBoxVolumeUpMusic.TabStop = false;
+            this.pictureBoxVolumeUpMusic.Click += new System.EventHandler(this.pictureBoxVolumeUpMusic_Click);
+            this.pictureBoxVolumeUpMusic.MouseEnter += new System.EventHandler(this.pictureBoxVolumeUpMusic_MouseEnter);
+            this.pictureBoxVolumeUpMusic.MouseLeave += new System.EventHandler(this.pictureBoxVolumeUpMusic_MouseLeave);
             // 
             // pictureBoxVolumeDownMusic
             // 
@@ -548,6 +557,9 @@
             this.pictureBoxVolumeDownMusic.Size = new System.Drawing.Size(50, 50);
             this.pictureBoxVolumeDownMusic.TabIndex = 3;
             this.pictureBoxVolumeDownMusic.TabStop = false;
+            this.pictureBoxVolumeDownMusic.Click += new System.EventHandler(this.pictureBoxVolumeDownMusic_Click);
+            this.pictureBoxVolumeDownMusic.MouseEnter += new System.EventHandler(this.pictureBoxVolumeDownMusic_MouseEnter);
+            this.pictureBoxVolumeDownMusic.MouseLeave += new System.EventHandler(this.pictureBoxVolumeDownMusic_MouseLeave);
             // 
             // label20
             // 
@@ -1905,9 +1917,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1149, 650);
+            this.Controls.Add(this.panelSetting);
             this.Controls.Add(this.panelGame);
             this.Controls.Add(this.panelLose);
-            this.Controls.Add(this.panelSetting);
             this.Controls.Add(this.panelWin);
             this.Controls.Add(this.panelCreateLoadPlayer);
             this.Controls.Add(this.panelDifficulty);

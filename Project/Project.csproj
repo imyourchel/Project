@@ -296,5 +296,35 @@
   <ItemGroup>
     <None Include="Resources\Background %2813%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icesream1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\burger1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\burger2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\burger3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\burger4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\burger5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\burger6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salad1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salad2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cup.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -50,9 +50,9 @@ namespace Project
             }
             return data;
         }
-        public void AddingIngredients(string name, Image picture)
+        public void AddingIngredients(string name, Image picture, Image serve)
         {
-            IngredientsBeverages ingredient = new IngredientsBeverages(name, picture);
+            IngredientsBeverages ingredient = new IngredientsBeverages(name, picture,serve);
             listOfIngredients.Add(ingredient);
         }
         #endregion Methods

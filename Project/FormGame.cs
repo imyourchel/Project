@@ -47,9 +47,23 @@ namespace Project
         bool hard;
         bool impossible;
 
+        bool barMusic1 = true;
+        bool barMusic2 = true;
+        bool barMusic3 = true;
+        bool barMusic4 = true;
+        bool barMusic5 = true;
+        bool barSFX1 = true;
+        bool barSFX2 = true;
+        bool barSFX3 = true;
+        bool barSFX4 = true;
+        bool barSFX5 = true;
+
         int selectedIngCount;
         int incTimerCust;
         int incTimerEmotion1;
+        int incTimerEmotion2;
+        int tempEmotion;
+        bool timeFirst = true;
 
         List<bool> stockBear;
         List<bool> stockTumblr;
@@ -364,6 +378,13 @@ namespace Project
         private void pictureBoxRestart_Click(object sender, EventArgs e)
         {
             PlaySound("button");
+            foreach(int i in listTempIncome)
+            {
+                tempIncome += i;
+            }
+            player.Income = (player.Income) - tempIncome;
+            tempIncome = 0;
+            listTempIncome.Clear();
             panelSetting.Visible = false;
             if (labelEasy.Font.Name == "Franklin Gothic Demi")
             {
@@ -388,13 +409,13 @@ namespace Project
             #region Foods
             item = new Foods("burger", Properties.Resources.burger, 50);
             listOfItems.Add(item);
-            ((Foods)item).AddingIngredients("plate", Properties.Resources.plates);
-            ((Foods)item).AddingIngredients("bottombun", Properties.Resources.bottomBun);
-            ((Foods)item).AddingIngredients("patty", Properties.Resources.patty);
-            ((Foods)item).AddingIngredients("cheese", Properties.Resources.cheese);
-            ((Foods)item).AddingIngredients("tomato", Properties.Resources.tomato);
-            ((Foods)item).AddingIngredients("lettuce", Properties.Resources.lettuce);
-            ((Foods)item).AddingIngredients("topbun", Properties.Resources.topBun);
+            ((Foods)item).AddingIngredients("plate", Properties.Resources.plates, Properties.Resources.burger1);
+            ((Foods)item).AddingIngredients("bottombun", Properties.Resources.bottomBun, Properties.Resources.burger2);
+            ((Foods)item).AddingIngredients("patty", Properties.Resources.patty, Properties.Resources.burger3);
+            ((Foods)item).AddingIngredients("cheese", Properties.Resources.cheese, Properties.Resources.burger4);
+            ((Foods)item).AddingIngredients("tomato", Properties.Resources.tomato, Properties.Resources.burger5);
+            ((Foods)item).AddingIngredients("lettuce", Properties.Resources.lettuce, Properties.Resources.burger6);
+            ((Foods)item).AddingIngredients("topbun", Properties.Resources.topBun, Properties.Resources.burger);
 
             pictureBoxPlate.Tag = ((Foods)item).ListOfIngredients[0].Name;
             pictureBoxBottomBun.Tag = ((Foods)item).ListOfIngredients[1].Name;
@@ -423,9 +444,9 @@ namespace Project
 
             item = new Foods("salad", Properties.Resources.salad, 25);
             listOfItems.Add(item);
-            ((Foods)item).AddingIngredients("plate", Properties.Resources.plates);
-            ((Foods)item).AddingIngredients("lettuce", Properties.Resources.lettuce);
-            ((Foods)item).AddingIngredients("mayo", Properties.Resources.mayo);
+            ((Foods)item).AddingIngredients("plate", Properties.Resources.plates, Properties.Resources.salad1);
+            ((Foods)item).AddingIngredients("lettuce", Properties.Resources.lettuce, Properties.Resources.salad2);
+            ((Foods)item).AddingIngredients("mayo", Properties.Resources.mayo, Properties.Resources.salad);
 
             pictureBoxPlate.Tag = ((Foods)item).ListOfIngredients[0].Name;
             pictureBoxLettuce.Tag = ((Foods)item).ListOfIngredients[1].Name;
@@ -442,8 +463,8 @@ namespace Project
 
             item = new Foods("icecream", Properties.Resources.iceCream, 10);
             listOfItems.Add(item);
-            ((Foods)item).AddingIngredients("cone", Properties.Resources.cone);
-            ((Foods)item).AddingIngredients("ice", Properties.Resources.icMachine);
+            ((Foods)item).AddingIngredients("cone", Properties.Resources.cone, Properties.Resources.icesream1);
+            ((Foods)item).AddingIngredients("ice", Properties.Resources.icMachine, Properties.Resources.iceCream);
 
             pictureBoxCone.Tag = ((Foods)item).ListOfIngredients[0].Name;
             pictureBoxICMachine.Tag = ((Foods)item).ListOfIngredients[1].Name;
@@ -458,8 +479,8 @@ namespace Project
             #region Beverages
             item = new Beverages(false, "L", "coffeeLHot", Properties.Resources.hotL, 25);
             listOfItems.Add(item);
-            ((Beverages)item).AddingIngredients("cup", Properties.Resources.beverages);            
-            ((Beverages)item).AddingIngredients("coffee", Properties.Resources.textL);
+            ((Beverages)item).AddingIngredients("cup", Properties.Resources.beverages, Properties.Resources.cup);            
+            ((Beverages)item).AddingIngredients("coffee", Properties.Resources.textL, Properties.Resources.hotL);
 
             pictureBoxBeverage.Tag = ((Beverages)item).ListOfIngredients[0].Name;
             pictureBoxBevL.Tag = ((Beverages)item).ListOfIngredients[1].Name;
@@ -472,8 +493,8 @@ namespace Project
 
             item = new Beverages(false, "M", "coffeeMHot", Properties.Resources.hotM, 20);
             listOfItems.Add(item);
-            ((Beverages)item).AddingIngredients("cup", Properties.Resources.beverages);
-            ((Beverages)item).AddingIngredients("coffee", Properties.Resources.textM);
+            ((Beverages)item).AddingIngredients("cup", Properties.Resources.beverages, Properties.Resources.cup);
+            ((Beverages)item).AddingIngredients("coffee", Properties.Resources.textM, Properties.Resources.hotM);
 
             pictureBoxBeverage.Tag = ((Beverages)item).ListOfIngredients[0].Name;
             pictureBoxBevM.Tag = ((Beverages)item).ListOfIngredients[1].Name;
@@ -486,8 +507,8 @@ namespace Project
 
             item = new Beverages(false, "S", "coffeeSHot", Properties.Resources.hotS, 15);
             listOfItems.Add(item);
-            ((Beverages)item).AddingIngredients("cup", Properties.Resources.beverages);
-            ((Beverages)item).AddingIngredients("coffee", Properties.Resources.textS);
+            ((Beverages)item).AddingIngredients("cup", Properties.Resources.beverages, Properties.Resources.cup);
+            ((Beverages)item).AddingIngredients("coffee", Properties.Resources.textS, Properties.Resources.hotS);
 
             pictureBoxBeverage.Tag = ((Beverages)item).ListOfIngredients[0].Name;
             pictureBoxBevS.Tag = ((Beverages)item).ListOfIngredients[1].Name;
@@ -500,9 +521,9 @@ namespace Project
 
             item = new Beverages(true, "L", "coffeeLCold", Properties.Resources.coldL, 25);
             listOfItems.Add(item);
-            ((Beverages)item).AddingIngredients("cup", Properties.Resources.beverages);
-            ((Beverages)item).AddingIngredients("coffee", Properties.Resources.textL);
-            ((Beverages)item).AddingIngredients("ice", Properties.Resources.iceBucket);
+            ((Beverages)item).AddingIngredients("cup", Properties.Resources.beverages, Properties.Resources.cup);
+            ((Beverages)item).AddingIngredients("coffee", Properties.Resources.textL, Properties.Resources.coldL);
+            ((Beverages)item).AddingIngredients("ice", Properties.Resources.iceBucket, Properties.Resources.coldL);
 
             pictureBoxBeverage.Tag = ((Beverages)item).ListOfIngredients[0].Name;
             pictureBoxBevL.Tag = ((Beverages)item).ListOfIngredients[1].Name;
@@ -518,9 +539,9 @@ namespace Project
 
             item = new Beverages(true, "M", "coffeeMCold", Properties.Resources.coldM, 20);
             listOfItems.Add(item);
-            ((Beverages)item).AddingIngredients("cup", Properties.Resources.beverages);
-            ((Beverages)item).AddingIngredients("coffee", Properties.Resources.textM);
-            ((Beverages)item).AddingIngredients("ice", Properties.Resources.iceBucket);
+            ((Beverages)item).AddingIngredients("cup", Properties.Resources.beverages, Properties.Resources.cup);
+            ((Beverages)item).AddingIngredients("coffee", Properties.Resources.textM, Properties.Resources.coldM);
+            ((Beverages)item).AddingIngredients("ice", Properties.Resources.iceBucket, Properties.Resources.coldM);
 
             pictureBoxBeverage.Tag = ((Beverages)item).ListOfIngredients[0].Name;
             pictureBoxBevM.Tag = ((Beverages)item).ListOfIngredients[1].Name;
@@ -536,9 +557,9 @@ namespace Project
 
             item = new Beverages(true, "S", "coffeeSCold", Properties.Resources.coldS, 15);
             listOfItems.Add(item);
-            ((Beverages)item).AddingIngredients("cup", Properties.Resources.beverages);
-            ((Beverages)item).AddingIngredients("coffee", Properties.Resources.textS);
-            ((Beverages)item).AddingIngredients("ice", Properties.Resources.iceBucket);
+            ((Beverages)item).AddingIngredients("cup", Properties.Resources.beverages, Properties.Resources.cup);
+            ((Beverages)item).AddingIngredients("coffee", Properties.Resources.textS, Properties.Resources.coldS);
+            ((Beverages)item).AddingIngredients("ice", Properties.Resources.iceBucket, Properties.Resources.coldS);
 
             pictureBoxBeverage.Tag = ((Beverages)item).ListOfIngredients[0].Name;
             pictureBoxBevS.Tag = ((Beverages)item).ListOfIngredients[1].Name;
@@ -648,7 +669,9 @@ namespace Project
             labelNamePlayer.Text = player.Name;
             StallDisplay();
             timerEmotion1.Start();
+            timerEmotion2.Start();
             incTimerEmotion1 = 0;
+            incTimerEmotion2 = 0;
 
             //Selected level
             int selected;
@@ -671,76 +694,8 @@ namespace Project
             labelDisplayDataPlayer.Text = player.Display(selected);
             labelIncomeNow.Text = player.Income.ToString();
 
-            //tes
             CreateCustomers();
             CreateCustomers2();
-            //Items item = (Items)customers.OrderItem;
-            //Merchandise merch = (Merchandise)item;
-            //player.StockMerchandise = new List<Merchandise> { merch, merch, merch };
-            //label1.Text = player.StockMerchandise[0].Stock.ToString();
-        }
-        private void CreateCustomers()
-        {
-            if (first == true)
-            {
-                Random numRandomCust = new Random();
-                int randomCust = numRandomCust.Next(0, 3);
-                if (randomCust == 0)
-                {
-                    customers = new Customers("Dustin", Properties.Resources.dustin, "male", null);
-                }
-                else if (randomCust == 1)
-                {
-                    customers = new Customers("Jeni", Properties.Resources.jeni, "female", null);
-                }
-                else if (randomCust == 2)
-                {
-                    customers = new Customers("Bumi", Properties.Resources.bumi, "kid", null);
-                }
-            }
-            else
-            {
-                customers = tempCust;
-            }
-            pictureBoxCustomer1.Image = customers.Picture;
-            pictureBoxCustomer1.BackColor = Color.Transparent;
-            pictureBoxCustomer1.SizeMode = PictureBoxSizeMode.StretchImage;
-
-            panelDialog1.BackgroundImage = Properties.Resources.dialog;
-            incTimerCust = 0;
-
-            pictureBoxServe.Image = null;
-            pictureBoxServe.Tag = "none";
-
-            timerCust.Start();
-        }
-        private void CreateCustomers2()
-        {
-            if (first == false)
-            {
-                CreateCustomers();
-            }
-            Random numRandomCust = new Random();
-            int randomCust = numRandomCust.Next(0, 3);
-            if (randomCust == 0)
-            {
-                customer2 = new Customers("Dustin", Properties.Resources.dustin, "male", null);
-            }
-            else if (randomCust == 1)
-            {
-                customer2 = new Customers("Jeni", Properties.Resources.jeni, "female", null);
-            }
-            else if (randomCust == 2)
-            {
-                customer2 = new Customers("Bumi", Properties.Resources.bumi, "kid", null);
-            }           
-            tempCust = customer2;
-            pictureBoxCustomer2.Image = tempCust.Picture;
-            pictureBoxCustomer2.BackColor = Color.Transparent;
-            pictureBoxCustomer2.SizeMode = PictureBoxSizeMode.StretchImage;
-
-            panelDialog2.BackgroundImage = Properties.Resources.dialog;
-            panelDialog2.BackgroundImageLayout = ImageLayout.Stretch;
         }
         private void CreateCustomerOrder()
         {
@@ -815,6 +770,7 @@ namespace Project
             selectedIngCount = 0;
             remainingCusts--;
             labelRemainingCustomers.Text = "Remaining Customers: " + remainingCusts.ToString();
+            labelIncomeNow.Text=player.Income.ToString();
             incTimerCust = 0;
             timerCust.Start();
             PlaySound("correct");
@@ -826,36 +782,6 @@ namespace Project
             PlaySound("fail");
         }
         
-        private void timerCust_Tick(object sender, EventArgs e)
-        {
-            incTimerCust++;            
-            if (incTimerCust == 1 && pictureBoxServe.Tag.ToString() == "none")
-            {
-                if (first == true){ CreateCustomerOrder();CreateCustomerOrder2(); }
-                else { CreateCustomerOrder2(); }
-                timerCust.Stop();
-                first = false;
-            }
-            else if (incTimerCust == 1 && pictureBoxServe.Tag.ToString() == "done")
-            {
-                panelDialog1.Visible= true;
-                pictureBoxServe.Image = null;
-                pictureBoxCustomer1.Image = null;
-                incTimerCust = 0;
-                timerCust.Stop();
-                if (remainingCusts > 0)
-                {
-                    CreateCustomers2();
-                }
-                else
-                {
-                    timerGame.Stop();
-                    panelGame.Visible = false;
-                    panelWin.Visible = true;
-                    PlaySound("win");
-                }
-            }
-        }
         private void ServeOrder(PictureBox PictureBox, string type)
         {
             if (type == "foods")
@@ -866,7 +792,7 @@ namespace Project
                     if (PictureBox.Tag.ToString() == foodOrder.ListOfIngredients[selectedIngCount].Name)
                     {
                         selectedIngCount++;
-                        pictureBoxServe.Image = PictureBox.Image;
+                        pictureBoxServe.Image = foodOrder.ListOfIngredients[selectedIngCount-1].ServePicture;
                         pictureBoxServe.SizeMode = PictureBoxSizeMode.StretchImage;
                         if (selectedIngCount == foodOrder.ListOfIngredients.Count)
                         {
@@ -892,7 +818,7 @@ namespace Project
                     if (PictureBox.Tag.ToString() == bevOrder.ListOfIngredients[selectedIngCount].Name)
                     {
                         selectedIngCount++;
-                        pictureBoxServe.Image = PictureBox.Image;
+                        pictureBoxServe.Image = bevOrder.ListOfIngredients[selectedIngCount-1].ServePicture ;
                         pictureBoxServe.SizeMode = PictureBoxSizeMode.StretchImage;
 
                         if (selectedIngCount == bevOrder.ListOfIngredients.Count)
@@ -1666,14 +1592,127 @@ namespace Project
             }
         }
 
+        private void CreateCustomers()
+        {
+            if (first == true)
+            {
+                Random numRandomCust = new Random();
+                int randomCust = numRandomCust.Next(0, 3);
+                if (randomCust == 0)
+                {
+                    customers = new Customers("Dustin", Properties.Resources.dustin, "male", null);
+                }
+                else if (randomCust == 1)
+                {
+                    customers = new Customers("Jeni", Properties.Resources.jeni, "female", null);
+                }
+                else if (randomCust == 2)
+                {
+                    customers = new Customers("Bumi", Properties.Resources.bumi, "kid", null);
+                }
+            }
+            else
+            {
+                customers = tempCust;
+            }
+            pictureBoxCustomer1.Image = customers.Picture;
+            pictureBoxCustomer1.BackColor = Color.Transparent;
+            pictureBoxCustomer1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            panelDialog1.BackgroundImage = Properties.Resources.dialog;
+            incTimerCust = 0;
+
+            pictureBoxServe.Image = null;
+            pictureBoxServe.Tag = "none";
+
+            timerCust.Start();
+        }
+        private void CreateCustomers2()
+        {
+            if (first == false)
+            {
+                CreateCustomers();
+            }
+            Random numRandomCust = new Random();
+            int randomCust = numRandomCust.Next(0, 3);
+            if (randomCust == 0)
+            {
+                customer2 = new Customers("Dustin", Properties.Resources.dustin, "male", null);
+            }
+            else if (randomCust == 1)
+            {
+                customer2 = new Customers("Jeni", Properties.Resources.jeni, "female", null);
+            }
+            else if (randomCust == 2)
+            {
+                customer2 = new Customers("Bumi", Properties.Resources.bumi, "kid", null);
+            }           
+            tempCust = customer2;
+            pictureBoxCustomer2.Image = tempCust.Picture;
+            pictureBoxCustomer2.BackColor = Color.Transparent;
+            pictureBoxCustomer2.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            panelDialog2.BackgroundImage = Properties.Resources.dialog;
+            panelDialog2.BackgroundImageLayout = ImageLayout.Stretch;
+        }
+        private void timerCust_Tick(object sender, EventArgs e)
+        {
+            incTimerCust++;            
+            if (incTimerCust == 1 && pictureBoxServe.Tag.ToString() == "none")
+            {
+                if (first == true){ CreateCustomerOrder();CreateCustomerOrder2(); }
+                else { CreateCustomerOrder2(); }
+                timerCust.Stop();
+                first = false;
+            }
+            else if (incTimerCust == 1 && pictureBoxServe.Tag.ToString() == "done")
+            {
+                panelDialog1.Visible= true;
+                pictureBoxServe.Image = null;
+                pictureBoxCustomer1.Image = null;
+                incTimerCust = 0;
+                timerCust.Stop();
+                if (remainingCusts > 1)
+                {
+                    CreateCustomers2();
+                }
+                else if (remainingCusts == 1)
+                {
+                    pictureBoxCustomer2.Visible = false;
+                    panelDialog2.Visible = false;
+                }
+                else
+                {
+                    timerGame.Stop();
+                    panelGame.Visible = false;
+                    panelWin.Visible = true;
+                    PlaySound("win");
+                }
+            }
+        }
         private void timerEmotion2_Tick(object sender, EventArgs e)
         {
-
+            incTimerEmotion2++;
+            Image image = null;
+            if (incTimerEmotion1 <= 7)
+            {
+                image = Properties.Resources.happy;
+            }
+            else if (incTimerEmotion1 > 7 && incTimerEmotion1 <= 14)
+            {
+                image = Properties.Resources.flat;
+            }
+            else if (incTimerEmotion1 > 7)
+            {
+                image = Properties.Resources.angry;
+            }
+            pictureBoxEmotion2.Image = image;
+            pictureBoxEmotion2.SizeMode = PictureBoxSizeMode.StretchImage;
         }
         private void timerEmotion1_Tick(object sender, EventArgs e)
         {
-            incTimerEmotion1++;
             Image image = null;
+            incTimerEmotion1++;
             if (incTimerEmotion1 <= 4)
             {
                 image = Properties.Resources.happy;
@@ -1750,6 +1789,266 @@ namespace Project
         private void buttonBuyMerchandiseRobot_Click(object sender, EventArgs e)
         {
             PlaySound("click");
+        }
+
+        private void pictureBoxVolumeDownMusic_Click(object sender, EventArgs e)
+        {
+            PlaySound("button");
+            if (barMusic1 == true && barMusic2 == true && barMusic3 == true && barMusic4 == true & barMusic5 == true)
+            {
+                pictureBoxBarMusic5.BackgroundImage = Properties.Resources.volumeBar;
+                sound2.settings.volume = 80;
+                barMusic5 = false;
+            }
+            else if (barMusic1 == true && barMusic2 == true && barMusic3 == true && barMusic4 == true)
+            {
+                pictureBoxBarMusic5.BackgroundImage = Properties.Resources.volumeBar;
+                pictureBoxBarMusic4.BackgroundImage = Properties.Resources.volumeBar;
+                sound2.settings.volume = 60;
+                barMusic5 = false;
+                barMusic4 = false;
+            }
+            else if (barMusic1 == true && barMusic2 == true && barMusic3 == true)
+            {
+                pictureBoxBarMusic5.BackgroundImage = Properties.Resources.volumeBar;
+                pictureBoxBarMusic4.BackgroundImage = Properties.Resources.volumeBar;
+                pictureBoxBarMusic3.BackgroundImage = Properties.Resources.volumeBar;
+                sound2.settings.volume = 40;
+                barMusic5 = false;
+                barMusic4 = false;
+                barMusic3 = false;
+            }
+            else if (barMusic1 == true && barMusic2 == true)
+            {
+                pictureBoxBarMusic5.BackgroundImage = Properties.Resources.volumeBar;
+                pictureBoxBarMusic4.BackgroundImage = Properties.Resources.volumeBar;
+                pictureBoxBarMusic3.BackgroundImage = Properties.Resources.volumeBar;
+                pictureBoxBarMusic2.BackgroundImage = Properties.Resources.volumeBar;
+                sound2.settings.volume = 20;
+                barMusic5 = false;
+                barMusic4 = false;
+                barMusic3 = false;
+                barMusic2 = false;
+            }
+            else if (barMusic1 == true)
+            {
+                pictureBoxBarMusic5.BackgroundImage = Properties.Resources.volumeBar;
+                pictureBoxBarMusic4.BackgroundImage = Properties.Resources.volumeBar;
+                pictureBoxBarMusic3.BackgroundImage = Properties.Resources.volumeBar;
+                pictureBoxBarMusic2.BackgroundImage = Properties.Resources.volumeBar;
+                pictureBoxBarMusic1.BackgroundImage = Properties.Resources.volumeBar;
+                sound2.settings.volume = 0;
+                barMusic5 = false;
+                barMusic4 = false;
+                barMusic3 = false;
+                barMusic2 = false;
+                barMusic1 = false;
+            }
+        }
+
+        private void pictureBoxVolumeUpMusic_Click(object sender, EventArgs e)
+        {
+            PlaySound("button");
+            if (barMusic1 == false && barMusic2 == false && barMusic3 == false && barMusic4 == false & barMusic5 == false)
+            {
+                pictureBoxBarMusic1.BackgroundImage = Properties.Resources.volumeBarFull;
+                sound2.settings.volume = 20;
+                barMusic1 = true;
+            }
+            else if (barMusic2 == false && barMusic3 == false && barMusic4 == false && barMusic5 == false)
+            {
+                pictureBoxBarMusic1.BackgroundImage = Properties.Resources.volumeBarFull;
+                pictureBoxBarMusic2.BackgroundImage = Properties.Resources.volumeBarFull;
+                sound2.settings.volume = 40;
+                barMusic1 = true;
+                barMusic2 = true;
+            }
+            else if (barMusic3 == false && barMusic4 == false && barMusic5 == false)
+            {
+                pictureBoxBarMusic1.BackgroundImage = Properties.Resources.volumeBarFull;
+                pictureBoxBarMusic2.BackgroundImage = Properties.Resources.volumeBarFull;
+                pictureBoxBarMusic3.BackgroundImage = Properties.Resources.volumeBarFull;
+                sound2.settings.volume = 60;
+                barMusic1 = true;
+                barMusic2 = true;
+                barMusic3 = true;
+            }
+            else if (barMusic4 == false && barMusic5 == false)
+            {
+                pictureBoxBarMusic1.BackgroundImage = Properties.Resources.volumeBarFull;
+                pictureBoxBarMusic2.BackgroundImage = Properties.Resources.volumeBarFull;
+                pictureBoxBarMusic3.BackgroundImage = Properties.Resources.volumeBarFull;
+                pictureBoxBarMusic4.BackgroundImage = Properties.Resources.volumeBarFull;
+                sound2.settings.volume = 80;
+                barMusic1 = true;
+                barMusic2 = true;
+                barMusic3 = true;
+                barMusic4 = true;
+            }
+            else if (barMusic5 == false)
+            {
+                pictureBoxBarMusic1.BackgroundImage = Properties.Resources.volumeBarFull;
+                pictureBoxBarMusic2.BackgroundImage = Properties.Resources.volumeBarFull;
+                pictureBoxBarMusic3.BackgroundImage = Properties.Resources.volumeBarFull;
+                pictureBoxBarMusic4.BackgroundImage = Properties.Resources.volumeBarFull;
+                pictureBoxBarMusic5.BackgroundImage = Properties.Resources.volumeBarFull;
+                sound2.settings.volume = 100;
+                barMusic1 = true;
+                barMusic2 = true;
+                barMusic3 = true;
+                barMusic4 = true;
+                barMusic5 = true;
+            }
+        }
+
+        private void pictureBoxVolumeDownMusic_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBoxVolumeDownMusic.BackgroundImage = Properties.Resources.buttonVolDownFull;
+        }
+
+        private void pictureBoxVolumeDownMusic_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxVolumeDownMusic.BackgroundImage = Properties.Resources.buttonVolDown;
+        }
+
+        private void pictureBoxVolumeUpMusic_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBoxVolumeUpMusic.BackgroundImage = Properties.Resources.buttonVolUpFull;
+        }
+
+        private void pictureBoxVolumeUpMusic_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxVolumeUpMusic.BackgroundImage = Properties.Resources.buttonVolUp;
+        }
+
+        private void pictureBoxVolumeDownSFX_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBoxVolumeDownSFX.BackgroundImage = Properties.Resources.buttonVolDownFull;
+        }
+
+        private void pictureBoxVolumeDownSFX_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxVolumeDownSFX.BackgroundImage = Properties.Resources.buttonVolDown;
+        }
+
+        private void pictureBoxVolmeUpSFX_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxVolmeUpSFX.BackgroundImage = Properties.Resources.buttonVolUp;
+        }
+
+        private void pictureBoxVolmeUpSFX_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBoxVolmeUpSFX.BackgroundImage = Properties.Resources.buttonVolUpFull;
+        }
+
+        private void pictureBoxVolumeDownSFX_Click(object sender, EventArgs e)
+        {
+            PlaySound("button");
+            if (barSFX1 == true && barSFX2 == true && barSFX3 == true && barSFX4 == true & barSFX5 == true)
+            {
+                pictureBoxVolumeBarSFX5.BackgroundImage = Properties.Resources.volumeBar;
+                sound1.settings.volume = 80;
+                barSFX5 = false;
+            }
+            else if (barSFX1 == true && barSFX2 == true && barSFX3 == true && barSFX4 == true)
+            {
+                pictureBoxVolumeBarSFX5.BackgroundImage = Properties.Resources.volumeBar;
+                pictureBoxVolumeBarSFX4.BackgroundImage = Properties.Resources.volumeBar;
+                sound1.settings.volume = 60;
+                barSFX5 = false;
+                barSFX4 = false;
+            }
+            else if (barSFX1 == true && barSFX2 == true && barSFX3 == true)
+            {
+                pictureBoxVolumeBarSFX5.BackgroundImage = Properties.Resources.volumeBar;
+                pictureBoxVolumeBarSFX4.BackgroundImage = Properties.Resources.volumeBar;
+                pictureBoxVolumeBarSFX3.BackgroundImage = Properties.Resources.volumeBar;
+                sound1.settings.volume = 40;
+                barSFX5 = false;
+                barSFX4 = false;
+                barSFX3 = false;
+            }
+            else if (barSFX1 == true && barSFX2 == true)
+            {
+                pictureBoxVolumeBarSFX5.BackgroundImage = Properties.Resources.volumeBar;
+                pictureBoxVolumeBarSFX4.BackgroundImage = Properties.Resources.volumeBar;
+                pictureBoxVolumeBarSFX3.BackgroundImage = Properties.Resources.volumeBar;
+                pictureBoxVolumeBarSFX2.BackgroundImage = Properties.Resources.volumeBar;
+                sound1.settings.volume = 20;
+                barSFX5 = false;
+                barSFX4 = false;
+                barSFX3 = false;
+                barSFX2 = false;
+            }
+            else if (barSFX1 == true)
+            {
+                pictureBoxVolumeBarSFX5.BackgroundImage = Properties.Resources.volumeBar;
+                pictureBoxVolumeBarSFX4.BackgroundImage = Properties.Resources.volumeBar;
+                pictureBoxVolumeBarSFX3.BackgroundImage = Properties.Resources.volumeBar;
+                pictureBoxVolumeBarSFX2.BackgroundImage = Properties.Resources.volumeBar;
+                pictureBoxVolumeBarSFX1.BackgroundImage = Properties.Resources.volumeBar;
+                sound1.settings.volume = 0;
+                barSFX5 = false;
+                barSFX4 = false;
+                barSFX3 = false;
+                barSFX2 = false;
+                barSFX1 = false;
+            }
+        }
+
+        private void pictureBoxVolmeUpSFX_Click(object sender, EventArgs e)
+        {
+            PlaySound("button");
+            if (barSFX1 == false && barSFX2 == false && barSFX3 == false && barSFX4 == false & barSFX5 == false)
+            {
+                pictureBoxVolumeBarSFX1.BackgroundImage = Properties.Resources.volumeBarFull;
+                sound1.settings.volume = 20;
+                barSFX1 = true;
+            }
+            else if (barSFX2 == false && barSFX3 == false && barSFX4 == false & barSFX5 == false)
+            {
+                pictureBoxVolumeBarSFX1.BackgroundImage = Properties.Resources.volumeBarFull;
+                pictureBoxVolumeBarSFX2.BackgroundImage = Properties.Resources.volumeBarFull;
+                sound1.settings.volume = 40;
+                barSFX1 = true;
+                barSFX2 = true;
+            }
+            else if (barSFX3 == false && barSFX4 == false & barSFX5 == false)
+            {
+                pictureBoxVolumeBarSFX1.BackgroundImage = Properties.Resources.volumeBarFull;
+                pictureBoxVolumeBarSFX2.BackgroundImage = Properties.Resources.volumeBarFull;
+                pictureBoxVolumeBarSFX3.BackgroundImage = Properties.Resources.volumeBarFull;
+                sound1.settings.volume = 60;
+                barSFX1 = true;
+                barSFX2 = true;
+                barSFX3 = true;
+            }
+            else if (barSFX4 == false & barSFX5 == false)
+            {
+                pictureBoxVolumeBarSFX1.BackgroundImage = Properties.Resources.volumeBarFull;
+                pictureBoxVolumeBarSFX2.BackgroundImage = Properties.Resources.volumeBarFull;
+                pictureBoxVolumeBarSFX3.BackgroundImage = Properties.Resources.volumeBarFull;
+                pictureBoxVolumeBarSFX4.BackgroundImage = Properties.Resources.volumeBarFull;
+                sound1.settings.volume = 80;
+                barSFX1 = true;
+                barSFX2 = true;
+                barSFX3 = true;
+                barSFX4 = true;
+            }
+            else if (barSFX5 == false)
+            {
+                pictureBoxVolumeBarSFX1.BackgroundImage = Properties.Resources.volumeBarFull;
+                pictureBoxVolumeBarSFX2.BackgroundImage = Properties.Resources.volumeBarFull;
+                pictureBoxVolumeBarSFX3.BackgroundImage = Properties.Resources.volumeBarFull;
+                pictureBoxVolumeBarSFX4.BackgroundImage = Properties.Resources.volumeBarFull;
+                pictureBoxVolumeBarSFX5.BackgroundImage = Properties.Resources.volumeBarFull;
+                sound1.settings.volume = 100;
+                barSFX1 = true;
+                barSFX2 = true;
+                barSFX3 = true;
+                barSFX4 = true;
+                barSFX5 = true;
+            }
         }
     }
 }
