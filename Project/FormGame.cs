@@ -63,7 +63,7 @@ namespace Project
         int incTimerEmotion1;
         int incTimerEmotion2;
         int tempEmotion;
-        bool timeFirst = true;
+        bool timeFirst = true;//bingung dipake atau gak
 
         List<bool> stockBear;
         List<bool> stockTumblr;
@@ -71,8 +71,8 @@ namespace Project
 
         Customers tempCust;
         Customers tempOrder;
-
         bool first = true;
+        bool last = false;
 
         WindowsMediaPlayer sound1 = new WindowsMediaPlayer();
         WindowsMediaPlayer sound2 = new WindowsMediaPlayer();
@@ -368,7 +368,6 @@ namespace Project
         }
         #endregion setting panel game
 
-        #region InGame
         private void pictureBoxHome_Click(object sender, EventArgs e)
         {
             PlaySound("button");
@@ -577,7 +576,7 @@ namespace Project
             #region Merchandise     
             
             item = new Merchandise(stockBear, "bear", Properties.Resources.bear, 100);
-            listOfItems.Add(item);            
+            listOfItems.Add(item);
             pictureBoxBear1.Tag = ((Merchandise)item).Name;
             pictureBoxBear2.Tag = ((Merchandise)item).Name;
             pictureBoxBear3.Tag = ((Merchandise)item).Name;
@@ -637,7 +636,6 @@ namespace Project
             pictureBoxRobot5.SizeMode = PictureBoxSizeMode.StretchImage;
 
             #endregion Merchandise
-
         }   
 
         private void timerGame_Tick(object sender, EventArgs e)
@@ -696,68 +694,6 @@ namespace Project
 
             CreateCustomers();
             CreateCustomers2();
-        }
-        private void CreateCustomerOrder()
-        {
-            if (first == true)
-            {
-                Random numRandomItemType = new Random();
-                int randomItemType = numRandomItemType.Next(0, 3);
-                if (randomItemType == 0) //Foods
-                {
-                    Random numRandomFood = new Random();
-                    int randomFood = numRandomFood.Next(0, 3);
-                    customers.OrderItem = listOfItems[randomFood];
-                }
-                else if (randomItemType == 1)
-                {
-                    Random numRandomBev = new Random();
-                    int randomBev = numRandomBev.Next(3, 9);
-                    customers.OrderItem = listOfItems[randomBev];
-                }
-                else if (randomItemType == 2)
-                {
-                    Random numRandomMerch = new Random();
-                    int randomMerch = numRandomMerch.Next(9, 12);
-                    customers.OrderItem = listOfItems[randomMerch];
-                } 
-            }
-            else
-            {
-                customers = tempOrder;
-            }
-            pictureBoxOrder1.Image = customers.OrderItem.Picture;
-            pictureBoxOrder1.SizeMode = PictureBoxSizeMode.StretchImage;
-        }
-        private void CreateCustomerOrder2()
-        {
-            if (first == false)
-            {
-                CreateCustomerOrder();
-            }
-            Random numRandomItemType = new Random();
-            int randomItemType = numRandomItemType.Next(0, 3);
-            if (randomItemType == 0) //Foods
-            {
-                Random numRandomFood = new Random();
-                int randomFood = numRandomFood.Next(0, 3);
-                customer2.OrderItem = listOfItems[randomFood];
-            }
-            else if (randomItemType == 1)
-            {
-                Random numRandomBev = new Random();
-                int randomBev = numRandomBev.Next(3, 9);
-                customer2.OrderItem = listOfItems[randomBev];
-            }
-            else if (randomItemType == 2)
-            {
-                Random numRandomMerch = new Random();
-                int randomMerch = numRandomMerch.Next(9, 12);
-                customer2.OrderItem = listOfItems[randomMerch];
-            }            
-            tempOrder = customer2;
-            pictureBoxOrder2.Image = tempOrder.OrderItem.Picture;
-            pictureBoxOrder2.SizeMode = PictureBoxSizeMode.StretchImage;
         }
         private void CorrectOrder(Items order)
         {
@@ -861,6 +797,7 @@ namespace Project
 
             }
         }
+
         #region PictureBox Mouse
         private void ChangePictureBoxColor(PictureBox pictureBox, string status)
         {
@@ -1236,6 +1173,7 @@ namespace Project
         }
         #endregion Foods & Beverages
         #endregion PictureBox Mouse
+
         #region Label Difficulty Click
         private void labelEasy_Click(object sender, EventArgs e)
         {
@@ -1309,6 +1247,7 @@ namespace Project
             this.labelHard.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
         }
         #endregion Panel Difficulty Click
+
         #region picbox click
         private void pictureBoxTopBun_Click(object sender, EventArgs e)
         {
@@ -1487,7 +1426,6 @@ namespace Project
             ServeOrder(pictureBoxRobot1, "merchandise");
         }
         #endregion picbox click
-        #endregion InGame
 
         public void SaveToFile()
         {
@@ -1592,6 +1530,75 @@ namespace Project
             }
         }
 
+        private void CreateCustomerOrder()
+        {
+            if (first == true)
+            {
+                Random numRandomItemType = new Random();
+                int randomItemType = numRandomItemType.Next(0, 3);
+                if (randomItemType == 0) //Foods
+                {
+                    Random numRandomFood = new Random();
+                    int randomFood = numRandomFood.Next(0, 3);
+                    customers.OrderItem = listOfItems[randomFood];
+                }
+                else if (randomItemType == 1)
+                {
+                    Random numRandomBev = new Random();
+                    int randomBev = numRandomBev.Next(3, 9);
+                    customers.OrderItem = listOfItems[randomBev];
+                }
+                else if (randomItemType == 2)
+                {
+                    Random numRandomMerch = new Random();
+                    int randomMerch = numRandomMerch.Next(9, 12);
+                    customers.OrderItem = listOfItems[randomMerch];
+                } 
+            }
+            else
+            {
+                customers = tempOrder;
+            }
+            pictureBoxOrder1.Image = customers.OrderItem.Picture;
+            pictureBoxOrder1.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
+        private void CreateCustomerOrder2()
+        {
+            if(last == false)
+            {
+                if (first == false)
+                {
+                    CreateCustomerOrder();
+                }
+                Random numRandomItemType = new Random();
+                int randomItemType = numRandomItemType.Next(0, 3);
+                if (randomItemType == 0) //Foods
+                {
+                    Random numRandomFood = new Random();
+                    int randomFood = numRandomFood.Next(0, 3);
+                    customer2.OrderItem = listOfItems[randomFood];
+                }
+                else if (randomItemType == 1)
+                {
+                    Random numRandomBev = new Random();
+                    int randomBev = numRandomBev.Next(3, 9);
+                    customer2.OrderItem = listOfItems[randomBev];
+                }
+                else if (randomItemType == 2)
+                {
+                    Random numRandomMerch = new Random();
+                    int randomMerch = numRandomMerch.Next(9, 12);
+                    customer2.OrderItem = listOfItems[randomMerch];
+                }
+                tempOrder = customer2;
+                pictureBoxOrder2.Image = tempOrder.OrderItem.Picture;
+                pictureBoxOrder2.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+            else
+            {
+                CreateCustomerOrder();
+            }
+        }
         private void CreateCustomers()
         {
             if (first == true)
@@ -1629,31 +1636,38 @@ namespace Project
         }
         private void CreateCustomers2()
         {
-            if (first == false)
+            if(last == false)
+            {
+                if (first == false)
+                {
+                    CreateCustomers();
+                }
+                Random numRandomCust = new Random();
+                int randomCust = numRandomCust.Next(0, 3);
+                if (randomCust == 0)
+                {
+                    customer2 = new Customers("Dustin", Properties.Resources.dustin, "male", null);
+                }
+                else if (randomCust == 1)
+                {
+                    customer2 = new Customers("Jeni", Properties.Resources.jeni, "female", null);
+                }
+                else if (randomCust == 2)
+                {
+                    customer2 = new Customers("Bumi", Properties.Resources.bumi, "kid", null);
+                }
+                tempCust = customer2;
+                pictureBoxCustomer2.Image = tempCust.Picture;
+                pictureBoxCustomer2.BackColor = Color.Transparent;
+                pictureBoxCustomer2.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                panelDialog2.BackgroundImage = Properties.Resources.dialog;
+                panelDialog2.BackgroundImageLayout = ImageLayout.Stretch;
+            }
+            else
             {
                 CreateCustomers();
             }
-            Random numRandomCust = new Random();
-            int randomCust = numRandomCust.Next(0, 3);
-            if (randomCust == 0)
-            {
-                customer2 = new Customers("Dustin", Properties.Resources.dustin, "male", null);
-            }
-            else if (randomCust == 1)
-            {
-                customer2 = new Customers("Jeni", Properties.Resources.jeni, "female", null);
-            }
-            else if (randomCust == 2)
-            {
-                customer2 = new Customers("Bumi", Properties.Resources.bumi, "kid", null);
-            }           
-            tempCust = customer2;
-            pictureBoxCustomer2.Image = tempCust.Picture;
-            pictureBoxCustomer2.BackColor = Color.Transparent;
-            pictureBoxCustomer2.SizeMode = PictureBoxSizeMode.StretchImage;
-
-            panelDialog2.BackgroundImage = Properties.Resources.dialog;
-            panelDialog2.BackgroundImageLayout = ImageLayout.Stretch;
         }
         private void timerCust_Tick(object sender, EventArgs e)
         {
@@ -1672,15 +1686,22 @@ namespace Project
                 pictureBoxCustomer1.Image = null;
                 incTimerCust = 0;
                 timerCust.Stop();
-                if (remainingCusts > 1)
+                if (remainingCusts > 0)
                 {
-                    CreateCustomers2();
-                }
-                else if (remainingCusts == 1)
-                {
-                    pictureBoxCustomer2.Visible = false;
-                    panelDialog2.Visible = false;
-                }
+                    if(remainingCusts == 1)
+                    {
+                        //buat orang terakhir tidak ke display
+                        last = true;
+                        CreateCustomers2();
+                        pictureBoxCustomer2.Visible = false;
+                        panelDialog2.Visible = false;
+                    }
+                    else
+                    {
+                        CreateCustomers2();
+                    }                   
+                }                
+                                    
                 else
                 {
                     timerGame.Stop();
@@ -1790,7 +1811,7 @@ namespace Project
         {
             PlaySound("click");
         }
-
+        #region Volume
         private void pictureBoxVolumeDownMusic_Click(object sender, EventArgs e)
         {
             PlaySound("button");
@@ -2050,5 +2071,6 @@ namespace Project
                 barSFX5 = true;
             }
         }
+        #endregion Volume
     }
 }
